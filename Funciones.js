@@ -1,31 +1,66 @@
+const myfunción = () => console.log(a+b);
+myfunción(4 + 7)
+
+// funciones flecha
+
+const bubalu = (b,c) =>  b *c;
+console.log(bubalu(5,8));
+
+// funciones de orden superior
+
+function superior(func, param) {
+    return func(param)
+}
+superior(bubalu, 5,8)
+
+// forEach
+
+let consola = 0
+[4,5,6].forEach ( numer => { 
+    consola += Number;
+    console.log(consola)
+})
+
+// segundo
+const apellidos = ["jairo", "castillo"]
+
+apellidos.forEach ( apellidos => {
+    const p = document.createElement("p");
+    p.textContent = apellidos;
+    document.body.appendChild(p);
+})
+
+// tercero 
+
+const mejor = [ 2, 3, 4, 5];
+mejor.forEach( mejor => {
+    return mejor * 2;
+})
+console.log(mejor)
+
+---------------------------------------------------------------
 //
-let función = (a,b) => (a * b);
-console.log(función(5, 6));
-
-// segundo ejercicio
-
-let segundo = ( a ,c ) => (a - c);
-console.log(segundo( 20, 15));
-
-//Variables locales dentro de una función
-
-let local = () => {
-    let variables = 20;
-    return variables;
+function sumar (b,c) {
+    return b + c;
 }
-console.log(local());
+console.log(sumar( 5, 7));
 
-// funciones 3 
-
-const elmejor = () => {
-    let gozar = 50;
-    let virir = 47;
-    return gozar * virir;
+//2
+const suman= ( b, f) => {
+    return b * f;
 }
-elmejor();
+console.log(suman(17,6));
 
-// funcion 5
+//3 
+const mejorr = (b,n)=> console.log(b-n);
+mejor(45, 7);
 
-const mejorf = ( m , r) => m + r;
-console.log(mejorf(4, 60)); 
+//4 numero mayor
+let camino = [2,3,2, 3, 98, 6, 7, 8, 9, 10];
+function mayor(mejort){
+    maximo = Math.max(...mejort)
+    console.log(maximo)
+}
+mayor(camino);
+
 
