@@ -23,3 +23,14 @@ console.log(gonzalo);
 const falu = new Date();
  gaco = falu.getFullYear()
 console.log(gaco)
+
+METODOS: 
+
+getFullYear() 
+getMonth()
+getDate()
+getDay()
+getHours()
+getMinutes()
+getSeconds()
+getMilliseconds()
