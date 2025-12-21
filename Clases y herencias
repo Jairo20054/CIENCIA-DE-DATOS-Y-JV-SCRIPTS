@@ -1,0 +1,34 @@
+//
+////
+class comida {
+    constructor(tipo, cantidad, precio, localizaciòn) {
+        this.tipo = tipo;
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.localizaciòn = localizaciòn;
+    }
+
+    inicial () {
+        return `comida ordenada${this.tipo}, ${this.cantidad}, ${this.precio}, ${this.localizaciòn}`
+    }
+}
+
+let orden = new comida("almuerzo", 2, 15000, "Puerto tejadad")
+
+console.log(orden.inicial())
+
+////
+
+class cena extends comida {
+    constructor(tipo, cantidad, precio, localizaciòn, postre) {
+        super(tipo, cantidad, precio, localizaciòn)
+        this.postre = postre;
+    }
+    informaciòn(){
+        return  `comida ordenada ,  ${this.tipo} cantidad ${this.cantidad}  ${this.precio}  ${this.localizaciòn} ${this.postre}`
+    }
+}
+
+let cena31 = new cena("pavo" , 16, 20.000, "villa clarita", "helado")
+
+console.log(cena31.informaciòn())
