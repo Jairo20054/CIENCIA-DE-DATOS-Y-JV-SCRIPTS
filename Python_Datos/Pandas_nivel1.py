@@ -19,7 +19,11 @@ bases_de_dtaos = {
 df = pd.DataFrame(bases_de_dtaos)
 #df[['ID_Cliente', 'Precio_USD']]= df[['ID_Cliente', 'Precio_USD']]
 ##print(df[['ID_Cliente', 'Precio_USD']].astype(float))
-base = bases_de_dtaos.loc[[1,2]]
-print(base)## sirve para sacar el promedio, desviación estar, min y maximo
+##print(df[['ID_Cliente', 'Precio_USD']].describe()) sirve para sacar el promedio, desviación estar, min y maximo
+#base = df.loc[[1, 2]] ## Sirve para filtrar filas por su ID
+#basess = df.iloc[[1, 2]] ## Sirve para filtrar el numero de las filas
+basec = df.groupby('ID_Cliente')['Precio_USD'].mean() ## agrupar5 y sacar el promedio
+numero = df.pivot_table(index="Nombre", values = ["Precio_USD"], columns="Ciudad", aggfunc= "sum")## sirve para utilizar tablas dinamicas 
+print(numero)## 
 
 
