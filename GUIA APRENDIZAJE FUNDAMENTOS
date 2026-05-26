@@ -1,0 +1,1971 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía Senior de Fundamentos y Programación | NIDO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f2ee;
+      --surface: #ffffff;
+      --surface-2: #eae8e3;
+      --surface-3: #ddd9d1;
+      --ink: #1a1814;
+      --ink-2: #2d2a24;
+      --muted: #6b6560;
+      --primary: #1a6b47;
+      --primary-light: #e6f3ed;
+      --primary-2: #238c5e;
+      --accent: #c4850c;
+      --accent-light: #fdf3e0;
+      --danger: #b83a3a;
+      --danger-light: #fce8e8;
+      --success: #1a6b47;
+      --success-light: #e6f3ed;
+      --purple: #6b3fa0;
+      --purple-light: #f0eaf8;
+      --code-bg: #1b1e1c;
+      --code-text: #d4e8da;
+      --code-comment: #637a6b;
+      --code-keyword: #7ec8a0;
+      --code-string: #e8c97a;
+      --code-func: #82b1ff;
+      --code-number: #f5a87a;
+      --code-type: #c792ea;
+      --line: #d9d5ce;
+      --shadow-sm: 0 1px 3px rgba(26,24,20,.06);
+      --shadow-md: 0 8px 30px rgba(26,24,20,.08);
+      --shadow-lg: 0 20px 60px rgba(26,24,20,.10);
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
+      --max: 1200px;
+      --font-display: "Instrument Serif", Georgia, serif;
+      --font-body: "DM Sans", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+      --transition: .2s cubic-bezier(.4,0,.2,1);
+    }
+
+    [data-theme="dark"] {
+      --bg: #141614;
+      --surface: #1e201e;
+      --surface-2: #282a28;
+      --surface-3: #333533;
+      --ink: #e8e6e1;
+      --ink-2: #c4c2bc;
+      --muted: #8a8780;
+      --primary: #5ec49a;
+      --primary-light: rgba(94,196,154,.12);
+      --primary-2: #7ed6b0;
+      --accent: #e8a832;
+      --accent-light: rgba(232,168,50,.1);
+      --danger: #e05555;
+      --danger-light: rgba(224,85,85,.1);
+      --success: #5ec49a;
+      --success-light: rgba(94,196,154,.1);
+      --purple: #b088d4;
+      --purple-light: rgba(176,136,212,.1);
+      --code-bg: #111311;
+      --line: #333533;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.2);
+      --shadow-md: 0 8px 30px rgba(0,0,0,.25);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,.3);
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    a { color: var(--primary); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    a:hover { color: var(--primary-2); }
+    code, pre { font-family: var(--font-mono); }
+    code { font-size: .88em; background: var(--surface-2); padding: 2px 6px; border-radius: 4px; }
+    strong { font-weight: 700; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      position: sticky; top: 0; z-index: 30;
+      backdrop-filter: blur(20px) saturate(1.6);
+      -webkit-backdrop-filter: blur(20px) saturate(1.6);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom: 1px solid var(--line);
+      transition: background var(--transition);
+    }
+    .topbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 12px 0;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; letter-spacing: -.03em; white-space: nowrap;
+      font-size: 15px;
+    }
+    .brand-mark {
+      width: 38px; height: 38px; display: grid; place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), #0d3d28);
+      color: white; font-family: var(--font-display); font-size: 20px;
+      box-shadow: 0 4px 12px rgba(26,107,71,.25);
+    }
+    [data-theme="dark"] .brand-mark { box-shadow: 0 4px 12px rgba(0,0,0,.4); }
+    .nav {
+      display: flex; align-items: center; gap: 2px;
+      overflow-x: auto; padding: 2px; scrollbar-width: thin;
+    }
+    .nav a {
+      text-decoration: none; color: var(--muted); font-size: 13px;
+      font-weight: 600; padding: 7px 12px; border-radius: 8px;
+      white-space: nowrap; transition: all var(--transition);
+    }
+    .nav a:hover { background: var(--surface-2); color: var(--primary); }
+    .theme-toggle {
+      background: var(--surface-2); border: 1px solid var(--line);
+      border-radius: 8px; padding: 6px 10px; cursor: pointer;
+      font-size: 16px; line-height: 1; transition: all var(--transition);
+    }
+    .theme-toggle:hover { background: var(--surface-3); }
+
+    /* ─── HERO ─── */
+    .hero { padding: 56px 0 24px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; align-items: stretch; }
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl); padding: clamp(28px, 5vw, 48px);
+      box-shadow: var(--shadow-lg); position: relative; overflow: hidden;
+    }
+    .hero-card::after {
+      content: "< />";
+      position: absolute; right: -12px; bottom: -40px;
+      font-size: 140px; font-weight: 900; letter-spacing: -.08em;
+      font-family: var(--font-mono);
+      color: var(--primary); opacity: .05; pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--primary); background: var(--primary-light);
+      border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+      border-radius: 8px; padding: 6px 12px; font-size: 12px;
+      font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: var(--font-display); font-weight: 400;
+      font-size: clamp(34px, 5.5vw, 64px); line-height: 1;
+      letter-spacing: -.03em; margin-bottom: 16px;
+    }
+    h1 em { font-style: italic; color: var(--primary); }
+    .hero p { color: var(--muted); font-size: clamp(15px, 1.8vw, 18px); margin: 0; }
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+
+    .btn {
+      border: 0; border-radius: 10px; padding: 11px 18px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--font-body); font-weight: 700; font-size: 14px;
+      cursor: pointer; text-decoration: none;
+      transition: all var(--transition);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 14px rgba(26,107,71,.25); }
+    .btn-primary:hover { background: var(--primary-2); color: white; }
+    .btn-ghost { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+    .btn-ghost:hover { background: var(--surface-2); }
+    .btn-small { padding: 7px 12px; font-size: 12px; }
+    .btn-accent { background: var(--accent); color: white; }
+
+    .stat-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius-xl); padding: 24px;
+      box-shadow: var(--shadow-lg); display: flex; flex-direction: column;
+      justify-content: space-between; gap: 18px;
+    }
+    .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .stat {
+      background: var(--surface-2); border-radius: 14px; padding: 14px;
+      min-height: 96px; display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .stat strong { font-size: 26px; letter-spacing: -.04em; color: var(--primary); font-family: var(--font-display); }
+    .stat span { color: var(--muted); font-size: 12px; font-weight: 600; }
+    .progress-wrap { background: var(--surface-2); border-radius: 999px; height: 8px; overflow: hidden; }
+    .progress-bar {
+      width: 0%; height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px; transition: width .4s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 48px 0; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex; align-items: end; justify-content: space-between;
+      gap: 20px; margin-bottom: 20px;
+    }
+    .section-head h2 {
+      font-family: var(--font-display); font-weight: 400;
+      font-size: clamp(26px, 3.5vw, 44px); line-height: 1.05;
+      letter-spacing: -.02em;
+    }
+    .section-head p { margin: 8px 0 0; color: var(--muted); max-width: 700px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .card h3 { margin-bottom: 8px; letter-spacing: -.02em; font-size: 18px; line-height: 1.2; }
+    .card p { color: var(--muted); margin-bottom: 10px; font-size: 14px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .pill, .level {
+      display: inline-flex; align-items: center;
+      border-radius: 6px; font-size: 11px; font-weight: 700;
+      padding: 4px 8px; letter-spacing: .02em;
+    }
+    .level.esencial { color: var(--success); background: var(--success-light); }
+    .level.recom { color: var(--accent); background: var(--accent-light); }
+    .level.avanzado { color: var(--purple); background: var(--purple-light); }
+    .level.critico { color: var(--danger); background: var(--danger-light); }
+    .pill { background: var(--surface-2); color: var(--muted); }
+
+    /* ─── MODULES ─── */
+    .module {
+      display: grid; grid-template-columns: 280px 1fr;
+      gap: 16px; align-items: start; margin-bottom: 24px;
+    }
+    .module-aside {
+      position: sticky; top: 72px;
+      background: linear-gradient(160deg, var(--primary), #0d3d28);
+      color: white; border-radius: var(--radius-xl); padding: 22px;
+      box-shadow: 0 12px 40px rgba(26,107,71,.2);
+    }
+    [data-theme="dark"] .module-aside { box-shadow: 0 12px 40px rgba(0,0,0,.4); }
+    .module-aside h3 {
+      font-family: var(--font-display); font-weight: 400;
+      font-size: 26px; line-height: 1.05; margin-bottom: 8px;
+    }
+    .module-aside p { color: rgba(255,255,255,.72); margin: 0; font-size: 14px; }
+    .module-aside .pill { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.15); color: white; }
+    .module-aside .pill-row { margin-top: 14px; }
+
+    .concept-list { display: grid; gap: 10px; }
+    .concept {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition);
+    }
+    .concept:hover { box-shadow: var(--shadow-md); }
+    .concept summary {
+      list-style: none; cursor: pointer; padding: 16px 18px;
+      display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center;
+      font-size: 14px;
+    }
+    .concept summary::-webkit-details-marker { display: none; }
+    .concept summary::before {
+      content: ""; display: none;
+    }
+    .concept summary h4 { margin: 0; font-size: 17px; letter-spacing: -.02em; }
+    .concept[open] summary { border-bottom: 1px solid var(--line); }
+    .concept-body { padding: 18px; display: grid; gap: 12px; }
+    .concept-body p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+    /* ─── CODE BLOCKS ─── */
+    .code-block {
+      background: var(--code-bg); color: var(--code-text);
+      border-radius: var(--radius-md); overflow: auto;
+      border: 1px solid rgba(255,255,255,.06);
+      position: relative;
+    }
+    .code-block pre {
+      margin: 0; padding: 16px; font-size: 13px; line-height: 1.6;
+      tab-size: 2; white-space: pre; overflow-x: auto;
+    }
+    .code-label {
+      position: absolute; top: 8px; right: 10px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .06em; padding: 2px 8px; border-radius: 4px;
+      background: rgba(255,255,255,.08); color: rgba(255,255,255,.4);
+    }
+    .code-block .kw { color: var(--code-keyword); }
+    .code-block .str { color: var(--code-string); }
+    .code-block .fn { color: var(--code-func); }
+    .code-block .cm { color: var(--code-comment); font-style: italic; }
+    .code-block .num { color: var(--code-number); }
+    .code-block .tp { color: var(--code-type); }
+
+    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .comparison-grid .code-block { flex: 1; }
+    .bad-label, .good-label {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 11px; font-weight: 700; letter-spacing: .03em;
+      padding: 4px 10px; border-radius: 6px; margin-bottom: 6px;
+    }
+    .bad-label { color: var(--danger); background: var(--danger-light); }
+    .good-label { color: var(--success); background: var(--success-light); }
+
+    .mini {
+      background: var(--accent-light); border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+      border-radius: var(--radius-md); padding: 14px;
+      font-size: 14px;
+    }
+    .mini strong { color: var(--accent); }
+
+    .senior-tip {
+      background: var(--purple-light); border: 1px solid color-mix(in srgb, var(--purple) 20%, transparent);
+      border-radius: var(--radius-md); padding: 14px;
+      font-size: 14px;
+    }
+    .senior-tip strong { color: var(--purple); }
+
+    .danger-tip {
+      background: var(--danger-light); border: 1px solid color-mix(in srgb, var(--danger) 20%, transparent);
+      border-radius: var(--radius-md); padding: 14px;
+      font-size: 14px;
+    }
+    .danger-tip strong { color: var(--danger); }
+
+    /* ─── TABLE ─── */
+    .table-wrap {
+      overflow-x: auto; background: var(--surface);
+      border: 1px solid var(--line); border-radius: var(--radius-lg);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 700px; }
+    th, td { padding: 12px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
+    th { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; background: var(--surface-2); font-weight: 700; }
+    tr:last-child td { border-bottom: 0; }
+
+    /* ─── EXERCISE GENERATOR ─── */
+    .exercise-generator {
+      background: linear-gradient(145deg, #102b1d, var(--primary));
+      color: white; border-radius: var(--radius-xl); padding: clamp(22px, 4vw, 36px);
+      display: grid; grid-template-columns: .85fr 1.15fr; gap: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+    .exercise-generator p { color: rgba(255,255,255,.7); font-size: 14px; }
+    .exercise-output {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg); padding: 20px; min-height: 240px; font-size: 14px;
+    }
+    .exercise-output h3 { margin: 0 0 8px; font-size: 18px; }
+    .exercise-output ul { margin: 8px 0 0; padding-left: 20px; }
+    .exercise-output li { margin-bottom: 4px; }
+    .select-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    select {
+      border-radius: 8px; border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.1); color: white;
+      padding: 10px 14px; outline: none; font-weight: 600;
+      font-family: var(--font-body); font-size: 13px;
+    }
+    select option { color: var(--ink); }
+
+    /* ─── CHECKLIST ─── */
+    .checklist { display: grid; gap: 8px; }
+    .check-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 12px 14px; border: 1px solid var(--line);
+      border-radius: var(--radius-md); background: var(--surface);
+      transition: all var(--transition);
+    }
+    .check-item:has(input:checked) { background: var(--primary-light); border-color: color-mix(in srgb, var(--primary) 20%, transparent); }
+    .check-item input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--primary); cursor: pointer; }
+    .check-item label { cursor: pointer; color: var(--muted); font-size: 14px; }
+    .check-item strong { color: var(--ink); display: block; font-size: 13px; }
+
+    /* ─── TIMELINE ─── */
+    .timeline { position: relative; display: grid; gap: 12px; }
+    .step { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: stretch; }
+    .step-num {
+      border-radius: 16px; background: var(--primary-light); color: var(--primary);
+      display: grid; place-items: center; font-weight: 800; font-size: 20px;
+      font-family: var(--font-display);
+    }
+    .step-body {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 16px; padding: 16px;
+    }
+    .step-body h3 { margin-bottom: 4px; font-size: 16px; }
+    .step-body p { color: var(--muted); font-size: 14px; }
+
+    /* ─── SEARCH ─── */
+    .search-box {
+      position: relative; margin-bottom: 18px;
+    }
+    .search-box input {
+      width: 100%; padding: 12px 16px 12px 40px;
+      border: 1px solid var(--line); border-radius: var(--radius-md);
+      background: var(--surface); color: var(--ink); font-size: 14px;
+      font-family: var(--font-body); outline: none;
+      transition: border-color var(--transition);
+    }
+    .search-box input:focus { border-color: var(--primary); }
+    .search-box svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+
+    /* ─── FOOTER ─── */
+    .footer { padding: 32px 0 48px; color: var(--muted); text-align: center; font-size: 14px; }
+    .print-note { display: none; }
+
+    /* ─── TABS ─── */
+    .tab-bar { display: flex; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
+    .tab-btn {
+      padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px;
+      background: var(--surface); color: var(--muted); font-size: 13px;
+      font-weight: 600; cursor: pointer; font-family: var(--font-body);
+      transition: all var(--transition);
+    }
+    .tab-btn:hover { background: var(--surface-2); }
+    .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: fadeUp .5s cubic-bezier(.4,0,.2,1) both; }
+    .delay-1 { animation-delay: .1s; }
+    .delay-2 { animation-delay: .2s; }
+    .delay-3 { animation-delay: .3s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 980px) {
+      .hero-grid, .module, .exercise-generator, .grid-3, .grid-2, .comparison-grid { grid-template-columns: 1fr; }
+      .module-aside { position: relative; top: 0; }
+      .section-head { display: block; }
+    }
+    @media (max-width: 640px) {
+      .topbar-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .hero { padding-top: 28px; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 1fr; }
+      .step-num { min-height: 48px; }
+      .concept summary { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .topbar, .hero-actions, .exercise-generator button, .select-row, .print-hide, .theme-toggle, .search-box { display: none !important; }
+      body { background: white; }
+      .hero-card, .card, .concept, .table-wrap, .stat-card { box-shadow: none; }
+      .module { grid-template-columns: 1fr; page-break-inside: avoid; }
+      .module-aside { background: #eee; color: #111; box-shadow: none; }
+      .module-aside p, .module-aside .pill { color: #333; }
+      .print-note { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand"><div class="brand-mark">N</div><span>Guía Full Stack NIDO</span></div>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#mapa">Mapa</a>
+        <a href="#conceptos">Conceptos</a>
+        <a href="#typescript">TypeScript</a>
+        <a href="#testing">Testing</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#arquitectura">Arquitectura</a>
+        <a href="#ejercicios">Ejercicios</a>
+        <a href="#ruta">Ruta</a>
+        <a href="#glosario">Glosario</a>
+        <a href="#checklist">Checklist</a>
+      </nav>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema" title="Tema claro / oscuro">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card animate-in">
+          <span class="eyebrow">Roadmap 80/20 · JS · TS · React · Node · Prisma · Testing</span>
+          <h1>Fundamentos y programación para construir NIDO con <em>criterio senior</em></h1>
+          <p>Guía interactiva para dominar conceptos, practicar con ejercicios reales, y aprender las buenas prácticas que separan a un dev junior de un ingeniero senior. Incluye anti-patrones, TypeScript, testing, seguridad y arquitectura.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#ejercicios">Practicar ahora</a>
+            <a class="btn btn-ghost" href="#conceptos">Ver conceptos</a>
+            <a class="btn btn-ghost" href="#arquitectura">Arquitectura</a>
+            <button class="btn btn-ghost print-hide" onclick="window.print()">Imprimir PDF</button>
+          </div>
+        </div>
+        <aside class="stat-card animate-in delay-1">
+          <div>
+            <span class="eyebrow">Panel de avance</span>
+            <h2 style="font-family:var(--font-display);font-weight:400;letter-spacing:-.02em;line-height:1.05;font-size:28px;">Domina el 80% que usarás todos los días</h2>
+            <p style="color:var(--muted);margin:8px 0 14px;font-size:14px;">Marca el checklist al final para guardar tu progreso en este navegador.</p>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong>9</strong><span>Módulos principales</span></div>
+            <div class="stat"><strong>80+</strong><span>Conceptos explicados</span></div>
+            <div class="stat"><strong>60+</strong><span>Ejercicios prácticos</span></div>
+            <div class="stat"><strong>100%</strong><span>Offline / HTML estático</span></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;color:var(--muted);font-weight:700;font-size:12px;">
+              <span>Progreso checklist</span><span id="progressText">0%</span>
+            </div>
+            <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ═══ MAPA ═══ -->
+    <section id="mapa">
+      <div class="container">
+        <div class="section-head"><div>
+          <h2>Mapa de aprendizaje</h2>
+          <p>La meta no es memorizar. Es entender el concepto, aplicar la sintaxis, y construir algo real con criterio.</p>
+        </div></div>
+        <div class="grid-3 animate-in">
+          <article class="card">
+            <h3>1. Concepto</h3>
+            <p>Entiende la idea universal: variable, función, API, estado, base de datos, error, tipo, test.</p>
+            <div class="pill-row"><span class="pill">Pensamiento lógico</span><span class="pill">Entrada · Proceso · Salida</span></div>
+          </article>
+          <article class="card">
+            <h3>2. Sintaxis + Tipos</h3>
+            <p>Escríbelo en TypeScript/JavaScript, React, Node o Prisma. La sintaxis cambia; el concepto permanece.</p>
+            <div class="pill-row"><span class="pill">TypeScript</span><span class="pill">React 18</span><span class="pill">Prisma</span></div>
+          </article>
+          <article class="card">
+            <h3>3. Proyecto real + calidad</h3>
+            <p>Aplícalo en NIDO con tests, validación, manejo de errores, seguridad, y code review.</p>
+            <div class="pill-row"><span class="pill">Testing</span><span class="pill">CI/CD</span><span class="pill">Clean Code</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONCEPTOS ═══ -->
+    <section id="conceptos">
+      <div class="container">
+        <div class="section-head"><div>
+          <h2>Conceptos por módulo</h2>
+          <p>Cada concepto incluye explicación, ejemplo con buenas prácticas, anti-patrón vs patrón correcto, y ejercicio. Abre cada tarjeta y practica.</p>
+        </div></div>
+
+        <div class="search-box print-hide">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="conceptSearch" placeholder="Buscar concepto… (ej: useState, middleware, prisma)" oninput="filterConcepts(this.value)">
+        </div>
+
+        <!-- ─── MODULE 1: JavaScript ─── -->
+        <div class="module" id="javascript" data-module>
+          <aside class="module-aside">
+            <h3>1. JavaScript esencial</h3>
+            <p>Todo el stack vive sobre JS. Domina estos fundamentos y el resto se construye encima.</p>
+            <div class="pill-row"><span class="pill">Esencial</span><span class="pill">Lógica</span><span class="pill">NIDO diario</span></div>
+          </aside>
+          <div class="concept-list">
+
+            <details class="concept" data-concept="const let variables declaracion" open>
+              <summary><h4>const / let</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> <code>const</code> para valores que no se reasignan, <code>let</code> para los que sí. Nunca uses <code>var</code> — tiene hoisting y scope impredecible que genera bugs sutiles.</p>
+                <div class="comparison-grid">
+                  <div>
+                    <span class="bad-label">✗ Anti-patrón</span>
+                    <div class="code-block"><pre><span class="cm">// var tiene hoisting y scope de función</span>
+<span class="kw">var</span> price = <span class="num">1500000</span>;
+<span class="kw">var</span> price = <span class="num">2000000</span>; <span class="cm">// sin error — redeclaración</span>
+
+<span class="cm">// let para valores que no cambian</span>
+<span class="kw">let</span> API_URL = <span class="str">"https://api.nido.co"</span>;</pre></div>
+                  </div>
+                  <div>
+                    <span class="good-label">✓ Buena práctica</span>
+                    <div class="code-block"><pre><span class="cm">// const por defecto — solo let cuando mutes</span>
+<span class="kw">const</span> MAX_PRICE = <span class="num">50_000_000</span>;
+<span class="kw">const</span> API_URL = <span class="str">"https://api.nido.co"</span>;
+
+<span class="kw">let</span> currentPage = <span class="num">1</span>;
+currentPage += <span class="num">1</span>; <span class="cm">// reasignación válida</span></pre></div>
+                  </div>
+                </div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Usa <code>const</code> por defecto. Solo cambia a <code>let</code> cuando necesites reasignar. Esto comunica intención al equipo y evita mutaciones accidentales. Usa separador de miles <code>_</code> para números grandes.</div>
+                <div class="mini"><strong>Mini ejercicio:</strong> Declara <code>MAX_RESULTS</code> (constante), <code>currentPage</code> (mutable) y <code>BASE_URL</code> (constante). Intenta reasignar <code>MAX_RESULTS</code> y observa el error.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="arrow functions funciones flecha callback">
+              <summary><h4>Arrow functions</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> forma moderna de funciones. Se usa en callbacks, eventos, <code>map</code>, <code>filter</code> y componentes React. No tiene su propio <code>this</code>.</p>
+                <div class="comparison-grid">
+                  <div>
+                    <span class="bad-label">✗ Anti-patrón</span>
+                    <div class="code-block"><pre><span class="cm">// Función sin tipo de retorno claro</span>
+<span class="kw">const</span> <span class="fn">calc</span> = (a, b, c) => {
+  <span class="kw">return</span> a * b + c - a / b;
+};
+
+<span class="cm">// Nombre no descriptivo</span>
+<span class="kw">const</span> <span class="fn">fn1</span> = (x) => x * <span class="num">1.19</span>;</pre></div>
+                  </div>
+                  <div>
+                    <span class="good-label">✓ Buena práctica</span>
+                    <div class="code-block"><pre><span class="cm">// Nombre descriptivo y una sola responsabilidad</span>
+<span class="kw">const</span> <span class="fn">addIVA</span> = (price) => price * <span class="num">1.19</span>;
+
+<span class="kw">const</span> <span class="fn">formatCOP</span> = (price) =>
+  <span class="str">`$${price.<span class="fn">toLocaleString</span>(<span class="str">"es-CO"</span>)}`</span>;
+
+<span class="cm">// Explícito: qué entra y qué sale</span>
+<span class="kw">const</span> <span class="fn">getFullName</span> = (first, last) =>
+  <span class="str">`${first} ${last}`</span>;</pre></div>
+                  </div>
+                </div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Una función debe hacer UNA cosa. Si necesitas scroll para leerla, es hora de refactorizar. El nombre debe ser un verbo que describa su acción: <code>formatPrice</code>, <code>validateEmail</code>, <code>calculateTotal</code>.</div>
+                <div class="mini"><strong>Mini ejercicio:</strong> crea <code>addIVA(price)</code>, <code>formatCOP(price)</code> y <code>getPriceWithTax(price)</code> que componga las dos anteriores.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="async await try catch promesas asincronía error">
+              <summary><h4>Async/Await + Error handling</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> maneja operaciones que tardan (API, BD). <code>await</code> espera el resultado y <code>try/catch</code> previene que el programa se rompa.</p>
+                <div class="comparison-grid">
+                  <div>
+                    <span class="bad-label">✗ Anti-patrón</span>
+                    <div class="code-block"><pre><span class="cm">// Sin manejo de errores</span>
+<span class="kw">const</span> <span class="fn">getProperties</span> = <span class="kw">async</span> () => {
+  <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">"/api/properties"</span>);
+  <span class="kw">return</span> res.<span class="fn">json</span>(); <span class="cm">// si falla → app rota</span>
+};</pre></div>
+                  </div>
+                  <div>
+                    <span class="good-label">✓ Buena práctica</span>
+                    <div class="code-block"><pre><span class="kw">const</span> <span class="fn">getProperties</span> = <span class="kw">async</span> (cityId) => {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(
+      <span class="str">`/api/properties?city=${cityId}`</span>
+    );
+    <span class="kw">if</span> (!res.ok) {
+      <span class="kw">throw new</span> <span class="fn">Error</span>(<span class="str">`HTTP ${res.status}`</span>);
+    }
+    <span class="kw">return await</span> res.<span class="fn">json</span>();
+  } <span class="kw">catch</span> (error) {
+    console.<span class="fn">error</span>(<span class="str">"Fetch failed:"</span>, error);
+    <span class="kw">return</span> [];
+  }
+};</pre></div>
+                  </div>
+                </div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Siempre verifica <code>res.ok</code> — un status 404 o 500 no lanza excepción por sí solo. Retorna un valor seguro en el <code>catch</code> (array vacío, null, objeto con error) para que la UI no se rompa.</div>
+                <div class="mini"><strong>Mini ejercicio:</strong> escribe <code>getUsers()</code> que consulte <code>/api/users</code>, valide el status, retorne <code>[]</code> si falla, y logee el error con contexto.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="destructuring desestructuración objetos arrays">
+              <summary><h4>Destructuring</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> extrae valores de objetos o arrays en una línea. En React es fundamental para leer props, state y respuestas de API.</p>
+                <div class="code-block"><pre><span class="cm">// Objetos</span>
+<span class="kw">const</span> { title, city, price } = property;
+
+<span class="cm">// Con valores por defecto — defensivo</span>
+<span class="kw">const</span> { title, city = <span class="str">"Sin ciudad"</span>, price = <span class="num">0</span> } = property;
+
+<span class="cm">// Renombrar variables</span>
+<span class="kw">const</span> { title: propertyTitle, landlord: { name: ownerName } } = property;
+
+<span class="cm">// Arrays</span>
+<span class="kw">const</span> [first, second, ...rest] = results;</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Usa valores por defecto en destructuring para datos que vienen del servidor — nunca confíes en que un campo existirá. Destructuring anidado profundo reduce legibilidad; extrae en pasos.</div>
+                <div class="mini"><strong>Mini ejercicio:</strong> de un objeto <code>user</code> extrae <code>name</code>, <code>email</code>, y <code>role</code> con default <code>"viewer"</code>.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="map filter reduce array métodos lista">
+              <summary><h4>.map(), .filter(), .reduce()</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> <code>map</code> transforma cada elemento, <code>filter</code> selecciona, <code>reduce</code> acumula. Son inmutables: nunca modifican el array original.</p>
+                <div class="code-block"><pre><span class="kw">const</span> properties = [
+  { city: <span class="str">"Cali"</span>, price: <span class="num">900_000</span>, available: <span class="kw">true</span> },
+  { city: <span class="str">"Bogotá"</span>, price: <span class="num">2_000_000</span>, available: <span class="kw">false</span> },
+  { city: <span class="str">"Cali"</span>, price: <span class="num">1_300_000</span>, available: <span class="kw">true</span> },
+];
+
+<span class="cm">// filter → solo las que cumplen condición</span>
+<span class="kw">const</span> available = properties.<span class="fn">filter</span>((p) => p.available);
+
+<span class="cm">// map → transformar cada elemento</span>
+<span class="kw">const</span> titles = properties.<span class="fn">map</span>((p) => p.city);
+
+<span class="cm">// Encadenar — filter + map</span>
+<span class="kw">const</span> caliPrices = properties
+  .<span class="fn">filter</span>((p) => p.city === <span class="str">"Cali"</span> && p.available)
+  .<span class="fn">map</span>((p) => <span class="fn">formatCOP</span>(p.price));
+
+<span class="cm">// reduce — calcular total</span>
+<span class="kw">const</span> totalPrice = properties.<span class="fn">reduce</span>(
+  (sum, p) => sum + p.price, <span class="num">0</span>
+);</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Nunca mutes el array original con <code>push</code>, <code>splice</code>, o <code>sort()</code> directo. Usa <code>[...arr].sort()</code> o <code>toSorted()</code>. Encadenar filter+map es más legible que un <code>reduce</code> complejo. Si el reduce tiene más de 3 líneas, probablemente necesitas refactorizar.</div>
+                <div class="mini"><strong>Mini ejercicio:</strong> filtra propiedades de Cali con precio &lt; $1.500.000, muestra solo título y precio formateado.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="spread operator copia inmutabilidad">
+              <summary><h4>Spread / Rest operator</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> <code>...</code> copia arrays u objetos sin mutarlos. En React es obligatorio para actualizar estado de forma segura.</p>
+                <div class="code-block"><pre><span class="cm">// Copiar y modificar objeto (inmutable)</span>
+<span class="kw">const</span> updated = { ...property, price: <span class="num">1_800_000</span> };
+
+<span class="cm">// Agregar a array sin mutar</span>
+<span class="kw">const</span> withNew = [...properties, newProperty];
+
+<span class="cm">// Eliminar de array sin mutar</span>
+<span class="kw">const</span> without = properties.<span class="fn">filter</span>((p) => p.id !== removeId);
+
+<span class="cm">// Rest en parámetros — recoger "el resto"</span>
+<span class="kw">const</span> <span class="fn">logFirst</span> = (first, ...others) => {
+  console.<span class="fn">log</span>(first, others.length);
+};</pre></div>
+                <div class="danger-tip"><strong>Cuidado:</strong> Spread hace copia <em>superficial</em>. Si tienes objetos anidados, necesitas copiar cada nivel o usar <code>structuredClone()</code> para copia profunda.</div>
+                <div class="mini"><strong>Mini ejercicio:</strong> copia un objeto <code>property</code> cambiando solo el precio. Luego agrega una nueva propiedad a un array sin mutar el original.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="optional chaining nullish coalescing null undefined seguro">
+              <summary><h4>Optional chaining ?. y ??</h4><span class="level recom">Recomendado</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> <code>?.</code> evita errores al acceder propiedades que podrían ser null. <code>??</code> da valor por defecto solo para null/undefined (no para 0 o "").</p>
+                <div class="comparison-grid">
+                  <div>
+                    <span class="bad-label">✗ Anti-patrón</span>
+                    <div class="code-block"><pre><span class="cm">// || trata 0, "" y false como falsy</span>
+<span class="kw">const</span> rooms = property.bedrooms || <span class="num">1</span>;
+<span class="cm">// Si bedrooms es 0 → devuelve 1 (bug)</span>
+
+<span class="cm">// Sin optional chaining</span>
+<span class="kw">const</span> name = property && property.landlord
+  && property.landlord.name;</pre></div>
+                  </div>
+                  <div>
+                    <span class="good-label">✓ Buena práctica</span>
+                    <div class="code-block"><pre><span class="cm">// ?? solo para null/undefined</span>
+<span class="kw">const</span> rooms = property.bedrooms ?? <span class="num">1</span>;
+<span class="cm">// Si bedrooms es 0 → devuelve 0 ✓</span>
+
+<span class="cm">// Acceso seguro anidado</span>
+<span class="kw">const</span> name = property?.landlord?.name
+  ?? <span class="str">"Sin propietario"</span>;</pre></div>
+                  </div>
+                </div>
+                <div class="mini"><strong>Mini ejercicio:</strong> muestra el nombre del usuario si existe, si no muestra "Invitado". Usa <code>??</code> para un precio que podría ser 0.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="import export módulos esm">
+              <summary><h4>import / export (ESM)</h4><span class="level recom">Recomendado</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> ES Modules permiten separar tu código en archivos. Un componente, hook, servicio o utilidad debe poder exportarse e importarse donde se necesite.</p>
+                <div class="code-block"><pre><span class="cm">// utils/formatPrice.ts — named export</span>
+<span class="kw">export const</span> <span class="fn">formatPrice</span> = (price: <span class="tp">number</span>): <span class="tp">string</span> =>
+  <span class="str">`$${price.toLocaleString("es-CO")}`</span>;
+
+<span class="cm">// PropertyCard.tsx — import nombrado</span>
+<span class="kw">import</span> { formatPrice } <span class="kw">from</span> <span class="str">"../utils/formatPrice"</span>;
+
+<span class="cm">// Barril de exportaciones (index.ts)</span>
+<span class="kw">export</span> { formatPrice } <span class="kw">from</span> <span class="str">"./formatPrice"</span>;
+<span class="kw">export</span> { formatDate } <span class="kw">from</span> <span class="str">"./formatDate"</span>;</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Prefiere named exports sobre default exports — facilita el refactoring y el auto-import. Usa barrel files (<code>index.ts</code>) para agrupar exportaciones de un directorio. Evita barrel files en directorios muy grandes — puede afectar tree-shaking.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="closures event loop asincronía single thread">
+              <summary><h4>Closures y Event Loop</h4><span class="level avanzado">Avanzado</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> un closure es una función que "recuerda" su contexto externo. El event loop explica cómo JS maneja asincronía siendo single-thread. Son la base mental para hooks, timers, promesas y Node.</p>
+                <div class="code-block"><pre><span class="cm">// Closure: la función interna recuerda count</span>
+<span class="kw">const</span> <span class="fn">createCounter</span> = (initial = <span class="num">0</span>) => {
+  <span class="kw">let</span> count = initial;
+  <span class="kw">return</span> {
+    <span class="fn">increment</span>: () => ++count,
+    <span class="fn">decrement</span>: () => --count,
+    <span class="fn">getCount</span>: () => count,
+  };
+};
+
+<span class="kw">const</span> counter = <span class="fn">createCounter</span>(<span class="num">10</span>);
+counter.<span class="fn">increment</span>(); <span class="cm">// 11</span>
+counter.<span class="fn">getCount</span>(); <span class="cm">// 11</span>
+
+<span class="cm">// Event loop: microtasks vs macrotasks</span>
+console.<span class="fn">log</span>(<span class="str">"1"</span>);                    <span class="cm">// sync</span>
+<span class="fn">setTimeout</span>(() => console.<span class="fn">log</span>(<span class="str">"2"</span>), <span class="num">0</span>); <span class="cm">// macro</span>
+<span class="tp">Promise</span>.<span class="fn">resolve</span>().<span class="fn">then</span>(() =>
+  console.<span class="fn">log</span>(<span class="str">"3"</span>));                   <span class="cm">// micro</span>
+<span class="cm">// Output: 1, 3, 2</span></pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Los closures son la base de useState en React — cada render "captura" su propio estado. Entender el event loop te permite debuggear race conditions y entender por qué setTimeout(0) no ejecuta inmediatamente.</div>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- ─── MODULE 2: React ─── -->
+        <div class="module" id="react" data-module>
+          <aside class="module-aside">
+            <h3>2. React 18+</h3>
+            <p>Piensa en componentes como piezas LEGO. Cada tarjeta, filtro, modal o formulario debe tener una responsabilidad clara.</p>
+            <div class="pill-row"><span class="pill">Componentes</span><span class="pill">Estado</span><span class="pill">Hooks</span></div>
+          </aside>
+          <div class="concept-list">
+
+            <details class="concept" data-concept="componente funcional jsx tsx react" open>
+              <summary><h4>Componente funcional + JSX</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> un componente es una función que retorna JSX. Con TypeScript, tipas las props para auto-completado y seguridad.</p>
+                <div class="comparison-grid">
+                  <div>
+                    <span class="bad-label">✗ Anti-patrón</span>
+                    <div class="code-block"><pre><span class="cm">// Props sin tipar, nombre genérico</span>
+<span class="kw">function</span> <span class="fn">Card</span>(props) {
+  <span class="kw">return</span> (
+    &lt;div&gt;
+      &lt;h3&gt;{props.data.title}&lt;/h3&gt;
+      &lt;p&gt;{props.data.city}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</pre></div>
+                  </div>
+                  <div>
+                    <span class="good-label">✓ Buena práctica</span>
+                    <div class="code-block"><pre><span class="tp">interface</span> PropertyCardProps {
+  title: <span class="tp">string</span>;
+  city: <span class="tp">string</span>;
+  price: <span class="tp">number</span>;
+}
+
+<span class="kw">function</span> <span class="fn">PropertyCard</span>({
+  title, city, price
+}: <span class="tp">PropertyCardProps</span>) {
+  <span class="kw">return</span> (
+    &lt;article className=<span class="str">"card"</span>&gt;
+      &lt;h3&gt;{title}&lt;/h3&gt;
+      &lt;p&gt;{city} · {<span class="fn">formatCOP</span>(price)}&lt;/p&gt;
+    &lt;/article&gt;
+  );
+}</pre></div>
+                  </div>
+                </div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Usa destructuring directo en los parámetros. Tipa las props con interface. Usa <code>article</code>, <code>section</code>, <code>nav</code> en vez de <code>div</code> para HTML semántico.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="usestate estado local react hook">
+              <summary><h4>useState</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> guarda estado local. Cuando el estado cambia, React re-renderiza el componente.</p>
+                <div class="code-block"><pre><span class="cm">// Estado simple</span>
+<span class="kw">const</span> [isOpen, setIsOpen] = <span class="fn">useState</span>(<span class="kw">false</span>);
+
+<span class="cm">// Estado de objeto — SIEMPRE con spread</span>
+<span class="kw">const</span> [filters, setFilters] = <span class="fn">useState</span>&lt;<span class="tp">Filters</span>&gt;({
+  city: <span class="str">""</span>,
+  maxPrice: <span class="kw">null</span>,
+  bedrooms: <span class="kw">null</span>,
+});
+
+<span class="cm">// Actualizar con función — usa prev, nunca el estado actual</span>
+<span class="kw">const</span> <span class="fn">updateCity</span> = (city: <span class="tp">string</span>) => {
+  <span class="fn">setFilters</span>((prev) => ({ ...prev, city }));
+};</pre></div>
+                <div class="danger-tip"><strong>Cuidado:</strong> <code>setState</code> es asíncrono. No leas el estado justo después de setearlo — usa la forma funcional <code>setState(prev => ...)</code> para actualizar basado en el valor anterior.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="useeffect efecto secundario ciclo vida lifecycle">
+              <summary><h4>useEffect</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> ejecuta efectos secundarios: cargar datos, suscripciones, timers. El array de dependencias controla cuándo corre.</p>
+                <div class="comparison-grid">
+                  <div>
+                    <span class="bad-label">✗ Anti-patrón</span>
+                    <div class="code-block"><pre><span class="cm">// Sin cleanup — memory leak</span>
+<span class="fn">useEffect</span>(() => {
+  <span class="kw">const</span> id = <span class="fn">setInterval</span>(poll, <span class="num">5000</span>);
+  <span class="cm">// falta return () => clearInterval(id)</span>
+}, []);
+
+<span class="cm">// Dependencia faltante</span>
+<span class="fn">useEffect</span>(() => {
+  <span class="fn">fetchData</span>(userId);
+}, []); <span class="cm">// userId falta — bug sutil</span></pre></div>
+                  </div>
+                  <div>
+                    <span class="good-label">✓ Buena práctica</span>
+                    <div class="code-block"><pre><span class="fn">useEffect</span>(() => {
+  <span class="kw">const</span> controller = <span class="kw">new</span> <span class="fn">AbortController</span>();
+
+  <span class="kw">const</span> <span class="fn">loadProperties</span> = <span class="kw">async</span> () => {
+    <span class="kw">try</span> {
+      <span class="kw">const</span> data = <span class="kw">await</span> <span class="fn">fetchProperties</span>(
+        city, { signal: controller.signal }
+      );
+      <span class="fn">setProperties</span>(data);
+    } <span class="kw">catch</span> (err) {
+      <span class="kw">if</span> (err.name !== <span class="str">"AbortError"</span>) {
+        <span class="fn">setError</span>(err.message);
+      }
+    }
+  };
+
+  <span class="fn">loadProperties</span>();
+  <span class="kw">return</span> () => controller.<span class="fn">abort</span>();
+}, [city]); <span class="cm">// dependencia correcta</span></pre></div>
+                  </div>
+                </div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Siempre incluye cleanup con AbortController para peticiones. Usa el linter de exhaustive-deps. Si tu useEffect es complejo, probablemente necesitas un custom hook.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="renderizado condicional loading error empty state">
+              <summary><h4>Renderizado condicional</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> muestra UI diferente según el estado: loading, error, vacío, datos. Es el patrón más usado en React.</p>
+                <div class="code-block"><pre><span class="kw">function</span> <span class="fn">PropertyList</span>({ city }: { city: <span class="tp">string</span> }) {
+  <span class="kw">const</span> { properties, isLoading, error } = <span class="fn">useProperties</span>(city);
+
+  <span class="kw">if</span> (isLoading) <span class="kw">return</span> &lt;<span class="fn">Skeleton</span> count={<span class="num">6</span>} /&gt;;
+  <span class="kw">if</span> (error) <span class="kw">return</span> &lt;<span class="fn">ErrorBanner</span> message={error} /&gt;;
+  <span class="kw">if</span> (properties.length === <span class="num">0</span>) <span class="kw">return</span> &lt;<span class="fn">EmptyState</span> /&gt;;
+
+  <span class="kw">return</span> (
+    &lt;section className=<span class="str">"grid"</span>&gt;
+      {properties.<span class="fn">map</span>((p) => (
+        &lt;<span class="fn">PropertyCard</span> key={p.id} {...p} /&gt;
+      ))}
+    &lt;/section&gt;
+  );
+}</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Usa early returns (guard clauses) en vez de ternarios anidados — es mucho más legible. Siempre maneja los 4 estados: loading, error, vacío y datos.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="custom hook reutilizar lógica hook personalizado">
+              <summary><h4>Custom Hooks</h4><span class="level recom">Recomendado</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> funciones que empiezan con <code>use</code> y encapsulan lógica reutilizable. Separan la lógica de la UI.</p>
+                <div class="code-block"><pre><span class="cm">// hooks/useProperties.ts</span>
+<span class="kw">export function</span> <span class="fn">useProperties</span>(city: <span class="tp">string</span>) {
+  <span class="kw">const</span> [properties, setProperties] = <span class="fn">useState</span>&lt;<span class="tp">Property</span>[]&gt;([]);
+  <span class="kw">const</span> [isLoading, setIsLoading] = <span class="fn">useState</span>(<span class="kw">true</span>);
+  <span class="kw">const</span> [error, setError] = <span class="fn">useState</span>&lt;<span class="tp">string</span> | <span class="kw">null</span>&gt;(<span class="kw">null</span>);
+
+  <span class="fn">useEffect</span>(() => {
+    <span class="kw">const</span> controller = <span class="kw">new</span> <span class="fn">AbortController</span>();
+    <span class="fn">setIsLoading</span>(<span class="kw">true</span>);
+    <span class="fn">setError</span>(<span class="kw">null</span>);
+
+    <span class="fn">propertyService</span>.<span class="fn">getByCity</span>(city, controller.signal)
+      .<span class="fn">then</span>(setProperties)
+      .<span class="fn">catch</span>((err) => {
+        <span class="kw">if</span> (err.name !== <span class="str">"AbortError"</span>) <span class="fn">setError</span>(err.message);
+      })
+      .<span class="fn">finally</span>(() => <span class="fn">setIsLoading</span>(<span class="kw">false</span>));
+
+    <span class="kw">return</span> () => controller.<span class="fn">abort</span>();
+  }, [city]);
+
+  <span class="kw">return</span> { properties, isLoading, error };
+}</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Un custom hook debe seguir SRP: una razón para existir. El componente queda limpio y testeable. El hook queda reutilizable en otra pantalla.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="reglas react estado mutable hooks condicional">
+              <summary><h4>Reglas de oro en React</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Las 5 reglas que evitan el 80% de bugs:</strong></p>
+                <div class="code-block"><pre><span class="cm">// 1. No mutes estado — siempre copias</span>
+<span class="fn">setUser</span>((prev) => ({ ...prev, name: <span class="str">"Camilo"</span> }));
+
+<span class="cm">// 2. No llames hooks condicionalmente</span>
+<span class="cm">// ✗ if (x) useState(...)  — React se rompe</span>
+<span class="cm">// ✓ siempre al inicio del componente</span>
+
+<span class="cm">// 3. Keys únicas y estables en listas</span>
+{items.<span class="fn">map</span>((item) => &lt;<span class="fn">Item</span> key={item.id} /&gt;)}
+<span class="cm">// ✗ key={index}  — bugs al reordenar</span>
+
+<span class="cm">// 4. useEffect: incluye todas las deps</span>
+<span class="cm">// 5. Un componente = una responsabilidad</span></pre></div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- ─── MODULE 3: Node.js ─── -->
+        <div class="module" id="node" data-module>
+          <aside class="module-aside">
+            <h3>3. Node.js + Express</h3>
+            <p>El backend recibe peticiones, valida datos, protege rutas, consulta la BD y responde JSON.</p>
+            <div class="pill-row"><span class="pill">API REST</span><span class="pill">Seguridad</span><span class="pill">Capas</span></div>
+          </aside>
+          <div class="concept-list">
+
+            <details class="concept" data-concept="rest api http endpoints rutas get post put delete" open>
+              <summary><h4>REST API y códigos HTTP</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> una API REST usa HTTP para CRUD. Las URLs deben ser sustantivos en plural. Los status codes comunican el resultado.</p>
+                <div class="code-block"><pre><span class="cm">// Verbos + sustantivos = API REST correcta</span>
+GET    /api/properties          <span class="cm">// listar</span>
+GET    /api/properties/:id      <span class="cm">// detalle</span>
+POST   /api/properties          <span class="cm">// crear</span>
+PATCH  /api/properties/:id      <span class="cm">// actualizar parcial</span>
+DELETE /api/properties/:id      <span class="cm">// eliminar</span>
+
+<span class="cm">// Status codes que debes conocer</span>
+<span class="num">200</span> OK            <span class="cm">// éxito</span>
+<span class="num">201</span> Created       <span class="cm">// recurso creado</span>
+<span class="num">400</span> Bad Request   <span class="cm">// datos inválidos del cliente</span>
+<span class="num">401</span> Unauthorized  <span class="cm">// sin autenticación</span>
+<span class="num">403</span> Forbidden     <span class="cm">// sin permisos</span>
+<span class="num">404</span> Not Found     <span class="cm">// recurso no existe</span>
+<span class="num">409</span> Conflict      <span class="cm">// duplicado o conflicto</span>
+<span class="num">500</span> Internal      <span class="cm">// error del servidor</span></pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> usa PATCH en vez de PUT para actualizaciones parciales. Nunca expongas errores internos al cliente — loggea el stack trace y responde un mensaje genérico.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="middleware autenticación auth next express">
+              <summary><h4>Middleware</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> función intermedia entre petición y respuesta. Sirve para auth, logs, validación, rate-limiting y manejo de errores.</p>
+                <div class="code-block"><pre><span class="cm">// Auth middleware con manejo de errores</span>
+<span class="kw">const</span> <span class="fn">requireAuth</span> = <span class="kw">async</span> (req, res, next) => {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> token = req.headers.authorization
+      ?.<span class="fn">replace</span>(<span class="str">"Bearer "</span>, <span class="str">""</span>);
+
+    <span class="kw">if</span> (!token) {
+      <span class="kw">return</span> res.<span class="fn">status</span>(<span class="num">401</span>).<span class="fn">json</span>({
+        error: <span class="str">"TOKEN_MISSING"</span>,
+        message: <span class="str">"Token de autenticación requerido"</span>,
+      });
+    }
+
+    <span class="kw">const</span> payload = <span class="fn">verifyToken</span>(token);
+    req.user = payload; <span class="cm">// disponible en controllers</span>
+    <span class="fn">next</span>();
+  } <span class="kw">catch</span> {
+    res.<span class="fn">status</span>(<span class="num">401</span>).<span class="fn">json</span>({
+      error: <span class="str">"TOKEN_INVALID"</span>,
+      message: <span class="str">"Token inválido o expirado"</span>,
+    });
+  }
+};</pre></div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="capas route controller service arquitectura separación">
+              <summary><h4>Capas: Route → Controller → Service</h4><span class="level recom">Recomendado</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> separa responsabilidades. La ruta define URL, el controller maneja HTTP, el service contiene la lógica de negocio.</p>
+                <div class="code-block"><pre><span class="cm">// routes/property.routes.ts</span>
+router.<span class="fn">get</span>(<span class="str">"/"</span>, <span class="fn">listProperties</span>);
+router.<span class="fn">post</span>(<span class="str">"/"</span>, requireAuth, <span class="fn">validate</span>(createSchema), <span class="fn">createProperty</span>);
+
+<span class="cm">// controllers/property.controller.ts</span>
+<span class="kw">export const</span> <span class="fn">listProperties</span> = <span class="kw">async</span> (req, res, next) => {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> filters = <span class="fn">parseFilters</span>(req.query);
+    <span class="kw">const</span> result = <span class="kw">await</span> propertyService.<span class="fn">list</span>(filters);
+    res.<span class="fn">json</span>(result);
+  } <span class="kw">catch</span> (error) {
+    <span class="fn">next</span>(error); <span class="cm">// delega al error handler global</span>
+  }
+};
+
+<span class="cm">// services/property.service.ts</span>
+<span class="kw">export const</span> <span class="fn">list</span> = <span class="kw">async</span> (filters: <span class="tp">PropertyFilters</span>) => {
+  <span class="kw">const</span> [results, total] = <span class="kw">await</span> <span class="tp">Promise</span>.<span class="fn">all</span>([
+    prisma.property.<span class="fn">findMany</span>({ where: <span class="fn">buildWhere</span>(filters) }),
+    prisma.property.<span class="fn">count</span>({ where: <span class="fn">buildWhere</span>(filters) }),
+  ]);
+  <span class="kw">return</span> { results, total };
+};</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> El controller NUNCA debe importar Prisma directamente. El service NUNCA debe recibir <code>req</code> ni <code>res</code>. Esta separación permite testear cada capa independientemente.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="validación zod schema input sanitización">
+              <summary><h4>Validación con Zod</h4><span class="level recom">Recomendado</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> Zod valida y tipa datos del cliente en una sola declaración. Nunca confíes en el frontend.</p>
+                <div class="code-block"><pre><span class="kw">import</span> { z } <span class="kw">from</span> <span class="str">"zod"</span>;
+
+<span class="kw">export const</span> createPropertySchema = z.<span class="fn">object</span>({
+  title: z.<span class="fn">string</span>().<span class="fn">min</span>(<span class="num">5</span>, <span class="str">"Mínimo 5 caracteres"</span>).<span class="fn">max</span>(<span class="num">200</span>),
+  city: z.<span class="fn">string</span>().<span class="fn">min</span>(<span class="num">2</span>),
+  price: z.<span class="fn">number</span>().<span class="fn">positive</span>(<span class="str">"El precio debe ser positivo"</span>),
+  bedrooms: z.<span class="fn">number</span>().<span class="fn">int</span>().<span class="fn">min</span>(<span class="num">1</span>).<span class="fn">max</span>(<span class="num">20</span>),
+});
+
+<span class="cm">// El tipo se infiere automáticamente</span>
+<span class="kw">type</span> <span class="tp">CreatePropertyInput</span> = z.<span class="fn">infer</span>&lt;<span class="kw">typeof</span> createPropertySchema&gt;;</pre></div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- ─── MODULE 4: Prisma ─── -->
+        <div class="module" id="prisma" data-module>
+          <aside class="module-aside">
+            <h3>4. Prisma + PostgreSQL</h3>
+            <p>Prisma conecta tu código con la BD de manera tipada, segura y con migraciones versionadas.</p>
+            <div class="pill-row"><span class="pill">ORM</span><span class="pill">Relaciones</span><span class="pill">Migrations</span></div>
+          </aside>
+          <div class="concept-list">
+
+            <details class="concept" data-concept="schema modelo relaciones prisma base datos" open>
+              <summary><h4>Schema, modelos y relaciones</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <div class="code-block"><pre><span class="tp">model</span> Property {
+  id         <span class="tp">Int</span>       <span class="fn">@id</span> <span class="fn">@default</span>(autoincrement())
+  title      <span class="tp">String</span>
+  price      <span class="tp">Int</span>
+  city       <span class="tp">String</span>
+  bedrooms   <span class="tp">Int</span>       <span class="fn">@default</span>(<span class="num">1</span>)
+  available  <span class="tp">Boolean</span>   <span class="fn">@default</span>(<span class="kw">true</span>)
+  createdAt  <span class="tp">DateTime</span>  <span class="fn">@default</span>(now())
+  updatedAt  <span class="tp">DateTime</span>  <span class="fn">@updatedAt</span>
+  deletedAt  <span class="tp">DateTime?</span> <span class="cm">// soft delete</span>
+
+  landlord   User      <span class="fn">@relation</span>(fields: [landlordId], references: [id])
+  landlordId <span class="tp">Int</span>
+  favorites  Favorite[]
+
+  <span class="fn">@@index</span>([city])
+  <span class="fn">@@index</span>([price])
+  <span class="fn">@@index</span>([landlordId])
+}
+
+<span class="tp">model</span> Favorite {
+  id         <span class="tp">Int</span>      <span class="fn">@id</span> <span class="fn">@default</span>(autoincrement())
+  user       User     <span class="fn">@relation</span>(fields: [userId], references: [id])
+  userId     <span class="tp">Int</span>
+  property   Property <span class="fn">@relation</span>(fields: [propertyId], references: [id])
+  propertyId <span class="tp">Int</span>
+  createdAt  <span class="tp">DateTime</span> <span class="fn">@default</span>(now())
+
+  <span class="fn">@@unique</span>([userId, propertyId]) <span class="cm">// evitar duplicados</span>
+}</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Siempre incluye <code>createdAt</code>/<code>updatedAt</code>. Usa soft delete (<code>deletedAt</code>) en producción — datos borrados en hard delete no se recuperan. Agrega índices en campos que usas en <code>where</code> y <code>orderBy</code>.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="findmany where include select filtros paginación consulta">
+              <summary><h4>Consultas avanzadas con filtros</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <div class="code-block"><pre><span class="cm">// Búsqueda con filtros opcionales + paginación</span>
+<span class="kw">const</span> <span class="fn">searchProperties</span> = <span class="kw">async</span> (filters: <span class="tp">Filters</span>) => {
+  <span class="kw">const</span> { city, maxPrice, bedrooms, page = <span class="num">1</span>, limit = <span class="num">20</span> } = filters;
+
+  <span class="kw">const</span> where: <span class="tp">Prisma.PropertyWhereInput</span> = {
+    deletedAt: <span class="kw">null</span>,        <span class="cm">// excluir soft-deleted</span>
+    available: <span class="kw">true</span>,
+    ...(city && { city }),
+    ...(maxPrice && { price: { lte: maxPrice } }),
+    ...(bedrooms && { bedrooms: { gte: bedrooms } }),
+  };
+
+  <span class="kw">const</span> [results, total] = <span class="kw">await</span> <span class="tp">Promise</span>.<span class="fn">all</span>([
+    prisma.property.<span class="fn">findMany</span>({
+      where,
+      select: {
+        id: <span class="kw">true</span>, title: <span class="kw">true</span>, price: <span class="kw">true</span>,
+        city: <span class="kw">true</span>, bedrooms: <span class="kw">true</span>,
+        landlord: { select: { name: <span class="kw">true</span> } },
+      },
+      orderBy: { createdAt: <span class="str">"desc"</span> },
+      skip: (page - <span class="num">1</span>) * limit,
+      take: limit,
+    }),
+    prisma.property.<span class="fn">count</span>({ where }),
+  ]);
+
+  <span class="kw">return</span> {
+    results,
+    total,
+    page,
+    totalPages: Math.<span class="fn">ceil</span>(total / limit),
+  };
+};</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Usa <code>select</code> para evitar traer datos innecesarios (especialmente contraseñas). Ejecuta <code>findMany</code> y <code>count</code> en paralelo con <code>Promise.all</code>. Construye el <code>where</code> dinámicamente con spread condicional.</div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- ─── MODULE 5: CSS ─── -->
+        <div class="module" id="css" data-module>
+          <aside class="module-aside">
+            <h3>5. CSS / Vite</h3>
+            <p>Mobile-first, variables CSS, Grid, Flexbox. Sin frameworks pesados — CSS moderno es suficiente.</p>
+            <div class="pill-row"><span class="pill">Grid</span><span class="pill">Flexbox</span><span class="pill">Variables</span></div>
+          </aside>
+          <div class="concept-list">
+            <details class="concept" data-concept="css grid responsive auto-fill minmax grilla" open>
+              <summary><h4>CSS Grid responsive</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <div class="code-block"><pre><span class="cm">/* Grilla que se adapta sola — sin media queries */</span>
+.<span class="fn">property-grid</span> {
+  <span class="kw">display</span>: grid;
+  <span class="kw">grid-template-columns</span>: <span class="fn">repeat</span>(auto-fill, <span class="fn">minmax</span>(<span class="num">280px</span>, <span class="num">1fr</span>));
+  <span class="kw">gap</span>: <span class="num">16px</span>;
+}
+
+<span class="cm">/* Variables centralizadas */</span>
+<span class="fn">:root</span> {
+  <span class="kw">--color-primary</span>: <span class="str">#1a6b47</span>;
+  <span class="kw">--color-surface</span>: <span class="str">#ffffff</span>;
+  <span class="kw">--radius-card</span>: <span class="num">16px</span>;
+  <span class="kw">--shadow-card</span>: <span class="num">0</span> <span class="num">4px</span> <span class="num">12px</span> <span class="fn">rgba</span>(<span class="num">0</span>,<span class="num">0</span>,<span class="num">0</span>,<span class="num">.06</span>);
+}
+
+<span class="cm">/* Mobile-first: base es mobile, agranda con min-width */</span>
+<span class="fn">@media</span> (<span class="kw">min-width</span>: <span class="num">768px</span>) {
+  .<span class="fn">layout</span> { <span class="kw">grid-template-columns</span>: <span class="num">280px</span> <span class="num">1fr</span>; }
+}</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> <code>auto-fill + minmax</code> elimina la necesidad de media queries para grillas de tarjetas. Usa CSS custom properties para temas y consistencia. Aplica <code>clamp()</code> para tipografía fluida: <code>font-size: clamp(16px, 2vw, 20px)</code>.</div>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- ─── MODULE 6: Buenas prácticas ─── -->
+        <div class="module" id="practicas" data-module>
+          <aside class="module-aside">
+            <h3>6. Clean Code</h3>
+            <p>La calidad no está en más código, sino en código claro, seguro, mantenible y testeable.</p>
+            <div class="pill-row"><span class="pill">Naming</span><span class="pill">Git</span><span class="pill">SOLID</span></div>
+          </aside>
+          <div class="concept-list">
+
+            <details class="concept" data-concept="clean code nombres funciones legibilidad refactoring" open>
+              <summary><h4>Clean Code aplicado</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <div class="comparison-grid">
+                  <div>
+                    <span class="bad-label">✗ Código confuso</span>
+                    <div class="code-block"><pre><span class="kw">const</span> d = [];
+<span class="kw">const</span> <span class="fn">process</span> = (x) => {
+  <span class="kw">if</span> (x.a > <span class="num">0</span> && x.b !== <span class="str">""</span> && x.c === <span class="kw">true</span>) {
+    d.<span class="fn">push</span>({ ...x, d: x.a * <span class="num">1.19</span> });
+  }
+};
+data.<span class="fn">forEach</span>(process);</pre></div>
+                  </div>
+                  <div>
+                    <span class="good-label">✓ Código senior</span>
+                    <div class="code-block"><pre><span class="kw">const</span> <span class="fn">isValidProperty</span> = (p: <span class="tp">Property</span>) =>
+  p.price > <span class="num">0</span> && p.city !== <span class="str">""</span> && p.available;
+
+<span class="kw">const</span> <span class="fn">withTax</span> = (p: <span class="tp">Property</span>) => ({
+  ...p,
+  priceWithTax: p.price * <span class="num">1.19</span>,
+});
+
+<span class="kw">const</span> taxedProperties = properties
+  .<span class="fn">filter</span>(isValidProperty)
+  .<span class="fn">map</span>(withTax);</pre></div>
+                  </div>
+                </div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Extrae condiciones a funciones con nombre (predicados). Usa composición (filter + map) en vez de loops con mutación. Cada función hace UNA cosa. Los nombres son la documentación más importante.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="git flow ramas commits convenciones conventional">
+              <summary><h4>Git: ramas y commits</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <div class="code-block"><pre><span class="cm"># Estructura de ramas</span>
+main       <span class="cm"># producción — siempre estable</span>
+develop    <span class="cm"># integración continua</span>
+
+<span class="cm"># Ramas de trabajo</span>
+git checkout -b feat/property-filter
+git checkout -b fix/map-crash-empty-list
+git checkout -b refactor/extract-use-properties
+
+<span class="cm"># Conventional Commits — semánticos</span>
+feat: add price range filter to search
+fix: prevent crash when property list is empty
+refactor: extract useProperties custom hook
+docs: add API endpoint documentation
+test: add unit tests for formatPrice
+chore: upgrade prisma to v5.10</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Conventional Commits permiten generar changelogs automáticos y semantic versioning. Commits pequeños y frecuentes son mejores que un commit gigante. Usa <code>git rebase -i</code> para limpiar el historial antes de hacer merge.</div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TYPESCRIPT ═══ -->
+    <section id="typescript">
+      <div class="container">
+        <div class="module" data-module>
+          <aside class="module-aside" style="background: linear-gradient(160deg, #2b5ea0, #1a3a66);">
+            <h3>7. TypeScript</h3>
+            <p>TypeScript previene bugs antes de que lleguen a producción. Es el estándar en equipos senior.</p>
+            <div class="pill-row"><span class="pill">Tipos</span><span class="pill">Interfaces</span><span class="pill">Generics</span></div>
+          </aside>
+          <div class="concept-list">
+
+            <details class="concept" data-concept="typescript tipos interface type primitivos" open>
+              <summary><h4>Tipos básicos e interfaces</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> TypeScript añade tipos estáticos a JavaScript. Detecta errores en compile-time, no en producción a las 3 AM.</p>
+                <div class="code-block"><pre><span class="cm">// Interface para entidades del dominio</span>
+<span class="kw">interface</span> <span class="tp">Property</span> {
+  id: <span class="tp">number</span>;
+  title: <span class="tp">string</span>;
+  city: <span class="tp">string</span>;
+  price: <span class="tp">number</span>;
+  bedrooms: <span class="tp">number</span>;
+  available: <span class="tp">boolean</span>;
+  landlord: <span class="tp">Pick</span>&lt;<span class="tp">User</span>, <span class="str">"id"</span> | <span class="str">"name"</span>&gt;;
+  createdAt: <span class="tp">string</span>;
+}
+
+<span class="cm">// Type para filtros opcionales</span>
+<span class="kw">type</span> <span class="tp">PropertyFilters</span> = {
+  city?: <span class="tp">string</span>;
+  maxPrice?: <span class="tp">number</span>;
+  bedrooms?: <span class="tp">number</span>;
+  page?: <span class="tp">number</span>;
+};
+
+<span class="cm">// Función tipada</span>
+<span class="kw">const</span> <span class="fn">formatCOP</span> = (price: <span class="tp">number</span>): <span class="tp">string</span> =>
+  <span class="str">`$${price.toLocaleString("es-CO")}`</span>;
+
+<span class="cm">// Union types para estados</span>
+<span class="kw">type</span> <span class="tp">Status</span> = <span class="str">"idle"</span> | <span class="str">"loading"</span> | <span class="str">"success"</span> | <span class="str">"error"</span>;
+
+<span class="cm">// Generics — reutilizable</span>
+<span class="kw">interface</span> <span class="tp">PaginatedResponse</span>&lt;<span class="tp">T</span>&gt; {
+  results: <span class="tp">T</span>[];
+  total: <span class="tp">number</span>;
+  page: <span class="tp">number</span>;
+  totalPages: <span class="tp">number</span>;
+}</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Usa <code>interface</code> para objetos del dominio y <code>type</code> para unions, intersections y utilidades. Evita <code>any</code> — si no sabes el tipo, usa <code>unknown</code> y haz narrowing. <code>Pick</code>, <code>Omit</code>, <code>Partial</code> y <code>Required</code> son utility types esenciales.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="typescript strict any evitar errores compilacion">
+              <summary><h4>Reglas TS para seniors</h4><span class="level critico">Crítico</span></summary>
+              <div class="concept-body">
+                <div class="comparison-grid">
+                  <div>
+                    <span class="bad-label">✗ TypeScript roto</span>
+                    <div class="code-block"><pre><span class="cm">// any desactiva TypeScript</span>
+<span class="kw">const</span> <span class="fn">getData</span> = (x: <span class="tp">any</span>): <span class="tp">any</span> => x.data;
+
+<span class="cm">// Type assertion sin verificar</span>
+<span class="kw">const</span> user = response <span class="kw">as</span> <span class="tp">User</span>;
+
+<span class="cm">// @ts-ignore esconde bugs</span>
+<span class="cm">// @ts-ignore</span>
+user.<span class="fn">nonExistentMethod</span>();</pre></div>
+                  </div>
+                  <div>
+                    <span class="good-label">✓ TypeScript seguro</span>
+                    <div class="code-block"><pre><span class="cm">// unknown + narrowing</span>
+<span class="kw">const</span> <span class="fn">parseResponse</span> = (data: <span class="tp">unknown</span>) => {
+  <span class="kw">if</span> (!<span class="fn">isUser</span>(data)) <span class="kw">throw</span> <span class="kw">new</span> <span class="fn">Error</span>(<span class="str">"Invalid"</span>);
+  <span class="kw">return</span> data; <span class="cm">// tipado como User</span>
+};
+
+<span class="cm">// Zod para validar + tipar en runtime</span>
+<span class="kw">const</span> parsed = userSchema.<span class="fn">parse</span>(response);
+<span class="cm">// parsed tiene tipo inferido ✓</span></pre></div>
+                  </div>
+                </div>
+                <div class="danger-tip"><strong>Regla de oro:</strong> Si tu proyecto tiene más de 5 <code>any</code>, tu TypeScript es JavaScript disfrazado. Usa <code>strict: true</code> en tsconfig. Nunca uses <code>@ts-ignore</code> — siempre hay una forma tipada de resolver el problema.</div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TESTING ═══ -->
+    <section id="testing">
+      <div class="container">
+        <div class="module" data-module>
+          <aside class="module-aside" style="background: linear-gradient(160deg, #6b3fa0, #3a1f5e);">
+            <h3>8. Testing</h3>
+            <p>El código sin tests es código que se rompe cuando no estás mirando. Tests dan confianza para refactorizar.</p>
+            <div class="pill-row"><span class="pill">Vitest</span><span class="pill">RTL</span><span class="pill">TDD</span></div>
+          </aside>
+          <div class="concept-list">
+
+            <details class="concept" data-concept="test unitario vitest describe it expect" open>
+              <summary><h4>Tests unitarios con Vitest</h4><span class="level esencial">Esencial</span></summary>
+              <div class="concept-body">
+                <p><strong>Qué es:</strong> verificar que una función o módulo hace lo que promete. Si no puedes testearla fácilmente, probablemente tiene demasiadas responsabilidades.</p>
+                <div class="code-block"><pre><span class="cm">// formatPrice.test.ts</span>
+<span class="kw">import</span> { describe, it, expect } <span class="kw">from</span> <span class="str">"vitest"</span>;
+<span class="kw">import</span> { formatCOP } <span class="kw">from</span> <span class="str">"./formatPrice"</span>;
+
+<span class="fn">describe</span>(<span class="str">"formatCOP"</span>, () => {
+  <span class="fn">it</span>(<span class="str">"formats a positive number with COP format"</span>, () => {
+    <span class="fn">expect</span>(<span class="fn">formatCOP</span>(<span class="num">1_500_000</span>)).<span class="fn">toBe</span>(<span class="str">"$1.500.000"</span>);
+  });
+
+  <span class="fn">it</span>(<span class="str">"handles zero"</span>, () => {
+    <span class="fn">expect</span>(<span class="fn">formatCOP</span>(<span class="num">0</span>)).<span class="fn">toBe</span>(<span class="str">"$0"</span>);
+  });
+
+  <span class="fn">it</span>(<span class="str">"returns fallback for null/undefined"</span>, () => {
+    <span class="fn">expect</span>(<span class="fn">formatCOP</span>(<span class="kw">null</span>)).<span class="fn">toBe</span>(<span class="str">"Precio a consultar"</span>);
+  });
+});
+
+<span class="cm">// Patrón AAA: Arrange → Act → Assert</span>
+<span class="fn">it</span>(<span class="str">"filters available properties in Cali"</span>, () => {
+  <span class="cm">// Arrange</span>
+  <span class="kw">const</span> properties = [
+    { city: <span class="str">"Cali"</span>, available: <span class="kw">true</span> },
+    { city: <span class="str">"Bogotá"</span>, available: <span class="kw">true</span> },
+    { city: <span class="str">"Cali"</span>, available: <span class="kw">false</span> },
+  ];
+  <span class="cm">// Act</span>
+  <span class="kw">const</span> result = <span class="fn">filterByCity</span>(properties, <span class="str">"Cali"</span>);
+  <span class="cm">// Assert</span>
+  <span class="fn">expect</span>(result).<span class="fn">toHaveLength</span>(<span class="num">1</span>);
+  <span class="fn">expect</span>(result[<span class="num">0</span>].city).<span class="fn">toBe</span>(<span class="str">"Cali"</span>);
+});</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Testea el comportamiento, no la implementación. Nombres de test descriptivos: "should [acción] when [condición]". Patrón AAA (Arrange-Act-Assert) para estructura clara. Testea edge cases: null, undefined, arrays vacíos, strings vacíos.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="react testing library componente render screen">
+              <summary><h4>Testing de componentes (RTL)</h4><span class="level recom">Recomendado</span></summary>
+              <div class="concept-body">
+                <div class="code-block"><pre><span class="kw">import</span> { render, screen } <span class="kw">from</span> <span class="str">"@testing-library/react"</span>;
+<span class="kw">import</span> { PropertyCard } <span class="kw">from</span> <span class="str">"./PropertyCard"</span>;
+
+<span class="fn">it</span>(<span class="str">"renders title and city"</span>, () => {
+  <span class="fn">render</span>(&lt;<span class="fn">PropertyCard</span>
+    title=<span class="str">"Casa en Cali"</span>
+    city=<span class="str">"Cali"</span>
+    price={<span class="num">1500000</span>}
+  /&gt;);
+
+  <span class="fn">expect</span>(screen.<span class="fn">getByText</span>(<span class="str">"Casa en Cali"</span>)).<span class="fn">toBeInTheDocument</span>();
+  <span class="fn">expect</span>(screen.<span class="fn">getByText</span>(<span class="str">/cali/i</span>)).<span class="fn">toBeInTheDocument</span>();
+});
+
+<span class="fn">it</span>(<span class="str">"shows empty state when no results"</span>, () => {
+  <span class="fn">render</span>(&lt;<span class="fn">PropertyList</span> properties={[]} /&gt;);
+  <span class="fn">expect</span>(screen.<span class="fn">getByText</span>(<span class="str">/sin resultados/i</span>)).<span class="fn">toBeInTheDocument</span>();
+});</pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> Testea como el usuario ve la UI — por texto, rol, label. No testees estilos ni detalles de implementación. Si necesitas <code>data-testid</code>, probablemente tu UI no es accesible.</div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SEGURIDAD Y PERFORMANCE ═══ -->
+    <section id="seguridad">
+      <div class="container">
+        <div class="module" data-module>
+          <aside class="module-aside" style="background: linear-gradient(160deg, #b83a3a, #7a1e1e);">
+            <h3>9. Seguridad &amp; Performance</h3>
+            <p>Un senior no solo escribe features — protege a los usuarios y optimiza la experiencia.</p>
+            <div class="pill-row"><span class="pill">XSS</span><span class="pill">Injection</span><span class="pill">Optimización</span></div>
+          </aside>
+          <div class="concept-list">
+
+            <details class="concept" data-concept="seguridad xss injection sql sanitizar" open>
+              <summary><h4>Vulnerabilidades comunes</h4><span class="level critico">Crítico</span></summary>
+              <div class="concept-body">
+                <div class="code-block"><pre><span class="cm">// ✗ SQL Injection — NUNCA concatenes queries</span>
+<span class="kw">const</span> query = <span class="str">`SELECT * FROM users WHERE email = '${email}'`</span>;
+
+<span class="cm">// ✓ Prisma es seguro por diseño (parameterized queries)</span>
+<span class="kw">const</span> user = <span class="kw">await</span> prisma.user.<span class="fn">findUnique</span>({
+  where: { email } <span class="cm">// sanitizado automáticamente</span>
+});
+
+<span class="cm">// ✗ XSS — insertar HTML sin sanitizar</span>
+element.innerHTML = userInput; <span class="cm">// PELIGROSO</span>
+
+<span class="cm">// ✓ React escapa por defecto</span>
+&lt;p&gt;{userInput}&lt;/p&gt; <span class="cm">// seguro — React escapa HTML</span>
+
+<span class="cm">// ✗ Exponer secretos</span>
+<span class="kw">const</span> token = <span class="str">"sk_live_abc123..."</span>; <span class="cm">// en código</span>
+
+<span class="cm">// ✓ Variables de entorno</span>
+<span class="kw">const</span> token = process.env.STRIPE_SECRET;</pre></div>
+                <div class="danger-tip"><strong>Reglas de seguridad inquebrantables:</strong> 1) Nunca confíes en input del cliente — valida todo en el backend. 2) Nunca expongas stack traces en producción. 3) Hashea contraseñas con bcrypt (cost ≥ 12). 4) Usa HTTPS siempre. 5) Tokens JWT con expiración corta. 6) Rate limiting en endpoints de auth.</div>
+              </div>
+            </details>
+
+            <details class="concept" data-concept="performance optimización rendimiento lazy memo cache">
+              <summary><h4>Performance checklist</h4><span class="level recom">Recomendado</span></summary>
+              <div class="concept-body">
+                <div class="code-block"><pre><span class="cm">// React: evita re-renders innecesarios</span>
+<span class="kw">const</span> <span class="fn">ExpensiveList</span> = <span class="fn">React.memo</span>(({ items }) => (
+  &lt;ul&gt;{items.<span class="fn">map</span>((i) => &lt;li key={i.id}&gt;{i.name}&lt;/li&gt;)}&lt;/ul&gt;
+));
+
+<span class="cm">// useMemo para cálculos costosos</span>
+<span class="kw">const</span> filtered = <span class="fn">useMemo</span>(
+  () => properties.<span class="fn">filter</span>(<span class="fn">matchesFilters</span>),
+  [properties, filters]
+);
+
+<span class="cm">// Lazy loading de imágenes</span>
+&lt;img src={url} loading=<span class="str">"lazy"</span> alt={title} /&gt;
+
+<span class="cm">// Code splitting con React.lazy</span>
+<span class="kw">const</span> <span class="fn">PropertyDetail</span> = <span class="fn">React.lazy</span>(
+  () => <span class="kw">import</span>(<span class="str">"./pages/PropertyDetail"</span>)
+);
+
+<span class="cm">// DB: siempre indexa campos de búsqueda</span>
+<span class="cm">// @@index([city])</span>
+<span class="cm">// @@index([price])</span></pre></div>
+                <div class="senior-tip"><strong>Tip senior:</strong> No optimices prematuramente. Mide primero con React DevTools Profiler y Lighthouse. Las optimizaciones más impactantes: lazy loading de rutas, índices de BD, <code>select</code> en Prisma y debounce en inputs de búsqueda.</div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ARQUITECTURA ═══ -->
+    <section id="arquitectura">
+      <div class="container">
+        <div class="section-head"><div>
+          <h2>Arquitectura y patrones</h2>
+          <p>Cómo organizar un proyecto real para que escale sin volverse un espagueti inmantenible.</p>
+        </div></div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Estructura de carpetas (Backend)</h3>
+            <div class="code-block"><pre>src/
+├── routes/          <span class="cm">// URLs y middleware por recurso</span>
+│   └── property.routes.ts
+├── controllers/     <span class="cm">// req/res — sin lógica de negocio</span>
+│   └── property.controller.ts
+├── services/        <span class="cm">// lógica de negocio — testeable</span>
+│   └── property.service.ts
+├── repositories/    <span class="cm">// acceso a BD — Prisma</span>
+│   └── property.repository.ts
+├── schemas/         <span class="cm">// validación con Zod</span>
+│   └── property.schema.ts
+├── middlewares/     <span class="cm">// auth, validate, errorHandler</span>
+├── types/           <span class="cm">// interfaces compartidas</span>
+├── utils/           <span class="cm">// helpers puros</span>
+├── config/          <span class="cm">// env, DB, logger</span>
+└── app.ts           <span class="cm">// setup Express</span></pre></div>
+          </div>
+          <div class="card">
+            <h3>Estructura de carpetas (Frontend)</h3>
+            <div class="code-block"><pre>src/
+├── components/      <span class="cm">// UI reutilizable</span>
+│   ├── ui/          <span class="cm">// Button, Input, Card...</span>
+│   └── property/    <span class="cm">// PropertyCard, PropertyGrid</span>
+├── pages/           <span class="cm">// vistas completas</span>
+│   ├── Home.tsx
+│   └── PropertyDetail.tsx
+├── hooks/           <span class="cm">// custom hooks</span>
+│   └── useProperties.ts
+├── services/        <span class="cm">// llamadas a API</span>
+│   └── propertyService.ts
+├── types/           <span class="cm">// interfaces TypeScript</span>
+├── utils/           <span class="cm">// formatPrice, formatDate...</span>
+├── context/         <span class="cm">// AuthContext, ThemeContext</span>
+├── styles/          <span class="cm">// CSS Modules o variables</span>
+└── App.tsx</pre></div>
+          </div>
+        </div>
+
+        <div style="height:16px"></div>
+        <div class="card">
+          <h3>Principios SOLID simplificados</h3>
+          <div class="code-block"><pre><span class="cm">// S — Single Responsibility</span>
+<span class="cm">// Un módulo tiene UNA razón para cambiar</span>
+<span class="cm">// PropertyCard renderiza UI, useProperties maneja datos</span>
+
+<span class="cm">// O — Open/Closed</span>
+<span class="cm">// Abierto para extensión, cerrado para modificación</span>
+<span class="cm">// Agrega nuevos filtros sin modificar la función de búsqueda existente</span>
+
+<span class="cm">// L — Liskov Substitution</span>
+<span class="cm">// Un componente hijo debe funcionar donde funciona el padre</span>
+
+<span class="cm">// I — Interface Segregation</span>
+<span class="cm">// No obligues a un componente a depender de props que no usa</span>
+<span class="cm">// ✗ &lt;Card property={fullPropertyObject} /&gt;</span>
+<span class="cm">// ✓ &lt;Card title={title} price={price} city={city} /&gt;</span>
+
+<span class="cm">// D — Dependency Inversion</span>
+<span class="cm">// El service no depende de Prisma directamente → depende de una interfaz</span>
+<span class="cm">// Esto permite cambiar de Prisma a otro ORM sin tocar la lógica</span></pre></div>
+          <div class="senior-tip"><strong>Tip senior:</strong> No necesitas aplicar SOLID a rajatabla en cada línea. Pero conocer estos principios te ayuda a tomar decisiones de diseño cuando el proyecto crece. El principio más importante en la práctica diaria: Single Responsibility.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ EJERCICIOS ═══ -->
+    <section id="ejercicios">
+      <div class="container">
+        <div class="section-head"><div>
+          <h2>Ejercicios y retos</h2>
+          <p>Practica con ejercicios pequeños primero. Luego conecta varios conceptos en retos tipo proyecto real.</p>
+        </div></div>
+
+        <div class="exercise-generator">
+          <div>
+            <span class="eyebrow" style="background:rgba(255,255,255,.1);color:white;border-color:rgba(255,255,255,.15);">Generador interactivo</span>
+            <h2 style="font-family:var(--font-display);font-weight:400;letter-spacing:-.02em;line-height:1.05;">Genera un reto distinto cada vez</h2>
+            <p>Escoge módulo y dificultad. Resuélvelo primero tú, luego compara con IA y explica el resultado en palabras simples.</p>
+            <div class="select-row">
+              <select id="moduleSelect" aria-label="Módulo">
+                <option value="js">JavaScript</option>
+                <option value="react">React</option>
+                <option value="node">Node/Express</option>
+                <option value="prisma">Prisma</option>
+                <option value="css">CSS/Vite</option>
+                <option value="ts">TypeScript</option>
+                <option value="testing">Testing</option>
+              </select>
+              <select id="difficultySelect" aria-label="Dificultad">
+                <option value="mini">Mini ejercicio</option>
+                <option value="medio">Intermedio</option>
+                <option value="reto">Reto NIDO</option>
+              </select>
+              <button class="btn btn-primary" onclick="generateExercise()" style="border:1px solid rgba(255,255,255,.2);">Generar</button>
+            </div>
+          </div>
+          <div class="exercise-output" id="exerciseOutput">
+            <h3>Reto inicial: filtros tipados</h3>
+            <p>Crea una interfaz TypeScript <code>PropertyFilters</code> con campos opcionales para ciudad, precio máximo y habitaciones mínimas. Luego implementa una función <code>filterProperties</code> que reciba un array tipado y retorne solo los resultados válidos.</p>
+            <ul>
+              <li>Usa TypeScript strict mode.</li>
+              <li>Valida edge cases: filtros vacíos, array vacío.</li>
+              <li>Escribe al menos 3 tests.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:16px"></div>
+        <div class="grid-3">
+          <article class="card"><span class="level esencial">Mini</span><h3>JS: predicados</h3><p>Crea funciones <code>isExpensive</code>, <code>isAvailable</code> y <code>isInCity</code> y compónlas con filter.</p></article>
+          <article class="card"><span class="level esencial">Mini</span><h3>React: error boundary</h3><p>Implementa un componente que muestre un fallback amigable cuando un hijo tiene error.</p></article>
+          <article class="card"><span class="level esencial">Mini</span><h3>TS: utility types</h3><p>Usa <code>Pick</code>, <code>Omit</code> y <code>Partial</code> para crear tipos derivados de <code>Property</code>.</p></article>
+          <article class="card"><span class="level recom">Intermedio</span><h3>Node: error handler</h3><p>Crea un middleware global de errores que loguee el stack en dev y responda mensajes genéricos en prod.</p></article>
+          <article class="card"><span class="level recom">Intermedio</span><h3>Testing: service</h3><p>Testea <code>property.service.ts</code> mockeando Prisma. Verifica filtros opcionales y paginación.</p></article>
+          <article class="card"><span class="level avanzado">Reto</span><h3>Full Stack: favoritos</h3><p>Flujo completo: botón en React → endpoint Express → modelo Prisma con @@unique → feedback optimista en UI.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ RUTA ═══ -->
+    <section id="ruta">
+      <div class="container">
+        <div class="section-head"><div>
+          <h2>Ruta de estudio</h2>
+          <p>Orden recomendado para construir bases reales sin saltar a copiar código de proyectos grandes.</p>
+        </div></div>
+        <div class="timeline">
+          <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Fundamentos JavaScript</h3><p>Variables, funciones, arrays, objetos, condicionales, bucles, map/filter, spread, async/await, closures.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body"><h3>TypeScript desde el día 1</h3><p>Tipos básicos, interfaces, union types, generics. Configura <code>strict: true</code> y nunca uses <code>any</code>.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Lógica aplicada con tests</h3><p>Resuelve ejercicios con Entrada → Proceso → Salida. Escribe el test primero (TDD) cuando sea posible.</p></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Backend: Node + Express + Prisma</h3><p>Rutas, controllers, services, middlewares, validación con Zod, manejo de errores, API REST correcta.</p></div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-body"><h3>Base de datos: PostgreSQL + Prisma</h3><p>Modelos, relaciones, migraciones, CRUD, filtros, paginación, índices, soft delete.</p></div></div>
+          <div class="step"><div class="step-num">6</div><div class="step-body"><h3>React profesional</h3><p>Componentes tipados, props, estado, hooks, custom hooks, renderizado condicional, consumo de APIs.</p></div></div>
+          <div class="step"><div class="step-num">7</div><div class="step-body"><h3>Testing serio</h3><p>Vitest para lógica, RTL para componentes, tests de integración para endpoints. Cobertura ≥ 80%.</p></div></div>
+          <div class="step"><div class="step-num">8</div><div class="step-body"><h3>Producción y calidad</h3><p>Git flow, ESLint, Prettier, CI/CD, logs estructurados, monitoring, feature flags, deploy seguro.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ GLOSARIO ═══ -->
+    <section id="glosario">
+      <div class="container">
+        <div class="section-head"><div>
+          <h2>Glosario Full Stack</h2>
+          <p>Términos que aparecen en documentación, entrevistas, code reviews y conversaciones con equipos de desarrollo.</p>
+        </div></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Término</th><th>Definición</th><th>Por qué importa</th></tr></thead>
+            <tbody>
+              <tr><td><strong>API REST</strong></td><td>Interfaz para comunicar frontend y backend usando HTTP y JSON.</td><td>Es el lenguaje común entre React y Node.</td></tr>
+              <tr><td><strong>ORM</strong></td><td>Herramienta que mapea código a base de datos. Prisma es un ORM.</td><td>Consultas tipadas sin escribir SQL crudo.</td></tr>
+              <tr><td><strong>JWT</strong></td><td>Token firmado que prueba la identidad de un usuario.</td><td>Auth stateless: protege rutas sin sesión en servidor.</td></tr>
+              <tr><td><strong>Middleware</strong></td><td>Función intermedia entre request y response.</td><td>Auth, validación, logs, rate limiting, error handling.</td></tr>
+              <tr><td><strong>CORS</strong></td><td>Permiso del backend para aceptar requests de otro dominio.</td><td>Sin CORS, React no puede hablar con tu API.</td></tr>
+              <tr><td><strong>Migration</strong></td><td>Archivo versionado con cambios al schema de BD.</td><td>Evolucionar la BD con control y rollback.</td></tr>
+              <tr><td><strong>Hook</strong></td><td>Función de React que empieza con <code>use</code>.</td><td>Estado, efectos y lógica reutilizable.</td></tr>
+              <tr><td><strong>Re-render</strong></td><td>React ejecuta un componente cuando cambian props o state.</td><td>Entenderlo evita bugs de performance.</td></tr>
+              <tr><td><strong>Race condition</strong></td><td>Bug donde el resultado depende del orden de operaciones asíncronas.</td><td>Causa datos inconsistentes y bugs difíciles de reproducir.</td></tr>
+              <tr><td><strong>Idempotente</strong></td><td>Una operación que produce el mismo resultado aunque se ejecute varias veces.</td><td>GET y DELETE deben ser idempotentes.</td></tr>
+              <tr><td><strong>Narrowing</strong></td><td>Reducir un tipo amplio a uno específico con condicionales.</td><td>Reemplaza el uso de <code>any</code> en TypeScript.</td></tr>
+              <tr><td><strong>Optimistic UI</strong></td><td>Actualizar la UI antes de confirmar con el servidor.</td><td>Mejor UX percibida — la app se siente instantánea.</td></tr>
+              <tr><td><strong>Debounce</strong></td><td>Esperar N ms después del último evento antes de ejecutar.</td><td>Evita 100 llamadas a API mientras el usuario escribe.</td></tr>
+              <tr><td><strong>DRY</strong></td><td>Don't Repeat Yourself.</td><td>Si copias código 3 veces → extrae función, hook o componente.</td></tr>
+              <tr><td><strong>SRP</strong></td><td>Single Responsibility Principle.</td><td>Cada módulo tiene una sola razón para cambiar.</td></tr>
+              <tr><td><strong>CI/CD</strong></td><td>Automatización de tests, lint y deploy.</td><td>Atrapa errores antes de producción.</td></tr>
+              <tr><td><strong>Feature flag</strong></td><td>Condicional que activa/desactiva features sin deploy.</td><td>Deploys más seguros y rollback instantáneo.</td></tr>
+              <tr><td><strong>Structured logging</strong></td><td>Logs en formato JSON con contexto (userId, requestId).</td><td>Permiten buscar y filtrar en sistemas como Datadog.</td></tr>
+              <tr><td><strong>N+1 query</strong></td><td>Bug donde un loop genera una query por cada item.</td><td>Destruye performance — usa <code>include</code> o <code>join</code>.</td></tr>
+              <tr><td><strong>Dead code</strong></td><td>Código que nunca se ejecuta.</td><td>Agrega confusión y peso sin beneficio.</td></tr>
+              <tr><td><strong>Tech debt</strong></td><td>Atajos técnicos que se pagan después con intereses.</td><td>Identifícala, documéntala y planifica cuándo pagarla.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CHECKLIST ═══ -->
+    <section id="checklist">
+      <div class="container">
+        <div class="section-head"><div>
+          <h2>Checklist diario</h2>
+          <p>Antes de aceptar código generado por IA o Codex, responde estas preguntas. Usa IA como copiloto, no como reemplazo.</p>
+        </div></div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Comprensión del código</h3>
+            <div class="checklist" id="checklistBox">
+              <div class="check-item"><input type="checkbox" id="c1"><label for="c1"><strong>Problema</strong>¿Qué problema exacto resuelve este código?</label></div>
+              <div class="check-item"><input type="checkbox" id="c2"><label for="c2"><strong>Entrada</strong>¿Qué datos entran y de dónde vienen?</label></div>
+              <div class="check-item"><input type="checkbox" id="c3"><label for="c3"><strong>Proceso</strong>¿Qué hace paso a paso?</label></div>
+              <div class="check-item"><input type="checkbox" id="c4"><label for="c4"><strong>Salida</strong>¿Qué devuelve o qué cambia en el sistema?</label></div>
+              <div class="check-item"><input type="checkbox" id="c5"><label for="c5"><strong>Errores</strong>¿Qué podría fallar y cómo se maneja?</label></div>
+              <div class="check-item"><input type="checkbox" id="c6"><label for="c6"><strong>Tipos</strong>¿Están tipados los inputs y outputs?</label></div>
+              <div class="check-item"><input type="checkbox" id="c7"><label for="c7"><strong>Capas</strong>¿Qué parte es frontend, backend o BD?</label></div>
+              <div class="check-item"><input type="checkbox" id="c8"><label for="c8"><strong>Nombres</strong>¿Los nombres son descriptivos y consistentes?</label></div>
+              <div class="check-item"><input type="checkbox" id="c9"><label for="c9"><strong>Tests</strong>¿Cómo comprobaría que funciona?</label></div>
+              <div class="check-item"><input type="checkbox" id="c10"><label for="c10"><strong>Seguridad</strong>¿Hay validación, auth y sanitización?</label></div>
+              <div class="check-item"><input type="checkbox" id="c11"><label for="c11"><strong>Explica</strong>¿Puedo explicar este código en palabras simples?</label></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Code review checklist</h3>
+            <div class="checklist" id="reviewChecklistBox">
+              <div class="check-item"><input type="checkbox" id="r1"><label for="r1"><strong>SRP</strong>¿Cada función/componente hace UNA sola cosa?</label></div>
+              <div class="check-item"><input type="checkbox" id="r2"><label for="r2"><strong>Inmutabilidad</strong>¿Se evita mutar estado y objetos?</label></div>
+              <div class="check-item"><input type="checkbox" id="r3"><label for="r3"><strong>Edge cases</strong>¿Se manejan null, undefined, arrays vacíos?</label></div>
+              <div class="check-item"><input type="checkbox" id="r4"><label for="r4"><strong>Error handling</strong>¿Hay try/catch y fallbacks apropiados?</label></div>
+              <div class="check-item"><input type="checkbox" id="r5"><label for="r5"><strong>No any</strong>¿Todo está correctamente tipado?</label></div>
+              <div class="check-item"><input type="checkbox" id="r6"><label for="r6"><strong>DRY</strong>¿Hay código repetido que debería extraerse?</label></div>
+              <div class="check-item"><input type="checkbox" id="r7"><label for="r7"><strong>Secrets</strong>¿Los secretos están en .env, no en el código?</label></div>
+              <div class="check-item"><input type="checkbox" id="r8"><label for="r8"><strong>Performance</strong>¿Se evitan N+1 queries y re-renders?</label></div>
+              <div class="check-item"><input type="checkbox" id="r9"><label for="r9"><strong>Accesibilidad</strong>¿HTML semántico, labels, alt text?</label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Guía Senior NIDO</strong> · Fundamentos, TypeScript, Testing, Seguridad y Arquitectura · HTML offline</p>
+      <p class="print-note">Versión impresa generada desde el navegador.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Theme Toggle ───
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('nidoGuideTheme', next);
+      document.querySelector('.theme-toggle').textContent = next === 'dark' ? '☀️' : '🌙';
+    }
+    const savedTheme = localStorage.getItem('nidoGuideTheme');
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // ─── Concept Search ───
+    function filterConcepts(query) {
+      const q = query.toLowerCase().trim();
+      document.querySelectorAll('.concept').forEach(el => {
+        const keywords = (el.dataset.concept || '') + ' ' + el.textContent.toLowerCase();
+        el.style.display = !q || keywords.includes(q) ? '' : 'none';
+      });
+    }
+
+    // ─── Exercise Generator ───
+    const exercises = {
+      js: {
+        mini: [
+          { title: "map + tipos", text: "Crea un array de números y genera otro con cada número * 2. Tipa el array como number[].", steps: ["Usa const y tipos explícitos.", "Usa .map() — no mutes.", "Imprime resultado original y transformado."] },
+          { title: "filter por ciudad", text: "Crea una lista tipada de propiedades y conserva solo las de Medellín.", steps: ["Crea una interface Property.", "Usa .filter() con predicado nombrado.", "Muestra cuántas quedaron."] },
+          { title: "spread defensivo", text: "Copia una propiedad y cambia solo el precio. Verifica que la original no cambió.", steps: ["No mutes el objeto original.", "Usa {...property, price: nuevo}.", "console.assert(original.price !== copia.price)."] }
+        ],
+        medio: [
+          { title: "Filtro combinado tipado", text: "Filtra propiedades por ciudad, precio máximo y habitaciones mínimas con TypeScript.", steps: ["Crea interface PropertyFilters con campos opcionales.", "Valida que filtros vacíos retornen todo.", "Retorna { results, total }.", "Escribe 2 tests."] },
+          { title: "Error handling robusto", text: "Crea fetchProperties que maneje errores de red, status 4xx/5xx y datos vacíos.", steps: ["Usa AbortController.", "Verifica res.ok antes de parsear.", "Retorna un objeto Result<T> con success y error."] }
+        ],
+        reto: [
+          { title: "Motor de búsqueda NIDO", text: "Implementa searchProperties(filters, properties) tipado que combine todos los filtros con paginación.", steps: ["Filtros opcionales con spread condicional.", "Paginación con skip/take.", "Ordena por precio o fecha.", "Retorna PaginatedResponse<Property>.", "Escribe 5 tests que cubran edge cases."] }
+        ]
+      },
+      react: {
+        mini: [
+          { title: "Input controlado tipado", text: "Crea un input de ciudad con useState tipado que actualice en cada cambio.", steps: ["Estado inicial tipado como string.", "onChange tipado con React.ChangeEvent.", "Muestra debajo la ciudad escrita."] },
+          { title: "Lista con key correcta", text: "Renderiza una lista de propiedades con map y key=id.", steps: ["Nunca uses index como key.", "Tipa el componente con interface.", "Usa HTML semántico (article, h3)."] }
+        ],
+        medio: [
+          { title: "Custom hook useDebounce", text: "Crea un hook que retrase la actualización de un valor por N ms.", steps: ["Usa useState y useEffect.", "Limpia el timeout en cleanup.", "Testea con diferentes delays."] },
+          { title: "Loading + Error + Empty", text: "Simula carga de propiedades con los 4 estados: idle, loading, error, success.", steps: ["Usa union type para Status.", "Renderizado condicional con early returns.", "Muestra Skeleton en loading."] }
+        ],
+        reto: [
+          { title: "Hook useProperties completo", text: "Custom hook con loading, error, filtros, paginación y abort controller.", steps: ["Expón properties, loading, error, setFilters, nextPage.", "Cancela request anterior al cambiar filtros.", "Escribe 3 tests del hook con renderHook."] }
+        ]
+      },
+      node: {
+        mini: [
+          { title: "Health check tipado", text: "Crea GET /api/health que responda { status: 'ok', timestamp: ISO }.", steps: ["Tipa el response body.", "Devuelve status 200.", "Agrega header Cache-Control: no-store."] },
+          { title: "Middleware de request ID", text: "Agrega un requestId único a cada request para tracing.", steps: ["Usa crypto.randomUUID().", "Asigna a req.id y al header X-Request-Id.", "Logea método, URL y requestId."] }
+        ],
+        medio: [
+          { title: "Error handler global", text: "Crea un middleware que capture todos los errores y responda de forma consistente.", steps: ["Detecta errores de validación (ZodError) vs errores generales.", "En dev muestra stack, en prod mensaje genérico.", "Logea con requestId y contexto.", "Responde con { error: CODE, message: string }."] }
+        ],
+        reto: [
+          { title: "CRUD completo por capas", text: "Properties con route → controller → service → repository, completamente tipado.", steps: ["Ruta sin lógica de negocio.", "Controller maneja req/res y delega.", "Service contiene reglas de negocio.", "Repository habla con Prisma.", "Validación con Zod en middleware."] }
+        ]
+      },
+      prisma: {
+        mini: [
+          { title: "Modelo Favorite", text: "Diseña un modelo que conecte User y Property sin duplicados.", steps: ["Incluye userId, propertyId y createdAt.", "@@unique([userId, propertyId]).", "Agrega relaciones bidireccionales."] },
+          { title: "Select eficiente", text: "Consulta propiedades sin traer datos innecesarios.", steps: ["Usa select en vez de retornar todo.", "Incluye solo id, title, price, city.", "Incluye landlord.name con select anidado."] }
+        ],
+        medio: [
+          { title: "Paginación tipada", text: "Implementa paginación con skip/take que retorne metadata.", steps: ["Recibe page y limit tipados.", "Calcula skip automáticamente.", "Retorna PaginatedResponse con totalPages.", "Ejecuta findMany y count en paralelo."] }
+        ],
+        reto: [
+          { title: "Búsqueda avanzada", text: "Consulta con filtros opcionales, paginación, orden dinámico y soft delete.", steps: ["city, maxPrice, bedrooms opcionales.", "deletedAt: null siempre.", "Orden configurable (price, date).", "Retorna results, total, page, totalPages.", "Escribe 4 tests del repository."] }
+        ]
+      },
+      css: {
+        mini: [
+          { title: "Card con custom properties", text: "Diseña una tarjeta usando solo CSS variables para colores, radios y sombras.", steps: ["Define variables en :root.", "Usa border-box y padding consistente.", "Hover con transform y shadow."] }
+        ],
+        medio: [
+          { title: "Grid responsive sin media queries", text: "Grilla con auto-fill + minmax que funcione en cualquier viewport.", steps: ["Usa repeat(auto-fill, minmax(280px, 1fr)).", "Agrega gap consistente.", "Prueba en 320px, 768px y 1440px."] }
+        ],
+        reto: [
+          { title: "Sistema de diseño mini", text: "Crea :root con tokens de color, spacing, radius, shadow y tipografía.", steps: ["Al menos 5 colores con variantes light.", "4 niveles de spacing (xs, sm, md, lg).", "Tipografía fluida con clamp().", "Dark mode con [data-theme='dark']."] }
+        ]
+      },
+      ts: {
+        mini: [
+          { title: "Tipar Property", text: "Crea interfaces para Property, User y PropertyFilters.", steps: ["Usa interface para entidades.", "Usa type para filtros con campos opcionales.", "Incluye Pick<User, 'id' | 'name'> para relaciones."] },
+          { title: "Utility types", text: "Crea tipos derivados usando Pick, Omit, Partial y Required.", steps: ["PropertySummary con Pick<Property, 'title' | 'price'>.", "CreatePropertyInput con Omit<Property, 'id' | 'createdAt'>.", "UpdatePropertyInput con Partial<CreatePropertyInput>."] }
+        ],
+        medio: [
+          { title: "Generic PaginatedResponse", text: "Crea un tipo genérico que funcione con cualquier entidad.", steps: ["PaginatedResponse<T> con results: T[].", "Incluye total, page, totalPages.", "Úsalo con Property y User."] }
+        ],
+        reto: [
+          { title: "Type-safe API client", text: "Crea un wrapper de fetch que infiera el tipo de retorno según el endpoint.", steps: ["Define un map de endpoints a tipos de respuesta.", "El client debe inferir el tipo correcto.", "Maneja errores tipados.", "Cero any en toda la implementación."] }
+        ]
+      },
+      testing: {
+        mini: [
+          { title: "Test formatPrice", text: "Escribe tests para una función de formato de precio.", steps: ["Testa número positivo, 0, null y undefined.", "Usa describe + it + expect.", "Patrón AAA: Arrange, Act, Assert."] }
+        ],
+        medio: [
+          { title: "Mock de Prisma", text: "Testea un service que usa Prisma sin conectar a BD real.", steps: ["Crea un mock de PrismaClient.", "Verifica que findMany se llama con los filtros correctos.", "Testa el caso de error de BD."] }
+        ],
+        reto: [
+          { title: "Integration test de endpoint", text: "Testea POST /api/properties end-to-end.", steps: ["Usa supertest con express.", "Verifica 201 con datos válidos.", "Verifica 400 con datos inválidos.", "Verifica 401 sin token.", "Limpia la BD entre tests."] }
+        ]
+      }
+    };
+
+    function generateExercise() {
+      const module = document.getElementById('moduleSelect').value;
+      const difficulty = document.getElementById('difficultySelect').value;
+      const list = exercises[module]?.[difficulty];
+      if (!list || list.length === 0) {
+        document.getElementById('exerciseOutput').innerHTML = '<p>No hay ejercicios para esta combinación aún.</p>';
+        return;
+      }
+      const item = list[Math.floor(Math.random() * list.length)];
+      document.getElementById('exerciseOutput').innerHTML = `
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+        <ul>${item.steps.map(s => `<li>${s}</li>`).join('')}</ul>
+      `;
+    }
+
+    // ─── Checklist Persistence ───
+    const allChecks = Array.from(document.querySelectorAll('#checklistBox input, #reviewChecklistBox input'));
+    function updateProgress() {
+      const done = allChecks.filter(c => c.checked).length;
+      const percent = Math.round((done / allChecks.length) * 100);
+      document.getElementById('progressText').textContent = percent + '%';
+      document.getElementById('progressBar').style.width = percent + '%';
+      localStorage.setItem('nidoGuideChecklist_v2', JSON.stringify(allChecks.map(c => c.checked)));
+    }
+    const saved = JSON.parse(localStorage.getItem('nidoGuideChecklist_v2') || '[]');
+    allChecks.forEach((check, i) => {
+      check.checked = Boolean(saved[i]);
+      check.addEventListener('change', updateProgress);
+    });
+    updateProgress();
+
+    // ─── Intersection Observer for animations ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.module, .card, .step').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
