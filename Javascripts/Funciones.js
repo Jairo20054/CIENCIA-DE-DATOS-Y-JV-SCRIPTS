@@ -63,4 +63,24 @@ function mayor(mejort){
 }
 mayor(camino);
 
+//////////////////////////////////
+
+const multiplo = [2, 4, 6, 8]
+
+const funcion = multiplo.map(multiplo) => {
+    multiplo * 2
+}
+console.log(funcion);
+
+// forma agil
+
+const numero = [2, 4, 6, 8]
+const operación = numero.map(numero => numero * 2)
+console.log(operación)
+
+///// ejercicio 1 
+
+const nombre = "hola";
+const completo = (nombre)=> { return nombre + "juan"}
+console.log(completo(nombre));
 
