@@ -8,7 +8,7 @@ console.log(bubalu(5,8));
 
 // funciones de orden superior
 
-function superior(func, param) {
+export function superior(func, param) {
     return func(param)
 }
 superior(bubalu, 5,8)
@@ -38,7 +38,7 @@ mejor.forEach( mejor => {
 })
 console.log(mejor)
 
----------------------------------------------------------------
+
 //
 function sumar (b,c) {
     return b + c;
@@ -84,3 +84,6 @@ const nombre = "hola";
 const completo = (nombre)=> { return nombre + "juan"}
 console.log(completo(nombre));
 
+export const funciones = (a, b) => {
+    
+} 

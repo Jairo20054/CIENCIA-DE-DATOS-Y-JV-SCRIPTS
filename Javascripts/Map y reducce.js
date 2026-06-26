@@ -27,11 +27,7 @@ console.log(conver)
 
 ////
 
-const reducir = [10, 30, 50, 60 ,70];
 
-const operación = reducir.reduce((acumulador, reducir) = > {
-    return acumulador * reducir;
-}, 0)
 
 /// desctruturación
 
@@ -51,6 +47,12 @@ const propiedades = {
     casa_4: 8200000
 }
 
-const filtro = propiedades.filter((propiedades) = > {
-    return 
-}) 
+/// funcion map
+
+const numerol = [ 2, 4 ,6 ,8 , 10];
+
+const funciones = numerol.map((numerol) =>{
+    return numerol * 5;
+})
+
+console.log(funciones)
