@@ -1,1971 +1,1330 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guía Senior de Fundamentos y Programación | NIDO</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan de Estudio de 1 Año | Ingeniería de Software</title>
   <style>
-    :root {
-      --bg: #f4f2ee;
-      --surface: #ffffff;
-      --surface-2: #eae8e3;
-      --surface-3: #ddd9d1;
-      --ink: #1a1814;
-      --ink-2: #2d2a24;
-      --muted: #6b6560;
-      --primary: #1a6b47;
-      --primary-light: #e6f3ed;
-      --primary-2: #238c5e;
-      --accent: #c4850c;
-      --accent-light: #fdf3e0;
-      --danger: #b83a3a;
-      --danger-light: #fce8e8;
-      --success: #1a6b47;
-      --success-light: #e6f3ed;
-      --purple: #6b3fa0;
-      --purple-light: #f0eaf8;
-      --code-bg: #1b1e1c;
-      --code-text: #d4e8da;
-      --code-comment: #637a6b;
-      --code-keyword: #7ec8a0;
-      --code-string: #e8c97a;
-      --code-func: #82b1ff;
-      --code-number: #f5a87a;
-      --code-type: #c792ea;
-      --line: #d9d5ce;
-      --shadow-sm: 0 1px 3px rgba(26,24,20,.06);
-      --shadow-md: 0 8px 30px rgba(26,24,20,.08);
-      --shadow-lg: 0 20px 60px rgba(26,24,20,.10);
-      --radius-xl: 24px;
-      --radius-lg: 16px;
-      --radius-md: 10px;
-      --radius-sm: 6px;
-      --max: 1200px;
-      --font-display: "Instrument Serif", Georgia, serif;
-      --font-body: "DM Sans", system-ui, sans-serif;
-      --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
-      --transition: .2s cubic-bezier(.4,0,.2,1);
+    :root{
+      --bg:#0b1020;
+      --bg2:#101830;
+      --card:#121a33;
+      --card2:#172142;
+      --ink:#eef4ff;
+      --muted:#aab8d4;
+      --line:rgba(255,255,255,.12);
+      --brand:#6ee7b7;
+      --brand2:#60a5fa;
+      --warn:#fbbf24;
+      --bad:#fb7185;
+      --ok:#34d399;
+      --shadow:0 18px 55px rgba(0,0,0,.32);
+      --radius:24px;
     }
-
-    [data-theme="dark"] {
-      --bg: #141614;
-      --surface: #1e201e;
-      --surface-2: #282a28;
-      --surface-3: #333533;
-      --ink: #e8e6e1;
-      --ink-2: #c4c2bc;
-      --muted: #8a8780;
-      --primary: #5ec49a;
-      --primary-light: rgba(94,196,154,.12);
-      --primary-2: #7ed6b0;
-      --accent: #e8a832;
-      --accent-light: rgba(232,168,50,.1);
-      --danger: #e05555;
-      --danger-light: rgba(224,85,85,.1);
-      --success: #5ec49a;
-      --success-light: rgba(94,196,154,.1);
-      --purple: #b088d4;
-      --purple-light: rgba(176,136,212,.1);
-      --code-bg: #111311;
-      --line: #333533;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,.2);
-      --shadow-md: 0 8px 30px rgba(0,0,0,.25);
-      --shadow-lg: 0 20px 60px rgba(0,0,0,.3);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left,rgba(96,165,250,.28),transparent 35%),
+        radial-gradient(circle at top right,rgba(110,231,183,.16),transparent 32%),
+        linear-gradient(180deg,var(--bg),#080b16 70%);
+      line-height:1.55;
     }
-
-    * { box-sizing: border-box; margin: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.65;
-      transition: background var(--transition), color var(--transition);
+    a{color:inherit}
+    .container{width:min(1180px,92vw);margin:auto}
+    .hero{
+      padding:62px 0 34px;
+      position:relative;
+      overflow:hidden;
     }
-
-    a { color: var(--primary); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-    a:hover { color: var(--primary-2); }
-    code, pre { font-family: var(--font-mono); }
-    code { font-size: .88em; background: var(--surface-2); padding: 2px 6px; border-radius: 4px; }
-    strong { font-weight: 700; }
-    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
-
-    /* ─── TOPBAR ─── */
-    .topbar {
-      position: sticky; top: 0; z-index: 30;
-      backdrop-filter: blur(20px) saturate(1.6);
-      -webkit-backdrop-filter: blur(20px) saturate(1.6);
-      background: color-mix(in srgb, var(--bg) 80%, transparent);
-      border-bottom: 1px solid var(--line);
-      transition: background var(--transition);
+    .badge{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      padding:9px 13px;
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:.2px;
     }
-    .topbar-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; padding: 12px 0;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:30px;
+      align-items:center;
+      margin-top:24px;
     }
-    .brand {
-      display: flex; align-items: center; gap: 10px;
-      font-weight: 800; letter-spacing: -.03em; white-space: nowrap;
-      font-size: 15px;
+    h1{
+      font-size:clamp(34px,6vw,70px);
+      line-height:1.02;
+      margin:14px 0 16px;
+      letter-spacing:-2.2px;
     }
-    .brand-mark {
-      width: 38px; height: 38px; display: grid; place-items: center;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), #0d3d28);
-      color: white; font-family: var(--font-display); font-size: 20px;
-      box-shadow: 0 4px 12px rgba(26,107,71,.25);
+    .lead{
+      color:var(--muted);
+      font-size:clamp(17px,2.1vw,22px);
+      max-width:860px;
+      margin:0 0 22px;
     }
-    [data-theme="dark"] .brand-mark { box-shadow: 0 4px 12px rgba(0,0,0,.4); }
-    .nav {
-      display: flex; align-items: center; gap: 2px;
-      overflow-x: auto; padding: 2px; scrollbar-width: thin;
+    .hero-card{
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
     }
-    .nav a {
-      text-decoration: none; color: var(--muted); font-size: 13px;
-      font-weight: 600; padding: 7px 12px; border-radius: 8px;
-      white-space: nowrap; transition: all var(--transition);
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:18px;
     }
-    .nav a:hover { background: var(--surface-2); color: var(--primary); }
-    .theme-toggle {
-      background: var(--surface-2); border: 1px solid var(--line);
-      border-radius: 8px; padding: 6px 10px; cursor: pointer;
-      font-size: 16px; line-height: 1; transition: all var(--transition);
+    .stat{
+      padding:15px;
+      border-radius:18px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
     }
-    .theme-toggle:hover { background: var(--surface-3); }
-
-    /* ─── HERO ─── */
-    .hero { padding: 56px 0 24px; }
-    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; align-items: stretch; }
-    .hero-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl); padding: clamp(28px, 5vw, 48px);
-      box-shadow: var(--shadow-lg); position: relative; overflow: hidden;
+    .stat b{font-size:24px;display:block}
+    .stat span{font-size:12px;color:var(--muted)}
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
     }
-    .hero-card::after {
-      content: "< />";
-      position: absolute; right: -12px; bottom: -40px;
-      font-size: 140px; font-weight: 900; letter-spacing: -.08em;
-      font-family: var(--font-mono);
-      color: var(--primary); opacity: .05; pointer-events: none;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      text-decoration:none;
+      font-weight:800;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.07);
+      transition:.2s ease;
     }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 6px;
-      color: var(--primary); background: var(--primary-light);
-      border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
-      border-radius: 8px; padding: 6px 12px; font-size: 12px;
-      font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
-      margin-bottom: 16px;
+    .btn.primary{
+      color:#07111f;
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+      border:none;
     }
-    h1 {
-      font-family: var(--font-display); font-weight: 400;
-      font-size: clamp(34px, 5.5vw, 64px); line-height: 1;
-      letter-spacing: -.03em; margin-bottom: 16px;
+    .btn:hover{transform:translateY(-2px)}
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(16px);
+      background:rgba(8,11,22,.78);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
-    h1 em { font-style: italic; color: var(--primary); }
-    .hero p { color: var(--muted); font-size: clamp(15px, 1.8vw, 18px); margin: 0; }
-    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
-
-    .btn {
-      border: 0; border-radius: 10px; padding: 11px 18px;
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      font-family: var(--font-body); font-weight: 700; font-size: 14px;
-      cursor: pointer; text-decoration: none;
-      transition: all var(--transition);
+    .nav .container{
+      display:flex;
+      gap:10px;
+      overflow:auto;
+      padding:10px 0;
     }
-    .btn:hover { transform: translateY(-1px); }
-    .btn:active { transform: translateY(0); }
-    .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 14px rgba(26,107,71,.25); }
-    .btn-primary:hover { background: var(--primary-2); color: white; }
-    .btn-ghost { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
-    .btn-ghost:hover { background: var(--surface-2); }
-    .btn-small { padding: 7px 12px; font-size: 12px; }
-    .btn-accent { background: var(--accent); color: white; }
-
-    .stat-card {
-      background: var(--surface); border: 1px solid var(--line);
-      border-radius: var(--radius-xl); padding: 24px;
-      box-shadow: var(--shadow-lg); display: flex; flex-direction: column;
-      justify-content: space-between; gap: 18px;
+    .nav a{
+      white-space:nowrap;
+      text-decoration:none;
+      color:var(--muted);
+      padding:9px 12px;
+      border-radius:12px;
+      font-size:14px;
+      font-weight:800;
     }
-    .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .stat {
-      background: var(--surface-2); border-radius: 14px; padding: 14px;
-      min-height: 96px; display: flex; flex-direction: column; justify-content: space-between;
+    .nav a:hover{background:rgba(255,255,255,.07);color:var(--ink)}
+    section{padding:38px 0}
+    .section-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:18px;
     }
-    .stat strong { font-size: 26px; letter-spacing: -.04em; color: var(--primary); font-family: var(--font-display); }
-    .stat span { color: var(--muted); font-size: 12px; font-weight: 600; }
-    .progress-wrap { background: var(--surface-2); border-radius: 999px; height: 8px; overflow: hidden; }
-    .progress-bar {
-      width: 0%; height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      border-radius: 999px; transition: width .4s cubic-bezier(.4,0,.2,1);
+    h2{
+      font-size:clamp(26px,3vw,40px);
+      margin:0;
+      letter-spacing:-1px;
     }
-
-    /* ─── SECTIONS ─── */
-    section { padding: 48px 0; scroll-margin-top: 72px; }
-    .section-head {
-      display: flex; align-items: end; justify-content: space-between;
-      gap: 20px; margin-bottom: 20px;
+    .subtitle{color:var(--muted);max-width:760px;margin:8px 0 0}
+    .grid{display:grid;gap:16px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 12px 32px rgba(0,0,0,.18);
     }
-    .section-head h2 {
-      font-family: var(--font-display); font-weight: 400;
-      font-size: clamp(26px, 3.5vw, 44px); line-height: 1.05;
-      letter-spacing: -.02em;
+    .card h3{margin:0 0 10px;font-size:20px}
+    .card p,.card li{color:var(--muted)}
+    .pill{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(110,231,183,.13);
+      color:#b7ffe4;
+      border:1px solid rgba(110,231,183,.22);
+      font-size:12px;
+      font-weight:900;
+      margin:3px 5px 3px 0;
     }
-    .section-head p { margin: 8px 0 0; color: var(--muted); max-width: 700px; }
-
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .card {
-      background: var(--surface); border: 1px solid var(--line);
-      border-radius: var(--radius-lg); padding: 20px;
-      box-shadow: var(--shadow-sm);
-      transition: box-shadow var(--transition), transform var(--transition);
+    .pill.blue{background:rgba(96,165,250,.14);border-color:rgba(96,165,250,.25);color:#c8dcff}
+    .pill.yellow{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.22);color:#ffe3a3}
+    .pill.red{background:rgba(251,113,133,.12);border-color:rgba(251,113,133,.22);color:#ffc0ca}
+    .table-wrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:rgba(255,255,255,.04);
+      box-shadow:0 12px 32px rgba(0,0,0,.16);
     }
-    .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .card h3 { margin-bottom: 8px; letter-spacing: -.02em; font-size: 18px; line-height: 1.2; }
-    .card p { color: var(--muted); margin-bottom: 10px; font-size: 14px; }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-    .pill, .level {
-      display: inline-flex; align-items: center;
-      border-radius: 6px; font-size: 11px; font-weight: 700;
-      padding: 4px 8px; letter-spacing: .02em;
+    table{border-collapse:collapse;width:100%;min-width:980px}
+    th,td{padding:14px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+    th{
+      text-align:left;
+      color:#dce7ff;
+      font-size:13px;
+      letter-spacing:.2px;
+      background:rgba(255,255,255,.06);
+      position:sticky;
+      top:0;
     }
-    .level.esencial { color: var(--success); background: var(--success-light); }
-    .level.recom { color: var(--accent); background: var(--accent-light); }
-    .level.avanzado { color: var(--purple); background: var(--purple-light); }
-    .level.critico { color: var(--danger); background: var(--danger-light); }
-    .pill { background: var(--surface-2); color: var(--muted); }
-
-    /* ─── MODULES ─── */
-    .module {
-      display: grid; grid-template-columns: 280px 1fr;
-      gap: 16px; align-items: start; margin-bottom: 24px;
+    td{color:var(--muted)}
+    td strong{color:var(--ink)}
+    tr:hover td{background:rgba(255,255,255,.025)}
+    .timeline{display:grid;gap:14px}
+    .month{
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:16px;
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px;
     }
-    .module-aside {
-      position: sticky; top: 72px;
-      background: linear-gradient(160deg, var(--primary), #0d3d28);
-      color: white; border-radius: var(--radius-xl); padding: 22px;
-      box-shadow: 0 12px 40px rgba(26,107,71,.2);
+    .month-number{
+      min-height:94px;
+      border-radius:18px;
+      background:linear-gradient(135deg,rgba(110,231,183,.22),rgba(96,165,250,.18));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      border:1px solid rgba(255,255,255,.14);
     }
-    [data-theme="dark"] .module-aside { box-shadow: 0 12px 40px rgba(0,0,0,.4); }
-    .module-aside h3 {
-      font-family: var(--font-display); font-weight: 400;
-      font-size: 26px; line-height: 1.05; margin-bottom: 8px;
+    .month-number b{font-size:34px;line-height:1}
+    .month-number span{color:var(--muted);font-size:12px;font-weight:800}
+    .month h3{margin:0 0 8px;font-size:22px}
+    .checklist{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:12px;
     }
-    .module-aside p { color: rgba(255,255,255,.72); margin: 0; font-size: 14px; }
-    .module-aside .pill { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.15); color: white; }
-    .module-aside .pill-row { margin-top: 14px; }
-
-    .concept-list { display: grid; gap: 10px; }
-    .concept {
-      background: var(--surface); border: 1px solid var(--line);
-      border-radius: var(--radius-lg); overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: box-shadow var(--transition);
+    label.check{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px;
+      border-radius:15px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      cursor:pointer;
     }
-    .concept:hover { box-shadow: var(--shadow-md); }
-    .concept summary {
-      list-style: none; cursor: pointer; padding: 16px 18px;
-      display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center;
-      font-size: 14px;
+    input[type="checkbox"]{accent-color:#6ee7b7;transform:translateY(3px)}
+    .progress-card{
+      position:sticky;
+      top:65px;
+      background:linear-gradient(180deg,rgba(18,26,51,.96),rgba(12,17,34,.96));
     }
-    .concept summary::-webkit-details-marker { display: none; }
-    .concept summary::before {
-      content: ""; display: none;
+    .bar{
+      height:12px;
+      background:rgba(255,255,255,.09);
+      border-radius:999px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      margin:10px 0;
     }
-    .concept summary h4 { margin: 0; font-size: 17px; letter-spacing: -.02em; }
-    .concept[open] summary { border-bottom: 1px solid var(--line); }
-    .concept-body { padding: 18px; display: grid; gap: 12px; }
-    .concept-body p { color: var(--muted); font-size: 14px; line-height: 1.7; }
-
-    /* ─── CODE BLOCKS ─── */
-    .code-block {
-      background: var(--code-bg); color: var(--code-text);
-      border-radius: var(--radius-md); overflow: auto;
-      border: 1px solid rgba(255,255,255,.06);
-      position: relative;
+    .bar span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--brand),var(--brand2));transition:.25s ease}
+    .code{
+      background:#060a13;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      color:#c8e1ff;
+      overflow:auto;
+      font-family:Consolas,Monaco,monospace;
+      font-size:13px;
+      white-space:pre-wrap;
     }
-    .code-block pre {
-      margin: 0; padding: 16px; font-size: 13px; line-height: 1.6;
-      tab-size: 2; white-space: pre; overflow-x: auto;
+    details{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px 16px;
+      background:rgba(255,255,255,.045);
     }
-    .code-label {
-      position: absolute; top: 8px; right: 10px;
-      font-size: 10px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .06em; padding: 2px 8px; border-radius: 4px;
-      background: rgba(255,255,255,.08); color: rgba(255,255,255,.4);
+    details+details{margin-top:10px}
+    summary{font-weight:900;cursor:pointer;color:var(--ink)}
+    .footer{
+      padding:38px 0 58px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
     }
-    .code-block .kw { color: var(--code-keyword); }
-    .code-block .str { color: var(--code-string); }
-    .code-block .fn { color: var(--code-func); }
-    .code-block .cm { color: var(--code-comment); font-style: italic; }
-    .code-block .num { color: var(--code-number); }
-    .code-block .tp { color: var(--code-type); }
-
-    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .comparison-grid .code-block { flex: 1; }
-    .bad-label, .good-label {
-      display: inline-flex; align-items: center; gap: 4px;
-      font-size: 11px; font-weight: 700; letter-spacing: .03em;
-      padding: 4px 10px; border-radius: 6px; margin-bottom: 6px;
+    .small{font-size:13px;color:var(--muted)}
+    .note{
+      border-left:4px solid var(--brand);
+      background:rgba(110,231,183,.08);
+      padding:14px 16px;
+      border-radius:16px;
+      color:#cbeedd;
     }
-    .bad-label { color: var(--danger); background: var(--danger-light); }
-    .good-label { color: var(--success); background: var(--success-light); }
-
-    .mini {
-      background: var(--accent-light); border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
-      border-radius: var(--radius-md); padding: 14px;
-      font-size: 14px;
+    .danger{
+      border-left:4px solid var(--bad);
+      background:rgba(251,113,133,.08);
+      padding:14px 16px;
+      border-radius:16px;
+      color:#ffd5dc;
     }
-    .mini strong { color: var(--accent); }
-
-    .senior-tip {
-      background: var(--purple-light); border: 1px solid color-mix(in srgb, var(--purple) 20%, transparent);
-      border-radius: var(--radius-md); padding: 14px;
-      font-size: 14px;
+    .kbd{
+      display:inline-flex;
+      padding:2px 7px;
+      border:1px solid var(--line);
+      border-radius:8px;
+      background:rgba(255,255,255,.08);
+      font-family:Consolas,monospace;
+      color:var(--ink);
+      font-size:12px;
     }
-    .senior-tip strong { color: var(--purple); }
-
-    .danger-tip {
-      background: var(--danger-light); border: 1px solid color-mix(in srgb, var(--danger) 20%, transparent);
-      border-radius: var(--radius-md); padding: 14px;
-      font-size: 14px;
+    @media (max-width:900px){
+      .hero-grid,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+      .month{grid-template-columns:1fr}
+      .checklist{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+      .progress-card{position:relative;top:auto}
     }
-    .danger-tip strong { color: var(--danger); }
-
-    /* ─── TABLE ─── */
-    .table-wrap {
-      overflow-x: auto; background: var(--surface);
-      border: 1px solid var(--line); border-radius: var(--radius-lg);
-    }
-    table { width: 100%; border-collapse: collapse; min-width: 700px; }
-    th, td { padding: 12px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
-    th { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; background: var(--surface-2); font-weight: 700; }
-    tr:last-child td { border-bottom: 0; }
-
-    /* ─── EXERCISE GENERATOR ─── */
-    .exercise-generator {
-      background: linear-gradient(145deg, #102b1d, var(--primary));
-      color: white; border-radius: var(--radius-xl); padding: clamp(22px, 4vw, 36px);
-      display: grid; grid-template-columns: .85fr 1.15fr; gap: 20px;
-      box-shadow: var(--shadow-lg);
-    }
-    .exercise-generator p { color: rgba(255,255,255,.7); font-size: 14px; }
-    .exercise-output {
-      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius-lg); padding: 20px; min-height: 240px; font-size: 14px;
-    }
-    .exercise-output h3 { margin: 0 0 8px; font-size: 18px; }
-    .exercise-output ul { margin: 8px 0 0; padding-left: 20px; }
-    .exercise-output li { margin-bottom: 4px; }
-    .select-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
-    select {
-      border-radius: 8px; border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.1); color: white;
-      padding: 10px 14px; outline: none; font-weight: 600;
-      font-family: var(--font-body); font-size: 13px;
-    }
-    select option { color: var(--ink); }
-
-    /* ─── CHECKLIST ─── */
-    .checklist { display: grid; gap: 8px; }
-    .check-item {
-      display: flex; align-items: flex-start; gap: 10px;
-      padding: 12px 14px; border: 1px solid var(--line);
-      border-radius: var(--radius-md); background: var(--surface);
-      transition: all var(--transition);
-    }
-    .check-item:has(input:checked) { background: var(--primary-light); border-color: color-mix(in srgb, var(--primary) 20%, transparent); }
-    .check-item input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--primary); cursor: pointer; }
-    .check-item label { cursor: pointer; color: var(--muted); font-size: 14px; }
-    .check-item strong { color: var(--ink); display: block; font-size: 13px; }
-
-    /* ─── TIMELINE ─── */
-    .timeline { position: relative; display: grid; gap: 12px; }
-    .step { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: stretch; }
-    .step-num {
-      border-radius: 16px; background: var(--primary-light); color: var(--primary);
-      display: grid; place-items: center; font-weight: 800; font-size: 20px;
-      font-family: var(--font-display);
-    }
-    .step-body {
-      background: var(--surface); border: 1px solid var(--line);
-      border-radius: 16px; padding: 16px;
-    }
-    .step-body h3 { margin-bottom: 4px; font-size: 16px; }
-    .step-body p { color: var(--muted); font-size: 14px; }
-
-    /* ─── SEARCH ─── */
-    .search-box {
-      position: relative; margin-bottom: 18px;
-    }
-    .search-box input {
-      width: 100%; padding: 12px 16px 12px 40px;
-      border: 1px solid var(--line); border-radius: var(--radius-md);
-      background: var(--surface); color: var(--ink); font-size: 14px;
-      font-family: var(--font-body); outline: none;
-      transition: border-color var(--transition);
-    }
-    .search-box input:focus { border-color: var(--primary); }
-    .search-box svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); }
-
-    /* ─── FOOTER ─── */
-    .footer { padding: 32px 0 48px; color: var(--muted); text-align: center; font-size: 14px; }
-    .print-note { display: none; }
-
-    /* ─── TABS ─── */
-    .tab-bar { display: flex; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
-    .tab-btn {
-      padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px;
-      background: var(--surface); color: var(--muted); font-size: 13px;
-      font-weight: 600; cursor: pointer; font-family: var(--font-body);
-      transition: all var(--transition);
-    }
-    .tab-btn:hover { background: var(--surface-2); }
-    .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-in { animation: fadeUp .5s cubic-bezier(.4,0,.2,1) both; }
-    .delay-1 { animation-delay: .1s; }
-    .delay-2 { animation-delay: .2s; }
-    .delay-3 { animation-delay: .3s; }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 980px) {
-      .hero-grid, .module, .exercise-generator, .grid-3, .grid-2, .comparison-grid { grid-template-columns: 1fr; }
-      .module-aside { position: relative; top: 0; }
-      .section-head { display: block; }
-    }
-    @media (max-width: 640px) {
-      .topbar-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .hero { padding-top: 28px; }
-      .stat-grid { grid-template-columns: 1fr; }
-      .step { grid-template-columns: 1fr; }
-      .step-num { min-height: 48px; }
-      .concept summary { grid-template-columns: 1fr; }
-    }
-    @media print {
-      .topbar, .hero-actions, .exercise-generator button, .select-row, .print-hide, .theme-toggle, .search-box { display: none !important; }
-      body { background: white; }
-      .hero-card, .card, .concept, .table-wrap, .stat-card { box-shadow: none; }
-      .module { grid-template-columns: 1fr; page-break-inside: avoid; }
-      .module-aside { background: #eee; color: #111; box-shadow: none; }
-      .module-aside p, .module-aside .pill { color: #333; }
-      .print-note { display: block; }
+    @media print{
+      body{background:#fff;color:#111}
+      .nav,.cta-row,.progress-card{display:none}
+      .card,.month,.table-wrap,details{box-shadow:none;background:#fff;color:#111;border-color:#ddd}
+      .card p,.card li,td,.subtitle,.small{color:#333}
+      section{break-inside:avoid}
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand"><div class="brand-mark">N</div><span>Guía Full Stack NIDO</span></div>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="#mapa">Mapa</a>
-        <a href="#conceptos">Conceptos</a>
-        <a href="#typescript">TypeScript</a>
-        <a href="#testing">Testing</a>
-        <a href="#seguridad">Seguridad</a>
-        <a href="#arquitectura">Arquitectura</a>
-        <a href="#ejercicios">Ejercicios</a>
-        <a href="#ruta">Ruta</a>
-        <a href="#glosario">Glosario</a>
-        <a href="#checklist">Checklist</a>
-      </nav>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema" title="Tema claro / oscuro">🌙</button>
-    </div>
-  </header>
-
-  <main>
-    <!-- ═══ HERO ═══ -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-card animate-in">
-          <span class="eyebrow">Roadmap 80/20 · JS · TS · React · Node · Prisma · Testing</span>
-          <h1>Fundamentos y programación para construir NIDO con <em>criterio senior</em></h1>
-          <p>Guía interactiva para dominar conceptos, practicar con ejercicios reales, y aprender las buenas prácticas que separan a un dev junior de un ingeniero senior. Incluye anti-patrones, TypeScript, testing, seguridad y arquitectura.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#ejercicios">Practicar ahora</a>
-            <a class="btn btn-ghost" href="#conceptos">Ver conceptos</a>
-            <a class="btn btn-ghost" href="#arquitectura">Arquitectura</a>
-            <button class="btn btn-ghost print-hide" onclick="window.print()">Imprimir PDF</button>
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Ruta intensiva · 12 meses · Ingeniería de Software</span>
+      <div class="hero-grid">
+        <div>
+          <h1>Plan de estudio para convertirte en un excelente Ingeniero de Software</h1>
+          <p class="lead">
+            Ruta construida a partir de materias de programación, algoritmos, software, bases de datos,
+            arquitectura, redes, seguridad e inteligencia artificial presentes en planes de Ingeniería de Sistemas
+            de universidades colombianas. El enfoque no es memorizar: es aprender, practicar, construir y publicar.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#ruta">Empezar la ruta</a>
+            <a class="btn" href="#conceptos">Ver conceptos</a>
+            <a class="btn" href="#prompts">Prompts para ChatGPT</a>
+            <a class="btn" href="#libros">Libros</a>
           </div>
         </div>
-        <aside class="stat-card animate-in delay-1">
-          <div>
-            <span class="eyebrow">Panel de avance</span>
-            <h2 style="font-family:var(--font-display);font-weight:400;letter-spacing:-.02em;line-height:1.05;font-size:28px;">Domina el 80% que usarás todos los días</h2>
-            <p style="color:var(--muted);margin:8px 0 14px;font-size:14px;">Marca el checklist al final para guardar tu progreso en este navegador.</p>
+        <aside class="hero-card">
+          <h3>Meta del año</h3>
+          <p class="small">
+            Terminar con fundamentos universitarios, criterio profesional y un portafolio real:
+            API, frontend, base de datos, autenticación, pruebas, seguridad, despliegue y arquitectura.
+          </p>
+          <div class="stats">
+            <div class="stat"><b>12</b><span>meses</span></div>
+            <div class="stat"><b>48</b><span>semanas</span></div>
+            <div class="stat"><b>6</b><span>proyectos</span></div>
           </div>
-          <div class="stat-grid">
-            <div class="stat"><strong>9</strong><span>Módulos principales</span></div>
-            <div class="stat"><strong>80+</strong><span>Conceptos explicados</span></div>
-            <div class="stat"><strong>60+</strong><span>Ejercicios prácticos</span></div>
-            <div class="stat"><strong>100%</strong><span>Offline / HTML estático</span></div>
-          </div>
-          <div>
-            <div style="display:flex;justify-content:space-between;margin-bottom:6px;color:var(--muted);font-weight:700;font-size:12px;">
-              <span>Progreso checklist</span><span id="progressText">0%</span>
-            </div>
-            <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+          <div class="note" style="margin-top:16px">
+            Tecnología base recomendada: <strong>JavaScript + TypeScript + Node.js + React + PostgreSQL</strong>.
+            Python se usa como apoyo para algoritmos, datos e IA.
           </div>
         </aside>
       </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="container">
+      <a href="#base">Base universitaria</a>
+      <a href="#mapa">Mapa de competencias</a>
+      <a href="#ruta">Ruta anual</a>
+      <a href="#conceptos">Conceptos</a>
+      <a href="#horario">Horario</a>
+      <a href="#prompts">Prompts</a>
+      <a href="#proyectos">Portafolio</a>
+      <a href="#libros">Libros</a>
+      <a href="#evaluacion">Evaluación</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="base">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>1. Materias tomadas como base</h2>
+            <p class="subtitle">
+              Estas son las áreas que más aportan directamente a programación e ingeniería de software.
+              No se copiaron semestres completos: se extrajo lo esencial para diseñar una ruta práctica de un año.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Universidad Nacional · Ingeniería de Sistemas y Computación</h3>
+            <p>Materias relacionadas seleccionadas:</p>
+            <span class="pill">Programación de computadores</span>
+            <span class="pill">Programación orientada a objetos</span>
+            <span class="pill">Estructuras de datos</span>
+            <span class="pill">Algoritmos</span>
+            <span class="pill">Lenguajes de programación</span>
+            <span class="pill">Bases de datos</span>
+            <span class="pill">Ingeniería de software I y II</span>
+            <span class="pill">Arquitectura de software</span>
+            <span class="pill">Patrones de software</span>
+            <span class="pill">Desarrollo móvil</span>
+            <span class="pill">Sistemas operativos</span>
+            <span class="pill">Redes de computadores</span>
+            <span class="pill">Criptografía y seguridad</span>
+            <span class="pill">Computación paralela y distribuida</span>
+            <span class="pill">Minería de datos</span>
+            <span class="pill">Aprendizaje de máquina</span>
+          </div>
+
+          <div class="card">
+            <h3>Universidad de los Andes · Ingeniería de Sistemas y Computación</h3>
+            <p>Materias relacionadas seleccionadas:</p>
+            <span class="pill blue">Introducción a la Programación</span>
+            <span class="pill blue">Estructuras de datos y algoritmos</span>
+            <span class="pill blue">Diseño y Programación Orientada a Objetos</span>
+            <span class="pill blue">Elementos Esenciales de Lenguajes de Programación</span>
+            <span class="pill blue">Diseño de Algoritmos</span>
+            <span class="pill blue">Fundamentos de Bases de Datos</span>
+            <span class="pill blue">Ingeniería de Software Moderna</span>
+            <span class="pill blue">Arquitecturas de Software Robusto</span>
+            <span class="pill blue">Diseño de Aplicaciones Complejas</span>
+            <span class="pill blue">Fábricas de Software Globales</span>
+            <span class="pill blue">Tecnologías e Infraestructura de Cómputo</span>
+            <span class="pill blue">Redes y Servicios de Comunicaciones</span>
+            <span class="pill blue">Ciberseguridad</span>
+            <span class="pill blue">Inteligencia Artificial</span>
+            <span class="pill blue">Aprendizaje de Máquina</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- ═══ MAPA ═══ -->
     <section id="mapa">
       <div class="container">
-        <div class="section-head"><div>
-          <h2>Mapa de aprendizaje</h2>
-          <p>La meta no es memorizar. Es entender el concepto, aplicar la sintaxis, y construir algo real con criterio.</p>
-        </div></div>
-        <div class="grid-3 animate-in">
-          <article class="card">
-            <h3>1. Concepto</h3>
-            <p>Entiende la idea universal: variable, función, API, estado, base de datos, error, tipo, test.</p>
-            <div class="pill-row"><span class="pill">Pensamiento lógico</span><span class="pill">Entrada · Proceso · Salida</span></div>
-          </article>
-          <article class="card">
-            <h3>2. Sintaxis + Tipos</h3>
-            <p>Escríbelo en TypeScript/JavaScript, React, Node o Prisma. La sintaxis cambia; el concepto permanece.</p>
-            <div class="pill-row"><span class="pill">TypeScript</span><span class="pill">React 18</span><span class="pill">Prisma</span></div>
-          </article>
-          <article class="card">
-            <h3>3. Proyecto real + calidad</h3>
-            <p>Aplícalo en NIDO con tests, validación, manejo de errores, seguridad, y code review.</p>
-            <div class="pill-row"><span class="pill">Testing</span><span class="pill">CI/CD</span><span class="pill">Clean Code</span></div>
-          </article>
+        <h2>2. Mapa de competencias del año</h2>
+        <p class="subtitle">
+          Para ser un ingeniero de software completo debes aprender a programar, diseñar, probar,
+          desplegar, asegurar y mantener sistemas reales.
+        </p>
+
+        <div class="grid grid-4" style="margin-top:18px">
+          <div class="card">
+            <h3>Fundamentos</h3>
+            <p>Variables, funciones, control de flujo, estructuras, memoria, complejidad, Git y terminal.</p>
+          </div>
+          <div class="card">
+            <h3>Construcción</h3>
+            <p>POO, TypeScript, APIs, frontend, bases de datos, autenticación, validaciones y testing.</p>
+          </div>
+          <div class="card">
+            <h3>Diseño profesional</h3>
+            <p>SOLID, patrones, arquitectura por capas, clean architecture, documentación y refactorización.</p>
+          </div>
+          <div class="card">
+            <h3>Escala y seguridad</h3>
+            <p>Redes, SO, Docker, CI/CD, seguridad web, logs, rendimiento, sistemas distribuidos e IA aplicada.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ CONCEPTOS ═══ -->
+    <section id="ruta">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>3. Ruta de estudio de 12 meses</h2>
+            <p class="subtitle">
+              Cada mes tiene conceptos, práctica, entregable y prompts para estudiar con ChatGPT.
+              Marca lo que completes; el avance queda guardado en este navegador.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="timeline">
+            <article class="month">
+              <div class="month-number"><b>01</b><span>Mes</span></div>
+              <div>
+                <h3>Fundamentos de programación y pensamiento computacional</h3>
+                <p><strong>Objetivo:</strong> escribir programas pequeños sin copiar, entendiendo datos, flujo y errores.</p>
+                <p><strong>Conceptos:</strong> variables, tipos de datos, operadores, condicionales, ciclos, funciones, arrays, objetos, módulos, entrada/salida, debugging, Git básico.</p>
+                <p><strong>Proyecto:</strong> calculadora de presupuesto personal + conversor de unidades + menú por consola.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m1c1">Hice 40 ejercicios básicos sin mirar solución.</label>
+                  <label class="check"><input type="checkbox" data-key="m1c2">Publiqué mi primer repositorio en GitHub.</label>
+                  <label class="check"><input type="checkbox" data-key="m1c3">Puedo explicar qué es una función y cuándo usarla.</label>
+                  <label class="check"><input type="checkbox" data-key="m1c4">Aprendí a leer errores y corregirlos paso a paso.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>02</b><span>Mes</span></div>
+              <div>
+                <h3>JavaScript profundo + programación orientada a objetos</h3>
+                <p><strong>Objetivo:</strong> dominar objetos, clases, módulos, asincronía y estructura de código.</p>
+                <p><strong>Conceptos:</strong> scope, closures, this, prototypes, clases, encapsulación, herencia, composición, módulos ES, async/await, promesas, manejo de errores.</p>
+                <p><strong>Proyecto:</strong> gestor de tareas con usuarios, categorías, filtros y persistencia local.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m2c1">Creé clases y módulos reutilizables.</label>
+                  <label class="check"><input type="checkbox" data-key="m2c2">Entendí promesas y async/await con ejemplos propios.</label>
+                  <label class="check"><input type="checkbox" data-key="m2c3">Refactoricé código repetido en funciones limpias.</label>
+                  <label class="check"><input type="checkbox" data-key="m2c4">Documenté el proyecto en README.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>03</b><span>Mes</span></div>
+              <div>
+                <h3>Estructuras de datos y algoritmos</h3>
+                <p><strong>Objetivo:</strong> resolver problemas pensando en eficiencia, no solo en que funcione.</p>
+                <p><strong>Conceptos:</strong> Big O, arrays, listas, pilas, colas, hash maps, sets, árboles, grafos, recursión, búsqueda, ordenamiento, two pointers, sliding window.</p>
+                <p><strong>Proyecto:</strong> biblioteca de estructuras de datos + 60 problemas resueltos y explicados.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m3c1">Sé estimar complejidad temporal y espacial.</label>
+                  <label class="check"><input type="checkbox" data-key="m3c2">Implementé stack, queue, linked list, tree y graph.</label>
+                  <label class="check"><input type="checkbox" data-key="m3c3">Resolví 60 problemas con explicación.</label>
+                  <label class="check"><input type="checkbox" data-key="m3c4">Aprendí cuándo usar hash map, árbol o grafo.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>04</b><span>Mes</span></div>
+              <div>
+                <h3>Bases de datos, SQL y modelado</h3>
+                <p><strong>Objetivo:</strong> diseñar datos correctamente y consultar información con criterio.</p>
+                <p><strong>Conceptos:</strong> modelo entidad-relación, normalización, claves, relaciones, SQL, joins, índices, transacciones, vistas, triggers básicos, PostgreSQL, seguridad de datos.</p>
+                <p><strong>Proyecto:</strong> base de datos para propiedades/arriendos con usuarios, favoritos, reservas y pagos simulados.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m4c1">Diseñé un modelo ER con relaciones claras.</label>
+                  <label class="check"><input type="checkbox" data-key="m4c2">Hice consultas con JOIN, GROUP BY y subconsultas.</label>
+                  <label class="check"><input type="checkbox" data-key="m4c3">Entendí índices y transacciones.</label>
+                  <label class="check"><input type="checkbox" data-key="m4c4">Migré el modelo a PostgreSQL.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>05</b><span>Mes</span></div>
+              <div>
+                <h3>Backend profesional con Node.js, APIs y autenticación</h3>
+                <p><strong>Objetivo:</strong> construir servicios seguros, mantenibles y conectados a base de datos.</p>
+                <p><strong>Conceptos:</strong> HTTP, REST, Express/NestJS, controladores, servicios, repositorios, validación, JWT, cookies, hashing, middlewares, manejo global de errores, paginación, filtros.</p>
+                <p><strong>Proyecto:</strong> API de marketplace de propiedades con auth, CRUD, filtros, roles y documentación.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m5c1">Construí una API REST con rutas limpias.</label>
+                  <label class="check"><input type="checkbox" data-key="m5c2">Implementé autenticación y roles.</label>
+                  <label class="check"><input type="checkbox" data-key="m5c3">Validé datos de entrada y errores.</label>
+                  <label class="check"><input type="checkbox" data-key="m5c4">Documenté endpoints con ejemplos.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>06</b><span>Mes</span></div>
+              <div>
+                <h3>Frontend moderno con React y TypeScript</h3>
+                <p><strong>Objetivo:</strong> crear interfaces limpias, rápidas, responsivas y conectadas a una API.</p>
+                <p><strong>Conceptos:</strong> componentes, props, estado, hooks, contexto, rutas, formularios, validación, consumo API, loading/error states, accesibilidad, responsive, diseño de componentes.</p>
+                <p><strong>Proyecto:</strong> frontend de propiedades con búsqueda, filtros, detalle, login y panel básico.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m6c1">Creé componentes reutilizables con TypeScript.</label>
+                  <label class="check"><input type="checkbox" data-key="m6c2">Conecté frontend con API real.</label>
+                  <label class="check"><input type="checkbox" data-key="m6c3">Manejé estados de carga, error y vacío.</label>
+                  <label class="check"><input type="checkbox" data-key="m6c4">Hice la app responsive y ordenada.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>07</b><span>Mes</span></div>
+              <div>
+                <h3>Ingeniería de software, testing y calidad</h3>
+                <p><strong>Objetivo:</strong> pasar de “programar” a construir software sostenible.</p>
+                <p><strong>Conceptos:</strong> requisitos, historias de usuario, casos de uso, UML básico, pruebas unitarias, integración, E2E, TDD básico, mocks, cobertura, refactor, code review, deuda técnica.</p>
+                <p><strong>Proyecto:</strong> suite de pruebas para backend y frontend + tablero de issues y documentación técnica.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m7c1">Escribí pruebas unitarias e integración.</label>
+                  <label class="check"><input type="checkbox" data-key="m7c2">Documenté historias de usuario y criterios de aceptación.</label>
+                  <label class="check"><input type="checkbox" data-key="m7c3">Hice refactor sin romper funcionalidades.</label>
+                  <label class="check"><input type="checkbox" data-key="m7c4">Practiqué code review con checklist.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>08</b><span>Mes</span></div>
+              <div>
+                <h3>Arquitectura de software y patrones</h3>
+                <p><strong>Objetivo:</strong> diseñar sistemas que crezcan sin volverse desordenados.</p>
+                <p><strong>Conceptos:</strong> SOLID, clean architecture, capas, MVC, hexagonal, patrones creacionales/estructurales/comportamiento, DTO, repositorios, servicios, eventos, documentación C4.</p>
+                <p><strong>Proyecto:</strong> rediseñar la API en arquitectura limpia + diagrama C4 + decisiones arquitectónicas ADR.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m8c1">Apliqué SOLID en código real.</label>
+                  <label class="check"><input type="checkbox" data-key="m8c2">Implementé repositorios, servicios y casos de uso.</label>
+                  <label class="check"><input type="checkbox" data-key="m8c3">Usé patrones donde sí aportan valor.</label>
+                  <label class="check"><input type="checkbox" data-key="m8c4">Hice diagramas C4 y ADR.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>09</b><span>Mes</span></div>
+              <div>
+                <h3>Seguridad, redes y fundamentos de infraestructura</h3>
+                <p><strong>Objetivo:</strong> entender cómo viaja la información y cómo proteger una app web.</p>
+                <p><strong>Conceptos:</strong> DNS, TCP/IP, HTTP/HTTPS, CORS, cookies seguras, OWASP Top 10, XSS, CSRF, SQL injection, rate limit, logging, backups, variables de entorno, permisos.</p>
+                <p><strong>Proyecto:</strong> auditoría de seguridad de tu app + checklist OWASP + mejoras reales.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m9c1">Expliqué una petición HTTP de punta a punta.</label>
+                  <label class="check"><input type="checkbox" data-key="m9c2">Corregí riesgos XSS, CSRF o SQL injection.</label>
+                  <label class="check"><input type="checkbox" data-key="m9c3">Implementé rate limit y logs.</label>
+                  <label class="check"><input type="checkbox" data-key="m9c4">Documenté políticas de seguridad.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>10</b><span>Mes</span></div>
+              <div>
+                <h3>Sistemas operativos, Docker, despliegue y CI/CD</h3>
+                <p><strong>Objetivo:</strong> ejecutar, desplegar y monitorear software como en un entorno profesional.</p>
+                <p><strong>Conceptos:</strong> procesos, memoria, concurrencia, archivos, Linux, terminal, Docker, contenedores, variables de entorno, GitHub Actions, despliegue, monitoreo, logs.</p>
+                <p><strong>Proyecto:</strong> dockerizar frontend/backend/base de datos + pipeline CI/CD + despliegue en la nube.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m10c1">Uso terminal y Linux con seguridad.</label>
+                  <label class="check"><input type="checkbox" data-key="m10c2">Dockericé mi aplicación completa.</label>
+                  <label class="check"><input type="checkbox" data-key="m10c3">Configuré CI/CD con pruebas automáticas.</label>
+                  <label class="check"><input type="checkbox" data-key="m10c4">Publiqué una versión estable.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>11</b><span>Mes</span></div>
+              <div>
+                <h3>Datos, inteligencia artificial y aprendizaje de máquina aplicado</h3>
+                <p><strong>Objetivo:</strong> usar datos para construir funciones inteligentes sin perder fundamentos.</p>
+                <p><strong>Conceptos:</strong> Python básico para datos, pandas, limpieza de datos, regresión, clasificación, métricas, embeddings, recomendadores, APIs de IA, límites éticos, privacidad.</p>
+                <p><strong>Proyecto:</strong> recomendador simple de propiedades + dashboard de datos + explicación de métricas.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m11c1">Analicé un dataset con pandas.</label>
+                  <label class="check"><input type="checkbox" data-key="m11c2">Entrené un modelo simple y medí resultados.</label>
+                  <label class="check"><input type="checkbox" data-key="m11c3">Integré una función inteligente en la app.</label>
+                  <label class="check"><input type="checkbox" data-key="m11c4">Documenté riesgos y límites de la IA.</label>
+                </div>
+              </div>
+            </article>
+
+            <article class="month">
+              <div class="month-number"><b>12</b><span>Mes</span></div>
+              <div>
+                <h3>Proyecto final: sistema completo de nivel portafolio</h3>
+                <p><strong>Objetivo:</strong> demostrar que puedes diseñar, construir, probar, desplegar y explicar un producto real.</p>
+                <p><strong>Conceptos:</strong> arquitectura, backlog, releases, métricas, documentación, observabilidad, rendimiento, seguridad, experiencia de usuario, presentación técnica.</p>
+                <p><strong>Proyecto:</strong> plataforma full-stack publicada con README profesional, video demo, diagramas, pruebas, seguridad y mejoras pendientes.</p>
+                <div class="checklist">
+                  <label class="check"><input type="checkbox" data-key="m12c1">Publiqué la app final en producción.</label>
+                  <label class="check"><input type="checkbox" data-key="m12c2">Incluí pruebas, documentación y diagramas.</label>
+                  <label class="check"><input type="checkbox" data-key="m12c3">Grabé video demo de 3 a 5 minutos.</label>
+                  <label class="check"><input type="checkbox" data-key="m12c4">Puedo defender decisiones técnicas.</label>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="card progress-card">
+            <h3>Avance del plan</h3>
+            <p class="small">Marca cada actividad completada. El progreso se guarda localmente en tu navegador.</p>
+            <div class="bar"><span id="progressBar"></span></div>
+            <p><strong id="progressText">0%</strong> completado</p>
+            <p class="small" id="progressCount">0 de 48 actividades</p>
+            <button class="btn" id="resetBtn" type="button">Reiniciar avance</button>
+            <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+            <h3>Regla de oro</h3>
+            <p class="small">
+              Cada tema debe pasar por 4 pasos:
+              <br><span class="kbd">Entender</span> →
+              <span class="kbd">Implementar</span> →
+              <span class="kbd">Romper</span> →
+              <span class="kbd">Explicar</span>
+            </p>
+            <div class="danger">
+              No avances a un tema nuevo si no puedes explicar el anterior con tus propias palabras y con código.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section id="conceptos">
       <div class="container">
-        <div class="section-head"><div>
-          <h2>Conceptos por módulo</h2>
-          <p>Cada concepto incluye explicación, ejemplo con buenas prácticas, anti-patrón vs patrón correcto, y ejercicio. Abre cada tarjeta y practica.</p>
-        </div></div>
-
-        <div class="search-box print-hide">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" id="conceptSearch" placeholder="Buscar concepto… (ej: useState, middleware, prisma)" oninput="filterConcepts(this.value)">
-        </div>
-
-        <!-- ─── MODULE 1: JavaScript ─── -->
-        <div class="module" id="javascript" data-module>
-          <aside class="module-aside">
-            <h3>1. JavaScript esencial</h3>
-            <p>Todo el stack vive sobre JS. Domina estos fundamentos y el resto se construye encima.</p>
-            <div class="pill-row"><span class="pill">Esencial</span><span class="pill">Lógica</span><span class="pill">NIDO diario</span></div>
-          </aside>
-          <div class="concept-list">
-
-            <details class="concept" data-concept="const let variables declaracion" open>
-              <summary><h4>const / let</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> <code>const</code> para valores que no se reasignan, <code>let</code> para los que sí. Nunca uses <code>var</code> — tiene hoisting y scope impredecible que genera bugs sutiles.</p>
-                <div class="comparison-grid">
-                  <div>
-                    <span class="bad-label">✗ Anti-patrón</span>
-                    <div class="code-block"><pre><span class="cm">// var tiene hoisting y scope de función</span>
-<span class="kw">var</span> price = <span class="num">1500000</span>;
-<span class="kw">var</span> price = <span class="num">2000000</span>; <span class="cm">// sin error — redeclaración</span>
-
-<span class="cm">// let para valores que no cambian</span>
-<span class="kw">let</span> API_URL = <span class="str">"https://api.nido.co"</span>;</pre></div>
-                  </div>
-                  <div>
-                    <span class="good-label">✓ Buena práctica</span>
-                    <div class="code-block"><pre><span class="cm">// const por defecto — solo let cuando mutes</span>
-<span class="kw">const</span> MAX_PRICE = <span class="num">50_000_000</span>;
-<span class="kw">const</span> API_URL = <span class="str">"https://api.nido.co"</span>;
-
-<span class="kw">let</span> currentPage = <span class="num">1</span>;
-currentPage += <span class="num">1</span>; <span class="cm">// reasignación válida</span></pre></div>
-                  </div>
-                </div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Usa <code>const</code> por defecto. Solo cambia a <code>let</code> cuando necesites reasignar. Esto comunica intención al equipo y evita mutaciones accidentales. Usa separador de miles <code>_</code> para números grandes.</div>
-                <div class="mini"><strong>Mini ejercicio:</strong> Declara <code>MAX_RESULTS</code> (constante), <code>currentPage</code> (mutable) y <code>BASE_URL</code> (constante). Intenta reasignar <code>MAX_RESULTS</code> y observa el error.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="arrow functions funciones flecha callback">
-              <summary><h4>Arrow functions</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> forma moderna de funciones. Se usa en callbacks, eventos, <code>map</code>, <code>filter</code> y componentes React. No tiene su propio <code>this</code>.</p>
-                <div class="comparison-grid">
-                  <div>
-                    <span class="bad-label">✗ Anti-patrón</span>
-                    <div class="code-block"><pre><span class="cm">// Función sin tipo de retorno claro</span>
-<span class="kw">const</span> <span class="fn">calc</span> = (a, b, c) => {
-  <span class="kw">return</span> a * b + c - a / b;
-};
-
-<span class="cm">// Nombre no descriptivo</span>
-<span class="kw">const</span> <span class="fn">fn1</span> = (x) => x * <span class="num">1.19</span>;</pre></div>
-                  </div>
-                  <div>
-                    <span class="good-label">✓ Buena práctica</span>
-                    <div class="code-block"><pre><span class="cm">// Nombre descriptivo y una sola responsabilidad</span>
-<span class="kw">const</span> <span class="fn">addIVA</span> = (price) => price * <span class="num">1.19</span>;
-
-<span class="kw">const</span> <span class="fn">formatCOP</span> = (price) =>
-  <span class="str">`$${price.<span class="fn">toLocaleString</span>(<span class="str">"es-CO"</span>)}`</span>;
-
-<span class="cm">// Explícito: qué entra y qué sale</span>
-<span class="kw">const</span> <span class="fn">getFullName</span> = (first, last) =>
-  <span class="str">`${first} ${last}`</span>;</pre></div>
-                  </div>
-                </div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Una función debe hacer UNA cosa. Si necesitas scroll para leerla, es hora de refactorizar. El nombre debe ser un verbo que describa su acción: <code>formatPrice</code>, <code>validateEmail</code>, <code>calculateTotal</code>.</div>
-                <div class="mini"><strong>Mini ejercicio:</strong> crea <code>addIVA(price)</code>, <code>formatCOP(price)</code> y <code>getPriceWithTax(price)</code> que componga las dos anteriores.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="async await try catch promesas asincronía error">
-              <summary><h4>Async/Await + Error handling</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> maneja operaciones que tardan (API, BD). <code>await</code> espera el resultado y <code>try/catch</code> previene que el programa se rompa.</p>
-                <div class="comparison-grid">
-                  <div>
-                    <span class="bad-label">✗ Anti-patrón</span>
-                    <div class="code-block"><pre><span class="cm">// Sin manejo de errores</span>
-<span class="kw">const</span> <span class="fn">getProperties</span> = <span class="kw">async</span> () => {
-  <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">"/api/properties"</span>);
-  <span class="kw">return</span> res.<span class="fn">json</span>(); <span class="cm">// si falla → app rota</span>
-};</pre></div>
-                  </div>
-                  <div>
-                    <span class="good-label">✓ Buena práctica</span>
-                    <div class="code-block"><pre><span class="kw">const</span> <span class="fn">getProperties</span> = <span class="kw">async</span> (cityId) => {
-  <span class="kw">try</span> {
-    <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(
-      <span class="str">`/api/properties?city=${cityId}`</span>
-    );
-    <span class="kw">if</span> (!res.ok) {
-      <span class="kw">throw new</span> <span class="fn">Error</span>(<span class="str">`HTTP ${res.status}`</span>);
-    }
-    <span class="kw">return await</span> res.<span class="fn">json</span>();
-  } <span class="kw">catch</span> (error) {
-    console.<span class="fn">error</span>(<span class="str">"Fetch failed:"</span>, error);
-    <span class="kw">return</span> [];
-  }
-};</pre></div>
-                  </div>
-                </div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Siempre verifica <code>res.ok</code> — un status 404 o 500 no lanza excepción por sí solo. Retorna un valor seguro en el <code>catch</code> (array vacío, null, objeto con error) para que la UI no se rompa.</div>
-                <div class="mini"><strong>Mini ejercicio:</strong> escribe <code>getUsers()</code> que consulte <code>/api/users</code>, valide el status, retorne <code>[]</code> si falla, y logee el error con contexto.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="destructuring desestructuración objetos arrays">
-              <summary><h4>Destructuring</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> extrae valores de objetos o arrays en una línea. En React es fundamental para leer props, state y respuestas de API.</p>
-                <div class="code-block"><pre><span class="cm">// Objetos</span>
-<span class="kw">const</span> { title, city, price } = property;
-
-<span class="cm">// Con valores por defecto — defensivo</span>
-<span class="kw">const</span> { title, city = <span class="str">"Sin ciudad"</span>, price = <span class="num">0</span> } = property;
-
-<span class="cm">// Renombrar variables</span>
-<span class="kw">const</span> { title: propertyTitle, landlord: { name: ownerName } } = property;
-
-<span class="cm">// Arrays</span>
-<span class="kw">const</span> [first, second, ...rest] = results;</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Usa valores por defecto en destructuring para datos que vienen del servidor — nunca confíes en que un campo existirá. Destructuring anidado profundo reduce legibilidad; extrae en pasos.</div>
-                <div class="mini"><strong>Mini ejercicio:</strong> de un objeto <code>user</code> extrae <code>name</code>, <code>email</code>, y <code>role</code> con default <code>"viewer"</code>.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="map filter reduce array métodos lista">
-              <summary><h4>.map(), .filter(), .reduce()</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> <code>map</code> transforma cada elemento, <code>filter</code> selecciona, <code>reduce</code> acumula. Son inmutables: nunca modifican el array original.</p>
-                <div class="code-block"><pre><span class="kw">const</span> properties = [
-  { city: <span class="str">"Cali"</span>, price: <span class="num">900_000</span>, available: <span class="kw">true</span> },
-  { city: <span class="str">"Bogotá"</span>, price: <span class="num">2_000_000</span>, available: <span class="kw">false</span> },
-  { city: <span class="str">"Cali"</span>, price: <span class="num">1_300_000</span>, available: <span class="kw">true</span> },
-];
-
-<span class="cm">// filter → solo las que cumplen condición</span>
-<span class="kw">const</span> available = properties.<span class="fn">filter</span>((p) => p.available);
-
-<span class="cm">// map → transformar cada elemento</span>
-<span class="kw">const</span> titles = properties.<span class="fn">map</span>((p) => p.city);
-
-<span class="cm">// Encadenar — filter + map</span>
-<span class="kw">const</span> caliPrices = properties
-  .<span class="fn">filter</span>((p) => p.city === <span class="str">"Cali"</span> && p.available)
-  .<span class="fn">map</span>((p) => <span class="fn">formatCOP</span>(p.price));
-
-<span class="cm">// reduce — calcular total</span>
-<span class="kw">const</span> totalPrice = properties.<span class="fn">reduce</span>(
-  (sum, p) => sum + p.price, <span class="num">0</span>
-);</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Nunca mutes el array original con <code>push</code>, <code>splice</code>, o <code>sort()</code> directo. Usa <code>[...arr].sort()</code> o <code>toSorted()</code>. Encadenar filter+map es más legible que un <code>reduce</code> complejo. Si el reduce tiene más de 3 líneas, probablemente necesitas refactorizar.</div>
-                <div class="mini"><strong>Mini ejercicio:</strong> filtra propiedades de Cali con precio &lt; $1.500.000, muestra solo título y precio formateado.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="spread operator copia inmutabilidad">
-              <summary><h4>Spread / Rest operator</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> <code>...</code> copia arrays u objetos sin mutarlos. En React es obligatorio para actualizar estado de forma segura.</p>
-                <div class="code-block"><pre><span class="cm">// Copiar y modificar objeto (inmutable)</span>
-<span class="kw">const</span> updated = { ...property, price: <span class="num">1_800_000</span> };
-
-<span class="cm">// Agregar a array sin mutar</span>
-<span class="kw">const</span> withNew = [...properties, newProperty];
-
-<span class="cm">// Eliminar de array sin mutar</span>
-<span class="kw">const</span> without = properties.<span class="fn">filter</span>((p) => p.id !== removeId);
-
-<span class="cm">// Rest en parámetros — recoger "el resto"</span>
-<span class="kw">const</span> <span class="fn">logFirst</span> = (first, ...others) => {
-  console.<span class="fn">log</span>(first, others.length);
-};</pre></div>
-                <div class="danger-tip"><strong>Cuidado:</strong> Spread hace copia <em>superficial</em>. Si tienes objetos anidados, necesitas copiar cada nivel o usar <code>structuredClone()</code> para copia profunda.</div>
-                <div class="mini"><strong>Mini ejercicio:</strong> copia un objeto <code>property</code> cambiando solo el precio. Luego agrega una nueva propiedad a un array sin mutar el original.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="optional chaining nullish coalescing null undefined seguro">
-              <summary><h4>Optional chaining ?. y ??</h4><span class="level recom">Recomendado</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> <code>?.</code> evita errores al acceder propiedades que podrían ser null. <code>??</code> da valor por defecto solo para null/undefined (no para 0 o "").</p>
-                <div class="comparison-grid">
-                  <div>
-                    <span class="bad-label">✗ Anti-patrón</span>
-                    <div class="code-block"><pre><span class="cm">// || trata 0, "" y false como falsy</span>
-<span class="kw">const</span> rooms = property.bedrooms || <span class="num">1</span>;
-<span class="cm">// Si bedrooms es 0 → devuelve 1 (bug)</span>
-
-<span class="cm">// Sin optional chaining</span>
-<span class="kw">const</span> name = property && property.landlord
-  && property.landlord.name;</pre></div>
-                  </div>
-                  <div>
-                    <span class="good-label">✓ Buena práctica</span>
-                    <div class="code-block"><pre><span class="cm">// ?? solo para null/undefined</span>
-<span class="kw">const</span> rooms = property.bedrooms ?? <span class="num">1</span>;
-<span class="cm">// Si bedrooms es 0 → devuelve 0 ✓</span>
-
-<span class="cm">// Acceso seguro anidado</span>
-<span class="kw">const</span> name = property?.landlord?.name
-  ?? <span class="str">"Sin propietario"</span>;</pre></div>
-                  </div>
-                </div>
-                <div class="mini"><strong>Mini ejercicio:</strong> muestra el nombre del usuario si existe, si no muestra "Invitado". Usa <code>??</code> para un precio que podría ser 0.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="import export módulos esm">
-              <summary><h4>import / export (ESM)</h4><span class="level recom">Recomendado</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> ES Modules permiten separar tu código en archivos. Un componente, hook, servicio o utilidad debe poder exportarse e importarse donde se necesite.</p>
-                <div class="code-block"><pre><span class="cm">// utils/formatPrice.ts — named export</span>
-<span class="kw">export const</span> <span class="fn">formatPrice</span> = (price: <span class="tp">number</span>): <span class="tp">string</span> =>
-  <span class="str">`$${price.toLocaleString("es-CO")}`</span>;
-
-<span class="cm">// PropertyCard.tsx — import nombrado</span>
-<span class="kw">import</span> { formatPrice } <span class="kw">from</span> <span class="str">"../utils/formatPrice"</span>;
-
-<span class="cm">// Barril de exportaciones (index.ts)</span>
-<span class="kw">export</span> { formatPrice } <span class="kw">from</span> <span class="str">"./formatPrice"</span>;
-<span class="kw">export</span> { formatDate } <span class="kw">from</span> <span class="str">"./formatDate"</span>;</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Prefiere named exports sobre default exports — facilita el refactoring y el auto-import. Usa barrel files (<code>index.ts</code>) para agrupar exportaciones de un directorio. Evita barrel files en directorios muy grandes — puede afectar tree-shaking.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="closures event loop asincronía single thread">
-              <summary><h4>Closures y Event Loop</h4><span class="level avanzado">Avanzado</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> un closure es una función que "recuerda" su contexto externo. El event loop explica cómo JS maneja asincronía siendo single-thread. Son la base mental para hooks, timers, promesas y Node.</p>
-                <div class="code-block"><pre><span class="cm">// Closure: la función interna recuerda count</span>
-<span class="kw">const</span> <span class="fn">createCounter</span> = (initial = <span class="num">0</span>) => {
-  <span class="kw">let</span> count = initial;
-  <span class="kw">return</span> {
-    <span class="fn">increment</span>: () => ++count,
-    <span class="fn">decrement</span>: () => --count,
-    <span class="fn">getCount</span>: () => count,
-  };
-};
-
-<span class="kw">const</span> counter = <span class="fn">createCounter</span>(<span class="num">10</span>);
-counter.<span class="fn">increment</span>(); <span class="cm">// 11</span>
-counter.<span class="fn">getCount</span>(); <span class="cm">// 11</span>
-
-<span class="cm">// Event loop: microtasks vs macrotasks</span>
-console.<span class="fn">log</span>(<span class="str">"1"</span>);                    <span class="cm">// sync</span>
-<span class="fn">setTimeout</span>(() => console.<span class="fn">log</span>(<span class="str">"2"</span>), <span class="num">0</span>); <span class="cm">// macro</span>
-<span class="tp">Promise</span>.<span class="fn">resolve</span>().<span class="fn">then</span>(() =>
-  console.<span class="fn">log</span>(<span class="str">"3"</span>));                   <span class="cm">// micro</span>
-<span class="cm">// Output: 1, 3, 2</span></pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Los closures son la base de useState en React — cada render "captura" su propio estado. Entender el event loop te permite debuggear race conditions y entender por qué setTimeout(0) no ejecuta inmediatamente.</div>
-              </div>
-            </details>
-          </div>
-        </div>
-
-        <!-- ─── MODULE 2: React ─── -->
-        <div class="module" id="react" data-module>
-          <aside class="module-aside">
-            <h3>2. React 18+</h3>
-            <p>Piensa en componentes como piezas LEGO. Cada tarjeta, filtro, modal o formulario debe tener una responsabilidad clara.</p>
-            <div class="pill-row"><span class="pill">Componentes</span><span class="pill">Estado</span><span class="pill">Hooks</span></div>
-          </aside>
-          <div class="concept-list">
-
-            <details class="concept" data-concept="componente funcional jsx tsx react" open>
-              <summary><h4>Componente funcional + JSX</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> un componente es una función que retorna JSX. Con TypeScript, tipas las props para auto-completado y seguridad.</p>
-                <div class="comparison-grid">
-                  <div>
-                    <span class="bad-label">✗ Anti-patrón</span>
-                    <div class="code-block"><pre><span class="cm">// Props sin tipar, nombre genérico</span>
-<span class="kw">function</span> <span class="fn">Card</span>(props) {
-  <span class="kw">return</span> (
-    &lt;div&gt;
-      &lt;h3&gt;{props.data.title}&lt;/h3&gt;
-      &lt;p&gt;{props.data.city}&lt;/p&gt;
-    &lt;/div&gt;
-  );
-}</pre></div>
-                  </div>
-                  <div>
-                    <span class="good-label">✓ Buena práctica</span>
-                    <div class="code-block"><pre><span class="tp">interface</span> PropertyCardProps {
-  title: <span class="tp">string</span>;
-  city: <span class="tp">string</span>;
-  price: <span class="tp">number</span>;
-}
-
-<span class="kw">function</span> <span class="fn">PropertyCard</span>({
-  title, city, price
-}: <span class="tp">PropertyCardProps</span>) {
-  <span class="kw">return</span> (
-    &lt;article className=<span class="str">"card"</span>&gt;
-      &lt;h3&gt;{title}&lt;/h3&gt;
-      &lt;p&gt;{city} · {<span class="fn">formatCOP</span>(price)}&lt;/p&gt;
-    &lt;/article&gt;
-  );
-}</pre></div>
-                  </div>
-                </div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Usa destructuring directo en los parámetros. Tipa las props con interface. Usa <code>article</code>, <code>section</code>, <code>nav</code> en vez de <code>div</code> para HTML semántico.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="usestate estado local react hook">
-              <summary><h4>useState</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> guarda estado local. Cuando el estado cambia, React re-renderiza el componente.</p>
-                <div class="code-block"><pre><span class="cm">// Estado simple</span>
-<span class="kw">const</span> [isOpen, setIsOpen] = <span class="fn">useState</span>(<span class="kw">false</span>);
-
-<span class="cm">// Estado de objeto — SIEMPRE con spread</span>
-<span class="kw">const</span> [filters, setFilters] = <span class="fn">useState</span>&lt;<span class="tp">Filters</span>&gt;({
-  city: <span class="str">""</span>,
-  maxPrice: <span class="kw">null</span>,
-  bedrooms: <span class="kw">null</span>,
-});
-
-<span class="cm">// Actualizar con función — usa prev, nunca el estado actual</span>
-<span class="kw">const</span> <span class="fn">updateCity</span> = (city: <span class="tp">string</span>) => {
-  <span class="fn">setFilters</span>((prev) => ({ ...prev, city }));
-};</pre></div>
-                <div class="danger-tip"><strong>Cuidado:</strong> <code>setState</code> es asíncrono. No leas el estado justo después de setearlo — usa la forma funcional <code>setState(prev => ...)</code> para actualizar basado en el valor anterior.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="useeffect efecto secundario ciclo vida lifecycle">
-              <summary><h4>useEffect</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> ejecuta efectos secundarios: cargar datos, suscripciones, timers. El array de dependencias controla cuándo corre.</p>
-                <div class="comparison-grid">
-                  <div>
-                    <span class="bad-label">✗ Anti-patrón</span>
-                    <div class="code-block"><pre><span class="cm">// Sin cleanup — memory leak</span>
-<span class="fn">useEffect</span>(() => {
-  <span class="kw">const</span> id = <span class="fn">setInterval</span>(poll, <span class="num">5000</span>);
-  <span class="cm">// falta return () => clearInterval(id)</span>
-}, []);
-
-<span class="cm">// Dependencia faltante</span>
-<span class="fn">useEffect</span>(() => {
-  <span class="fn">fetchData</span>(userId);
-}, []); <span class="cm">// userId falta — bug sutil</span></pre></div>
-                  </div>
-                  <div>
-                    <span class="good-label">✓ Buena práctica</span>
-                    <div class="code-block"><pre><span class="fn">useEffect</span>(() => {
-  <span class="kw">const</span> controller = <span class="kw">new</span> <span class="fn">AbortController</span>();
-
-  <span class="kw">const</span> <span class="fn">loadProperties</span> = <span class="kw">async</span> () => {
-    <span class="kw">try</span> {
-      <span class="kw">const</span> data = <span class="kw">await</span> <span class="fn">fetchProperties</span>(
-        city, { signal: controller.signal }
-      );
-      <span class="fn">setProperties</span>(data);
-    } <span class="kw">catch</span> (err) {
-      <span class="kw">if</span> (err.name !== <span class="str">"AbortError"</span>) {
-        <span class="fn">setError</span>(err.message);
-      }
-    }
-  };
-
-  <span class="fn">loadProperties</span>();
-  <span class="kw">return</span> () => controller.<span class="fn">abort</span>();
-}, [city]); <span class="cm">// dependencia correcta</span></pre></div>
-                  </div>
-                </div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Siempre incluye cleanup con AbortController para peticiones. Usa el linter de exhaustive-deps. Si tu useEffect es complejo, probablemente necesitas un custom hook.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="renderizado condicional loading error empty state">
-              <summary><h4>Renderizado condicional</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> muestra UI diferente según el estado: loading, error, vacío, datos. Es el patrón más usado en React.</p>
-                <div class="code-block"><pre><span class="kw">function</span> <span class="fn">PropertyList</span>({ city }: { city: <span class="tp">string</span> }) {
-  <span class="kw">const</span> { properties, isLoading, error } = <span class="fn">useProperties</span>(city);
-
-  <span class="kw">if</span> (isLoading) <span class="kw">return</span> &lt;<span class="fn">Skeleton</span> count={<span class="num">6</span>} /&gt;;
-  <span class="kw">if</span> (error) <span class="kw">return</span> &lt;<span class="fn">ErrorBanner</span> message={error} /&gt;;
-  <span class="kw">if</span> (properties.length === <span class="num">0</span>) <span class="kw">return</span> &lt;<span class="fn">EmptyState</span> /&gt;;
-
-  <span class="kw">return</span> (
-    &lt;section className=<span class="str">"grid"</span>&gt;
-      {properties.<span class="fn">map</span>((p) => (
-        &lt;<span class="fn">PropertyCard</span> key={p.id} {...p} /&gt;
-      ))}
-    &lt;/section&gt;
-  );
-}</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Usa early returns (guard clauses) en vez de ternarios anidados — es mucho más legible. Siempre maneja los 4 estados: loading, error, vacío y datos.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="custom hook reutilizar lógica hook personalizado">
-              <summary><h4>Custom Hooks</h4><span class="level recom">Recomendado</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> funciones que empiezan con <code>use</code> y encapsulan lógica reutilizable. Separan la lógica de la UI.</p>
-                <div class="code-block"><pre><span class="cm">// hooks/useProperties.ts</span>
-<span class="kw">export function</span> <span class="fn">useProperties</span>(city: <span class="tp">string</span>) {
-  <span class="kw">const</span> [properties, setProperties] = <span class="fn">useState</span>&lt;<span class="tp">Property</span>[]&gt;([]);
-  <span class="kw">const</span> [isLoading, setIsLoading] = <span class="fn">useState</span>(<span class="kw">true</span>);
-  <span class="kw">const</span> [error, setError] = <span class="fn">useState</span>&lt;<span class="tp">string</span> | <span class="kw">null</span>&gt;(<span class="kw">null</span>);
-
-  <span class="fn">useEffect</span>(() => {
-    <span class="kw">const</span> controller = <span class="kw">new</span> <span class="fn">AbortController</span>();
-    <span class="fn">setIsLoading</span>(<span class="kw">true</span>);
-    <span class="fn">setError</span>(<span class="kw">null</span>);
-
-    <span class="fn">propertyService</span>.<span class="fn">getByCity</span>(city, controller.signal)
-      .<span class="fn">then</span>(setProperties)
-      .<span class="fn">catch</span>((err) => {
-        <span class="kw">if</span> (err.name !== <span class="str">"AbortError"</span>) <span class="fn">setError</span>(err.message);
-      })
-      .<span class="fn">finally</span>(() => <span class="fn">setIsLoading</span>(<span class="kw">false</span>));
-
-    <span class="kw">return</span> () => controller.<span class="fn">abort</span>();
-  }, [city]);
-
-  <span class="kw">return</span> { properties, isLoading, error };
-}</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Un custom hook debe seguir SRP: una razón para existir. El componente queda limpio y testeable. El hook queda reutilizable en otra pantalla.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="reglas react estado mutable hooks condicional">
-              <summary><h4>Reglas de oro en React</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Las 5 reglas que evitan el 80% de bugs:</strong></p>
-                <div class="code-block"><pre><span class="cm">// 1. No mutes estado — siempre copias</span>
-<span class="fn">setUser</span>((prev) => ({ ...prev, name: <span class="str">"Camilo"</span> }));
-
-<span class="cm">// 2. No llames hooks condicionalmente</span>
-<span class="cm">// ✗ if (x) useState(...)  — React se rompe</span>
-<span class="cm">// ✓ siempre al inicio del componente</span>
-
-<span class="cm">// 3. Keys únicas y estables en listas</span>
-{items.<span class="fn">map</span>((item) => &lt;<span class="fn">Item</span> key={item.id} /&gt;)}
-<span class="cm">// ✗ key={index}  — bugs al reordenar</span>
-
-<span class="cm">// 4. useEffect: incluye todas las deps</span>
-<span class="cm">// 5. Un componente = una responsabilidad</span></pre></div>
-              </div>
-            </details>
-
-          </div>
-        </div>
-
-        <!-- ─── MODULE 3: Node.js ─── -->
-        <div class="module" id="node" data-module>
-          <aside class="module-aside">
-            <h3>3. Node.js + Express</h3>
-            <p>El backend recibe peticiones, valida datos, protege rutas, consulta la BD y responde JSON.</p>
-            <div class="pill-row"><span class="pill">API REST</span><span class="pill">Seguridad</span><span class="pill">Capas</span></div>
-          </aside>
-          <div class="concept-list">
-
-            <details class="concept" data-concept="rest api http endpoints rutas get post put delete" open>
-              <summary><h4>REST API y códigos HTTP</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> una API REST usa HTTP para CRUD. Las URLs deben ser sustantivos en plural. Los status codes comunican el resultado.</p>
-                <div class="code-block"><pre><span class="cm">// Verbos + sustantivos = API REST correcta</span>
-GET    /api/properties          <span class="cm">// listar</span>
-GET    /api/properties/:id      <span class="cm">// detalle</span>
-POST   /api/properties          <span class="cm">// crear</span>
-PATCH  /api/properties/:id      <span class="cm">// actualizar parcial</span>
-DELETE /api/properties/:id      <span class="cm">// eliminar</span>
-
-<span class="cm">// Status codes que debes conocer</span>
-<span class="num">200</span> OK            <span class="cm">// éxito</span>
-<span class="num">201</span> Created       <span class="cm">// recurso creado</span>
-<span class="num">400</span> Bad Request   <span class="cm">// datos inválidos del cliente</span>
-<span class="num">401</span> Unauthorized  <span class="cm">// sin autenticación</span>
-<span class="num">403</span> Forbidden     <span class="cm">// sin permisos</span>
-<span class="num">404</span> Not Found     <span class="cm">// recurso no existe</span>
-<span class="num">409</span> Conflict      <span class="cm">// duplicado o conflicto</span>
-<span class="num">500</span> Internal      <span class="cm">// error del servidor</span></pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> usa PATCH en vez de PUT para actualizaciones parciales. Nunca expongas errores internos al cliente — loggea el stack trace y responde un mensaje genérico.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="middleware autenticación auth next express">
-              <summary><h4>Middleware</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> función intermedia entre petición y respuesta. Sirve para auth, logs, validación, rate-limiting y manejo de errores.</p>
-                <div class="code-block"><pre><span class="cm">// Auth middleware con manejo de errores</span>
-<span class="kw">const</span> <span class="fn">requireAuth</span> = <span class="kw">async</span> (req, res, next) => {
-  <span class="kw">try</span> {
-    <span class="kw">const</span> token = req.headers.authorization
-      ?.<span class="fn">replace</span>(<span class="str">"Bearer "</span>, <span class="str">""</span>);
-
-    <span class="kw">if</span> (!token) {
-      <span class="kw">return</span> res.<span class="fn">status</span>(<span class="num">401</span>).<span class="fn">json</span>({
-        error: <span class="str">"TOKEN_MISSING"</span>,
-        message: <span class="str">"Token de autenticación requerido"</span>,
-      });
-    }
-
-    <span class="kw">const</span> payload = <span class="fn">verifyToken</span>(token);
-    req.user = payload; <span class="cm">// disponible en controllers</span>
-    <span class="fn">next</span>();
-  } <span class="kw">catch</span> {
-    res.<span class="fn">status</span>(<span class="num">401</span>).<span class="fn">json</span>({
-      error: <span class="str">"TOKEN_INVALID"</span>,
-      message: <span class="str">"Token inválido o expirado"</span>,
-    });
-  }
-};</pre></div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="capas route controller service arquitectura separación">
-              <summary><h4>Capas: Route → Controller → Service</h4><span class="level recom">Recomendado</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> separa responsabilidades. La ruta define URL, el controller maneja HTTP, el service contiene la lógica de negocio.</p>
-                <div class="code-block"><pre><span class="cm">// routes/property.routes.ts</span>
-router.<span class="fn">get</span>(<span class="str">"/"</span>, <span class="fn">listProperties</span>);
-router.<span class="fn">post</span>(<span class="str">"/"</span>, requireAuth, <span class="fn">validate</span>(createSchema), <span class="fn">createProperty</span>);
-
-<span class="cm">// controllers/property.controller.ts</span>
-<span class="kw">export const</span> <span class="fn">listProperties</span> = <span class="kw">async</span> (req, res, next) => {
-  <span class="kw">try</span> {
-    <span class="kw">const</span> filters = <span class="fn">parseFilters</span>(req.query);
-    <span class="kw">const</span> result = <span class="kw">await</span> propertyService.<span class="fn">list</span>(filters);
-    res.<span class="fn">json</span>(result);
-  } <span class="kw">catch</span> (error) {
-    <span class="fn">next</span>(error); <span class="cm">// delega al error handler global</span>
-  }
-};
-
-<span class="cm">// services/property.service.ts</span>
-<span class="kw">export const</span> <span class="fn">list</span> = <span class="kw">async</span> (filters: <span class="tp">PropertyFilters</span>) => {
-  <span class="kw">const</span> [results, total] = <span class="kw">await</span> <span class="tp">Promise</span>.<span class="fn">all</span>([
-    prisma.property.<span class="fn">findMany</span>({ where: <span class="fn">buildWhere</span>(filters) }),
-    prisma.property.<span class="fn">count</span>({ where: <span class="fn">buildWhere</span>(filters) }),
-  ]);
-  <span class="kw">return</span> { results, total };
-};</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> El controller NUNCA debe importar Prisma directamente. El service NUNCA debe recibir <code>req</code> ni <code>res</code>. Esta separación permite testear cada capa independientemente.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="validación zod schema input sanitización">
-              <summary><h4>Validación con Zod</h4><span class="level recom">Recomendado</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> Zod valida y tipa datos del cliente en una sola declaración. Nunca confíes en el frontend.</p>
-                <div class="code-block"><pre><span class="kw">import</span> { z } <span class="kw">from</span> <span class="str">"zod"</span>;
-
-<span class="kw">export const</span> createPropertySchema = z.<span class="fn">object</span>({
-  title: z.<span class="fn">string</span>().<span class="fn">min</span>(<span class="num">5</span>, <span class="str">"Mínimo 5 caracteres"</span>).<span class="fn">max</span>(<span class="num">200</span>),
-  city: z.<span class="fn">string</span>().<span class="fn">min</span>(<span class="num">2</span>),
-  price: z.<span class="fn">number</span>().<span class="fn">positive</span>(<span class="str">"El precio debe ser positivo"</span>),
-  bedrooms: z.<span class="fn">number</span>().<span class="fn">int</span>().<span class="fn">min</span>(<span class="num">1</span>).<span class="fn">max</span>(<span class="num">20</span>),
-});
-
-<span class="cm">// El tipo se infiere automáticamente</span>
-<span class="kw">type</span> <span class="tp">CreatePropertyInput</span> = z.<span class="fn">infer</span>&lt;<span class="kw">typeof</span> createPropertySchema&gt;;</pre></div>
-              </div>
-            </details>
-
-          </div>
-        </div>
-
-        <!-- ─── MODULE 4: Prisma ─── -->
-        <div class="module" id="prisma" data-module>
-          <aside class="module-aside">
-            <h3>4. Prisma + PostgreSQL</h3>
-            <p>Prisma conecta tu código con la BD de manera tipada, segura y con migraciones versionadas.</p>
-            <div class="pill-row"><span class="pill">ORM</span><span class="pill">Relaciones</span><span class="pill">Migrations</span></div>
-          </aside>
-          <div class="concept-list">
-
-            <details class="concept" data-concept="schema modelo relaciones prisma base datos" open>
-              <summary><h4>Schema, modelos y relaciones</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <div class="code-block"><pre><span class="tp">model</span> Property {
-  id         <span class="tp">Int</span>       <span class="fn">@id</span> <span class="fn">@default</span>(autoincrement())
-  title      <span class="tp">String</span>
-  price      <span class="tp">Int</span>
-  city       <span class="tp">String</span>
-  bedrooms   <span class="tp">Int</span>       <span class="fn">@default</span>(<span class="num">1</span>)
-  available  <span class="tp">Boolean</span>   <span class="fn">@default</span>(<span class="kw">true</span>)
-  createdAt  <span class="tp">DateTime</span>  <span class="fn">@default</span>(now())
-  updatedAt  <span class="tp">DateTime</span>  <span class="fn">@updatedAt</span>
-  deletedAt  <span class="tp">DateTime?</span> <span class="cm">// soft delete</span>
-
-  landlord   User      <span class="fn">@relation</span>(fields: [landlordId], references: [id])
-  landlordId <span class="tp">Int</span>
-  favorites  Favorite[]
-
-  <span class="fn">@@index</span>([city])
-  <span class="fn">@@index</span>([price])
-  <span class="fn">@@index</span>([landlordId])
-}
-
-<span class="tp">model</span> Favorite {
-  id         <span class="tp">Int</span>      <span class="fn">@id</span> <span class="fn">@default</span>(autoincrement())
-  user       User     <span class="fn">@relation</span>(fields: [userId], references: [id])
-  userId     <span class="tp">Int</span>
-  property   Property <span class="fn">@relation</span>(fields: [propertyId], references: [id])
-  propertyId <span class="tp">Int</span>
-  createdAt  <span class="tp">DateTime</span> <span class="fn">@default</span>(now())
-
-  <span class="fn">@@unique</span>([userId, propertyId]) <span class="cm">// evitar duplicados</span>
-}</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Siempre incluye <code>createdAt</code>/<code>updatedAt</code>. Usa soft delete (<code>deletedAt</code>) en producción — datos borrados en hard delete no se recuperan. Agrega índices en campos que usas en <code>where</code> y <code>orderBy</code>.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="findmany where include select filtros paginación consulta">
-              <summary><h4>Consultas avanzadas con filtros</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <div class="code-block"><pre><span class="cm">// Búsqueda con filtros opcionales + paginación</span>
-<span class="kw">const</span> <span class="fn">searchProperties</span> = <span class="kw">async</span> (filters: <span class="tp">Filters</span>) => {
-  <span class="kw">const</span> { city, maxPrice, bedrooms, page = <span class="num">1</span>, limit = <span class="num">20</span> } = filters;
-
-  <span class="kw">const</span> where: <span class="tp">Prisma.PropertyWhereInput</span> = {
-    deletedAt: <span class="kw">null</span>,        <span class="cm">// excluir soft-deleted</span>
-    available: <span class="kw">true</span>,
-    ...(city && { city }),
-    ...(maxPrice && { price: { lte: maxPrice } }),
-    ...(bedrooms && { bedrooms: { gte: bedrooms } }),
-  };
-
-  <span class="kw">const</span> [results, total] = <span class="kw">await</span> <span class="tp">Promise</span>.<span class="fn">all</span>([
-    prisma.property.<span class="fn">findMany</span>({
-      where,
-      select: {
-        id: <span class="kw">true</span>, title: <span class="kw">true</span>, price: <span class="kw">true</span>,
-        city: <span class="kw">true</span>, bedrooms: <span class="kw">true</span>,
-        landlord: { select: { name: <span class="kw">true</span> } },
-      },
-      orderBy: { createdAt: <span class="str">"desc"</span> },
-      skip: (page - <span class="num">1</span>) * limit,
-      take: limit,
-    }),
-    prisma.property.<span class="fn">count</span>({ where }),
-  ]);
-
-  <span class="kw">return</span> {
-    results,
-    total,
-    page,
-    totalPages: Math.<span class="fn">ceil</span>(total / limit),
-  };
-};</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Usa <code>select</code> para evitar traer datos innecesarios (especialmente contraseñas). Ejecuta <code>findMany</code> y <code>count</code> en paralelo con <code>Promise.all</code>. Construye el <code>where</code> dinámicamente con spread condicional.</div>
-              </div>
-            </details>
-
-          </div>
-        </div>
-
-        <!-- ─── MODULE 5: CSS ─── -->
-        <div class="module" id="css" data-module>
-          <aside class="module-aside">
-            <h3>5. CSS / Vite</h3>
-            <p>Mobile-first, variables CSS, Grid, Flexbox. Sin frameworks pesados — CSS moderno es suficiente.</p>
-            <div class="pill-row"><span class="pill">Grid</span><span class="pill">Flexbox</span><span class="pill">Variables</span></div>
-          </aside>
-          <div class="concept-list">
-            <details class="concept" data-concept="css grid responsive auto-fill minmax grilla" open>
-              <summary><h4>CSS Grid responsive</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <div class="code-block"><pre><span class="cm">/* Grilla que se adapta sola — sin media queries */</span>
-.<span class="fn">property-grid</span> {
-  <span class="kw">display</span>: grid;
-  <span class="kw">grid-template-columns</span>: <span class="fn">repeat</span>(auto-fill, <span class="fn">minmax</span>(<span class="num">280px</span>, <span class="num">1fr</span>));
-  <span class="kw">gap</span>: <span class="num">16px</span>;
-}
-
-<span class="cm">/* Variables centralizadas */</span>
-<span class="fn">:root</span> {
-  <span class="kw">--color-primary</span>: <span class="str">#1a6b47</span>;
-  <span class="kw">--color-surface</span>: <span class="str">#ffffff</span>;
-  <span class="kw">--radius-card</span>: <span class="num">16px</span>;
-  <span class="kw">--shadow-card</span>: <span class="num">0</span> <span class="num">4px</span> <span class="num">12px</span> <span class="fn">rgba</span>(<span class="num">0</span>,<span class="num">0</span>,<span class="num">0</span>,<span class="num">.06</span>);
-}
-
-<span class="cm">/* Mobile-first: base es mobile, agranda con min-width */</span>
-<span class="fn">@media</span> (<span class="kw">min-width</span>: <span class="num">768px</span>) {
-  .<span class="fn">layout</span> { <span class="kw">grid-template-columns</span>: <span class="num">280px</span> <span class="num">1fr</span>; }
-}</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> <code>auto-fill + minmax</code> elimina la necesidad de media queries para grillas de tarjetas. Usa CSS custom properties para temas y consistencia. Aplica <code>clamp()</code> para tipografía fluida: <code>font-size: clamp(16px, 2vw, 20px)</code>.</div>
-              </div>
-            </details>
-          </div>
-        </div>
-
-        <!-- ─── MODULE 6: Buenas prácticas ─── -->
-        <div class="module" id="practicas" data-module>
-          <aside class="module-aside">
-            <h3>6. Clean Code</h3>
-            <p>La calidad no está en más código, sino en código claro, seguro, mantenible y testeable.</p>
-            <div class="pill-row"><span class="pill">Naming</span><span class="pill">Git</span><span class="pill">SOLID</span></div>
-          </aside>
-          <div class="concept-list">
-
-            <details class="concept" data-concept="clean code nombres funciones legibilidad refactoring" open>
-              <summary><h4>Clean Code aplicado</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <div class="comparison-grid">
-                  <div>
-                    <span class="bad-label">✗ Código confuso</span>
-                    <div class="code-block"><pre><span class="kw">const</span> d = [];
-<span class="kw">const</span> <span class="fn">process</span> = (x) => {
-  <span class="kw">if</span> (x.a > <span class="num">0</span> && x.b !== <span class="str">""</span> && x.c === <span class="kw">true</span>) {
-    d.<span class="fn">push</span>({ ...x, d: x.a * <span class="num">1.19</span> });
-  }
-};
-data.<span class="fn">forEach</span>(process);</pre></div>
-                  </div>
-                  <div>
-                    <span class="good-label">✓ Código senior</span>
-                    <div class="code-block"><pre><span class="kw">const</span> <span class="fn">isValidProperty</span> = (p: <span class="tp">Property</span>) =>
-  p.price > <span class="num">0</span> && p.city !== <span class="str">""</span> && p.available;
-
-<span class="kw">const</span> <span class="fn">withTax</span> = (p: <span class="tp">Property</span>) => ({
-  ...p,
-  priceWithTax: p.price * <span class="num">1.19</span>,
-});
-
-<span class="kw">const</span> taxedProperties = properties
-  .<span class="fn">filter</span>(isValidProperty)
-  .<span class="fn">map</span>(withTax);</pre></div>
-                  </div>
-                </div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Extrae condiciones a funciones con nombre (predicados). Usa composición (filter + map) en vez de loops con mutación. Cada función hace UNA cosa. Los nombres son la documentación más importante.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="git flow ramas commits convenciones conventional">
-              <summary><h4>Git: ramas y commits</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <div class="code-block"><pre><span class="cm"># Estructura de ramas</span>
-main       <span class="cm"># producción — siempre estable</span>
-develop    <span class="cm"># integración continua</span>
-
-<span class="cm"># Ramas de trabajo</span>
-git checkout -b feat/property-filter
-git checkout -b fix/map-crash-empty-list
-git checkout -b refactor/extract-use-properties
-
-<span class="cm"># Conventional Commits — semánticos</span>
-feat: add price range filter to search
-fix: prevent crash when property list is empty
-refactor: extract useProperties custom hook
-docs: add API endpoint documentation
-test: add unit tests for formatPrice
-chore: upgrade prisma to v5.10</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Conventional Commits permiten generar changelogs automáticos y semantic versioning. Commits pequeños y frecuentes son mejores que un commit gigante. Usa <code>git rebase -i</code> para limpiar el historial antes de hacer merge.</div>
-              </div>
-            </details>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ TYPESCRIPT ═══ -->
-    <section id="typescript">
-      <div class="container">
-        <div class="module" data-module>
-          <aside class="module-aside" style="background: linear-gradient(160deg, #2b5ea0, #1a3a66);">
-            <h3>7. TypeScript</h3>
-            <p>TypeScript previene bugs antes de que lleguen a producción. Es el estándar en equipos senior.</p>
-            <div class="pill-row"><span class="pill">Tipos</span><span class="pill">Interfaces</span><span class="pill">Generics</span></div>
-          </aside>
-          <div class="concept-list">
-
-            <details class="concept" data-concept="typescript tipos interface type primitivos" open>
-              <summary><h4>Tipos básicos e interfaces</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> TypeScript añade tipos estáticos a JavaScript. Detecta errores en compile-time, no en producción a las 3 AM.</p>
-                <div class="code-block"><pre><span class="cm">// Interface para entidades del dominio</span>
-<span class="kw">interface</span> <span class="tp">Property</span> {
-  id: <span class="tp">number</span>;
-  title: <span class="tp">string</span>;
-  city: <span class="tp">string</span>;
-  price: <span class="tp">number</span>;
-  bedrooms: <span class="tp">number</span>;
-  available: <span class="tp">boolean</span>;
-  landlord: <span class="tp">Pick</span>&lt;<span class="tp">User</span>, <span class="str">"id"</span> | <span class="str">"name"</span>&gt;;
-  createdAt: <span class="tp">string</span>;
-}
-
-<span class="cm">// Type para filtros opcionales</span>
-<span class="kw">type</span> <span class="tp">PropertyFilters</span> = {
-  city?: <span class="tp">string</span>;
-  maxPrice?: <span class="tp">number</span>;
-  bedrooms?: <span class="tp">number</span>;
-  page?: <span class="tp">number</span>;
-};
-
-<span class="cm">// Función tipada</span>
-<span class="kw">const</span> <span class="fn">formatCOP</span> = (price: <span class="tp">number</span>): <span class="tp">string</span> =>
-  <span class="str">`$${price.toLocaleString("es-CO")}`</span>;
-
-<span class="cm">// Union types para estados</span>
-<span class="kw">type</span> <span class="tp">Status</span> = <span class="str">"idle"</span> | <span class="str">"loading"</span> | <span class="str">"success"</span> | <span class="str">"error"</span>;
-
-<span class="cm">// Generics — reutilizable</span>
-<span class="kw">interface</span> <span class="tp">PaginatedResponse</span>&lt;<span class="tp">T</span>&gt; {
-  results: <span class="tp">T</span>[];
-  total: <span class="tp">number</span>;
-  page: <span class="tp">number</span>;
-  totalPages: <span class="tp">number</span>;
-}</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Usa <code>interface</code> para objetos del dominio y <code>type</code> para unions, intersections y utilidades. Evita <code>any</code> — si no sabes el tipo, usa <code>unknown</code> y haz narrowing. <code>Pick</code>, <code>Omit</code>, <code>Partial</code> y <code>Required</code> son utility types esenciales.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="typescript strict any evitar errores compilacion">
-              <summary><h4>Reglas TS para seniors</h4><span class="level critico">Crítico</span></summary>
-              <div class="concept-body">
-                <div class="comparison-grid">
-                  <div>
-                    <span class="bad-label">✗ TypeScript roto</span>
-                    <div class="code-block"><pre><span class="cm">// any desactiva TypeScript</span>
-<span class="kw">const</span> <span class="fn">getData</span> = (x: <span class="tp">any</span>): <span class="tp">any</span> => x.data;
-
-<span class="cm">// Type assertion sin verificar</span>
-<span class="kw">const</span> user = response <span class="kw">as</span> <span class="tp">User</span>;
-
-<span class="cm">// @ts-ignore esconde bugs</span>
-<span class="cm">// @ts-ignore</span>
-user.<span class="fn">nonExistentMethod</span>();</pre></div>
-                  </div>
-                  <div>
-                    <span class="good-label">✓ TypeScript seguro</span>
-                    <div class="code-block"><pre><span class="cm">// unknown + narrowing</span>
-<span class="kw">const</span> <span class="fn">parseResponse</span> = (data: <span class="tp">unknown</span>) => {
-  <span class="kw">if</span> (!<span class="fn">isUser</span>(data)) <span class="kw">throw</span> <span class="kw">new</span> <span class="fn">Error</span>(<span class="str">"Invalid"</span>);
-  <span class="kw">return</span> data; <span class="cm">// tipado como User</span>
-};
-
-<span class="cm">// Zod para validar + tipar en runtime</span>
-<span class="kw">const</span> parsed = userSchema.<span class="fn">parse</span>(response);
-<span class="cm">// parsed tiene tipo inferido ✓</span></pre></div>
-                  </div>
-                </div>
-                <div class="danger-tip"><strong>Regla de oro:</strong> Si tu proyecto tiene más de 5 <code>any</code>, tu TypeScript es JavaScript disfrazado. Usa <code>strict: true</code> en tsconfig. Nunca uses <code>@ts-ignore</code> — siempre hay una forma tipada de resolver el problema.</div>
-              </div>
-            </details>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ TESTING ═══ -->
-    <section id="testing">
-      <div class="container">
-        <div class="module" data-module>
-          <aside class="module-aside" style="background: linear-gradient(160deg, #6b3fa0, #3a1f5e);">
-            <h3>8. Testing</h3>
-            <p>El código sin tests es código que se rompe cuando no estás mirando. Tests dan confianza para refactorizar.</p>
-            <div class="pill-row"><span class="pill">Vitest</span><span class="pill">RTL</span><span class="pill">TDD</span></div>
-          </aside>
-          <div class="concept-list">
-
-            <details class="concept" data-concept="test unitario vitest describe it expect" open>
-              <summary><h4>Tests unitarios con Vitest</h4><span class="level esencial">Esencial</span></summary>
-              <div class="concept-body">
-                <p><strong>Qué es:</strong> verificar que una función o módulo hace lo que promete. Si no puedes testearla fácilmente, probablemente tiene demasiadas responsabilidades.</p>
-                <div class="code-block"><pre><span class="cm">// formatPrice.test.ts</span>
-<span class="kw">import</span> { describe, it, expect } <span class="kw">from</span> <span class="str">"vitest"</span>;
-<span class="kw">import</span> { formatCOP } <span class="kw">from</span> <span class="str">"./formatPrice"</span>;
-
-<span class="fn">describe</span>(<span class="str">"formatCOP"</span>, () => {
-  <span class="fn">it</span>(<span class="str">"formats a positive number with COP format"</span>, () => {
-    <span class="fn">expect</span>(<span class="fn">formatCOP</span>(<span class="num">1_500_000</span>)).<span class="fn">toBe</span>(<span class="str">"$1.500.000"</span>);
-  });
-
-  <span class="fn">it</span>(<span class="str">"handles zero"</span>, () => {
-    <span class="fn">expect</span>(<span class="fn">formatCOP</span>(<span class="num">0</span>)).<span class="fn">toBe</span>(<span class="str">"$0"</span>);
-  });
-
-  <span class="fn">it</span>(<span class="str">"returns fallback for null/undefined"</span>, () => {
-    <span class="fn">expect</span>(<span class="fn">formatCOP</span>(<span class="kw">null</span>)).<span class="fn">toBe</span>(<span class="str">"Precio a consultar"</span>);
-  });
-});
-
-<span class="cm">// Patrón AAA: Arrange → Act → Assert</span>
-<span class="fn">it</span>(<span class="str">"filters available properties in Cali"</span>, () => {
-  <span class="cm">// Arrange</span>
-  <span class="kw">const</span> properties = [
-    { city: <span class="str">"Cali"</span>, available: <span class="kw">true</span> },
-    { city: <span class="str">"Bogotá"</span>, available: <span class="kw">true</span> },
-    { city: <span class="str">"Cali"</span>, available: <span class="kw">false</span> },
-  ];
-  <span class="cm">// Act</span>
-  <span class="kw">const</span> result = <span class="fn">filterByCity</span>(properties, <span class="str">"Cali"</span>);
-  <span class="cm">// Assert</span>
-  <span class="fn">expect</span>(result).<span class="fn">toHaveLength</span>(<span class="num">1</span>);
-  <span class="fn">expect</span>(result[<span class="num">0</span>].city).<span class="fn">toBe</span>(<span class="str">"Cali"</span>);
-});</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Testea el comportamiento, no la implementación. Nombres de test descriptivos: "should [acción] when [condición]". Patrón AAA (Arrange-Act-Assert) para estructura clara. Testea edge cases: null, undefined, arrays vacíos, strings vacíos.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="react testing library componente render screen">
-              <summary><h4>Testing de componentes (RTL)</h4><span class="level recom">Recomendado</span></summary>
-              <div class="concept-body">
-                <div class="code-block"><pre><span class="kw">import</span> { render, screen } <span class="kw">from</span> <span class="str">"@testing-library/react"</span>;
-<span class="kw">import</span> { PropertyCard } <span class="kw">from</span> <span class="str">"./PropertyCard"</span>;
-
-<span class="fn">it</span>(<span class="str">"renders title and city"</span>, () => {
-  <span class="fn">render</span>(&lt;<span class="fn">PropertyCard</span>
-    title=<span class="str">"Casa en Cali"</span>
-    city=<span class="str">"Cali"</span>
-    price={<span class="num">1500000</span>}
-  /&gt;);
-
-  <span class="fn">expect</span>(screen.<span class="fn">getByText</span>(<span class="str">"Casa en Cali"</span>)).<span class="fn">toBeInTheDocument</span>();
-  <span class="fn">expect</span>(screen.<span class="fn">getByText</span>(<span class="str">/cali/i</span>)).<span class="fn">toBeInTheDocument</span>();
-});
-
-<span class="fn">it</span>(<span class="str">"shows empty state when no results"</span>, () => {
-  <span class="fn">render</span>(&lt;<span class="fn">PropertyList</span> properties={[]} /&gt;);
-  <span class="fn">expect</span>(screen.<span class="fn">getByText</span>(<span class="str">/sin resultados/i</span>)).<span class="fn">toBeInTheDocument</span>();
-});</pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> Testea como el usuario ve la UI — por texto, rol, label. No testees estilos ni detalles de implementación. Si necesitas <code>data-testid</code>, probablemente tu UI no es accesible.</div>
-              </div>
-            </details>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ SEGURIDAD Y PERFORMANCE ═══ -->
-    <section id="seguridad">
-      <div class="container">
-        <div class="module" data-module>
-          <aside class="module-aside" style="background: linear-gradient(160deg, #b83a3a, #7a1e1e);">
-            <h3>9. Seguridad &amp; Performance</h3>
-            <p>Un senior no solo escribe features — protege a los usuarios y optimiza la experiencia.</p>
-            <div class="pill-row"><span class="pill">XSS</span><span class="pill">Injection</span><span class="pill">Optimización</span></div>
-          </aside>
-          <div class="concept-list">
-
-            <details class="concept" data-concept="seguridad xss injection sql sanitizar" open>
-              <summary><h4>Vulnerabilidades comunes</h4><span class="level critico">Crítico</span></summary>
-              <div class="concept-body">
-                <div class="code-block"><pre><span class="cm">// ✗ SQL Injection — NUNCA concatenes queries</span>
-<span class="kw">const</span> query = <span class="str">`SELECT * FROM users WHERE email = '${email}'`</span>;
-
-<span class="cm">// ✓ Prisma es seguro por diseño (parameterized queries)</span>
-<span class="kw">const</span> user = <span class="kw">await</span> prisma.user.<span class="fn">findUnique</span>({
-  where: { email } <span class="cm">// sanitizado automáticamente</span>
-});
-
-<span class="cm">// ✗ XSS — insertar HTML sin sanitizar</span>
-element.innerHTML = userInput; <span class="cm">// PELIGROSO</span>
-
-<span class="cm">// ✓ React escapa por defecto</span>
-&lt;p&gt;{userInput}&lt;/p&gt; <span class="cm">// seguro — React escapa HTML</span>
-
-<span class="cm">// ✗ Exponer secretos</span>
-<span class="kw">const</span> token = <span class="str">"sk_live_abc123..."</span>; <span class="cm">// en código</span>
-
-<span class="cm">// ✓ Variables de entorno</span>
-<span class="kw">const</span> token = process.env.STRIPE_SECRET;</pre></div>
-                <div class="danger-tip"><strong>Reglas de seguridad inquebrantables:</strong> 1) Nunca confíes en input del cliente — valida todo en el backend. 2) Nunca expongas stack traces en producción. 3) Hashea contraseñas con bcrypt (cost ≥ 12). 4) Usa HTTPS siempre. 5) Tokens JWT con expiración corta. 6) Rate limiting en endpoints de auth.</div>
-              </div>
-            </details>
-
-            <details class="concept" data-concept="performance optimización rendimiento lazy memo cache">
-              <summary><h4>Performance checklist</h4><span class="level recom">Recomendado</span></summary>
-              <div class="concept-body">
-                <div class="code-block"><pre><span class="cm">// React: evita re-renders innecesarios</span>
-<span class="kw">const</span> <span class="fn">ExpensiveList</span> = <span class="fn">React.memo</span>(({ items }) => (
-  &lt;ul&gt;{items.<span class="fn">map</span>((i) => &lt;li key={i.id}&gt;{i.name}&lt;/li&gt;)}&lt;/ul&gt;
-));
-
-<span class="cm">// useMemo para cálculos costosos</span>
-<span class="kw">const</span> filtered = <span class="fn">useMemo</span>(
-  () => properties.<span class="fn">filter</span>(<span class="fn">matchesFilters</span>),
-  [properties, filters]
-);
-
-<span class="cm">// Lazy loading de imágenes</span>
-&lt;img src={url} loading=<span class="str">"lazy"</span> alt={title} /&gt;
-
-<span class="cm">// Code splitting con React.lazy</span>
-<span class="kw">const</span> <span class="fn">PropertyDetail</span> = <span class="fn">React.lazy</span>(
-  () => <span class="kw">import</span>(<span class="str">"./pages/PropertyDetail"</span>)
-);
-
-<span class="cm">// DB: siempre indexa campos de búsqueda</span>
-<span class="cm">// @@index([city])</span>
-<span class="cm">// @@index([price])</span></pre></div>
-                <div class="senior-tip"><strong>Tip senior:</strong> No optimices prematuramente. Mide primero con React DevTools Profiler y Lighthouse. Las optimizaciones más impactantes: lazy loading de rutas, índices de BD, <code>select</code> en Prisma y debounce en inputs de búsqueda.</div>
-              </div>
-            </details>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ ARQUITECTURA ═══ -->
-    <section id="arquitectura">
-      <div class="container">
-        <div class="section-head"><div>
-          <h2>Arquitectura y patrones</h2>
-          <p>Cómo organizar un proyecto real para que escale sin volverse un espagueti inmantenible.</p>
-        </div></div>
-
-        <div class="grid-2">
+        <h2>4. Banco de conceptos para pedirle a ChatGPT</h2>
+        <p class="subtitle">
+          Usa esta lista como temario. Copia un concepto y pídele a ChatGPT explicación, ejemplos, ejercicios,
+          errores comunes y un mini proyecto.
+        </p>
+
+        <div class="grid grid-3" style="margin-top:18px">
           <div class="card">
-            <h3>Estructura de carpetas (Backend)</h3>
-            <div class="code-block"><pre>src/
-├── routes/          <span class="cm">// URLs y middleware por recurso</span>
-│   └── property.routes.ts
-├── controllers/     <span class="cm">// req/res — sin lógica de negocio</span>
-│   └── property.controller.ts
-├── services/        <span class="cm">// lógica de negocio — testeable</span>
-│   └── property.service.ts
-├── repositories/    <span class="cm">// acceso a BD — Prisma</span>
-│   └── property.repository.ts
-├── schemas/         <span class="cm">// validación con Zod</span>
-│   └── property.schema.ts
-├── middlewares/     <span class="cm">// auth, validate, errorHandler</span>
-├── types/           <span class="cm">// interfaces compartidas</span>
-├── utils/           <span class="cm">// helpers puros</span>
-├── config/          <span class="cm">// env, DB, logger</span>
-└── app.ts           <span class="cm">// setup Express</span></pre></div>
-          </div>
-          <div class="card">
-            <h3>Estructura de carpetas (Frontend)</h3>
-            <div class="code-block"><pre>src/
-├── components/      <span class="cm">// UI reutilizable</span>
-│   ├── ui/          <span class="cm">// Button, Input, Card...</span>
-│   └── property/    <span class="cm">// PropertyCard, PropertyGrid</span>
-├── pages/           <span class="cm">// vistas completas</span>
-│   ├── Home.tsx
-│   └── PropertyDetail.tsx
-├── hooks/           <span class="cm">// custom hooks</span>
-│   └── useProperties.ts
-├── services/        <span class="cm">// llamadas a API</span>
-│   └── propertyService.ts
-├── types/           <span class="cm">// interfaces TypeScript</span>
-├── utils/           <span class="cm">// formatPrice, formatDate...</span>
-├── context/         <span class="cm">// AuthContext, ThemeContext</span>
-├── styles/          <span class="cm">// CSS Modules o variables</span>
-└── App.tsx</pre></div>
-          </div>
-        </div>
-
-        <div style="height:16px"></div>
-        <div class="card">
-          <h3>Principios SOLID simplificados</h3>
-          <div class="code-block"><pre><span class="cm">// S — Single Responsibility</span>
-<span class="cm">// Un módulo tiene UNA razón para cambiar</span>
-<span class="cm">// PropertyCard renderiza UI, useProperties maneja datos</span>
-
-<span class="cm">// O — Open/Closed</span>
-<span class="cm">// Abierto para extensión, cerrado para modificación</span>
-<span class="cm">// Agrega nuevos filtros sin modificar la función de búsqueda existente</span>
-
-<span class="cm">// L — Liskov Substitution</span>
-<span class="cm">// Un componente hijo debe funcionar donde funciona el padre</span>
-
-<span class="cm">// I — Interface Segregation</span>
-<span class="cm">// No obligues a un componente a depender de props que no usa</span>
-<span class="cm">// ✗ &lt;Card property={fullPropertyObject} /&gt;</span>
-<span class="cm">// ✓ &lt;Card title={title} price={price} city={city} /&gt;</span>
-
-<span class="cm">// D — Dependency Inversion</span>
-<span class="cm">// El service no depende de Prisma directamente → depende de una interfaz</span>
-<span class="cm">// Esto permite cambiar de Prisma a otro ORM sin tocar la lógica</span></pre></div>
-          <div class="senior-tip"><strong>Tip senior:</strong> No necesitas aplicar SOLID a rajatabla en cada línea. Pero conocer estos principios te ayuda a tomar decisiones de diseño cuando el proyecto crece. El principio más importante en la práctica diaria: Single Responsibility.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ EJERCICIOS ═══ -->
-    <section id="ejercicios">
-      <div class="container">
-        <div class="section-head"><div>
-          <h2>Ejercicios y retos</h2>
-          <p>Practica con ejercicios pequeños primero. Luego conecta varios conceptos en retos tipo proyecto real.</p>
-        </div></div>
-
-        <div class="exercise-generator">
-          <div>
-            <span class="eyebrow" style="background:rgba(255,255,255,.1);color:white;border-color:rgba(255,255,255,.15);">Generador interactivo</span>
-            <h2 style="font-family:var(--font-display);font-weight:400;letter-spacing:-.02em;line-height:1.05;">Genera un reto distinto cada vez</h2>
-            <p>Escoge módulo y dificultad. Resuélvelo primero tú, luego compara con IA y explica el resultado en palabras simples.</p>
-            <div class="select-row">
-              <select id="moduleSelect" aria-label="Módulo">
-                <option value="js">JavaScript</option>
-                <option value="react">React</option>
-                <option value="node">Node/Express</option>
-                <option value="prisma">Prisma</option>
-                <option value="css">CSS/Vite</option>
-                <option value="ts">TypeScript</option>
-                <option value="testing">Testing</option>
-              </select>
-              <select id="difficultySelect" aria-label="Dificultad">
-                <option value="mini">Mini ejercicio</option>
-                <option value="medio">Intermedio</option>
-                <option value="reto">Reto NIDO</option>
-              </select>
-              <button class="btn btn-primary" onclick="generateExercise()" style="border:1px solid rgba(255,255,255,.2);">Generar</button>
-            </div>
-          </div>
-          <div class="exercise-output" id="exerciseOutput">
-            <h3>Reto inicial: filtros tipados</h3>
-            <p>Crea una interfaz TypeScript <code>PropertyFilters</code> con campos opcionales para ciudad, precio máximo y habitaciones mínimas. Luego implementa una función <code>filterProperties</code> que reciba un array tipado y retorne solo los resultados válidos.</p>
+            <h3>Programación base</h3>
             <ul>
-              <li>Usa TypeScript strict mode.</li>
-              <li>Valida edge cases: filtros vacíos, array vacío.</li>
-              <li>Escribe al menos 3 tests.</li>
+              <li>Variables, constantes y tipos de datos</li>
+              <li>Operadores aritméticos, lógicos y comparación</li>
+              <li>Condicionales: if, else, switch</li>
+              <li>Ciclos: for, while, for...of</li>
+              <li>Funciones puras e impuras</li>
+              <li>Arrays y métodos: map, filter, reduce, find</li>
+              <li>Objetos, destructuring y spread/rest</li>
+              <li>Módulos, imports y exports</li>
+              <li>Manejo de errores con try/catch</li>
+              <li>Debugging con consola y breakpoints</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>POO y TypeScript</h3>
+            <ul>
+              <li>Clases, objetos e instancias</li>
+              <li>Encapsulación y modificadores</li>
+              <li>Herencia vs composición</li>
+              <li>Interfaces y tipos</li>
+              <li>Genéricos</li>
+              <li>Inyección de dependencias</li>
+              <li>Principios SOLID</li>
+              <li>DTOs y validación de datos</li>
+              <li>Arquitectura por módulos</li>
+              <li>Refactorización orientada a objetos</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Algoritmos y estructuras</h3>
+            <ul>
+              <li>Big O: tiempo y espacio</li>
+              <li>Recursión y backtracking</li>
+              <li>Listas enlazadas</li>
+              <li>Pilas y colas</li>
+              <li>Hash maps y sets</li>
+              <li>Árboles binarios</li>
+              <li>Grafos: BFS y DFS</li>
+              <li>Ordenamientos</li>
+              <li>Búsqueda binaria</li>
+              <li>Programación dinámica básica</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Bases de datos</h3>
+            <ul>
+              <li>Modelo relacional</li>
+              <li>MER y cardinalidad</li>
+              <li>Normalización</li>
+              <li>SQL básico y avanzado</li>
+              <li>JOINs</li>
+              <li>Índices</li>
+              <li>Transacciones ACID</li>
+              <li>PostgreSQL</li>
+              <li>ORMs</li>
+              <li>Migraciones y seeds</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Backend</h3>
+            <ul>
+              <li>HTTP, REST y JSON</li>
+              <li>Rutas, controladores y servicios</li>
+              <li>Middlewares</li>
+              <li>Autenticación y autorización</li>
+              <li>JWT, cookies y sesiones</li>
+              <li>Validación de inputs</li>
+              <li>Subida de archivos</li>
+              <li>Paginación y filtros</li>
+              <li>Logs</li>
+              <li>Documentación de API</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML semántico</li>
+              <li>CSS responsive</li>
+              <li>JavaScript en navegador</li>
+              <li>React: componentes y props</li>
+              <li>Hooks</li>
+              <li>Formularios</li>
+              <li>Rutas</li>
+              <li>Estado global</li>
+              <li>Consumo de API</li>
+              <li>Accesibilidad</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Ingeniería y calidad</h3>
+            <ul>
+              <li>Requisitos</li>
+              <li>Historias de usuario</li>
+              <li>Criterios de aceptación</li>
+              <li>Pruebas unitarias</li>
+              <li>Pruebas de integración</li>
+              <li>Pruebas E2E</li>
+              <li>Code review</li>
+              <li>Refactoring</li>
+              <li>Deuda técnica</li>
+              <li>Documentación técnica</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Arquitectura</h3>
+            <ul>
+              <li>MVC</li>
+              <li>Arquitectura por capas</li>
+              <li>Clean Architecture</li>
+              <li>Arquitectura hexagonal</li>
+              <li>Patrones de diseño</li>
+              <li>Eventos y colas</li>
+              <li>Monolito modular</li>
+              <li>Microservicios</li>
+              <li>Diagramas C4</li>
+              <li>ADR</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Infraestructura, seguridad e IA</h3>
+            <ul>
+              <li>Linux y terminal</li>
+              <li>Docker</li>
+              <li>CI/CD</li>
+              <li>DNS, TCP/IP, HTTPS</li>
+              <li>OWASP Top 10</li>
+              <li>CORS y cookies seguras</li>
+              <li>Rate limiting</li>
+              <li>Python para datos</li>
+              <li>Modelos de ML básicos</li>
+              <li>APIs de IA aplicadas</li>
             </ul>
           </div>
         </div>
-
-        <div style="height:16px"></div>
-        <div class="grid-3">
-          <article class="card"><span class="level esencial">Mini</span><h3>JS: predicados</h3><p>Crea funciones <code>isExpensive</code>, <code>isAvailable</code> y <code>isInCity</code> y compónlas con filter.</p></article>
-          <article class="card"><span class="level esencial">Mini</span><h3>React: error boundary</h3><p>Implementa un componente que muestre un fallback amigable cuando un hijo tiene error.</p></article>
-          <article class="card"><span class="level esencial">Mini</span><h3>TS: utility types</h3><p>Usa <code>Pick</code>, <code>Omit</code> y <code>Partial</code> para crear tipos derivados de <code>Property</code>.</p></article>
-          <article class="card"><span class="level recom">Intermedio</span><h3>Node: error handler</h3><p>Crea un middleware global de errores que loguee el stack en dev y responda mensajes genéricos en prod.</p></article>
-          <article class="card"><span class="level recom">Intermedio</span><h3>Testing: service</h3><p>Testea <code>property.service.ts</code> mockeando Prisma. Verifica filtros opcionales y paginación.</p></article>
-          <article class="card"><span class="level avanzado">Reto</span><h3>Full Stack: favoritos</h3><p>Flujo completo: botón en React → endpoint Express → modelo Prisma con @@unique → feedback optimista en UI.</p></article>
-        </div>
       </div>
     </section>
 
-    <!-- ═══ RUTA ═══ -->
-    <section id="ruta">
+    <section id="horario">
       <div class="container">
-        <div class="section-head"><div>
-          <h2>Ruta de estudio</h2>
-          <p>Orden recomendado para construir bases reales sin saltar a copiar código de proyectos grandes.</p>
-        </div></div>
-        <div class="timeline">
-          <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Fundamentos JavaScript</h3><p>Variables, funciones, arrays, objetos, condicionales, bucles, map/filter, spread, async/await, closures.</p></div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-body"><h3>TypeScript desde el día 1</h3><p>Tipos básicos, interfaces, union types, generics. Configura <code>strict: true</code> y nunca uses <code>any</code>.</p></div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Lógica aplicada con tests</h3><p>Resuelve ejercicios con Entrada → Proceso → Salida. Escribe el test primero (TDD) cuando sea posible.</p></div></div>
-          <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Backend: Node + Express + Prisma</h3><p>Rutas, controllers, services, middlewares, validación con Zod, manejo de errores, API REST correcta.</p></div></div>
-          <div class="step"><div class="step-num">5</div><div class="step-body"><h3>Base de datos: PostgreSQL + Prisma</h3><p>Modelos, relaciones, migraciones, CRUD, filtros, paginación, índices, soft delete.</p></div></div>
-          <div class="step"><div class="step-num">6</div><div class="step-body"><h3>React profesional</h3><p>Componentes tipados, props, estado, hooks, custom hooks, renderizado condicional, consumo de APIs.</p></div></div>
-          <div class="step"><div class="step-num">7</div><div class="step-body"><h3>Testing serio</h3><p>Vitest para lógica, RTL para componentes, tests de integración para endpoints. Cobertura ≥ 80%.</p></div></div>
-          <div class="step"><div class="step-num">8</div><div class="step-body"><h3>Producción y calidad</h3><p>Git flow, ESLint, Prettier, CI/CD, logs estructurados, monitoring, feature flags, deploy seguro.</p></div></div>
-        </div>
-      </div>
-    </section>
+        <h2>5. Horario semanal recomendado</h2>
+        <p class="subtitle">
+          Diseñado para avanzar aunque trabajes o estudies. La clave es constancia, práctica real y revisión.
+        </p>
 
-    <!-- ═══ GLOSARIO ═══ -->
-    <section id="glosario">
-      <div class="container">
-        <div class="section-head"><div>
-          <h2>Glosario Full Stack</h2>
-          <p>Términos que aparecen en documentación, entrevistas, code reviews y conversaciones con equipos de desarrollo.</p>
-        </div></div>
-        <div class="table-wrap">
+        <div class="table-wrap" style="margin-top:18px">
           <table>
-            <thead><tr><th>Término</th><th>Definición</th><th>Por qué importa</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Día</th>
+                <th>Actividad principal</th>
+                <th>Qué debes producir</th>
+                <th>Tiempo ideal</th>
+                <th>Tiempo mínimo</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td><strong>API REST</strong></td><td>Interfaz para comunicar frontend y backend usando HTTP y JSON.</td><td>Es el lenguaje común entre React y Node.</td></tr>
-              <tr><td><strong>ORM</strong></td><td>Herramienta que mapea código a base de datos. Prisma es un ORM.</td><td>Consultas tipadas sin escribir SQL crudo.</td></tr>
-              <tr><td><strong>JWT</strong></td><td>Token firmado que prueba la identidad de un usuario.</td><td>Auth stateless: protege rutas sin sesión en servidor.</td></tr>
-              <tr><td><strong>Middleware</strong></td><td>Función intermedia entre request y response.</td><td>Auth, validación, logs, rate limiting, error handling.</td></tr>
-              <tr><td><strong>CORS</strong></td><td>Permiso del backend para aceptar requests de otro dominio.</td><td>Sin CORS, React no puede hablar con tu API.</td></tr>
-              <tr><td><strong>Migration</strong></td><td>Archivo versionado con cambios al schema de BD.</td><td>Evolucionar la BD con control y rollback.</td></tr>
-              <tr><td><strong>Hook</strong></td><td>Función de React que empieza con <code>use</code>.</td><td>Estado, efectos y lógica reutilizable.</td></tr>
-              <tr><td><strong>Re-render</strong></td><td>React ejecuta un componente cuando cambian props o state.</td><td>Entenderlo evita bugs de performance.</td></tr>
-              <tr><td><strong>Race condition</strong></td><td>Bug donde el resultado depende del orden de operaciones asíncronas.</td><td>Causa datos inconsistentes y bugs difíciles de reproducir.</td></tr>
-              <tr><td><strong>Idempotente</strong></td><td>Una operación que produce el mismo resultado aunque se ejecute varias veces.</td><td>GET y DELETE deben ser idempotentes.</td></tr>
-              <tr><td><strong>Narrowing</strong></td><td>Reducir un tipo amplio a uno específico con condicionales.</td><td>Reemplaza el uso de <code>any</code> en TypeScript.</td></tr>
-              <tr><td><strong>Optimistic UI</strong></td><td>Actualizar la UI antes de confirmar con el servidor.</td><td>Mejor UX percibida — la app se siente instantánea.</td></tr>
-              <tr><td><strong>Debounce</strong></td><td>Esperar N ms después del último evento antes de ejecutar.</td><td>Evita 100 llamadas a API mientras el usuario escribe.</td></tr>
-              <tr><td><strong>DRY</strong></td><td>Don't Repeat Yourself.</td><td>Si copias código 3 veces → extrae función, hook o componente.</td></tr>
-              <tr><td><strong>SRP</strong></td><td>Single Responsibility Principle.</td><td>Cada módulo tiene una sola razón para cambiar.</td></tr>
-              <tr><td><strong>CI/CD</strong></td><td>Automatización de tests, lint y deploy.</td><td>Atrapa errores antes de producción.</td></tr>
-              <tr><td><strong>Feature flag</strong></td><td>Condicional que activa/desactiva features sin deploy.</td><td>Deploys más seguros y rollback instantáneo.</td></tr>
-              <tr><td><strong>Structured logging</strong></td><td>Logs en formato JSON con contexto (userId, requestId).</td><td>Permiten buscar y filtrar en sistemas como Datadog.</td></tr>
-              <tr><td><strong>N+1 query</strong></td><td>Bug donde un loop genera una query por cada item.</td><td>Destruye performance — usa <code>include</code> o <code>join</code>.</td></tr>
-              <tr><td><strong>Dead code</strong></td><td>Código que nunca se ejecuta.</td><td>Agrega confusión y peso sin beneficio.</td></tr>
-              <tr><td><strong>Tech debt</strong></td><td>Atajos técnicos que se pagan después con intereses.</td><td>Identifícala, documéntala y planifica cuándo pagarla.</td></tr>
+              <tr>
+                <td><strong>Lunes</strong></td>
+                <td>Teoría guiada del tema semanal</td>
+                <td>Resumen propio + 5 preguntas para ChatGPT</td>
+                <td>2 horas</td>
+                <td>45 min</td>
+              </tr>
+              <tr>
+                <td><strong>Martes</strong></td>
+                <td>Ejercicios técnicos</td>
+                <td>10 ejercicios pequeños subidos a GitHub</td>
+                <td>2 horas</td>
+                <td>45 min</td>
+              </tr>
+              <tr>
+                <td><strong>Miércoles</strong></td>
+                <td>Proyecto aplicado</td>
+                <td>Una funcionalidad funcionando</td>
+                <td>2 horas</td>
+                <td>45 min</td>
+              </tr>
+              <tr>
+                <td><strong>Jueves</strong></td>
+                <td>Debugging, pruebas y refactor</td>
+                <td>Errores corregidos + commits claros</td>
+                <td>2 horas</td>
+                <td>45 min</td>
+              </tr>
+              <tr>
+                <td><strong>Viernes</strong></td>
+                <td>Lectura técnica + documentación</td>
+                <td>README actualizado + notas del libro</td>
+                <td>1.5 horas</td>
+                <td>30 min</td>
+              </tr>
+              <tr>
+                <td><strong>Sábado</strong></td>
+                <td>Reto semanal</td>
+                <td>Mini proyecto o mejora completa</td>
+                <td>3 horas</td>
+                <td>1 hora</td>
+              </tr>
+              <tr>
+                <td><strong>Domingo</strong></td>
+                <td>Descanso activo</td>
+                <td>Revisión ligera, planificación y orden</td>
+                <td>30 min</td>
+                <td>15 min</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note" style="margin-top:18px">
+          Fórmula diaria: <strong>30% teoría + 60% código + 10% explicación.</strong>
+          Un ingeniero no solo hace que algo funcione: entiende por qué funciona y sabe explicarlo.
+        </div>
+      </div>
+    </section>
+
+    <section id="prompts">
+      <div class="container">
+        <h2>6. Prompts profesionales para estudiar con ChatGPT</h2>
+        <p class="subtitle">
+          Copia, cambia el tema entre corchetes y úsalo. No pidas solo explicación: pide práctica, errores,
+          evaluación y proyecto.
+        </p>
+
+        <div class="grid grid-2" style="margin-top:18px">
+          <div class="card">
+            <h3>Prompt maestro para aprender un concepto</h3>
+            <div class="code">Actúa como profesor universitario de Ingeniería de Software.
+Enséñame [CONCEPTO] desde cero hasta nivel intermedio.
+Incluye:
+1. Definición sencilla.
+2. Para qué sirve en software real.
+3. Ejemplo en JavaScript/TypeScript.
+4. Errores comunes.
+5. 10 ejercicios progresivos.
+6. Un mini proyecto.
+7. Preguntas tipo examen.
+8. Revisión de mi solución cuando te la envíe.</div>
+          </div>
+
+          <div class="card">
+            <h3>Prompt para practicar algoritmos</h3>
+            <div class="code">Quiero practicar [TEMA DE ALGORITMOS].
+Dame 5 problemas: fácil, medio, medio+, difícil y reto.
+No me des la solución al inicio.
+Primero dame pistas por niveles.
+Cuando te envíe mi código, evalúa:
+- correctitud
+- complejidad Big O
+- legibilidad
+- casos borde
+- cómo mejorarlo.</div>
+          </div>
+
+          <div class="card">
+            <h3>Prompt para proyectos reales</h3>
+            <div class="code">Ayúdame a construir una funcionalidad real para mi portafolio:
+[DESCRIBE LA FUNCIÓN].
+Quiero que lo hagas como senior:
+- requisitos
+- modelo de datos
+- endpoints
+- componentes frontend
+- validaciones
+- casos de prueba
+- riesgos de seguridad
+- criterios de aceptación
+No escribas todo por mí; guíame paso a paso y revisa mi avance.</div>
+          </div>
+
+          <div class="card">
+            <h3>Prompt para entender errores</h3>
+            <div class="code">Tengo este error:
+[PEGA EL ERROR]
+Y este código:
+[PEGA EL CÓDIGO]
+Explícame:
+1. Qué significa el error en palabras sencillas.
+2. Dónde está la causa probable.
+3. Cómo depurarlo paso a paso.
+4. Solución mínima.
+5. Solución profesional.
+6. Cómo evitar que vuelva a pasar.</div>
+          </div>
+
+          <div class="card">
+            <h3>Prompt para code review</h3>
+            <div class="code">Actúa como revisor senior de código.
+Revisa este código:
+[PEGA EL CÓDIGO]
+Evalúa:
+- claridad
+- duplicación
+- nombres
+- seguridad
+- rendimiento
+- arquitectura
+- pruebas necesarias
+Dame una versión mejorada y explícame cada cambio.</div>
+          </div>
+
+          <div class="card">
+            <h3>Prompt para explicar como ingeniero</h3>
+            <div class="code">Evalúame como si estuviera en una entrevista técnica.
+Pregúntame sobre [CONCEPTO].
+Hazme preguntas de menor a mayor dificultad.
+Después de cada respuesta mía, califícame de 1 a 10 y dime qué debo mejorar.
+No avances hasta que mi explicación sea clara.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="container">
+        <h2>7. Portafolio final que debes construir</h2>
+        <p class="subtitle">
+          Estos proyectos demuestran evolución real. No los hagas solo para “tener algo”: cada uno debe estar publicado,
+          documentado y defendible.
+        </p>
+
+        <div class="table-wrap" style="margin-top:18px">
+          <table>
+            <thead>
+              <tr>
+                <th>Proyecto</th>
+                <th>Mes</th>
+                <th>Qué demuestra</th>
+                <th>Requisitos mínimos</th>
+                <th>Extra profesional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Calculadora + gestor por consola</strong></td>
+                <td>1</td>
+                <td>Fundamentos y lógica</td>
+                <td>Funciones, validación, menú, errores</td>
+                <td>Tests básicos y README</td>
+              </tr>
+              <tr>
+                <td><strong>Gestor de tareas</strong></td>
+                <td>2</td>
+                <td>POO, módulos y frontend básico</td>
+                <td>CRUD, filtros, persistencia local</td>
+                <td>TypeScript + arquitectura limpia</td>
+              </tr>
+              <tr>
+                <td><strong>Biblioteca de algoritmos</strong></td>
+                <td>3</td>
+                <td>Estructuras, Big O y solución de problemas</td>
+                <td>Implementaciones propias + explicación</td>
+                <td>Benchmarks simples</td>
+              </tr>
+              <tr>
+                <td><strong>API de propiedades</strong></td>
+                <td>5</td>
+                <td>Backend, SQL, auth y roles</td>
+                <td>CRUD, JWT, PostgreSQL, validaciones</td>
+                <td>Swagger/OpenAPI + pruebas</td>
+              </tr>
+              <tr>
+                <td><strong>Frontend full-stack</strong></td>
+                <td>6-8</td>
+                <td>React, UX, arquitectura y consumo de API</td>
+                <td>Login, filtros, detalle, dashboard</td>
+                <td>Diseño responsive + estados vacíos</td>
+              </tr>
+              <tr>
+                <td><strong>Capstone profesional</strong></td>
+                <td>12</td>
+                <td>Sistema completo de ingeniería</td>
+                <td>App publicada, pruebas, seguridad, diagramas</td>
+                <td>Video demo + documentación técnica + métricas</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Checklist de README profesional</h3>
+          <span class="pill yellow">Descripción del problema</span>
+          <span class="pill yellow">Arquitectura</span>
+          <span class="pill yellow">Stack usado</span>
+          <span class="pill yellow">Instalación</span>
+          <span class="pill yellow">Variables de entorno</span>
+          <span class="pill yellow">Modelo de datos</span>
+          <span class="pill yellow">Endpoints</span>
+          <span class="pill yellow">Pruebas</span>
+          <span class="pill yellow">Capturas</span>
+          <span class="pill yellow">Video demo</span>
+          <span class="pill yellow">Decisiones técnicas</span>
+          <span class="pill yellow">Mejoras futuras</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="libros">
+      <div class="container">
+        <h2>8. Libros recomendados por etapa</h2>
+        <p class="subtitle">
+          No necesitas leerlos todos de una vez. Usa los libros como apoyo mientras construyes proyectos.
+        </p>
+
+        <div class="table-wrap" style="margin-top:18px">
+          <table>
+            <thead>
+              <tr>
+                <th>Etapa</th>
+                <th>Libro</th>
+                <th>Para qué usarlo</th>
+                <th>Cómo estudiarlo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Programación base</strong></td>
+                <td>Eloquent JavaScript · Marijn Haverbeke</td>
+                <td>Aprender JavaScript, funciones, estructuras, objetos y programación web.</td>
+                <td>Leer capítulos con ejercicios y pasar ejemplos a tu propio repositorio.</td>
+              </tr>
+              <tr>
+                <td><strong>JavaScript profundo</strong></td>
+                <td>You Don’t Know JS Yet · Kyle Simpson</td>
+                <td>Entender scope, closures, this, tipos y mecanismos internos.</td>
+                <td>Usarlo después del mes 1; no memorizar, experimentar en código.</td>
+              </tr>
+              <tr>
+                <td><strong>Algoritmos iniciales</strong></td>
+                <td>Grokking Algorithms · Aditya Bhargava</td>
+                <td>Comprender algoritmos con explicaciones visuales y problemas prácticos.</td>
+                <td>Resolver cada algoritmo en JavaScript y Python.</td>
+              </tr>
+              <tr>
+                <td><strong>Algoritmos universitarios</strong></td>
+                <td>Introduction to Algorithms · Cormen, Leiserson, Rivest, Stein</td>
+                <td>Base formal para análisis de algoritmos y estructuras avanzadas.</td>
+                <td>Consultar por temas; no leer lineal completo al inicio.</td>
+              </tr>
+              <tr>
+                <td><strong>Código profesional</strong></td>
+                <td>Clean Code · Robert C. Martin</td>
+                <td>Nombres, funciones, clases, errores, limpieza y mantenibilidad.</td>
+                <td>Aplicar capítulo por capítulo a tus propios proyectos.</td>
+              </tr>
+              <tr>
+                <td><strong>Oficio del programador</strong></td>
+                <td>The Pragmatic Programmer · Hunt & Thomas</td>
+                <td>Hábitos, criterio, responsabilidad, comunicación y carrera técnica.</td>
+                <td>Leer una sección semanal y convertirla en regla personal.</td>
+              </tr>
+              <tr>
+                <td><strong>Refactorización</strong></td>
+                <td>Refactoring · Martin Fowler</td>
+                <td>Mejorar diseño sin cambiar comportamiento externo.</td>
+                <td>Usarlo en el mes 7 para mejorar código ya construido.</td>
+              </tr>
+              <tr>
+                <td><strong>Patrones</strong></td>
+                <td>Head First Design Patterns · Freeman & Robson</td>
+                <td>Aprender patrones con ejemplos orientados a objetos.</td>
+                <td>Aplicar solo patrones que resuelvan problemas reales de tu app.</td>
+              </tr>
+              <tr>
+                <td><strong>Arquitectura</strong></td>
+                <td>Clean Architecture · Robert C. Martin</td>
+                <td>Separación de responsabilidades, capas y reglas de dependencia.</td>
+                <td>Leer junto con un refactor de tu backend.</td>
+              </tr>
+              <tr>
+                <td><strong>Bases de datos</strong></td>
+                <td>Database System Concepts · Silberschatz, Korth, Sudarshan</td>
+                <td>Modelo relacional, consultas, transacciones, índices y teoría.</td>
+                <td>Consultar mientras diseñas PostgreSQL.</td>
+              </tr>
+              <tr>
+                <td><strong>Redes</strong></td>
+                <td>Computer Networking: A Top-Down Approach · Kurose & Ross</td>
+                <td>Entender HTTP, DNS, TCP/IP y servicios de red.</td>
+                <td>Leer capítulos de web, transporte y seguridad.</td>
+              </tr>
+              <tr>
+                <td><strong>Sistemas operativos</strong></td>
+                <td>Operating Systems: Three Easy Pieces · Arpaci-Dusseau</td>
+                <td>Procesos, memoria, concurrencia y persistencia.</td>
+                <td>Complementar con prácticas en Linux y Docker.</td>
+              </tr>
+              <tr>
+                <td><strong>Sistemas de datos</strong></td>
+                <td>Designing Data-Intensive Applications · Martin Kleppmann</td>
+                <td>Datos, consistencia, replicación, particionamiento y sistemas distribuidos.</td>
+                <td>Leer después de bases de datos y backend.</td>
+              </tr>
+              <tr>
+                <td><strong>Ingeniería real</strong></td>
+                <td>Software Engineering at Google · Winters, Manshreck, Wright</td>
+                <td>Escala, prácticas, cultura técnica, mantenibilidad y trabajo en equipo.</td>
+                <td>Usarlo para madurar como ingeniero, no solo como programador.</td>
+              </tr>
+              <tr>
+                <td><strong>Seguridad</strong></td>
+                <td>Secure by Design · Johnsson, Deogun, Sawano</td>
+                <td>Diseñar software con seguridad desde el modelo y el código.</td>
+                <td>Aplicarlo en autenticación, permisos y validación.</td>
+              </tr>
+              <tr>
+                <td><strong>Machine Learning</strong></td>
+                <td>Hands-On Machine Learning · Aurélien Géron</td>
+                <td>Aprender ML con ejemplos prácticos en Python.</td>
+                <td>Usarlo en el mes 11 con un proyecto pequeño.</td>
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- ═══ CHECKLIST ═══ -->
-    <section id="checklist">
+    <section id="evaluacion">
       <div class="container">
-        <div class="section-head"><div>
-          <h2>Checklist diario</h2>
-          <p>Antes de aceptar código generado por IA o Codex, responde estas preguntas. Usa IA como copiloto, no como reemplazo.</p>
-        </div></div>
-        <div class="grid-2">
+        <h2>9. Rúbrica para saber si vas bien</h2>
+        <p class="subtitle">
+          Cada mes evalúate. No basta con ver videos: tienes que construir, explicar y sostener tu código.
+        </p>
+
+        <div class="grid grid-3" style="margin-top:18px">
           <div class="card">
-            <h3>Comprensión del código</h3>
-            <div class="checklist" id="checklistBox">
-              <div class="check-item"><input type="checkbox" id="c1"><label for="c1"><strong>Problema</strong>¿Qué problema exacto resuelve este código?</label></div>
-              <div class="check-item"><input type="checkbox" id="c2"><label for="c2"><strong>Entrada</strong>¿Qué datos entran y de dónde vienen?</label></div>
-              <div class="check-item"><input type="checkbox" id="c3"><label for="c3"><strong>Proceso</strong>¿Qué hace paso a paso?</label></div>
-              <div class="check-item"><input type="checkbox" id="c4"><label for="c4"><strong>Salida</strong>¿Qué devuelve o qué cambia en el sistema?</label></div>
-              <div class="check-item"><input type="checkbox" id="c5"><label for="c5"><strong>Errores</strong>¿Qué podría fallar y cómo se maneja?</label></div>
-              <div class="check-item"><input type="checkbox" id="c6"><label for="c6"><strong>Tipos</strong>¿Están tipados los inputs y outputs?</label></div>
-              <div class="check-item"><input type="checkbox" id="c7"><label for="c7"><strong>Capas</strong>¿Qué parte es frontend, backend o BD?</label></div>
-              <div class="check-item"><input type="checkbox" id="c8"><label for="c8"><strong>Nombres</strong>¿Los nombres son descriptivos y consistentes?</label></div>
-              <div class="check-item"><input type="checkbox" id="c9"><label for="c9"><strong>Tests</strong>¿Cómo comprobaría que funciona?</label></div>
-              <div class="check-item"><input type="checkbox" id="c10"><label for="c10"><strong>Seguridad</strong>¿Hay validación, auth y sanitización?</label></div>
-              <div class="check-item"><input type="checkbox" id="c11"><label for="c11"><strong>Explica</strong>¿Puedo explicar este código en palabras simples?</label></div>
-            </div>
+            <h3>Nivel básico</h3>
+            <p>Puedo seguir tutoriales y hacer ejercicios aislados.</p>
+            <ul>
+              <li>Entiendo sintaxis.</li>
+              <li>Hago programas pequeños.</li>
+              <li>Uso Git básico.</li>
+            </ul>
           </div>
           <div class="card">
-            <h3>Code review checklist</h3>
-            <div class="checklist" id="reviewChecklistBox">
-              <div class="check-item"><input type="checkbox" id="r1"><label for="r1"><strong>SRP</strong>¿Cada función/componente hace UNA sola cosa?</label></div>
-              <div class="check-item"><input type="checkbox" id="r2"><label for="r2"><strong>Inmutabilidad</strong>¿Se evita mutar estado y objetos?</label></div>
-              <div class="check-item"><input type="checkbox" id="r3"><label for="r3"><strong>Edge cases</strong>¿Se manejan null, undefined, arrays vacíos?</label></div>
-              <div class="check-item"><input type="checkbox" id="r4"><label for="r4"><strong>Error handling</strong>¿Hay try/catch y fallbacks apropiados?</label></div>
-              <div class="check-item"><input type="checkbox" id="r5"><label for="r5"><strong>No any</strong>¿Todo está correctamente tipado?</label></div>
-              <div class="check-item"><input type="checkbox" id="r6"><label for="r6"><strong>DRY</strong>¿Hay código repetido que debería extraerse?</label></div>
-              <div class="check-item"><input type="checkbox" id="r7"><label for="r7"><strong>Secrets</strong>¿Los secretos están en .env, no en el código?</label></div>
-              <div class="check-item"><input type="checkbox" id="r8"><label for="r8"><strong>Performance</strong>¿Se evitan N+1 queries y re-renders?</label></div>
-              <div class="check-item"><input type="checkbox" id="r9"><label for="r9"><strong>Accesibilidad</strong>¿HTML semántico, labels, alt text?</label></div>
-            </div>
+            <h3>Nivel intermedio</h3>
+            <p>Puedo construir funcionalidades propias con estructura y criterio.</p>
+            <ul>
+              <li>Diseño modelos de datos.</li>
+              <li>Creo APIs y frontend conectado.</li>
+              <li>Escribo pruebas y documentación.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Nivel profesional</h3>
+            <p>Puedo defender decisiones técnicas y mantener software real.</p>
+            <ul>
+              <li>Diseño arquitectura escalable.</li>
+              <li>Pienso en seguridad, rendimiento y mantenimiento.</li>
+              <li>Despliego, monitoreo y explico el sistema.</li>
+            </ul>
           </div>
         </div>
+
+        <details style="margin-top:18px" open>
+          <summary>Examen mensual sugerido</summary>
+          <ol>
+            <li>Explica el tema del mes sin mirar apuntes.</li>
+            <li>Resuelve un problema nuevo en máximo 45 minutos.</li>
+            <li>Agrega una funcionalidad al proyecto sin romper lo anterior.</li>
+            <li>Escribe al menos 3 pruebas.</li>
+            <li>Haz un commit claro y actualiza README.</li>
+            <li>Pide a ChatGPT que te entreviste sobre el tema y califica tus respuestas.</li>
+          </ol>
+        </details>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p><strong>Guía Senior NIDO</strong> · Fundamentos, TypeScript, Testing, Seguridad y Arquitectura · HTML offline</p>
-      <p class="print-note">Versión impresa generada desde el navegador.</p>
+      <p><strong>Plan creado para estudio personal intensivo.</strong></p>
+      <p>
+        Ruta enfocada en fundamentos universitarios + práctica profesional.
+        Ajusta los tiempos según tu disponibilidad, pero conserva la secuencia:
+        fundamentos → datos → backend/frontend → calidad → arquitectura → seguridad → despliegue → proyecto final.
+      </p>
+      <p class="small">Consejo final: cada semana publica algo, aunque sea pequeño. El portafolio se construye con constancia.</p>
     </div>
   </footer>
 
   <script>
-    // ─── Theme Toggle ───
-    function toggleTheme() {
-      const html = document.documentElement;
-      const current = html.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('nidoGuideTheme', next);
-      document.querySelector('.theme-toggle').textContent = next === 'dark' ? '☀️' : '🌙';
-    }
-    const savedTheme = localStorage.getItem('nidoGuideTheme');
-    if (savedTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      document.querySelector('.theme-toggle').textContent = '☀️';
-    }
+    const checks = Array.from(document.querySelectorAll('input[type="checkbox"][data-key]'));
+    const bar = document.getElementById('progressBar');
+    const text = document.getElementById('progressText');
+    const count = document.getElementById('progressCount');
+    const reset = document.getElementById('resetBtn');
 
-    // ─── Concept Search ───
-    function filterConcepts(query) {
-      const q = query.toLowerCase().trim();
-      document.querySelectorAll('.concept').forEach(el => {
-        const keywords = (el.dataset.concept || '') + ' ' + el.textContent.toLowerCase();
-        el.style.display = !q || keywords.includes(q) ? '' : 'none';
+    function load(){
+      checks.forEach(ch => {
+        ch.checked = localStorage.getItem('softwarePlan_' + ch.dataset.key) === '1';
       });
+      update();
     }
-
-    // ─── Exercise Generator ───
-    const exercises = {
-      js: {
-        mini: [
-          { title: "map + tipos", text: "Crea un array de números y genera otro con cada número * 2. Tipa el array como number[].", steps: ["Usa const y tipos explícitos.", "Usa .map() — no mutes.", "Imprime resultado original y transformado."] },
-          { title: "filter por ciudad", text: "Crea una lista tipada de propiedades y conserva solo las de Medellín.", steps: ["Crea una interface Property.", "Usa .filter() con predicado nombrado.", "Muestra cuántas quedaron."] },
-          { title: "spread defensivo", text: "Copia una propiedad y cambia solo el precio. Verifica que la original no cambió.", steps: ["No mutes el objeto original.", "Usa {...property, price: nuevo}.", "console.assert(original.price !== copia.price)."] }
-        ],
-        medio: [
-          { title: "Filtro combinado tipado", text: "Filtra propiedades por ciudad, precio máximo y habitaciones mínimas con TypeScript.", steps: ["Crea interface PropertyFilters con campos opcionales.", "Valida que filtros vacíos retornen todo.", "Retorna { results, total }.", "Escribe 2 tests."] },
-          { title: "Error handling robusto", text: "Crea fetchProperties que maneje errores de red, status 4xx/5xx y datos vacíos.", steps: ["Usa AbortController.", "Verifica res.ok antes de parsear.", "Retorna un objeto Result<T> con success y error."] }
-        ],
-        reto: [
-          { title: "Motor de búsqueda NIDO", text: "Implementa searchProperties(filters, properties) tipado que combine todos los filtros con paginación.", steps: ["Filtros opcionales con spread condicional.", "Paginación con skip/take.", "Ordena por precio o fecha.", "Retorna PaginatedResponse<Property>.", "Escribe 5 tests que cubran edge cases."] }
-        ]
-      },
-      react: {
-        mini: [
-          { title: "Input controlado tipado", text: "Crea un input de ciudad con useState tipado que actualice en cada cambio.", steps: ["Estado inicial tipado como string.", "onChange tipado con React.ChangeEvent.", "Muestra debajo la ciudad escrita."] },
-          { title: "Lista con key correcta", text: "Renderiza una lista de propiedades con map y key=id.", steps: ["Nunca uses index como key.", "Tipa el componente con interface.", "Usa HTML semántico (article, h3)."] }
-        ],
-        medio: [
-          { title: "Custom hook useDebounce", text: "Crea un hook que retrase la actualización de un valor por N ms.", steps: ["Usa useState y useEffect.", "Limpia el timeout en cleanup.", "Testea con diferentes delays."] },
-          { title: "Loading + Error + Empty", text: "Simula carga de propiedades con los 4 estados: idle, loading, error, success.", steps: ["Usa union type para Status.", "Renderizado condicional con early returns.", "Muestra Skeleton en loading."] }
-        ],
-        reto: [
-          { title: "Hook useProperties completo", text: "Custom hook con loading, error, filtros, paginación y abort controller.", steps: ["Expón properties, loading, error, setFilters, nextPage.", "Cancela request anterior al cambiar filtros.", "Escribe 3 tests del hook con renderHook."] }
-        ]
-      },
-      node: {
-        mini: [
-          { title: "Health check tipado", text: "Crea GET /api/health que responda { status: 'ok', timestamp: ISO }.", steps: ["Tipa el response body.", "Devuelve status 200.", "Agrega header Cache-Control: no-store."] },
-          { title: "Middleware de request ID", text: "Agrega un requestId único a cada request para tracing.", steps: ["Usa crypto.randomUUID().", "Asigna a req.id y al header X-Request-Id.", "Logea método, URL y requestId."] }
-        ],
-        medio: [
-          { title: "Error handler global", text: "Crea un middleware que capture todos los errores y responda de forma consistente.", steps: ["Detecta errores de validación (ZodError) vs errores generales.", "En dev muestra stack, en prod mensaje genérico.", "Logea con requestId y contexto.", "Responde con { error: CODE, message: string }."] }
-        ],
-        reto: [
-          { title: "CRUD completo por capas", text: "Properties con route → controller → service → repository, completamente tipado.", steps: ["Ruta sin lógica de negocio.", "Controller maneja req/res y delega.", "Service contiene reglas de negocio.", "Repository habla con Prisma.", "Validación con Zod en middleware."] }
-        ]
-      },
-      prisma: {
-        mini: [
-          { title: "Modelo Favorite", text: "Diseña un modelo que conecte User y Property sin duplicados.", steps: ["Incluye userId, propertyId y createdAt.", "@@unique([userId, propertyId]).", "Agrega relaciones bidireccionales."] },
-          { title: "Select eficiente", text: "Consulta propiedades sin traer datos innecesarios.", steps: ["Usa select en vez de retornar todo.", "Incluye solo id, title, price, city.", "Incluye landlord.name con select anidado."] }
-        ],
-        medio: [
-          { title: "Paginación tipada", text: "Implementa paginación con skip/take que retorne metadata.", steps: ["Recibe page y limit tipados.", "Calcula skip automáticamente.", "Retorna PaginatedResponse con totalPages.", "Ejecuta findMany y count en paralelo."] }
-        ],
-        reto: [
-          { title: "Búsqueda avanzada", text: "Consulta con filtros opcionales, paginación, orden dinámico y soft delete.", steps: ["city, maxPrice, bedrooms opcionales.", "deletedAt: null siempre.", "Orden configurable (price, date).", "Retorna results, total, page, totalPages.", "Escribe 4 tests del repository."] }
-        ]
-      },
-      css: {
-        mini: [
-          { title: "Card con custom properties", text: "Diseña una tarjeta usando solo CSS variables para colores, radios y sombras.", steps: ["Define variables en :root.", "Usa border-box y padding consistente.", "Hover con transform y shadow."] }
-        ],
-        medio: [
-          { title: "Grid responsive sin media queries", text: "Grilla con auto-fill + minmax que funcione en cualquier viewport.", steps: ["Usa repeat(auto-fill, minmax(280px, 1fr)).", "Agrega gap consistente.", "Prueba en 320px, 768px y 1440px."] }
-        ],
-        reto: [
-          { title: "Sistema de diseño mini", text: "Crea :root con tokens de color, spacing, radius, shadow y tipografía.", steps: ["Al menos 5 colores con variantes light.", "4 niveles de spacing (xs, sm, md, lg).", "Tipografía fluida con clamp().", "Dark mode con [data-theme='dark']."] }
-        ]
-      },
-      ts: {
-        mini: [
-          { title: "Tipar Property", text: "Crea interfaces para Property, User y PropertyFilters.", steps: ["Usa interface para entidades.", "Usa type para filtros con campos opcionales.", "Incluye Pick<User, 'id' | 'name'> para relaciones."] },
-          { title: "Utility types", text: "Crea tipos derivados usando Pick, Omit, Partial y Required.", steps: ["PropertySummary con Pick<Property, 'title' | 'price'>.", "CreatePropertyInput con Omit<Property, 'id' | 'createdAt'>.", "UpdatePropertyInput con Partial<CreatePropertyInput>."] }
-        ],
-        medio: [
-          { title: "Generic PaginatedResponse", text: "Crea un tipo genérico que funcione con cualquier entidad.", steps: ["PaginatedResponse<T> con results: T[].", "Incluye total, page, totalPages.", "Úsalo con Property y User."] }
-        ],
-        reto: [
-          { title: "Type-safe API client", text: "Crea un wrapper de fetch que infiera el tipo de retorno según el endpoint.", steps: ["Define un map de endpoints a tipos de respuesta.", "El client debe inferir el tipo correcto.", "Maneja errores tipados.", "Cero any en toda la implementación."] }
-        ]
-      },
-      testing: {
-        mini: [
-          { title: "Test formatPrice", text: "Escribe tests para una función de formato de precio.", steps: ["Testa número positivo, 0, null y undefined.", "Usa describe + it + expect.", "Patrón AAA: Arrange, Act, Assert."] }
-        ],
-        medio: [
-          { title: "Mock de Prisma", text: "Testea un service que usa Prisma sin conectar a BD real.", steps: ["Crea un mock de PrismaClient.", "Verifica que findMany se llama con los filtros correctos.", "Testa el caso de error de BD."] }
-        ],
-        reto: [
-          { title: "Integration test de endpoint", text: "Testea POST /api/properties end-to-end.", steps: ["Usa supertest con express.", "Verifica 201 con datos válidos.", "Verifica 400 con datos inválidos.", "Verifica 401 sin token.", "Limpia la BD entre tests."] }
-        ]
-      }
-    };
-
-    function generateExercise() {
-      const module = document.getElementById('moduleSelect').value;
-      const difficulty = document.getElementById('difficultySelect').value;
-      const list = exercises[module]?.[difficulty];
-      if (!list || list.length === 0) {
-        document.getElementById('exerciseOutput').innerHTML = '<p>No hay ejercicios para esta combinación aún.</p>';
-        return;
-      }
-      const item = list[Math.floor(Math.random() * list.length)];
-      document.getElementById('exerciseOutput').innerHTML = `
-        <h3>${item.title}</h3>
-        <p>${item.text}</p>
-        <ul>${item.steps.map(s => `<li>${s}</li>`).join('')}</ul>
-      `;
+    function update(){
+      const done = checks.filter(ch => ch.checked).length;
+      const total = checks.length;
+      const pct = total ? Math.round(done * 100 / total) : 0;
+      bar.style.width = pct + '%';
+      text.textContent = pct + '%';
+      count.textContent = done + ' de ' + total + ' actividades';
     }
-
-    // ─── Checklist Persistence ───
-    const allChecks = Array.from(document.querySelectorAll('#checklistBox input, #reviewChecklistBox input'));
-    function updateProgress() {
-      const done = allChecks.filter(c => c.checked).length;
-      const percent = Math.round((done / allChecks.length) * 100);
-      document.getElementById('progressText').textContent = percent + '%';
-      document.getElementById('progressBar').style.width = percent + '%';
-      localStorage.setItem('nidoGuideChecklist_v2', JSON.stringify(allChecks.map(c => c.checked)));
-    }
-    const saved = JSON.parse(localStorage.getItem('nidoGuideChecklist_v2') || '[]');
-    allChecks.forEach((check, i) => {
-      check.checked = Boolean(saved[i]);
-      check.addEventListener('change', updateProgress);
-    });
-    updateProgress();
-
-    // ─── Intersection Observer for animations ───
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-          observer.unobserve(entry.target);
-        }
+    checks.forEach(ch => {
+      ch.addEventListener('change', () => {
+        localStorage.setItem('softwarePlan_' + ch.dataset.key, ch.checked ? '1' : '0');
+        update();
       });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.module, .card, .step').forEach(el => {
-      observer.observe(el);
     });
+    reset.addEventListener('click', () => {
+      if(confirm('¿Seguro que quieres reiniciar tu avance?')){
+        checks.forEach(ch => {
+          ch.checked = false;
+          localStorage.removeItem('softwarePlan_' + ch.dataset.key);
+        });
+        update();
+      }
+    });
+    load();
   </script>
 </body>
 </html>
