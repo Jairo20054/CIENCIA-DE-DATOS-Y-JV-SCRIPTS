@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plan de Estudio de 1 Año | Ingeniería de Software</title>
+  <title>Ruta por Clases | Ingeniería de Software</title>
   <style>
     :root{
-      --bg:#0b1020;
-      --bg2:#101830;
-      --card:#121a33;
-      --card2:#172142;
-      --ink:#eef4ff;
-      --muted:#aab8d4;
+      --bg:#07111f;
+      --bg2:#0d1730;
+      --card:#111c36;
+      --card2:#152342;
+      --ink:#f3f7ff;
+      --muted:#a8b6d8;
       --line:rgba(255,255,255,.12);
       --brand:#6ee7b7;
       --brand2:#60a5fa;
       --warn:#fbbf24;
       --bad:#fb7185;
       --ok:#34d399;
-      --shadow:0 18px 55px rgba(0,0,0,.32);
+      --shadow:0 20px 60px rgba(0,0,0,.32);
       --radius:24px;
     }
     *{box-sizing:border-box}
@@ -28,336 +28,229 @@
       font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(circle at top left,rgba(96,165,250,.28),transparent 35%),
-        radial-gradient(circle at top right,rgba(110,231,183,.16),transparent 32%),
-        linear-gradient(180deg,var(--bg),#080b16 70%);
-      line-height:1.55;
+        radial-gradient(circle at 10% 0%,rgba(96,165,250,.28),transparent 34%),
+        radial-gradient(circle at 90% 5%,rgba(110,231,183,.16),transparent 33%),
+        linear-gradient(180deg,var(--bg),#050914 74%);
+      line-height:1.58;
     }
     a{color:inherit}
-    .container{width:min(1180px,92vw);margin:auto}
-    .hero{
-      padding:62px 0 34px;
-      position:relative;
-      overflow:hidden;
-    }
+    .container{width:min(1220px,92vw);margin:auto}
+    .hero{padding:58px 0 32px;position:relative;overflow:hidden}
     .badge{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 13px;border-radius:999px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.06);
-      padding:9px 13px;
-      border-radius:999px;
-      color:var(--muted);
-      font-weight:700;
-      font-size:13px;
-      letter-spacing:.2px;
+      color:#d8e4ff;font-weight:850;font-size:13px;
     }
     .hero-grid{
-      display:grid;
-      grid-template-columns:1.25fr .75fr;
-      gap:30px;
-      align-items:center;
-      margin-top:24px;
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:24px
     }
     h1{
-      font-size:clamp(34px,6vw,70px);
-      line-height:1.02;
-      margin:14px 0 16px;
-      letter-spacing:-2.2px;
+      font-size:clamp(34px,6vw,68px);
+      line-height:1.02;margin:14px 0 16px;letter-spacing:-2.2px
     }
-    .lead{
-      color:var(--muted);
-      font-size:clamp(17px,2.1vw,22px);
-      max-width:860px;
-      margin:0 0 22px;
-    }
-    .hero-card{
+    h2{font-size:clamp(26px,3vw,40px);margin:0;letter-spacing:-1px}
+    h3{margin:0 0 10px}
+    .lead{font-size:clamp(17px,2vw,22px);color:var(--muted);max-width:900px;margin:0}
+    .hero-card,.card{
       background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:24px;
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
     }
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      margin-top:18px;
-    }
-    .stat{
-      padding:15px;
-      border-radius:18px;
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
-    }
-    .stat b{font-size:24px;display:block}
-    .stat span{font-size:12px;color:var(--muted)}
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:24px;
-    }
+    .hero-card{padding:24px}
+    .card{padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+    .small,.muted{color:var(--muted)}
+    .small{font-size:13px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .stat{padding:15px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid var(--line)}
+    .stat b{display:block;font-size:28px;line-height:1}
+    .stat span{font-size:12px;color:var(--muted);font-weight:750}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:9px;
-      text-decoration:none;
-      font-weight:800;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.07);
-      transition:.2s ease;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      text-decoration:none;border:1px solid var(--line);border-radius:14px;
+      padding:11px 14px;font-weight:850;background:rgba(255,255,255,.07);
+      color:var(--ink);cursor:pointer;transition:.18s ease;font-family:inherit;font-size:14px
     }
-    .btn.primary{
-      color:#07111f;
-      background:linear-gradient(135deg,var(--brand),var(--brand2));
-      border:none;
-    }
-    .btn:hover{transform:translateY(-2px)}
+    .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.1)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));border:0;color:#07111f}
+    .btn.ghost{background:transparent}
     .nav{
-      position:sticky;
-      top:0;
-      z-index:20;
-      backdrop-filter:blur(16px);
-      background:rgba(8,11,22,.78);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+      position:sticky;top:0;z-index:30;backdrop-filter:blur(16px);
+      background:rgba(5,9,20,.78);border-top:1px solid var(--line);border-bottom:1px solid var(--line)
     }
-    .nav .container{
-      display:flex;
-      gap:10px;
-      overflow:auto;
-      padding:10px 0;
-    }
-    .nav a{
-      white-space:nowrap;
-      text-decoration:none;
-      color:var(--muted);
-      padding:9px 12px;
-      border-radius:12px;
-      font-size:14px;
-      font-weight:800;
-    }
+    .nav .container{display:flex;gap:10px;overflow:auto;padding:10px 0}
+    .nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:850;font-size:14px;padding:9px 12px;border-radius:12px}
     .nav a:hover{background:rgba(255,255,255,.07);color:var(--ink)}
     section{padding:38px 0}
-    .section-title{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:20px;
-      margin-bottom:18px;
-    }
-    h2{
-      font-size:clamp(26px,3vw,40px);
-      margin:0;
-      letter-spacing:-1px;
-    }
-    .subtitle{color:var(--muted);max-width:760px;margin:8px 0 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
+    .subtitle{margin:8px 0 0;color:var(--muted);max-width:850px}
     .grid{display:grid;gap:16px}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .card{
-      background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:20px;
-      box-shadow:0 12px 32px rgba(0,0,0,.18);
-    }
-    .card h3{margin:0 0 10px;font-size:20px}
-    .card p,.card li{color:var(--muted)}
     .pill{
-      display:inline-flex;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(110,231,183,.13);
-      color:#b7ffe4;
-      border:1px solid rgba(110,231,183,.22);
-      font-size:12px;
-      font-weight:900;
-      margin:3px 5px 3px 0;
+      display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;
+      background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.24);
+      color:#c9ffe9;font-size:12px;font-weight:900;margin:3px 5px 3px 0
     }
-    .pill.blue{background:rgba(96,165,250,.14);border-color:rgba(96,165,250,.25);color:#c8dcff}
-    .pill.yellow{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.22);color:#ffe3a3}
-    .pill.red{background:rgba(251,113,133,.12);border-color:rgba(251,113,133,.22);color:#ffc0ca}
-    .table-wrap{
-      overflow:auto;
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:rgba(255,255,255,.04);
-      box-shadow:0 12px 32px rgba(0,0,0,.16);
+    .pill.blue{background:rgba(96,165,250,.13);border-color:rgba(96,165,250,.25);color:#cfe0ff}
+    .pill.yellow{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.25);color:#ffe5a8}
+    .pill.red{background:rgba(251,113,133,.12);border-color:rgba(251,113,133,.25);color:#ffd0d8}
+    .note{
+      border-left:4px solid var(--brand);background:rgba(110,231,183,.08);
+      padding:14px 16px;border-radius:16px;color:#d4ffe9
+    }
+    .warning{
+      border-left:4px solid var(--warn);background:rgba(251,191,36,.09);
+      padding:14px 16px;border-radius:16px;color:#ffedbd
+    }
+    .danger{
+      border-left:4px solid var(--bad);background:rgba(251,113,133,.08);
+      padding:14px 16px;border-radius:16px;color:#ffd4dd
+    }
+    .schedule{
+      overflow:auto;border:1px solid var(--line);border-radius:22px;
+      background:rgba(255,255,255,.04);box-shadow:0 12px 32px rgba(0,0,0,.16)
     }
     table{border-collapse:collapse;width:100%;min-width:980px}
     th,td{padding:14px 15px;border-bottom:1px solid var(--line);vertical-align:top}
-    th{
-      text-align:left;
-      color:#dce7ff;
-      font-size:13px;
-      letter-spacing:.2px;
-      background:rgba(255,255,255,.06);
-      position:sticky;
-      top:0;
-    }
+    th{text-align:left;color:#dce7ff;font-size:13px;background:rgba(255,255,255,.06);letter-spacing:.2px}
     td{color:var(--muted)}
     td strong{color:var(--ink)}
     tr:hover td{background:rgba(255,255,255,.025)}
-    .timeline{display:grid;gap:14px}
-    .month{
-      display:grid;
-      grid-template-columns:120px 1fr;
-      gap:16px;
-      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:18px;
+    .class-layout{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start}
+    .sidebar{
+      position:sticky;top:66px;border:1px solid var(--line);border-radius:22px;
+      background:linear-gradient(180deg,rgba(17,28,54,.96),rgba(9,15,31,.96));
+      padding:18px;box-shadow:var(--shadow)
     }
-    .month-number{
-      min-height:94px;
-      border-radius:18px;
+    .bar{height:12px;background:rgba(255,255,255,.09);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:10px 0}
+    .bar span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--brand),var(--brand2));transition:.25s ease}
+    .module-list{display:grid;gap:8px;margin-top:14px}
+    .module-btn{
+      text-align:left;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);
+      border-radius:13px;padding:10px 11px;cursor:pointer;font-weight:800;font-family:inherit
+    }
+    .module-btn.active,.module-btn:hover{background:rgba(96,165,250,.12);color:var(--ink)}
+    .class-grid{display:grid;gap:14px}
+    details.module{
+      border:1px solid var(--line);border-radius:24px;
+      background:rgba(255,255,255,.035);overflow:hidden
+    }
+    details.module > summary{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:18px 20px;font-weight:950;cursor:pointer;list-style:none
+    }
+    details.module > summary::-webkit-details-marker{display:none}
+    .module-title{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+    .module-body{padding:0 16px 16px}
+    .classes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .lesson{
+      border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+      padding:16px;position:relative
+    }
+    .lesson.done{outline:2px solid rgba(110,231,183,.35);background:linear-gradient(180deg,rgba(110,231,183,.09),rgba(255,255,255,.03))}
+    .lesson-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}
+    .lesson-num{
+      min-width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
       background:linear-gradient(135deg,rgba(110,231,183,.22),rgba(96,165,250,.18));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      border:1px solid rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.14);font-weight:950;font-size:18px;color:var(--ink)
     }
-    .month-number b{font-size:34px;line-height:1}
-    .month-number span{color:var(--muted);font-size:12px;font-weight:800}
-    .month h3{margin:0 0 8px;font-size:22px}
-    .checklist{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:10px;
-      margin-top:12px;
+    .lesson h4{font-size:18px;line-height:1.25;margin:0;color:var(--ink)}
+    .lesson p{margin:8px 0;color:var(--muted)}
+    .lesson-meta{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 12px}
+    .concept{
+      background:#060a13;border:1px solid var(--line);border-radius:14px;
+      padding:12px;color:#c8e1ff;font-family:Consolas,Monaco,monospace;font-size:13px;
+      white-space:pre-wrap;margin-top:8px
     }
     label.check{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:12px;
-      border-radius:15px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--muted);
-      cursor:pointer;
+      display:flex;gap:10px;align-items:center;cursor:pointer;color:var(--muted);
+      background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:13px;padding:10px;margin-top:12px
     }
-    input[type="checkbox"]{accent-color:#6ee7b7;transform:translateY(3px)}
-    .progress-card{
-      position:sticky;
-      top:65px;
-      background:linear-gradient(180deg,rgba(18,26,51,.96),rgba(12,17,34,.96));
-    }
-    .bar{
-      height:12px;
-      background:rgba(255,255,255,.09);
-      border-radius:999px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      margin:10px 0;
-    }
-    .bar span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--brand),var(--brand2));transition:.25s ease}
-    .code{
-      background:#060a13;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px;
-      color:#c8e1ff;
-      overflow:auto;
-      font-family:Consolas,Monaco,monospace;
-      font-size:13px;
-      white-space:pre-wrap;
-    }
-    details{
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px 16px;
-      background:rgba(255,255,255,.045);
-    }
-    details+details{margin-top:10px}
-    summary{font-weight:900;cursor:pointer;color:var(--ink)}
-    .footer{
-      padding:38px 0 58px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-    }
-    .small{font-size:13px;color:var(--muted)}
-    .note{
-      border-left:4px solid var(--brand);
-      background:rgba(110,231,183,.08);
-      padding:14px 16px;
-      border-radius:16px;
-      color:#cbeedd;
-    }
-    .danger{
-      border-left:4px solid var(--bad);
-      background:rgba(251,113,133,.08);
-      padding:14px 16px;
-      border-radius:16px;
-      color:#ffd5dc;
-    }
+    input[type="checkbox"]{accent-color:#6ee7b7;transform:scale(1.08)}
+    .copy-ok{font-size:12px;color:#b7ffe4;display:none;margin-left:6px}
     .kbd{
-      display:inline-flex;
-      padding:2px 7px;
-      border:1px solid var(--line);
-      border-radius:8px;
-      background:rgba(255,255,255,.08);
-      font-family:Consolas,monospace;
-      color:var(--ink);
-      font-size:12px;
+      display:inline-flex;padding:2px 7px;border:1px solid var(--line);border-radius:8px;
+      background:rgba(255,255,255,.08);font-family:Consolas,monospace;color:var(--ink);font-size:12px
     }
-    @media (max-width:900px){
-      .hero-grid,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
-      .month{grid-template-columns:1fr}
-      .checklist{grid-template-columns:1fr}
+    .prompt-card{
+      background:#060a13;border:1px solid var(--line);border-radius:16px;
+      padding:14px;color:#c8e1ff;overflow:auto;font-family:Consolas,Monaco,monospace;
+      font-size:13px;white-space:pre-wrap
+    }
+    .phase{display:flex;gap:12px;align-items:flex-start}
+    .phase b{display:grid;place-items:center;min-width:34px;height:34px;border-radius:12px;background:rgba(96,165,250,.14);border:1px solid rgba(96,165,250,.25)}
+    .phase p{margin:0;color:var(--muted)}
+
+    .glossary-panel{
+      border:1px solid var(--line);border-radius:24px;
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+      padding:18px;box-shadow:0 12px 32px rgba(0,0,0,.16)
+    }
+    .glossary-toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:14px 0 16px}
+    .glossary-search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.055);padding:10px 12px}
+    .glossary-search input{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font:inherit}
+    .glossary-search input::placeholder{color:rgba(168,182,216,.78)}
+    .glossary-count{color:var(--muted);font-size:13px;font-weight:850;white-space:nowrap}
+    .glossary-tabs{display:flex;gap:8px;overflow:auto;padding:4px 0 12px;margin-bottom:8px}
+    .glossary-tab{white-space:nowrap;border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--muted);border-radius:999px;padding:8px 11px;font-weight:850;cursor:pointer;font-family:inherit;font-size:13px}
+    .glossary-tab.active,.glossary-tab:hover{background:rgba(110,231,183,.13);border-color:rgba(110,231,183,.28);color:#d7ffef}
+    .glossary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:10px}
+    .term-card{border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));padding:15px;display:flex;flex-direction:column;gap:8px;min-height:205px}
+    .term-card h4{font-size:18px;margin:0;color:var(--ink);letter-spacing:-.2px}
+    .term-card p{margin:0;color:var(--muted)}
+    .term-category{display:inline-flex;width:max-content;padding:5px 9px;border-radius:999px;background:rgba(96,165,250,.13);border:1px solid rgba(96,165,250,.25);color:#cfe0ff;font-size:11px;font-weight:950}
+    .term-search{background:#060a13;border:1px solid var(--line);border-radius:12px;padding:10px;color:#c8e1ff;font-family:Consolas,Monaco,monospace;font-size:12px;white-space:pre-wrap;margin-top:auto}
+    .empty-glossary{padding:22px;border:1px dashed var(--line);border-radius:18px;color:var(--muted);text-align:center}
+    .footer{padding:38px 0 58px;border-top:1px solid var(--line);color:var(--muted)}
+    @media (max-width:980px){
+      .hero-grid,.grid-2,.grid-3,.grid-4,.class-layout,.classes,.glossary-grid{grid-template-columns:1fr}
+      .sidebar{position:relative;top:auto}
       .stats{grid-template-columns:1fr}
-      .progress-card{position:relative;top:auto}
     }
     @media print{
       body{background:#fff;color:#111}
-      .nav,.cta-row,.progress-card{display:none}
-      .card,.month,.table-wrap,details{box-shadow:none;background:#fff;color:#111;border-color:#ddd}
-      .card p,.card li,td,.subtitle,.small{color:#333}
+      .nav,.cta-row,.sidebar,.btn{display:none}
+      .card,.hero-card,details.module,.lesson,.schedule,.glossary-panel,.term-card{background:#fff;color:#111;box-shadow:none;border-color:#ddd}
+      .muted,.small,.subtitle,.lesson p,td{color:#333}
       section{break-inside:avoid}
     }
   </style>
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" id="inicio">
     <div class="container">
-      <span class="badge">Ruta intensiva · 12 meses · Ingeniería de Software</span>
+      <span class="badge">Ruta progresiva · 48 clases · 12 meses · sin saturarte</span>
       <div class="hero-grid">
         <div>
-          <h1>Plan de estudio para convertirte en un excelente Ingeniero de Software</h1>
+          <h1>Plan de Ingeniería de Software dividido por clases</h1>
           <p class="lead">
-            Ruta construida a partir de materias de programación, algoritmos, software, bases de datos,
-            arquitectura, redes, seguridad e inteligencia artificial presentes en planes de Ingeniería de Sistemas
-            de universidades colombianas. El enfoque no es memorizar: es aprender, practicar, construir y publicar.
+            Esta versión transforma tu plan anual en un horario de aprendizaje por sesiones. Cada clase tiene un objetivo claro,
+            una práctica pequeña y el concepto exacto que debes buscar en ChatGPT para aprender paso a paso.
           </p>
           <div class="cta-row">
-            <a class="btn primary" href="#ruta">Empezar la ruta</a>
-            <a class="btn" href="#conceptos">Ver conceptos</a>
-            <a class="btn" href="#prompts">Prompts para ChatGPT</a>
-            <a class="btn" href="#libros">Libros</a>
+            <a class="btn primary" href="#clases">Ver clases</a>
+            <a class="btn" href="#horario">Horario semanal</a>
+            <a class="btn" href="#terminologia">Terminología</a>
+            <a class="btn" href="#prompts">Prompts</a>
+            <a class="btn" href="#evaluacion">Evaluación</a>
           </div>
         </div>
         <aside class="hero-card">
-          <h3>Meta del año</h3>
+          <h3>Cómo usarlo</h3>
           <p class="small">
-            Terminar con fundamentos universitarios, criterio profesional y un portafolio real:
-            API, frontend, base de datos, autenticación, pruebas, seguridad, despliegue y arquitectura.
+            Avanza una clase por semana. En días con poco tiempo usa el modo mínimo de 60 minutos:
+            <strong>10 min repaso + 20 min teoría + 25 min código + 5 min explicación.</strong>
           </p>
           <div class="stats">
-            <div class="stat"><b>12</b><span>meses</span></div>
-            <div class="stat"><b>48</b><span>semanas</span></div>
-            <div class="stat"><b>6</b><span>proyectos</span></div>
+            <div class="stat"><b>48</b><span>clases</span></div>
+            <div class="stat"><b>12</b><span>módulos</span></div>
+            <div class="stat"><b>1</b><span>proyecto final</span></div>
           </div>
           <div class="note" style="margin-top:16px">
-            Tecnología base recomendada: <strong>JavaScript + TypeScript + Node.js + React + PostgreSQL</strong>.
-            Python se usa como apoyo para algoritmos, datos e IA.
+            Regla: en cada clase debes producir algo visible: código, resumen, diagrama, consulta SQL, prueba o documentación.
           </div>
         </aside>
       </div>
@@ -366,655 +259,222 @@
 
   <nav class="nav">
     <div class="container">
-      <a href="#base">Base universitaria</a>
-      <a href="#mapa">Mapa de competencias</a>
-      <a href="#ruta">Ruta anual</a>
-      <a href="#conceptos">Conceptos</a>
+      <a href="#metodo">Método</a>
       <a href="#horario">Horario</a>
+      <a href="#clases">48 clases</a>
+      <a href="#terminologia">Terminología</a>
       <a href="#prompts">Prompts</a>
-      <a href="#proyectos">Portafolio</a>
+      <a href="#proyectos">Proyectos</a>
       <a href="#libros">Libros</a>
       <a href="#evaluacion">Evaluación</a>
     </div>
   </nav>
 
   <main>
-    <section id="base">
+    <section id="metodo">
       <div class="container">
-        <div class="section-title">
+        <div class="section-head">
           <div>
-            <h2>1. Materias tomadas como base</h2>
-            <p class="subtitle">
-              Estas son las áreas que más aportan directamente a programación e ingeniería de software.
-              No se copiaron semestres completos: se extrajo lo esencial para diseñar una ruta práctica de un año.
-            </p>
+            <h2>1. Método para no saturarte</h2>
+            <p class="subtitle">El objetivo no es consumir muchos temas: es dominar un concepto por clase y convertirlo en práctica.</p>
           </div>
         </div>
-
-        <div class="grid grid-2">
-          <div class="card">
-            <h3>Universidad Nacional · Ingeniería de Sistemas y Computación</h3>
-            <p>Materias relacionadas seleccionadas:</p>
-            <span class="pill">Programación de computadores</span>
-            <span class="pill">Programación orientada a objetos</span>
-            <span class="pill">Estructuras de datos</span>
-            <span class="pill">Algoritmos</span>
-            <span class="pill">Lenguajes de programación</span>
-            <span class="pill">Bases de datos</span>
-            <span class="pill">Ingeniería de software I y II</span>
-            <span class="pill">Arquitectura de software</span>
-            <span class="pill">Patrones de software</span>
-            <span class="pill">Desarrollo móvil</span>
-            <span class="pill">Sistemas operativos</span>
-            <span class="pill">Redes de computadores</span>
-            <span class="pill">Criptografía y seguridad</span>
-            <span class="pill">Computación paralela y distribuida</span>
-            <span class="pill">Minería de datos</span>
-            <span class="pill">Aprendizaje de máquina</span>
-          </div>
-
-          <div class="card">
-            <h3>Universidad de los Andes · Ingeniería de Sistemas y Computación</h3>
-            <p>Materias relacionadas seleccionadas:</p>
-            <span class="pill blue">Introducción a la Programación</span>
-            <span class="pill blue">Estructuras de datos y algoritmos</span>
-            <span class="pill blue">Diseño y Programación Orientada a Objetos</span>
-            <span class="pill blue">Elementos Esenciales de Lenguajes de Programación</span>
-            <span class="pill blue">Diseño de Algoritmos</span>
-            <span class="pill blue">Fundamentos de Bases de Datos</span>
-            <span class="pill blue">Ingeniería de Software Moderna</span>
-            <span class="pill blue">Arquitecturas de Software Robusto</span>
-            <span class="pill blue">Diseño de Aplicaciones Complejas</span>
-            <span class="pill blue">Fábricas de Software Globales</span>
-            <span class="pill blue">Tecnologías e Infraestructura de Cómputo</span>
-            <span class="pill blue">Redes y Servicios de Comunicaciones</span>
-            <span class="pill blue">Ciberseguridad</span>
-            <span class="pill blue">Inteligencia Artificial</span>
-            <span class="pill blue">Aprendizaje de Máquina</span>
-          </div>
+        <div class="grid grid-4">
+          <div class="card phase"><b>1</b><p><strong>Entender.</strong><br>Pide una explicación sencilla, ejemplos y analogías.</p></div>
+          <div class="card phase"><b>2</b><p><strong>Implementar.</strong><br>Escribe código propio, aunque sea pequeño.</p></div>
+          <div class="card phase"><b>3</b><p><strong>Romper.</strong><br>Cambia datos, provoca errores y aprende a depurar.</p></div>
+          <div class="card phase"><b>4</b><p><strong>Explicar.</strong><br>Resume el concepto como si fueras a enseñarlo.</p></div>
         </div>
-      </div>
-    </section>
-
-    <section id="mapa">
-      <div class="container">
-        <h2>2. Mapa de competencias del año</h2>
-        <p class="subtitle">
-          Para ser un ingeniero de software completo debes aprender a programar, diseñar, probar,
-          desplegar, asegurar y mantener sistemas reales.
-        </p>
-
-        <div class="grid grid-4" style="margin-top:18px">
-          <div class="card">
-            <h3>Fundamentos</h3>
-            <p>Variables, funciones, control de flujo, estructuras, memoria, complejidad, Git y terminal.</p>
-          </div>
-          <div class="card">
-            <h3>Construcción</h3>
-            <p>POO, TypeScript, APIs, frontend, bases de datos, autenticación, validaciones y testing.</p>
-          </div>
-          <div class="card">
-            <h3>Diseño profesional</h3>
-            <p>SOLID, patrones, arquitectura por capas, clean architecture, documentación y refactorización.</p>
-          </div>
-          <div class="card">
-            <h3>Escala y seguridad</h3>
-            <p>Redes, SO, Docker, CI/CD, seguridad web, logs, rendimiento, sistemas distribuidos e IA aplicada.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ruta">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <h2>3. Ruta de estudio de 12 meses</h2>
-            <p class="subtitle">
-              Cada mes tiene conceptos, práctica, entregable y prompts para estudiar con ChatGPT.
-              Marca lo que completes; el avance queda guardado en este navegador.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid grid-2">
-          <div class="timeline">
-            <article class="month">
-              <div class="month-number"><b>01</b><span>Mes</span></div>
-              <div>
-                <h3>Fundamentos de programación y pensamiento computacional</h3>
-                <p><strong>Objetivo:</strong> escribir programas pequeños sin copiar, entendiendo datos, flujo y errores.</p>
-                <p><strong>Conceptos:</strong> variables, tipos de datos, operadores, condicionales, ciclos, funciones, arrays, objetos, módulos, entrada/salida, debugging, Git básico.</p>
-                <p><strong>Proyecto:</strong> calculadora de presupuesto personal + conversor de unidades + menú por consola.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m1c1">Hice 40 ejercicios básicos sin mirar solución.</label>
-                  <label class="check"><input type="checkbox" data-key="m1c2">Publiqué mi primer repositorio en GitHub.</label>
-                  <label class="check"><input type="checkbox" data-key="m1c3">Puedo explicar qué es una función y cuándo usarla.</label>
-                  <label class="check"><input type="checkbox" data-key="m1c4">Aprendí a leer errores y corregirlos paso a paso.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>02</b><span>Mes</span></div>
-              <div>
-                <h3>JavaScript profundo + programación orientada a objetos</h3>
-                <p><strong>Objetivo:</strong> dominar objetos, clases, módulos, asincronía y estructura de código.</p>
-                <p><strong>Conceptos:</strong> scope, closures, this, prototypes, clases, encapsulación, herencia, composición, módulos ES, async/await, promesas, manejo de errores.</p>
-                <p><strong>Proyecto:</strong> gestor de tareas con usuarios, categorías, filtros y persistencia local.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m2c1">Creé clases y módulos reutilizables.</label>
-                  <label class="check"><input type="checkbox" data-key="m2c2">Entendí promesas y async/await con ejemplos propios.</label>
-                  <label class="check"><input type="checkbox" data-key="m2c3">Refactoricé código repetido en funciones limpias.</label>
-                  <label class="check"><input type="checkbox" data-key="m2c4">Documenté el proyecto en README.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>03</b><span>Mes</span></div>
-              <div>
-                <h3>Estructuras de datos y algoritmos</h3>
-                <p><strong>Objetivo:</strong> resolver problemas pensando en eficiencia, no solo en que funcione.</p>
-                <p><strong>Conceptos:</strong> Big O, arrays, listas, pilas, colas, hash maps, sets, árboles, grafos, recursión, búsqueda, ordenamiento, two pointers, sliding window.</p>
-                <p><strong>Proyecto:</strong> biblioteca de estructuras de datos + 60 problemas resueltos y explicados.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m3c1">Sé estimar complejidad temporal y espacial.</label>
-                  <label class="check"><input type="checkbox" data-key="m3c2">Implementé stack, queue, linked list, tree y graph.</label>
-                  <label class="check"><input type="checkbox" data-key="m3c3">Resolví 60 problemas con explicación.</label>
-                  <label class="check"><input type="checkbox" data-key="m3c4">Aprendí cuándo usar hash map, árbol o grafo.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>04</b><span>Mes</span></div>
-              <div>
-                <h3>Bases de datos, SQL y modelado</h3>
-                <p><strong>Objetivo:</strong> diseñar datos correctamente y consultar información con criterio.</p>
-                <p><strong>Conceptos:</strong> modelo entidad-relación, normalización, claves, relaciones, SQL, joins, índices, transacciones, vistas, triggers básicos, PostgreSQL, seguridad de datos.</p>
-                <p><strong>Proyecto:</strong> base de datos para propiedades/arriendos con usuarios, favoritos, reservas y pagos simulados.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m4c1">Diseñé un modelo ER con relaciones claras.</label>
-                  <label class="check"><input type="checkbox" data-key="m4c2">Hice consultas con JOIN, GROUP BY y subconsultas.</label>
-                  <label class="check"><input type="checkbox" data-key="m4c3">Entendí índices y transacciones.</label>
-                  <label class="check"><input type="checkbox" data-key="m4c4">Migré el modelo a PostgreSQL.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>05</b><span>Mes</span></div>
-              <div>
-                <h3>Backend profesional con Node.js, APIs y autenticación</h3>
-                <p><strong>Objetivo:</strong> construir servicios seguros, mantenibles y conectados a base de datos.</p>
-                <p><strong>Conceptos:</strong> HTTP, REST, Express/NestJS, controladores, servicios, repositorios, validación, JWT, cookies, hashing, middlewares, manejo global de errores, paginación, filtros.</p>
-                <p><strong>Proyecto:</strong> API de marketplace de propiedades con auth, CRUD, filtros, roles y documentación.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m5c1">Construí una API REST con rutas limpias.</label>
-                  <label class="check"><input type="checkbox" data-key="m5c2">Implementé autenticación y roles.</label>
-                  <label class="check"><input type="checkbox" data-key="m5c3">Validé datos de entrada y errores.</label>
-                  <label class="check"><input type="checkbox" data-key="m5c4">Documenté endpoints con ejemplos.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>06</b><span>Mes</span></div>
-              <div>
-                <h3>Frontend moderno con React y TypeScript</h3>
-                <p><strong>Objetivo:</strong> crear interfaces limpias, rápidas, responsivas y conectadas a una API.</p>
-                <p><strong>Conceptos:</strong> componentes, props, estado, hooks, contexto, rutas, formularios, validación, consumo API, loading/error states, accesibilidad, responsive, diseño de componentes.</p>
-                <p><strong>Proyecto:</strong> frontend de propiedades con búsqueda, filtros, detalle, login y panel básico.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m6c1">Creé componentes reutilizables con TypeScript.</label>
-                  <label class="check"><input type="checkbox" data-key="m6c2">Conecté frontend con API real.</label>
-                  <label class="check"><input type="checkbox" data-key="m6c3">Manejé estados de carga, error y vacío.</label>
-                  <label class="check"><input type="checkbox" data-key="m6c4">Hice la app responsive y ordenada.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>07</b><span>Mes</span></div>
-              <div>
-                <h3>Ingeniería de software, testing y calidad</h3>
-                <p><strong>Objetivo:</strong> pasar de “programar” a construir software sostenible.</p>
-                <p><strong>Conceptos:</strong> requisitos, historias de usuario, casos de uso, UML básico, pruebas unitarias, integración, E2E, TDD básico, mocks, cobertura, refactor, code review, deuda técnica.</p>
-                <p><strong>Proyecto:</strong> suite de pruebas para backend y frontend + tablero de issues y documentación técnica.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m7c1">Escribí pruebas unitarias e integración.</label>
-                  <label class="check"><input type="checkbox" data-key="m7c2">Documenté historias de usuario y criterios de aceptación.</label>
-                  <label class="check"><input type="checkbox" data-key="m7c3">Hice refactor sin romper funcionalidades.</label>
-                  <label class="check"><input type="checkbox" data-key="m7c4">Practiqué code review con checklist.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>08</b><span>Mes</span></div>
-              <div>
-                <h3>Arquitectura de software y patrones</h3>
-                <p><strong>Objetivo:</strong> diseñar sistemas que crezcan sin volverse desordenados.</p>
-                <p><strong>Conceptos:</strong> SOLID, clean architecture, capas, MVC, hexagonal, patrones creacionales/estructurales/comportamiento, DTO, repositorios, servicios, eventos, documentación C4.</p>
-                <p><strong>Proyecto:</strong> rediseñar la API en arquitectura limpia + diagrama C4 + decisiones arquitectónicas ADR.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m8c1">Apliqué SOLID en código real.</label>
-                  <label class="check"><input type="checkbox" data-key="m8c2">Implementé repositorios, servicios y casos de uso.</label>
-                  <label class="check"><input type="checkbox" data-key="m8c3">Usé patrones donde sí aportan valor.</label>
-                  <label class="check"><input type="checkbox" data-key="m8c4">Hice diagramas C4 y ADR.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>09</b><span>Mes</span></div>
-              <div>
-                <h3>Seguridad, redes y fundamentos de infraestructura</h3>
-                <p><strong>Objetivo:</strong> entender cómo viaja la información y cómo proteger una app web.</p>
-                <p><strong>Conceptos:</strong> DNS, TCP/IP, HTTP/HTTPS, CORS, cookies seguras, OWASP Top 10, XSS, CSRF, SQL injection, rate limit, logging, backups, variables de entorno, permisos.</p>
-                <p><strong>Proyecto:</strong> auditoría de seguridad de tu app + checklist OWASP + mejoras reales.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m9c1">Expliqué una petición HTTP de punta a punta.</label>
-                  <label class="check"><input type="checkbox" data-key="m9c2">Corregí riesgos XSS, CSRF o SQL injection.</label>
-                  <label class="check"><input type="checkbox" data-key="m9c3">Implementé rate limit y logs.</label>
-                  <label class="check"><input type="checkbox" data-key="m9c4">Documenté políticas de seguridad.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>10</b><span>Mes</span></div>
-              <div>
-                <h3>Sistemas operativos, Docker, despliegue y CI/CD</h3>
-                <p><strong>Objetivo:</strong> ejecutar, desplegar y monitorear software como en un entorno profesional.</p>
-                <p><strong>Conceptos:</strong> procesos, memoria, concurrencia, archivos, Linux, terminal, Docker, contenedores, variables de entorno, GitHub Actions, despliegue, monitoreo, logs.</p>
-                <p><strong>Proyecto:</strong> dockerizar frontend/backend/base de datos + pipeline CI/CD + despliegue en la nube.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m10c1">Uso terminal y Linux con seguridad.</label>
-                  <label class="check"><input type="checkbox" data-key="m10c2">Dockericé mi aplicación completa.</label>
-                  <label class="check"><input type="checkbox" data-key="m10c3">Configuré CI/CD con pruebas automáticas.</label>
-                  <label class="check"><input type="checkbox" data-key="m10c4">Publiqué una versión estable.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>11</b><span>Mes</span></div>
-              <div>
-                <h3>Datos, inteligencia artificial y aprendizaje de máquina aplicado</h3>
-                <p><strong>Objetivo:</strong> usar datos para construir funciones inteligentes sin perder fundamentos.</p>
-                <p><strong>Conceptos:</strong> Python básico para datos, pandas, limpieza de datos, regresión, clasificación, métricas, embeddings, recomendadores, APIs de IA, límites éticos, privacidad.</p>
-                <p><strong>Proyecto:</strong> recomendador simple de propiedades + dashboard de datos + explicación de métricas.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m11c1">Analicé un dataset con pandas.</label>
-                  <label class="check"><input type="checkbox" data-key="m11c2">Entrené un modelo simple y medí resultados.</label>
-                  <label class="check"><input type="checkbox" data-key="m11c3">Integré una función inteligente en la app.</label>
-                  <label class="check"><input type="checkbox" data-key="m11c4">Documenté riesgos y límites de la IA.</label>
-                </div>
-              </div>
-            </article>
-
-            <article class="month">
-              <div class="month-number"><b>12</b><span>Mes</span></div>
-              <div>
-                <h3>Proyecto final: sistema completo de nivel portafolio</h3>
-                <p><strong>Objetivo:</strong> demostrar que puedes diseñar, construir, probar, desplegar y explicar un producto real.</p>
-                <p><strong>Conceptos:</strong> arquitectura, backlog, releases, métricas, documentación, observabilidad, rendimiento, seguridad, experiencia de usuario, presentación técnica.</p>
-                <p><strong>Proyecto:</strong> plataforma full-stack publicada con README profesional, video demo, diagramas, pruebas, seguridad y mejoras pendientes.</p>
-                <div class="checklist">
-                  <label class="check"><input type="checkbox" data-key="m12c1">Publiqué la app final en producción.</label>
-                  <label class="check"><input type="checkbox" data-key="m12c2">Incluí pruebas, documentación y diagramas.</label>
-                  <label class="check"><input type="checkbox" data-key="m12c3">Grabé video demo de 3 a 5 minutos.</label>
-                  <label class="check"><input type="checkbox" data-key="m12c4">Puedo defender decisiones técnicas.</label>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <aside class="card progress-card">
-            <h3>Avance del plan</h3>
-            <p class="small">Marca cada actividad completada. El progreso se guarda localmente en tu navegador.</p>
-            <div class="bar"><span id="progressBar"></span></div>
-            <p><strong id="progressText">0%</strong> completado</p>
-            <p class="small" id="progressCount">0 de 48 actividades</p>
-            <button class="btn" id="resetBtn" type="button">Reiniciar avance</button>
-            <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
-            <h3>Regla de oro</h3>
-            <p class="small">
-              Cada tema debe pasar por 4 pasos:
-              <br><span class="kbd">Entender</span> →
-              <span class="kbd">Implementar</span> →
-              <span class="kbd">Romper</span> →
-              <span class="kbd">Explicar</span>
-            </p>
-            <div class="danger">
-              No avances a un tema nuevo si no puedes explicar el anterior con tus propias palabras y con código.
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section id="conceptos">
-      <div class="container">
-        <h2>4. Banco de conceptos para pedirle a ChatGPT</h2>
-        <p class="subtitle">
-          Usa esta lista como temario. Copia un concepto y pídele a ChatGPT explicación, ejemplos, ejercicios,
-          errores comunes y un mini proyecto.
-        </p>
-
-        <div class="grid grid-3" style="margin-top:18px">
-          <div class="card">
-            <h3>Programación base</h3>
-            <ul>
-              <li>Variables, constantes y tipos de datos</li>
-              <li>Operadores aritméticos, lógicos y comparación</li>
-              <li>Condicionales: if, else, switch</li>
-              <li>Ciclos: for, while, for...of</li>
-              <li>Funciones puras e impuras</li>
-              <li>Arrays y métodos: map, filter, reduce, find</li>
-              <li>Objetos, destructuring y spread/rest</li>
-              <li>Módulos, imports y exports</li>
-              <li>Manejo de errores con try/catch</li>
-              <li>Debugging con consola y breakpoints</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>POO y TypeScript</h3>
-            <ul>
-              <li>Clases, objetos e instancias</li>
-              <li>Encapsulación y modificadores</li>
-              <li>Herencia vs composición</li>
-              <li>Interfaces y tipos</li>
-              <li>Genéricos</li>
-              <li>Inyección de dependencias</li>
-              <li>Principios SOLID</li>
-              <li>DTOs y validación de datos</li>
-              <li>Arquitectura por módulos</li>
-              <li>Refactorización orientada a objetos</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Algoritmos y estructuras</h3>
-            <ul>
-              <li>Big O: tiempo y espacio</li>
-              <li>Recursión y backtracking</li>
-              <li>Listas enlazadas</li>
-              <li>Pilas y colas</li>
-              <li>Hash maps y sets</li>
-              <li>Árboles binarios</li>
-              <li>Grafos: BFS y DFS</li>
-              <li>Ordenamientos</li>
-              <li>Búsqueda binaria</li>
-              <li>Programación dinámica básica</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Bases de datos</h3>
-            <ul>
-              <li>Modelo relacional</li>
-              <li>MER y cardinalidad</li>
-              <li>Normalización</li>
-              <li>SQL básico y avanzado</li>
-              <li>JOINs</li>
-              <li>Índices</li>
-              <li>Transacciones ACID</li>
-              <li>PostgreSQL</li>
-              <li>ORMs</li>
-              <li>Migraciones y seeds</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Backend</h3>
-            <ul>
-              <li>HTTP, REST y JSON</li>
-              <li>Rutas, controladores y servicios</li>
-              <li>Middlewares</li>
-              <li>Autenticación y autorización</li>
-              <li>JWT, cookies y sesiones</li>
-              <li>Validación de inputs</li>
-              <li>Subida de archivos</li>
-              <li>Paginación y filtros</li>
-              <li>Logs</li>
-              <li>Documentación de API</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Frontend</h3>
-            <ul>
-              <li>HTML semántico</li>
-              <li>CSS responsive</li>
-              <li>JavaScript en navegador</li>
-              <li>React: componentes y props</li>
-              <li>Hooks</li>
-              <li>Formularios</li>
-              <li>Rutas</li>
-              <li>Estado global</li>
-              <li>Consumo de API</li>
-              <li>Accesibilidad</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Ingeniería y calidad</h3>
-            <ul>
-              <li>Requisitos</li>
-              <li>Historias de usuario</li>
-              <li>Criterios de aceptación</li>
-              <li>Pruebas unitarias</li>
-              <li>Pruebas de integración</li>
-              <li>Pruebas E2E</li>
-              <li>Code review</li>
-              <li>Refactoring</li>
-              <li>Deuda técnica</li>
-              <li>Documentación técnica</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Arquitectura</h3>
-            <ul>
-              <li>MVC</li>
-              <li>Arquitectura por capas</li>
-              <li>Clean Architecture</li>
-              <li>Arquitectura hexagonal</li>
-              <li>Patrones de diseño</li>
-              <li>Eventos y colas</li>
-              <li>Monolito modular</li>
-              <li>Microservicios</li>
-              <li>Diagramas C4</li>
-              <li>ADR</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Infraestructura, seguridad e IA</h3>
-            <ul>
-              <li>Linux y terminal</li>
-              <li>Docker</li>
-              <li>CI/CD</li>
-              <li>DNS, TCP/IP, HTTPS</li>
-              <li>OWASP Top 10</li>
-              <li>CORS y cookies seguras</li>
-              <li>Rate limiting</li>
-              <li>Python para datos</li>
-              <li>Modelos de ML básicos</li>
-              <li>APIs de IA aplicadas</li>
-            </ul>
-          </div>
+        <div class="warning" style="margin-top:18px">
+          No pases a la siguiente clase si solo viste videos o leíste teoría. Debes poder responder:
+          <strong>¿qué es?, ¿para qué sirve?, ¿cómo se implementa?, ¿qué errores comunes tiene?</strong>
         </div>
       </div>
     </section>
 
     <section id="horario">
       <div class="container">
-        <h2>5. Horario semanal recomendado</h2>
-        <p class="subtitle">
-          Diseñado para avanzar aunque trabajes o estudies. La clave es constancia, práctica real y revisión.
-        </p>
-
-        <div class="table-wrap" style="margin-top:18px">
+        <h2>2. Horario semanal recomendado</h2>
+        <p class="subtitle">Una clase dura una semana. Así puedes progresar aunque solo tengas una hora diaria.</p>
+        <div class="schedule" style="margin-top:18px">
           <table>
             <thead>
               <tr>
                 <th>Día</th>
-                <th>Actividad principal</th>
-                <th>Qué debes producir</th>
-                <th>Tiempo ideal</th>
-                <th>Tiempo mínimo</th>
+                <th>Bloque de estudio</th>
+                <th>Qué haces</th>
+                <th>Producto mínimo</th>
+                <th>Prompt recomendado</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Lunes</strong></td>
-                <td>Teoría guiada del tema semanal</td>
-                <td>Resumen propio + 5 preguntas para ChatGPT</td>
-                <td>2 horas</td>
-                <td>45 min</td>
+                <td>Teoría guiada</td>
+                <td>Abres la clase semanal y buscas en ChatGPT el concepto indicado.</td>
+                <td>Resumen de 10 líneas con tus palabras.</td>
+                <td><span class="kbd">Prompt maestro</span></td>
               </tr>
               <tr>
                 <td><strong>Martes</strong></td>
-                <td>Ejercicios técnicos</td>
-                <td>10 ejercicios pequeños subidos a GitHub</td>
-                <td>2 horas</td>
-                <td>45 min</td>
+                <td>Ejercicios pequeños</td>
+                <td>Practicas sintaxis, casos simples y errores comunes.</td>
+                <td>5 a 10 ejercicios en GitHub.</td>
+                <td><span class="kbd">Prompt ejercicios</span></td>
               </tr>
               <tr>
                 <td><strong>Miércoles</strong></td>
-                <td>Proyecto aplicado</td>
-                <td>Una funcionalidad funcionando</td>
-                <td>2 horas</td>
-                <td>45 min</td>
+                <td>Aplicación real</td>
+                <td>Conectas el concepto con un mini proyecto.</td>
+                <td>Una funcionalidad funcionando.</td>
+                <td><span class="kbd">Prompt proyecto</span></td>
               </tr>
               <tr>
                 <td><strong>Jueves</strong></td>
-                <td>Debugging, pruebas y refactor</td>
-                <td>Errores corregidos + commits claros</td>
-                <td>2 horas</td>
-                <td>45 min</td>
+                <td>Debugging y refactor</td>
+                <td>Revisas errores, limpias código y mejoras nombres.</td>
+                <td>Commit con mejora técnica.</td>
+                <td><span class="kbd">Prompt errores</span></td>
               </tr>
               <tr>
                 <td><strong>Viernes</strong></td>
-                <td>Lectura técnica + documentación</td>
-                <td>README actualizado + notas del libro</td>
-                <td>1.5 horas</td>
-                <td>30 min</td>
+                <td>Documentación</td>
+                <td>Actualizas README, notas y ejemplos.</td>
+                <td>README o bitácora actualizada.</td>
+                <td><span class="kbd">Prompt explicar</span></td>
               </tr>
               <tr>
                 <td><strong>Sábado</strong></td>
                 <td>Reto semanal</td>
-                <td>Mini proyecto o mejora completa</td>
-                <td>3 horas</td>
-                <td>1 hora</td>
+                <td>Resuelves un problema más completo sin mirar solución.</td>
+                <td>Mini entrega de la clase.</td>
+                <td><span class="kbd">Prompt entrevista</span></td>
               </tr>
               <tr>
                 <td><strong>Domingo</strong></td>
-                <td>Descanso activo</td>
-                <td>Revisión ligera, planificación y orden</td>
-                <td>30 min</td>
-                <td>15 min</td>
+                <td>Revisión ligera</td>
+                <td>Marcas la clase, revisas pendientes y preparas la siguiente.</td>
+                <td>Lista de dudas para la próxima clase.</td>
+                <td><span class="kbd">Prompt evaluación</span></td>
               </tr>
             </tbody>
           </table>
         </div>
-
         <div class="note" style="margin-top:18px">
-          Fórmula diaria: <strong>30% teoría + 60% código + 10% explicación.</strong>
-          Un ingeniero no solo hace que algo funcione: entiende por qué funciona y sabe explicarlo.
+          Fórmula de cada sesión: <strong>30% teoría + 60% práctica + 10% explicación.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="clases">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>3. Ruta completa de 48 clases</h2>
+            <p class="subtitle">
+              Abre un módulo, estudia una clase por semana y copia el concepto de búsqueda en ChatGPT.
+              Tu avance se guarda en este navegador.
+            </p>
+          </div>
+        </div>
+
+        <div class="class-layout">
+          <aside class="sidebar">
+            <h3>Avance</h3>
+            <p class="small">Marca las clases terminadas. El progreso queda guardado localmente.</p>
+            <div class="bar"><span id="progressBar"></span></div>
+            <p><strong id="progressText">0%</strong> completado</p>
+            <p class="small" id="progressCount">0 de 48 clases</p>
+            <button class="btn" id="resetBtn" type="button">Reiniciar avance</button>
+            <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+            <h3>Módulos</h3>
+            <div class="module-list" id="moduleButtons"></div>
+            <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+            <div class="danger">
+              Una clase completada exige: resumen, código o práctica, explicación y commit.
+            </div>
+          </aside>
+
+          <div class="class-grid" id="classContainer"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="terminologia">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>4. Terminología total de un Ingeniero de Software</h2>
+            <p class="subtitle">
+              Esta pestaña es tu glosario profesional. Úsala cuando escuches una palabra técnica y no quieras perderte.
+              Puedes buscar por término, filtrar por categoría y copiar un prompt para pedirle a ChatGPT una explicación completa.
+            </p>
+          </div>
+        </div>
+        <div class="note" style="margin-bottom:18px">
+          Forma correcta de estudiar esta pestaña: no memorices todo de una vez. Cada semana escoge 10 términos relacionados con la clase actual,
+          pídele ejemplos a ChatGPT y crea una frase propia para explicar cada término.
+        </div>
+        <div class="glossary-panel">
+          <div class="glossary-toolbar">
+            <label class="glossary-search" for="glossarySearch">
+              <span>Buscar</span>
+              <input id="glossarySearch" type="search" placeholder="Ejemplo: API, Docker, SOLID, SQL, testing, XSS...">
+            </label>
+            <span class="glossary-count" id="glossaryCount">0 términos</span>
+          </div>
+          <div class="glossary-tabs" id="glossaryCategoryButtons"></div>
+          <div class="glossary-grid" id="glossaryContainer"></div>
         </div>
       </div>
     </section>
 
     <section id="prompts">
       <div class="container">
-        <h2>6. Prompts profesionales para estudiar con ChatGPT</h2>
-        <p class="subtitle">
-          Copia, cambia el tema entre corchetes y úsalo. No pidas solo explicación: pide práctica, errores,
-          evaluación y proyecto.
-        </p>
-
+        <h2>5. Prompts para estudiar cada clase</h2>
+        <p class="subtitle">Usa estos prompts con el concepto de la clase. Cambia lo que está entre corchetes.</p>
         <div class="grid grid-2" style="margin-top:18px">
           <div class="card">
-            <h3>Prompt maestro para aprender un concepto</h3>
-            <div class="code">Actúa como profesor universitario de Ingeniería de Software.
-Enséñame [CONCEPTO] desde cero hasta nivel intermedio.
-Incluye:
-1. Definición sencilla.
+            <h3>Prompt maestro</h3>
+            <div class="prompt-card">Actúa como profesor universitario y mentor senior de Ingeniería de Software.
+Enséñame [CONCEPTO DE LA CLASE] desde cero, sin saturarme.
+Quiero:
+1. Explicación sencilla.
 2. Para qué sirve en software real.
 3. Ejemplo en JavaScript/TypeScript.
 4. Errores comunes.
-5. 10 ejercicios progresivos.
-6. Un mini proyecto.
-7. Preguntas tipo examen.
-8. Revisión de mi solución cuando te la envíe.</div>
+5. 5 ejercicios progresivos.
+6. Un mini reto aplicado.
+7. Preguntas para verificar si entendí.</div>
           </div>
-
           <div class="card">
-            <h3>Prompt para practicar algoritmos</h3>
-            <div class="code">Quiero practicar [TEMA DE ALGORITMOS].
-Dame 5 problemas: fácil, medio, medio+, difícil y reto.
+            <h3>Prompt para ejercicios</h3>
+            <div class="prompt-card">Dame ejercicios sobre [CONCEPTO DE LA CLASE].
 No me des la solución al inicio.
-Primero dame pistas por niveles.
-Cuando te envíe mi código, evalúa:
-- correctitud
-- complejidad Big O
-- legibilidad
-- casos borde
-- cómo mejorarlo.</div>
+Organízalos en:
+- 3 fáciles
+- 3 medios
+- 2 aplicados a un proyecto real
+Cuando te envíe mi código, evalúa claridad, errores, casos borde y mejora profesional.</div>
           </div>
-
           <div class="card">
-            <h3>Prompt para proyectos reales</h3>
-            <div class="code">Ayúdame a construir una funcionalidad real para mi portafolio:
-[DESCRIBE LA FUNCIÓN].
-Quiero que lo hagas como senior:
+            <h3>Prompt para proyecto</h3>
+            <div class="prompt-card">Quiero aplicar [CONCEPTO DE LA CLASE] en un mini proyecto.
+Dame:
 - requisitos
-- modelo de datos
-- endpoints
-- componentes frontend
-- validaciones
-- casos de prueba
-- riesgos de seguridad
+- pasos pequeños
+- estructura de archivos
 - criterios de aceptación
-No escribas todo por mí; guíame paso a paso y revisa mi avance.</div>
+- errores comunes
+- cómo subirlo a GitHub
+Guíame paso a paso, no me des todo resuelto de una vez.</div>
           </div>
-
           <div class="card">
-            <h3>Prompt para entender errores</h3>
-            <div class="code">Tengo este error:
-[PEGA EL ERROR]
-Y este código:
-[PEGA EL CÓDIGO]
-Explícame:
-1. Qué significa el error en palabras sencillas.
-2. Dónde está la causa probable.
-3. Cómo depurarlo paso a paso.
-4. Solución mínima.
-5. Solución profesional.
-6. Cómo evitar que vuelva a pasar.</div>
-          </div>
-
-          <div class="card">
-            <h3>Prompt para code review</h3>
-            <div class="code">Actúa como revisor senior de código.
-Revisa este código:
-[PEGA EL CÓDIGO]
-Evalúa:
-- claridad
-- duplicación
-- nombres
-- seguridad
-- rendimiento
-- arquitectura
-- pruebas necesarias
-Dame una versión mejorada y explícame cada cambio.</div>
-          </div>
-
-          <div class="card">
-            <h3>Prompt para explicar como ingeniero</h3>
-            <div class="code">Evalúame como si estuviera en una entrevista técnica.
-Pregúntame sobre [CONCEPTO].
+            <h3>Prompt para evaluación</h3>
+            <div class="prompt-card">Evalúame sobre [CONCEPTO DE LA CLASE] como si fuera una entrevista técnica.
 Hazme preguntas de menor a mayor dificultad.
-Después de cada respuesta mía, califícame de 1 a 10 y dime qué debo mejorar.
-No avances hasta que mi explicación sea clara.</div>
+Después de cada respuesta, califícame de 1 a 10, corrige mi explicación y dime qué debo practicar antes de avanzar.</div>
           </div>
         </div>
       </div>
@@ -1022,202 +482,35 @@ No avances hasta que mi explicación sea clara.</div>
 
     <section id="proyectos">
       <div class="container">
-        <h2>7. Portafolio final que debes construir</h2>
-        <p class="subtitle">
-          Estos proyectos demuestran evolución real. No los hagas solo para “tener algo”: cada uno debe estar publicado,
-          documentado y defendible.
-        </p>
-
-        <div class="table-wrap" style="margin-top:18px">
-          <table>
-            <thead>
-              <tr>
-                <th>Proyecto</th>
-                <th>Mes</th>
-                <th>Qué demuestra</th>
-                <th>Requisitos mínimos</th>
-                <th>Extra profesional</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Calculadora + gestor por consola</strong></td>
-                <td>1</td>
-                <td>Fundamentos y lógica</td>
-                <td>Funciones, validación, menú, errores</td>
-                <td>Tests básicos y README</td>
-              </tr>
-              <tr>
-                <td><strong>Gestor de tareas</strong></td>
-                <td>2</td>
-                <td>POO, módulos y frontend básico</td>
-                <td>CRUD, filtros, persistencia local</td>
-                <td>TypeScript + arquitectura limpia</td>
-              </tr>
-              <tr>
-                <td><strong>Biblioteca de algoritmos</strong></td>
-                <td>3</td>
-                <td>Estructuras, Big O y solución de problemas</td>
-                <td>Implementaciones propias + explicación</td>
-                <td>Benchmarks simples</td>
-              </tr>
-              <tr>
-                <td><strong>API de propiedades</strong></td>
-                <td>5</td>
-                <td>Backend, SQL, auth y roles</td>
-                <td>CRUD, JWT, PostgreSQL, validaciones</td>
-                <td>Swagger/OpenAPI + pruebas</td>
-              </tr>
-              <tr>
-                <td><strong>Frontend full-stack</strong></td>
-                <td>6-8</td>
-                <td>React, UX, arquitectura y consumo de API</td>
-                <td>Login, filtros, detalle, dashboard</td>
-                <td>Diseño responsive + estados vacíos</td>
-              </tr>
-              <tr>
-                <td><strong>Capstone profesional</strong></td>
-                <td>12</td>
-                <td>Sistema completo de ingeniería</td>
-                <td>App publicada, pruebas, seguridad, diagramas</td>
-                <td>Video demo + documentación técnica + métricas</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="card" style="margin-top:18px">
-          <h3>Checklist de README profesional</h3>
-          <span class="pill yellow">Descripción del problema</span>
-          <span class="pill yellow">Arquitectura</span>
-          <span class="pill yellow">Stack usado</span>
-          <span class="pill yellow">Instalación</span>
-          <span class="pill yellow">Variables de entorno</span>
-          <span class="pill yellow">Modelo de datos</span>
-          <span class="pill yellow">Endpoints</span>
-          <span class="pill yellow">Pruebas</span>
-          <span class="pill yellow">Capturas</span>
-          <span class="pill yellow">Video demo</span>
-          <span class="pill yellow">Decisiones técnicas</span>
-          <span class="pill yellow">Mejoras futuras</span>
+        <h2>6. Entregables por etapa</h2>
+        <p class="subtitle">Cada bloque de 8 clases debe dejar una evidencia clara para tu portafolio.</p>
+        <div class="grid grid-3" style="margin-top:18px">
+          <div class="card"><h3>Clases 1–8</h3><p>Fundamentos + mini app web básica.</p><span class="pill">JavaScript</span><span class="pill">DOM</span><span class="pill">GitHub Pages</span></div>
+          <div class="card"><h3>Clases 9–16</h3><p>Proyecto modular con POO y TypeScript.</p><span class="pill blue">POO</span><span class="pill blue">TypeScript</span><span class="pill blue">npm</span></div>
+          <div class="card"><h3>Clases 17–24</h3><p>Biblioteca de estructuras y 60 problemas explicados.</p><span class="pill yellow">Big O</span><span class="pill yellow">Algoritmos</span></div>
+          <div class="card"><h3>Clases 25–32</h3><p>Base PostgreSQL + API REST con autenticación.</p><span class="pill">SQL</span><span class="pill">Node</span><span class="pill">Auth</span></div>
+          <div class="card"><h3>Clases 33–40</h3><p>Frontend React conectado, probado y documentado.</p><span class="pill blue">React</span><span class="pill blue">Testing</span><span class="pill blue">UX</span></div>
+          <div class="card"><h3>Clases 41–48</h3><p>Arquitectura, seguridad, despliegue, IA y proyecto final.</p><span class="pill red">OWASP</span><span class="pill red">Docker</span><span class="pill red">Portafolio</span></div>
         </div>
       </div>
     </section>
 
     <section id="libros">
       <div class="container">
-        <h2>8. Libros recomendados por etapa</h2>
-        <p class="subtitle">
-          No necesitas leerlos todos de una vez. Usa los libros como apoyo mientras construyes proyectos.
-        </p>
-
-        <div class="table-wrap" style="margin-top:18px">
+        <h2>7. Libros y recursos por momento</h2>
+        <p class="subtitle">No los leas todos a la vez. Úsalos como apoyo en la clase correcta.</p>
+        <div class="schedule" style="margin-top:18px">
           <table>
             <thead>
-              <tr>
-                <th>Etapa</th>
-                <th>Libro</th>
-                <th>Para qué usarlo</th>
-                <th>Cómo estudiarlo</th>
-              </tr>
+              <tr><th>Clases</th><th>Recurso</th><th>Uso recomendado</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>Programación base</strong></td>
-                <td>Eloquent JavaScript · Marijn Haverbeke</td>
-                <td>Aprender JavaScript, funciones, estructuras, objetos y programación web.</td>
-                <td>Leer capítulos con ejercicios y pasar ejemplos a tu propio repositorio.</td>
-              </tr>
-              <tr>
-                <td><strong>JavaScript profundo</strong></td>
-                <td>You Don’t Know JS Yet · Kyle Simpson</td>
-                <td>Entender scope, closures, this, tipos y mecanismos internos.</td>
-                <td>Usarlo después del mes 1; no memorizar, experimentar en código.</td>
-              </tr>
-              <tr>
-                <td><strong>Algoritmos iniciales</strong></td>
-                <td>Grokking Algorithms · Aditya Bhargava</td>
-                <td>Comprender algoritmos con explicaciones visuales y problemas prácticos.</td>
-                <td>Resolver cada algoritmo en JavaScript y Python.</td>
-              </tr>
-              <tr>
-                <td><strong>Algoritmos universitarios</strong></td>
-                <td>Introduction to Algorithms · Cormen, Leiserson, Rivest, Stein</td>
-                <td>Base formal para análisis de algoritmos y estructuras avanzadas.</td>
-                <td>Consultar por temas; no leer lineal completo al inicio.</td>
-              </tr>
-              <tr>
-                <td><strong>Código profesional</strong></td>
-                <td>Clean Code · Robert C. Martin</td>
-                <td>Nombres, funciones, clases, errores, limpieza y mantenibilidad.</td>
-                <td>Aplicar capítulo por capítulo a tus propios proyectos.</td>
-              </tr>
-              <tr>
-                <td><strong>Oficio del programador</strong></td>
-                <td>The Pragmatic Programmer · Hunt & Thomas</td>
-                <td>Hábitos, criterio, responsabilidad, comunicación y carrera técnica.</td>
-                <td>Leer una sección semanal y convertirla en regla personal.</td>
-              </tr>
-              <tr>
-                <td><strong>Refactorización</strong></td>
-                <td>Refactoring · Martin Fowler</td>
-                <td>Mejorar diseño sin cambiar comportamiento externo.</td>
-                <td>Usarlo en el mes 7 para mejorar código ya construido.</td>
-              </tr>
-              <tr>
-                <td><strong>Patrones</strong></td>
-                <td>Head First Design Patterns · Freeman & Robson</td>
-                <td>Aprender patrones con ejemplos orientados a objetos.</td>
-                <td>Aplicar solo patrones que resuelvan problemas reales de tu app.</td>
-              </tr>
-              <tr>
-                <td><strong>Arquitectura</strong></td>
-                <td>Clean Architecture · Robert C. Martin</td>
-                <td>Separación de responsabilidades, capas y reglas de dependencia.</td>
-                <td>Leer junto con un refactor de tu backend.</td>
-              </tr>
-              <tr>
-                <td><strong>Bases de datos</strong></td>
-                <td>Database System Concepts · Silberschatz, Korth, Sudarshan</td>
-                <td>Modelo relacional, consultas, transacciones, índices y teoría.</td>
-                <td>Consultar mientras diseñas PostgreSQL.</td>
-              </tr>
-              <tr>
-                <td><strong>Redes</strong></td>
-                <td>Computer Networking: A Top-Down Approach · Kurose & Ross</td>
-                <td>Entender HTTP, DNS, TCP/IP y servicios de red.</td>
-                <td>Leer capítulos de web, transporte y seguridad.</td>
-              </tr>
-              <tr>
-                <td><strong>Sistemas operativos</strong></td>
-                <td>Operating Systems: Three Easy Pieces · Arpaci-Dusseau</td>
-                <td>Procesos, memoria, concurrencia y persistencia.</td>
-                <td>Complementar con prácticas en Linux y Docker.</td>
-              </tr>
-              <tr>
-                <td><strong>Sistemas de datos</strong></td>
-                <td>Designing Data-Intensive Applications · Martin Kleppmann</td>
-                <td>Datos, consistencia, replicación, particionamiento y sistemas distribuidos.</td>
-                <td>Leer después de bases de datos y backend.</td>
-              </tr>
-              <tr>
-                <td><strong>Ingeniería real</strong></td>
-                <td>Software Engineering at Google · Winters, Manshreck, Wright</td>
-                <td>Escala, prácticas, cultura técnica, mantenibilidad y trabajo en equipo.</td>
-                <td>Usarlo para madurar como ingeniero, no solo como programador.</td>
-              </tr>
-              <tr>
-                <td><strong>Seguridad</strong></td>
-                <td>Secure by Design · Johnsson, Deogun, Sawano</td>
-                <td>Diseñar software con seguridad desde el modelo y el código.</td>
-                <td>Aplicarlo en autenticación, permisos y validación.</td>
-              </tr>
-              <tr>
-                <td><strong>Machine Learning</strong></td>
-                <td>Hands-On Machine Learning · Aurélien Géron</td>
-                <td>Aprender ML con ejemplos prácticos en Python.</td>
-                <td>Usarlo en el mes 11 con un proyecto pequeño.</td>
-              </tr>
+              <tr><td><strong>1–8</strong></td><td>Eloquent JavaScript</td><td>Fundamentos, funciones, objetos, DOM y práctica.</td></tr>
+              <tr><td><strong>9–16</strong></td><td>You Don’t Know JS Yet + TypeScript Handbook</td><td>JavaScript profundo y tipado profesional.</td></tr>
+              <tr><td><strong>17–24</strong></td><td>Grokking Algorithms</td><td>Algoritmos visuales, Big O y resolución de problemas.</td></tr>
+              <tr><td><strong>25–32</strong></td><td>Database System Concepts + PostgreSQL Docs</td><td>Modelado, SQL, transacciones e índices.</td></tr>
+              <tr><td><strong>33–40</strong></td><td>React Docs + Refactoring</td><td>Frontend, componentes, calidad, testing y mejora de código.</td></tr>
+              <tr><td><strong>41–48</strong></td><td>Clean Architecture + Secure by Design + Software Engineering at Google</td><td>Arquitectura, seguridad, despliegue y mentalidad profesional.</td></tr>
             </tbody>
           </table>
         </div>
@@ -1226,105 +519,304 @@ No avances hasta que mi explicación sea clara.</div>
 
     <section id="evaluacion">
       <div class="container">
-        <h2>9. Rúbrica para saber si vas bien</h2>
-        <p class="subtitle">
-          Cada mes evalúate. No basta con ver videos: tienes que construir, explicar y sostener tu código.
-        </p>
-
+        <h2>8. Evaluación para avanzar de clase</h2>
+        <p class="subtitle">Antes de marcar una clase como terminada, revisa estos criterios.</p>
         <div class="grid grid-3" style="margin-top:18px">
           <div class="card">
-            <h3>Nivel básico</h3>
-            <p>Puedo seguir tutoriales y hacer ejercicios aislados.</p>
-            <ul>
-              <li>Entiendo sintaxis.</li>
-              <li>Hago programas pequeños.</li>
-              <li>Uso Git básico.</li>
+            <h3>Comprensión</h3>
+            <ul class="muted">
+              <li>Puedo explicar el concepto sin leer.</li>
+              <li>Sé cuándo usarlo y cuándo no.</li>
+              <li>Conozco mínimo 3 errores comunes.</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Nivel intermedio</h3>
-            <p>Puedo construir funcionalidades propias con estructura y criterio.</p>
-            <ul>
-              <li>Diseño modelos de datos.</li>
-              <li>Creo APIs y frontend conectado.</li>
-              <li>Escribo pruebas y documentación.</li>
+            <h3>Práctica</h3>
+            <ul class="muted">
+              <li>Hice ejercicios propios.</li>
+              <li>Subí código a GitHub.</li>
+              <li>Probé casos normales y casos borde.</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Nivel profesional</h3>
-            <p>Puedo defender decisiones técnicas y mantener software real.</p>
-            <ul>
-              <li>Diseño arquitectura escalable.</li>
-              <li>Pienso en seguridad, rendimiento y mantenimiento.</li>
-              <li>Despliego, monitoreo y explico el sistema.</li>
+            <h3>Profesionalismo</h3>
+            <ul class="muted">
+              <li>El código tiene nombres claros.</li>
+              <li>El README o bitácora está actualizado.</li>
+              <li>Puedo defender mi solución en entrevista.</li>
             </ul>
           </div>
         </div>
-
-        <details style="margin-top:18px" open>
-          <summary>Examen mensual sugerido</summary>
-          <ol>
-            <li>Explica el tema del mes sin mirar apuntes.</li>
-            <li>Resuelve un problema nuevo en máximo 45 minutos.</li>
-            <li>Agrega una funcionalidad al proyecto sin romper lo anterior.</li>
-            <li>Escribe al menos 3 pruebas.</li>
-            <li>Haz un commit claro y actualiza README.</li>
-            <li>Pide a ChatGPT que te entreviste sobre el tema y califica tus respuestas.</li>
-          </ol>
-        </details>
+        <div class="note" style="margin-top:18px">
+          Tu meta no es “terminar rápido”. Tu meta es que cada semana suba tu nivel técnico, tu criterio y tu portafolio.
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p><strong>Plan creado para estudio personal intensivo.</strong></p>
-      <p>
-        Ruta enfocada en fundamentos universitarios + práctica profesional.
-        Ajusta los tiempos según tu disponibilidad, pero conserva la secuencia:
-        fundamentos → datos → backend/frontend → calidad → arquitectura → seguridad → despliegue → proyecto final.
-      </p>
-      <p class="small">Consejo final: cada semana publica algo, aunque sea pequeño. El portafolio se construye con constancia.</p>
+      <p><strong>Ruta de estudio personal para Ingeniería de Software.</strong></p>
+      <p>Secuencia: fundamentos → terminología profesional → JavaScript profundo → TypeScript → algoritmos → datos → backend → frontend → calidad → arquitectura → seguridad → despliegue → IA → proyecto final.</p>
+      <p class="small">Consejo: publica algo pequeño cada semana. La constancia crea portafolio.</p>
     </div>
   </footer>
 
   <script>
-    const checks = Array.from(document.querySelectorAll('input[type="checkbox"][data-key]'));
-    const bar = document.getElementById('progressBar');
-    const text = document.getElementById('progressText');
-    const count = document.getElementById('progressCount');
-    const reset = document.getElementById('resetBtn');
+    const modules = ["Módulo 1 · Fundamentos reales", "Módulo 2 · JavaScript práctico", "Módulo 3 · JavaScript profundo y POO", "Módulo 4 · TypeScript para software serio", "Módulo 5 · Algoritmos base", "Módulo 6 · Algoritmos intermedios", "Módulo 7 · Bases de datos y SQL", "Módulo 8 · Backend profesional", "Módulo 9 · Frontend moderno", "Módulo 10 · Ingeniería de software y calidad", "Módulo 11 · Arquitectura, seguridad e infraestructura", "Módulo 12 · Despliegue, IA y proyecto final"];
+    const lessons = [{"n": 1, "month": 1, "week": 1, "module": "Módulo 1 · Fundamentos reales", "title": "Preparación profesional: ambiente, terminal, Git y método de estudio", "concept": "ambiente de desarrollo, terminal, Git, GitHub y método de aprendizaje para ingeniería de software", "goal": "Dejar listo tu entorno y entender cómo estudiar sin copiar código.", "practice": "Crear un repositorio llamado ruta-software-2026 con README, carpetas por módulo y primer commit.", "output": "Repositorio inicial con README y bitácora de estudio."}, {"n": 2, "month": 1, "week": 2, "module": "Módulo 1 · Fundamentos reales", "title": "Variables, constantes, tipos de datos y operadores", "concept": "variables, constantes, tipos de datos y operadores en JavaScript con ejemplos cotidianos", "goal": "Entender cómo se representa la información dentro de un programa.", "practice": "Crear 20 ejercicios: edad, salario, descuentos, conversiones, presupuesto y validaciones simples.", "output": "Archivo fundamentos-variables.js con ejercicios comentados."}, {"n": 3, "month": 1, "week": 3, "module": "Módulo 1 · Fundamentos reales", "title": "Condicionales, lógica booleana y decisiones", "concept": "condicionales if else switch lógica booleana operadores lógicos en JavaScript", "goal": "Tomar decisiones en código según reglas del negocio.", "practice": "Crear reglas para aprobar crédito, calcular nivel de riesgo y clasificar prioridad de tickets.", "output": "Programa con 10 escenarios de decisión documentados."}, {"n": 4, "month": 1, "week": 4, "module": "Módulo 1 · Fundamentos reales", "title": "Ciclos, funciones, debugging y lectura de errores", "concept": "ciclos for while funciones debugging y manejo de errores básicos en JavaScript", "goal": "Repetir procesos, dividir problemas y corregir errores con método.", "practice": "Crear menú por consola con funciones para sumar, promediar, convertir unidades y validar entradas.", "output": "Mini proyecto de consola con funciones limpias."}, {"n": 5, "month": 2, "week": 5, "module": "Módulo 2 · JavaScript práctico", "title": "Arrays y métodos modernos", "concept": "arrays map filter reduce find some every sort en JavaScript explicado paso a paso", "goal": "Procesar listas de datos como lo harías en una app real.", "practice": "Analizar una lista de casos: filtrar por estado, contar por categoría, ordenar por fecha y calcular promedios.", "output": "Archivo arrays-casos.js con 12 ejercicios."}, {"n": 6, "month": 2, "week": 6, "module": "Módulo 2 · JavaScript práctico", "title": "Objetos, JSON, destructuring, spread y rest", "concept": "objetos JSON destructuring spread rest optional chaining nullish coalescing en JavaScript", "goal": "Modelar entidades reales como usuarios, propiedades, productos o tickets.", "practice": "Crear objetos de propiedades, usuarios y reservas; transformar datos y validar campos faltantes.", "output": "Modelo simple de datos en JavaScript."}, {"n": 7, "month": 2, "week": 7, "module": "Módulo 2 · JavaScript práctico", "title": "DOM, eventos y formularios web", "concept": "DOM eventos formularios validación inputs y manipulación de HTML con JavaScript", "goal": "Conectar la lógica de JavaScript con una interfaz visible.", "practice": "Crear formulario de registro de propiedad con validación de ciudad, precio, habitaciones y descripción.", "output": "Página HTML funcional con validaciones."}, {"n": 8, "month": 2, "week": 8, "module": "Módulo 2 · JavaScript práctico", "title": "Mini proyecto 1: gestor de tareas o casos", "concept": "proyecto gestor de tareas con JavaScript arrays objetos DOM localStorage y filtros", "goal": "Unir fundamentos en un producto pequeño, ordenado y usable.", "practice": "CRUD de tareas/casos con filtros por prioridad, estado y búsqueda.", "output": "Mini app publicada en GitHub Pages."}, {"n": 9, "month": 3, "week": 9, "module": "Módulo 3 · JavaScript profundo y POO", "title": "Scope, hoisting, closures y ejecución de código", "concept": "scope hoisting closures call stack execution context en JavaScript explicado fácil", "goal": "Entender por qué el código se comporta como se comporta.", "practice": "Crear ejemplos donde una función recuerde valores y explicar línea por línea el resultado.", "output": "Notas + 10 ejemplos propios de closures."}, {"n": 10, "month": 3, "week": 10, "module": "Módulo 3 · JavaScript profundo y POO", "title": "this, prototypes, clases y objetos internos", "concept": "this prototypes clases constructor métodos estáticos en JavaScript", "goal": "Comprender cómo JavaScript maneja objetos por dentro.", "practice": "Crear clases Usuario, Propiedad y Reserva con métodos y validaciones.", "output": "Modelo orientado a objetos inicial."}, {"n": 11, "month": 3, "week": 11, "module": "Módulo 3 · JavaScript profundo y POO", "title": "POO profesional: encapsulación, herencia y composición", "concept": "programación orientada a objetos encapsulación herencia composición en JavaScript y TypeScript", "goal": "Elegir composición o herencia según el problema, no por costumbre.", "practice": "Refactorizar clases para evitar duplicación usando composición.", "output": "Código antes/después con explicación de decisiones."}, {"n": 12, "month": 3, "week": 12, "module": "Módulo 3 · JavaScript profundo y POO", "title": "Módulos, npm, asincronía, promesas y fetch", "concept": "módulos ES npm promesas async await fetch manejo de errores asíncronos JavaScript", "goal": "Consumir datos externos y organizar código en módulos.", "practice": "Consumir una API pública, mostrar datos y manejar loading/error/empty states.", "output": "Proyecto web pequeño conectado a API."}, {"n": 13, "month": 4, "week": 13, "module": "Módulo 4 · TypeScript para software serio", "title": "Tipos, interfaces y modelos de dominio", "concept": "TypeScript tipos interfaces type aliases modelos de dominio para aplicaciones web", "goal": "Evitar errores antes de ejecutar el programa.", "practice": "Tipar Usuario, Propiedad, Reserva, Pago y RespuestaAPI.", "output": "Carpeta types con modelos reutilizables."}, {"n": 14, "month": 4, "week": 14, "module": "Módulo 4 · TypeScript para software serio", "title": "Funciones tipadas, genéricos y utilidades", "concept": "funciones tipadas genéricos utility types Partial Pick Omit Record en TypeScript", "goal": "Crear funciones reutilizables sin perder seguridad de tipos.", "practice": "Crear utilidades para filtrar, ordenar, paginar y formatear datos.", "output": "Librería pequeña de helpers en TypeScript."}, {"n": 15, "month": 4, "week": 15, "module": "Módulo 4 · TypeScript para software serio", "title": "Clases, DTOs, validación y organización por módulos", "concept": "DTO validación clases servicios módulos arquitectura básica en TypeScript", "goal": "Separar entrada de datos, reglas y salida de forma profesional.", "practice": "Crear DTOs para crear/actualizar propiedad y validar campos requeridos.", "output": "Módulo properties con DTOs y servicios."}, {"n": 16, "month": 4, "week": 16, "module": "Módulo 4 · TypeScript para software serio", "title": "Proyecto 2: gestor tipado con arquitectura básica", "concept": "proyecto TypeScript CRUD modular con validaciones servicios repositorios y README", "goal": "Construir una app pequeña con estructura mantenible.", "practice": "Rehacer el gestor de tareas/casos en TypeScript con carpetas limpias.", "output": "Proyecto TypeScript con README y scripts npm."}, {"n": 17, "month": 5, "week": 17, "module": "Módulo 5 · Algoritmos base", "title": "Big O, complejidad, recursión y pensamiento algorítmico", "concept": "Big O complejidad temporal espacial recursión pensamiento algorítmico con JavaScript", "goal": "Medir eficiencia y resolver problemas sin fuerza bruta innecesaria.", "practice": "Analizar 10 soluciones y escribir su complejidad temporal y espacial.", "output": "Tabla de complejidad con ejemplos."}, {"n": 18, "month": 5, "week": 18, "module": "Módulo 5 · Algoritmos base", "title": "Arrays y strings: two pointers y sliding window", "concept": "two pointers sliding window arrays strings patrones de algoritmos JavaScript", "goal": "Resolver problemas frecuentes de entrevistas y lógica real.", "practice": "Resolver 10 ejercicios de strings, duplicados, máximos, mínimos y ventanas.", "output": "10 problemas resueltos con explicación."}, {"n": 19, "month": 5, "week": 19, "module": "Módulo 5 · Algoritmos base", "title": "Hash maps, sets y conteo eficiente", "concept": "hash maps sets diccionarios conteo frecuencia búsqueda eficiente algoritmos JavaScript", "goal": "Usar estructuras correctas para buscar y contar rápido.", "practice": "Resolver problemas de anagramas, duplicados, conteos, agrupaciones y frecuencia.", "output": "10 ejercicios con Big O explicado."}, {"n": 20, "month": 5, "week": 20, "module": "Módulo 5 · Algoritmos base", "title": "Pilas, colas y listas enlazadas", "concept": "stacks queues linked lists estructuras de datos implementación en JavaScript", "goal": "Entender estructuras usadas en navegadores, colas, historial y procesos.", "practice": "Implementar Stack, Queue y LinkedList desde cero.", "output": "Biblioteca de estructuras con pruebas manuales."}, {"n": 21, "month": 6, "week": 21, "module": "Módulo 6 · Algoritmos intermedios", "title": "Árboles binarios y recorridos", "concept": "árboles binarios binary tree preorder inorder postorder BFS DFS JavaScript", "goal": "Comprender jerarquías, búsquedas y recorridos.", "practice": "Implementar árbol binario y recorridos; resolver 5 ejercicios.", "output": "Archivo tree.js con recorridos explicados."}, {"n": 22, "month": 6, "week": 22, "module": "Módulo 6 · Algoritmos intermedios", "title": "Grafos: BFS, DFS y caminos", "concept": "grafos BFS DFS listas de adyacencia caminos ciclos algoritmos JavaScript", "goal": "Modelar relaciones como redes, rutas, dependencias y recomendaciones.", "practice": "Crear grafo de ciudades o usuarios y recorrerlo con BFS/DFS.", "output": "Grafo funcional con explicación visual."}, {"n": 23, "month": 6, "week": 23, "module": "Módulo 6 · Algoritmos intermedios", "title": "Ordenamiento, búsqueda binaria y estrategias", "concept": "sorting binary search merge sort quicksort búsqueda binaria JavaScript", "goal": "Saber cuándo ordenar, cuándo buscar y qué costo tiene.", "practice": "Implementar búsqueda binaria, merge sort y quick sort con pruebas.", "output": "Comparación de algoritmos y Big O."}, {"n": 24, "month": 6, "week": 24, "module": "Módulo 6 · Algoritmos intermedios", "title": "Programación dinámica básica y examen de algoritmos", "concept": "programación dinámica memoization tabulation problemas básicos JavaScript", "goal": "Resolver problemas que se repiten usando memoria.", "practice": "Resolver Fibonacci optimizado, climbing stairs, coin change básico y grid paths.", "output": "Examen de 20 problemas con soluciones explicadas."}, {"n": 25, "month": 7, "week": 25, "module": "Módulo 7 · Bases de datos y SQL", "title": "Modelo entidad-relación, cardinalidad y normalización", "concept": "modelo entidad relación cardinalidad normalización bases de datos relacionales", "goal": "Diseñar datos antes de crear tablas.", "practice": "Diseñar la base de datos de propiedades, usuarios, reservas, pagos y favoritos.", "output": "Diagrama MER y reglas de negocio."}, {"n": 26, "month": 7, "week": 26, "module": "Módulo 7 · Bases de datos y SQL", "title": "SQL esencial: SELECT, WHERE, GROUP BY y agregaciones", "concept": "SQL SELECT WHERE ORDER BY GROUP BY HAVING funciones agregadas PostgreSQL", "goal": "Consultar datos con precisión.", "practice": "Crear 30 consultas sobre propiedades, reservas y usuarios.", "output": "Archivo consultas-basicas.sql."}, {"n": 27, "month": 7, "week": 27, "module": "Módulo 7 · Bases de datos y SQL", "title": "JOINs, subconsultas, vistas y reportes", "concept": "SQL JOIN INNER LEFT subconsultas vistas reportes PostgreSQL", "goal": "Cruzar información entre tablas como en sistemas reales.", "practice": "Reportes: propiedades por ciudad, reservas por usuario, ingresos por mes y favoritos.", "output": "consultas-reportes.sql con explicación."}, {"n": 28, "month": 7, "week": 28, "module": "Módulo 7 · Bases de datos y SQL", "title": "Índices, transacciones, migraciones y PostgreSQL", "concept": "índices transacciones ACID migraciones seeds PostgreSQL rendimiento básico", "goal": "Crear bases confiables, rápidas y mantenibles.", "practice": "Crear migraciones, seeds, índices y transacciones para reservas.", "output": "Base PostgreSQL lista para backend."}, {"n": 29, "month": 8, "week": 29, "module": "Módulo 8 · Backend profesional", "title": "HTTP, REST, JSON y diseño de APIs", "concept": "HTTP REST JSON códigos de estado métodos GET POST PUT PATCH DELETE diseño de API", "goal": "Entender cómo se comunican frontend y backend.", "practice": "Diseñar endpoints para propiedades, usuarios, auth, reservas y favoritos.", "output": "Contrato de API con rutas y ejemplos."}, {"n": 30, "month": 8, "week": 30, "module": "Módulo 8 · Backend profesional", "title": "Node.js, Express, rutas, controladores y servicios", "concept": "Node.js Express rutas controladores servicios repositorios arquitectura backend", "goal": "Crear backend organizado y fácil de mantener.", "practice": "Implementar CRUD de propiedades con capas: router, controller, service, repository.", "output": "API inicial funcionando."}, {"n": 31, "month": 8, "week": 31, "module": "Módulo 8 · Backend profesional", "title": "Autenticación, autorización, JWT, cookies y roles", "concept": "autenticación autorización JWT cookies sesiones roles hashing bcrypt seguridad backend", "goal": "Proteger rutas y diferenciar permisos de usuario.", "practice": "Login, registro, hash de contraseña, middleware auth y roles arrendador/usuario/admin.", "output": "Sistema de auth funcional."}, {"n": 32, "month": 8, "week": 32, "module": "Módulo 8 · Backend profesional", "title": "Validación, errores, paginación, filtros y documentación", "concept": "validación de inputs manejo global de errores paginación filtros documentación API Swagger OpenAPI", "goal": "Hacer una API profesional, clara y resistente a datos malos.", "practice": "Agregar filtros por ciudad, precio y servicios; documentar endpoints con ejemplos.", "output": "API documentada con validaciones."}, {"n": 33, "month": 9, "week": 33, "module": "Módulo 9 · Frontend moderno", "title": "React: componentes, props, estado y composición", "concept": "React componentes props state composición TypeScript buenas prácticas", "goal": "Construir interfaces reutilizables y limpias.", "practice": "Crear PropertyCard, SearchBar, Button, Layout y EmptyState.", "output": "Biblioteca básica de componentes."}, {"n": 34, "month": 9, "week": 34, "module": "Módulo 9 · Frontend moderno", "title": "Hooks, formularios, rutas y estado local/global", "concept": "React hooks useState useEffect useMemo formularios rutas estado global Context Zustand Redux", "goal": "Controlar pantallas, datos y formularios sin desorden.", "practice": "Crear rutas Home, Properties, Detail, Login y Publish con formularios validados.", "output": "Frontend navegable con flujo principal."}, {"n": 35, "month": 9, "week": 35, "module": "Módulo 9 · Frontend moderno", "title": "Consumo de API, loading, errores y estados vacíos", "concept": "consumir API con React fetch Axios React Query loading error empty states", "goal": "Conectar la interfaz con datos reales de backend.", "practice": "Listar propiedades desde API, aplicar filtros y mostrar errores de forma clara.", "output": "Frontend conectado a backend."}, {"n": 36, "month": 9, "week": 36, "module": "Módulo 9 · Frontend moderno", "title": "UX, responsive, accesibilidad y pulido visual", "concept": "responsive design accesibilidad UX UI estados vacíos formularios profesionales React", "goal": "Hacer que la app se vea ordenada en celular y escritorio.", "practice": "Revisar navegación, formularios, contrastes, textos, focus y experiencia móvil.", "output": "Versión frontend pulida."}, {"n": 37, "month": 10, "week": 37, "module": "Módulo 10 · Ingeniería de software y calidad", "title": "Requisitos, historias de usuario, casos de uso y criterios de aceptación", "concept": "requisitos historias de usuario casos de uso criterios de aceptación ingeniería de software", "goal": "Traducir necesidades en funcionalidades claras.", "practice": "Crear backlog de 20 historias para tu app de propiedades con criterios de aceptación.", "output": "Backlog profesional priorizado."}, {"n": 38, "month": 10, "week": 38, "module": "Módulo 10 · Ingeniería de software y calidad", "title": "Pruebas unitarias, integración y E2E", "concept": "testing unitario integración E2E Jest Vitest Playwright mocks cobertura", "goal": "Evitar romper tu software al hacer cambios.", "practice": "Crear pruebas para servicios backend, componentes frontend y flujo login/búsqueda.", "output": "Suite de pruebas inicial."}, {"n": 39, "month": 10, "week": 39, "module": "Módulo 10 · Ingeniería de software y calidad", "title": "Git profesional, code review, refactor y deuda técnica", "concept": "Git workflow code review refactoring deuda técnica buenas prácticas de commits", "goal": "Trabajar como en un equipo profesional.", "practice": "Crear ramas, PR simulado, checklist de review y refactorizar código repetido.", "output": "Historial Git limpio y checklist de calidad."}, {"n": 40, "month": 10, "week": 40, "module": "Módulo 10 · Ingeniería de software y calidad", "title": "Documentación técnica, UML básico y entregables", "concept": "documentación técnica README UML diagramas secuencia arquitectura manual técnico", "goal": "Explicar tu sistema para usuarios, reclutadores y equipos técnicos.", "practice": "Crear README completo, diagrama de casos de uso, secuencia y arquitectura simple.", "output": "Documentación de portafolio."}, {"n": 41, "month": 11, "week": 41, "module": "Módulo 11 · Arquitectura, seguridad e infraestructura", "title": "SOLID, patrones y Clean Architecture", "concept": "SOLID patrones de diseño Clean Architecture servicios repositorios casos de uso", "goal": "Diseñar código que crezca sin volverse inmantenible.", "practice": "Separar tu backend en dominio, aplicación, infraestructura e interfaces.", "output": "Refactor arquitectónico inicial."}, {"n": 42, "month": 11, "week": 42, "module": "Módulo 11 · Arquitectura, seguridad e infraestructura", "title": "Diagramas C4, ADR y monolito modular", "concept": "diagramas C4 ADR decisiones arquitectónicas monolito modular arquitectura de software", "goal": "Documentar decisiones y estructura como ingeniero profesional.", "practice": "Crear diagrama C1, C2, C3 y 3 ADR de decisiones reales.", "output": "Carpeta docs/architecture."}, {"n": 43, "month": 11, "week": 43, "module": "Módulo 11 · Arquitectura, seguridad e infraestructura", "title": "Redes: DNS, TCP/IP, HTTP/HTTPS, CORS y cookies", "concept": "DNS TCP IP HTTP HTTPS CORS cookies seguras redes para desarrollo web", "goal": "Entender cómo viaja una petición desde el navegador hasta el servidor.", "practice": "Dibujar el flujo login → frontend → backend → base de datos → respuesta.", "output": "Explicación técnica de una petición web."}, {"n": 44, "month": 11, "week": 44, "module": "Módulo 11 · Arquitectura, seguridad e infraestructura", "title": "OWASP, seguridad web, logs, backups y variables de entorno", "concept": "OWASP Top 10 XSS CSRF SQL injection rate limit logs backups variables de entorno", "goal": "Reducir riesgos comunes en aplicaciones web.", "practice": "Auditar tu app con checklist OWASP y corregir mínimo 5 riesgos.", "output": "Informe de seguridad y mejoras aplicadas."}, {"n": 45, "month": 12, "week": 45, "module": "Módulo 12 · Despliegue, IA y proyecto final", "title": "Linux, Docker, variables de entorno y CI/CD", "concept": "Linux Docker docker compose variables de entorno GitHub Actions CI CD despliegue", "goal": "Preparar tu app para ejecutarse igual en cualquier entorno.", "practice": "Dockerizar backend, frontend y base de datos; crear pipeline con pruebas.", "output": "docker-compose + workflow CI."}, {"n": 46, "month": 12, "week": 46, "module": "Módulo 12 · Despliegue, IA y proyecto final", "title": "Despliegue, monitoreo, logs y rendimiento", "concept": "despliegue web monitoreo logs performance Lighthouse profiling backend frontend", "goal": "Publicar y observar el comportamiento de tu sistema.", "practice": "Desplegar app, revisar logs, medir Lighthouse y corregir problemas críticos.", "output": "App publicada con métricas básicas."}, {"n": 47, "month": 12, "week": 47, "module": "Módulo 12 · Despliegue, IA y proyecto final", "title": "Datos, Python, pandas, ML básico e IA aplicada", "concept": "Python pandas limpieza de datos machine learning básico embeddings APIs de IA recomendadores", "goal": "Agregar una función inteligente sin perder criterio técnico.", "practice": "Crear recomendador simple de propiedades por ciudad, precio, preferencias y similitud.", "output": "Módulo de recomendación documentado."}, {"n": 48, "month": 12, "week": 48, "module": "Módulo 12 · Despliegue, IA y proyecto final", "title": "Capstone: presentación, demo, README y defensa técnica", "concept": "proyecto final full stack portafolio README demo arquitectura pruebas seguridad despliegue", "goal": "Cerrar el año con un proyecto defendible en entrevista técnica.", "practice": "Preparar video demo, README, diagramas, pruebas, checklist de seguridad y plan de mejoras.", "output": "Portafolio final listo para mostrar."}];
 
-    function load(){
-      checks.forEach(ch => {
-        ch.checked = localStorage.getItem('softwarePlan_' + ch.dataset.key) === '1';
-      });
-      update();
+
+    const glossaryTerms = [{"category": "Fundamentos de programación", "term": "Algoritmo", "definition": "Secuencia ordenada de pasos para resolver un problema o transformar una entrada en una salida.", "search": "algoritmo definición ejemplos pseudocódigo JavaScript pensamiento computacional"}, {"category": "Fundamentos de programación", "term": "Pseudocódigo", "definition": "Forma de escribir una solución usando lenguaje cercano al humano antes de programarla en un lenguaje real.", "search": "pseudocódigo cómo escribir algoritmos antes de programar ejemplos"}, {"category": "Fundamentos de programación", "term": "Variable", "definition": "Espacio con nombre donde se guarda un valor que puede cambiar durante la ejecución.", "search": "variables en programación tipos ejemplos JavaScript"}, {"category": "Fundamentos de programación", "term": "Constante", "definition": "Valor con nombre que no debería cambiar después de ser definido.", "search": "constantes en programación const buenas prácticas JavaScript"}, {"category": "Fundamentos de programación", "term": "Tipo de dato", "definition": "Categoría de un valor: número, texto, booleano, objeto, arreglo, null, undefined, entre otros.", "search": "tipos de datos primitivos y referencia JavaScript ejemplos"}, {"category": "Fundamentos de programación", "term": "Operador", "definition": "Símbolo o palabra que permite hacer operaciones aritméticas, lógicas, comparación o asignación.", "search": "operadores aritméticos lógicos comparación asignación JavaScript"}, {"category": "Fundamentos de programación", "term": "Expresión", "definition": "Combinación de valores, variables y operadores que produce un resultado.", "search": "expresiones en programación ejemplos JavaScript"}, {"category": "Fundamentos de programación", "term": "Sentencia", "definition": "Instrucción completa que el lenguaje ejecuta, como una asignación, un if o un return.", "search": "sentencias statements programación JavaScript ejemplos"}, {"category": "Fundamentos de programación", "term": "Control de flujo", "definition": "Forma en que el programa decide qué instrucciones ejecutar y en qué orden.", "search": "control de flujo if else switch ciclos JavaScript"}, {"category": "Fundamentos de programación", "term": "Condicional", "definition": "Estructura que ejecuta código según una condición verdadera o falsa.", "search": "condicionales if else switch JavaScript ejercicios"}, {"category": "Fundamentos de programación", "term": "Ciclo", "definition": "Estructura que repite instrucciones mientras se cumpla una condición o hasta recorrer una colección.", "search": "ciclos for while for of JavaScript ejemplos"}, {"category": "Fundamentos de programación", "term": "Función", "definition": "Bloque reutilizable de código que recibe datos, realiza una tarea y puede devolver un resultado.", "search": "funciones parámetros retorno scope JavaScript"}, {"category": "Fundamentos de programación", "term": "Parámetro", "definition": "Nombre definido en una función para recibir un valor de entrada.", "search": "parámetros argumentos funciones JavaScript diferencia"}, {"category": "Fundamentos de programación", "term": "Argumento", "definition": "Valor real que se entrega a una función cuando se llama.", "search": "argumentos parámetros funciones JavaScript ejemplos"}, {"category": "Fundamentos de programación", "term": "Retorno", "definition": "Valor que una función entrega al lugar donde fue llamada.", "search": "return retorno funciones JavaScript buenas prácticas"}, {"category": "Fundamentos de programación", "term": "Scope", "definition": "Alcance donde una variable puede ser leída o modificada.", "search": "scope global local bloque función JavaScript"}, {"category": "Fundamentos de programación", "term": "Debugging", "definition": "Proceso de encontrar, entender y corregir errores en el código.", "search": "debugging depuración breakpoints console log JavaScript"}, {"category": "Fundamentos de programación", "term": "Refactorización básica", "definition": "Mejorar la estructura interna del código sin cambiar lo que hace para el usuario.", "search": "refactorización básica código limpio ejemplos JavaScript"}, {"category": "JavaScript y TypeScript", "term": "Array", "definition": "Colección ordenada de elementos accesibles por índice.", "search": "arrays métodos map filter reduce find JavaScript"}, {"category": "JavaScript y TypeScript", "term": "Objeto", "definition": "Estructura que agrupa datos y comportamientos mediante pares clave-valor.", "search": "objetos propiedades métodos JavaScript ejemplos"}, {"category": "JavaScript y TypeScript", "term": "JSON", "definition": "Formato de texto para intercambiar datos entre sistemas, muy usado en APIs.", "search": "JSON estructura parse stringify APIs JavaScript"}, {"category": "JavaScript y TypeScript", "term": "Destructuring", "definition": "Sintaxis para extraer valores de arrays u objetos de forma corta y legible.", "search": "destructuring objetos arrays JavaScript ejemplos"}, {"category": "JavaScript y TypeScript", "term": "Spread operator", "definition": "Sintaxis que expande elementos de arrays u objetos para copiar, combinar o pasar argumentos.", "search": "spread operator arrays objetos JavaScript ejemplos"}, {"category": "JavaScript y TypeScript", "term": "Rest operator", "definition": "Sintaxis que agrupa múltiples valores restantes en un array o parámetro.", "search": "rest operator parámetros arrays JavaScript ejemplos"}, {"category": "JavaScript y TypeScript", "term": "Optional chaining", "definition": "Operador que permite acceder a propiedades anidadas sin romper si algo es null o undefined.", "search": "optional chaining JavaScript ?. ejemplos"}, {"category": "JavaScript y TypeScript", "term": "Nullish coalescing", "definition": "Operador que permite usar un valor alternativo solo cuando el valor es null o undefined.", "search": "nullish coalescing JavaScript ?? ejemplos"}, {"category": "JavaScript y TypeScript", "term": "Closure", "definition": "Función que recuerda variables del entorno donde fue creada, incluso después de terminar ese entorno.", "search": "closures JavaScript explicación sencilla ejemplos"}, {"category": "JavaScript y TypeScript", "term": "Hoisting", "definition": "Comportamiento por el cual algunas declaraciones parecen moverse al inicio de su alcance.", "search": "hoisting var let const function JavaScript"}, {"category": "JavaScript y TypeScript", "term": "Call stack", "definition": "Pila donde JavaScript registra qué funciones se están ejecutando y en qué orden.", "search": "call stack execution context JavaScript explicado"}, {"category": "JavaScript y TypeScript", "term": "Event loop", "definition": "Mecanismo que coordina tareas síncronas, callbacks, promesas y eventos en JavaScript.", "search": "event loop microtasks macrotasks promesas JavaScript"}, {"category": "JavaScript y TypeScript", "term": "Promesa", "definition": "Objeto que representa una operación asíncrona que puede completarse o fallar en el futuro.", "search": "promises promesas JavaScript then catch async await"}, {"category": "JavaScript y TypeScript", "term": "Async/Await", "definition": "Sintaxis para escribir código asíncrono de manera más clara usando promesas.", "search": "async await JavaScript manejo de errores try catch"}, {"category": "JavaScript y TypeScript", "term": "Módulo ES", "definition": "Archivo que exporta e importa código para organizar mejor una aplicación.", "search": "ES modules import export JavaScript TypeScript"}, {"category": "JavaScript y TypeScript", "term": "Tipo en TypeScript", "definition": "Definición que describe la forma esperada de un dato para evitar errores.", "search": "TypeScript tipos type aliases interfaces ejemplos"}, {"category": "JavaScript y TypeScript", "term": "Interface", "definition": "Contrato que define qué propiedades y métodos debe tener un objeto.", "search": "interfaces TypeScript modelos de dominio ejemplos"}, {"category": "JavaScript y TypeScript", "term": "Genérico", "definition": "Técnica para crear funciones, clases o tipos reutilizables que funcionan con varios tipos.", "search": "genéricos TypeScript funciones clases ejemplos"}, {"category": "JavaScript y TypeScript", "term": "DTO", "definition": "Objeto usado para transportar datos entre capas o entradas/salidas de una API.", "search": "DTO Data Transfer Object TypeScript backend validación"}, {"category": "JavaScript y TypeScript", "term": "Type narrowing", "definition": "Proceso de reducir un tipo amplio a uno más específico mediante validaciones.", "search": "type narrowing TypeScript typeof instanceof guards"}, {"category": "POO y diseño de código", "term": "Clase", "definition": "Molde para crear objetos con propiedades y métodos.", "search": "clases objetos instancias JavaScript TypeScript POO"}, {"category": "POO y diseño de código", "term": "Instancia", "definition": "Objeto creado a partir de una clase.", "search": "instancia objeto clase programación orientada a objetos"}, {"category": "POO y diseño de código", "term": "Encapsulación", "definition": "Principio de ocultar detalles internos y exponer solo lo necesario.", "search": "encapsulación POO private public TypeScript ejemplos"}, {"category": "POO y diseño de código", "term": "Abstracción", "definition": "Representar lo esencial de una entidad ocultando complejidad innecesaria.", "search": "abstracción programación orientada a objetos ejemplos"}, {"category": "POO y diseño de código", "term": "Herencia", "definition": "Mecanismo donde una clase reutiliza o extiende comportamiento de otra.", "search": "herencia POO extends super ventajas riesgos"}, {"category": "POO y diseño de código", "term": "Composición", "definition": "Construir objetos combinando piezas pequeñas en lugar de depender de jerarquías rígidas.", "search": "composición vs herencia POO ejemplos TypeScript"}, {"category": "POO y diseño de código", "term": "Polimorfismo", "definition": "Capacidad de usar una misma interfaz para diferentes implementaciones.", "search": "polimorfismo interfaces clases TypeScript ejemplos"}, {"category": "POO y diseño de código", "term": "Acoplamiento", "definition": "Nivel de dependencia entre módulos; mientras menor, más fácil cambiar el sistema.", "search": "acoplamiento bajo alto software ejemplos"}, {"category": "POO y diseño de código", "term": "Cohesión", "definition": "Medida de qué tan enfocada está una clase o módulo en una sola responsabilidad.", "search": "cohesión alta baja diseño de software ejemplos"}, {"category": "POO y diseño de código", "term": "SOLID", "definition": "Cinco principios para diseñar código orientado a objetos más mantenible.", "search": "principios SOLID ejemplos TypeScript JavaScript"}, {"category": "POO y diseño de código", "term": "Single Responsibility", "definition": "Principio que indica que una clase o módulo debe tener una sola razón para cambiar.", "search": "Single Responsibility Principle ejemplos TypeScript"}, {"category": "POO y diseño de código", "term": "Dependency Injection", "definition": "Técnica para entregar dependencias desde afuera en vez de crearlas internamente.", "search": "inyección de dependencias TypeScript Node ejemplos"}, {"category": "POO y diseño de código", "term": "Clean Code", "definition": "Conjunto de prácticas para que el código sea legible, simple y mantenible.", "search": "Clean Code nombres funciones clases buenas prácticas"}, {"category": "POO y diseño de código", "term": "Code smell", "definition": "Señal de que el código puede tener un problema de diseño, aunque funcione.", "search": "code smells ejemplos refactorización"}, {"category": "POO y diseño de código", "term": "Deuda técnica", "definition": "Costo futuro causado por soluciones rápidas, incompletas o mal diseñadas.", "search": "deuda técnica ejemplos cómo gestionarla software"}, {"category": "Algoritmos y estructuras de datos", "term": "Big O", "definition": "Notación para describir cómo crece el tiempo o memoria de un algoritmo al aumentar los datos.", "search": "Big O complejidad temporal espacial ejemplos"}, {"category": "Algoritmos y estructuras de datos", "term": "Complejidad temporal", "definition": "Cantidad de tiempo que necesita un algoritmo según el tamaño de la entrada.", "search": "complejidad temporal algoritmos ejemplos JavaScript"}, {"category": "Algoritmos y estructuras de datos", "term": "Complejidad espacial", "definition": "Cantidad de memoria adicional que necesita un algoritmo.", "search": "complejidad espacial algoritmos ejemplos"}, {"category": "Algoritmos y estructuras de datos", "term": "Recursión", "definition": "Técnica donde una función se llama a sí misma para resolver subproblemas.", "search": "recursión caso base pila de llamadas ejemplos"}, {"category": "Algoritmos y estructuras de datos", "term": "Backtracking", "definition": "Técnica que prueba soluciones parciales y retrocede cuando una opción no sirve.", "search": "backtracking explicación ejemplos algoritmos"}, {"category": "Algoritmos y estructuras de datos", "term": "Búsqueda binaria", "definition": "Algoritmo para encontrar elementos en listas ordenadas dividiendo el espacio de búsqueda.", "search": "búsqueda binaria JavaScript ejemplos Big O"}, {"category": "Algoritmos y estructuras de datos", "term": "Ordenamiento", "definition": "Proceso de organizar datos bajo un criterio, como menor a mayor.", "search": "algoritmos de ordenamiento bubble merge quick sort"}, {"category": "Algoritmos y estructuras de datos", "term": "Stack", "definition": "Estructura tipo pila donde el último elemento en entrar es el primero en salir.", "search": "stack pila LIFO JavaScript implementación"}, {"category": "Algoritmos y estructuras de datos", "term": "Queue", "definition": "Estructura tipo cola donde el primer elemento en entrar es el primero en salir.", "search": "queue cola FIFO JavaScript implementación"}, {"category": "Algoritmos y estructuras de datos", "term": "Linked list", "definition": "Estructura de nodos conectados donde cada nodo apunta al siguiente.", "search": "linked list lista enlazada JavaScript implementación"}, {"category": "Algoritmos y estructuras de datos", "term": "Hash map", "definition": "Estructura clave-valor que permite búsquedas muy rápidas.", "search": "hash map diccionario Map JavaScript algoritmos"}, {"category": "Algoritmos y estructuras de datos", "term": "Set", "definition": "Colección de valores únicos útil para eliminar duplicados o verificar existencia.", "search": "Set JavaScript valores únicos algoritmos"}, {"category": "Algoritmos y estructuras de datos", "term": "Tree", "definition": "Estructura jerárquica compuesta por nodos padre e hijos.", "search": "árboles estructuras de datos binary tree BFS DFS"}, {"category": "Algoritmos y estructuras de datos", "term": "Graph", "definition": "Estructura de nodos y conexiones que modela redes, rutas o relaciones.", "search": "grafos BFS DFS representación JavaScript"}, {"category": "Algoritmos y estructuras de datos", "term": "BFS", "definition": "Búsqueda en anchura que explora vecinos por niveles.", "search": "BFS breadth first search grafos árboles ejemplos"}, {"category": "Algoritmos y estructuras de datos", "term": "DFS", "definition": "Búsqueda en profundidad que explora un camino hasta el fondo antes de volver.", "search": "DFS depth first search grafos árboles ejemplos"}, {"category": "Algoritmos y estructuras de datos", "term": "Two pointers", "definition": "Patrón que usa dos índices para resolver problemas en arrays o strings de forma eficiente.", "search": "two pointers algoritmos arrays strings ejemplos"}, {"category": "Algoritmos y estructuras de datos", "term": "Sliding window", "definition": "Patrón que mantiene una ventana móvil sobre un array o string para optimizar búsquedas.", "search": "sliding window algoritmos JavaScript ejemplos"}, {"category": "Algoritmos y estructuras de datos", "term": "Programación dinámica", "definition": "Técnica para resolver problemas reutilizando resultados de subproblemas.", "search": "programación dinámica memoization tabulation ejemplos básicos"}, {"category": "Web, frontend y experiencia de usuario", "term": "HTML semántico", "definition": "Uso de etiquetas HTML según su significado para mejorar accesibilidad y estructura.", "search": "HTML semántico etiquetas header main section article accesibilidad"}, {"category": "Web, frontend y experiencia de usuario", "term": "CSS responsive", "definition": "Técnicas para que una interfaz se adapte a celular, tablet y escritorio.", "search": "CSS responsive media queries flexbox grid mobile first"}, {"category": "Web, frontend y experiencia de usuario", "term": "DOM", "definition": "Representación del HTML como árbol manipulable desde JavaScript.", "search": "DOM JavaScript querySelector eventos manipulación"}, {"category": "Web, frontend y experiencia de usuario", "term": "Evento", "definition": "Acción del usuario o navegador que puede activar código, como click, submit o input.", "search": "eventos DOM click submit input JavaScript"}, {"category": "Web, frontend y experiencia de usuario", "term": "Componente", "definition": "Pieza reutilizable de una interfaz con estructura, comportamiento y estilos.", "search": "componentes React props estado composición"}, {"category": "Web, frontend y experiencia de usuario", "term": "Props", "definition": "Datos que un componente recibe desde su componente padre.", "search": "props React TypeScript ejemplos"}, {"category": "Web, frontend y experiencia de usuario", "term": "State", "definition": "Datos internos que pueden cambiar y causar actualización de la interfaz.", "search": "state useState React ejemplos"}, {"category": "Web, frontend y experiencia de usuario", "term": "Hook", "definition": "Función especial de React para usar estado, efectos u otra lógica.", "search": "hooks React useState useEffect useMemo useCallback"}, {"category": "Web, frontend y experiencia de usuario", "term": "Routing", "definition": "Manejo de rutas o pantallas dentro de una aplicación web.", "search": "routing React Router rutas SPA ejemplos"}, {"category": "Web, frontend y experiencia de usuario", "term": "SPA", "definition": "Aplicación de una sola página que cambia vistas sin recargar todo el sitio.", "search": "SPA single page application React ventajas desventajas"}, {"category": "Web, frontend y experiencia de usuario", "term": "SSR", "definition": "Renderizado en servidor para enviar HTML inicial desde el backend o framework.", "search": "SSR server side rendering Next.js ventajas"}, {"category": "Web, frontend y experiencia de usuario", "term": "CSR", "definition": "Renderizado en cliente donde el navegador construye la interfaz con JavaScript.", "search": "CSR client side rendering React explicación"}, {"category": "Web, frontend y experiencia de usuario", "term": "Estado global", "definition": "Datos compartidos por varias partes de la aplicación.", "search": "estado global React Context Redux Zustand ejemplos"}, {"category": "Web, frontend y experiencia de usuario", "term": "Accesibilidad", "definition": "Diseñar interfaces usables para personas con diferentes capacidades.", "search": "accesibilidad web a11y aria contraste navegación teclado"}, {"category": "Web, frontend y experiencia de usuario", "term": "UX", "definition": "Experiencia completa del usuario al usar un producto.", "search": "UX experiencia de usuario heurísticas formularios"}, {"category": "Web, frontend y experiencia de usuario", "term": "UI", "definition": "Parte visual e interactiva de una aplicación.", "search": "UI diseño de interfaz componentes patrones"}, {"category": "Web, frontend y experiencia de usuario", "term": "Design system", "definition": "Conjunto de reglas, componentes y estilos para mantener consistencia visual.", "search": "design system tokens componentes UI software"}, {"category": "Web, frontend y experiencia de usuario", "term": "Estado vacío", "definition": "Mensaje o diseño mostrado cuando no hay datos que presentar.", "search": "empty state estados vacíos UX frontend"}, {"category": "Web, frontend y experiencia de usuario", "term": "Loading state", "definition": "Estado visual que indica que algo se está cargando.", "search": "loading state skeleton spinner UX frontend"}, {"category": "Web, frontend y experiencia de usuario", "term": "Error state", "definition": "Estado visual que explica un fallo y ofrece recuperación al usuario.", "search": "error state manejo de errores UX frontend"}, {"category": "Backend, APIs y servicios", "term": "Cliente-servidor", "definition": "Modelo donde un cliente solicita recursos y un servidor responde.", "search": "arquitectura cliente servidor web explicación"}, {"category": "Backend, APIs y servicios", "term": "HTTP", "definition": "Protocolo usado para comunicar clientes y servidores en la web.", "search": "HTTP métodos status codes headers body explicación"}, {"category": "Backend, APIs y servicios", "term": "HTTPS", "definition": "Versión segura de HTTP que cifra la comunicación con TLS.", "search": "HTTPS TLS certificados seguridad web"}, {"category": "Backend, APIs y servicios", "term": "Endpoint", "definition": "URL específica de una API donde se realiza una operación.", "search": "endpoint API REST ejemplos backend"}, {"category": "Backend, APIs y servicios", "term": "REST", "definition": "Estilo para diseñar APIs usando recursos, métodos HTTP y respuestas claras.", "search": "REST API recursos métodos HTTP buenas prácticas"}, {"category": "Backend, APIs y servicios", "term": "JSON API", "definition": "API que envía y recibe datos principalmente en formato JSON.", "search": "JSON API diseño ejemplos backend frontend"}, {"category": "Backend, APIs y servicios", "term": "Middleware", "definition": "Función intermedia que procesa una petición antes de llegar al controlador.", "search": "middleware Express Node autenticación logs errores"}, {"category": "Backend, APIs y servicios", "term": "Controller", "definition": "Capa que recibe la petición, valida entrada básica y coordina la respuesta.", "search": "controller controlador backend Express arquitectura"}, {"category": "Backend, APIs y servicios", "term": "Service", "definition": "Capa donde vive la lógica de negocio principal.", "search": "service layer capa servicios backend arquitectura"}, {"category": "Backend, APIs y servicios", "term": "Repository", "definition": "Capa que encapsula acceso a datos o persistencia.", "search": "repository pattern backend TypeScript ejemplos"}, {"category": "Backend, APIs y servicios", "term": "ORM", "definition": "Herramienta que permite trabajar con bases de datos usando objetos o modelos de código.", "search": "ORM Prisma Sequelize TypeORM ventajas desventajas"}, {"category": "Backend, APIs y servicios", "term": "Validación de input", "definition": "Verificación de datos recibidos antes de procesarlos o guardarlos.", "search": "validación inputs backend Joi Zod seguridad"}, {"category": "Backend, APIs y servicios", "term": "Serialización", "definition": "Transformar objetos internos en datos aptos para enviar o almacenar.", "search": "serialización deserialización JSON API backend"}, {"category": "Backend, APIs y servicios", "term": "Paginación", "definition": "Dividir resultados en páginas para no enviar demasiados datos de una vez.", "search": "paginación limit offset cursor API backend"}, {"category": "Backend, APIs y servicios", "term": "Rate limiting", "definition": "Límite de peticiones permitidas para reducir abuso o ataques.", "search": "rate limiting API Express seguridad"}, {"category": "Backend, APIs y servicios", "term": "Autenticación", "definition": "Proceso de comprobar quién es un usuario.", "search": "autenticación login JWT sesiones cookies backend"}, {"category": "Backend, APIs y servicios", "term": "Autorización", "definition": "Proceso de comprobar qué puede hacer un usuario autenticado.", "search": "autorización roles permisos RBAC backend"}, {"category": "Backend, APIs y servicios", "term": "JWT", "definition": "Token firmado usado para representar identidad o sesión en una aplicación.", "search": "JWT JSON Web Token autenticación seguridad"}, {"category": "Backend, APIs y servicios", "term": "Cookie segura", "definition": "Cookie configurada con flags como HttpOnly, Secure y SameSite para proteger sesiones.", "search": "cookies seguras HttpOnly Secure SameSite autenticación"}, {"category": "Backend, APIs y servicios", "term": "Webhook", "definition": "Petición enviada automáticamente por un sistema cuando ocurre un evento.", "search": "webhooks qué son ejemplos pagos notificaciones backend"}, {"category": "Bases de datos y datos", "term": "Base de datos", "definition": "Sistema organizado para almacenar, consultar y administrar información.", "search": "base de datos relacional no relacional fundamentos"}, {"category": "Bases de datos y datos", "term": "Modelo relacional", "definition": "Modelo que organiza datos en tablas relacionadas mediante claves.", "search": "modelo relacional tablas relaciones SQL"}, {"category": "Bases de datos y datos", "term": "Entidad", "definition": "Objeto o concepto del negocio que se quiere representar en la base de datos.", "search": "entidad relación modelo ER ejemplos"}, {"category": "Bases de datos y datos", "term": "Atributo", "definition": "Dato que describe una entidad, como nombre, precio o fecha.", "search": "atributos entidad relación bases de datos"}, {"category": "Bases de datos y datos", "term": "Clave primaria", "definition": "Campo que identifica de forma única cada registro de una tabla.", "search": "primary key clave primaria SQL ejemplos"}, {"category": "Bases de datos y datos", "term": "Clave foránea", "definition": "Campo que conecta una tabla con la clave primaria de otra.", "search": "foreign key clave foránea relaciones SQL"}, {"category": "Bases de datos y datos", "term": "Cardinalidad", "definition": "Cantidad de relaciones posibles entre entidades: uno a uno, uno a muchos o muchos a muchos.", "search": "cardinalidad modelo entidad relación ejemplos"}, {"category": "Bases de datos y datos", "term": "Normalización", "definition": "Proceso de organizar tablas para reducir duplicación y anomalías.", "search": "normalización bases de datos 1NF 2NF 3NF ejemplos"}, {"category": "Bases de datos y datos", "term": "SQL", "definition": "Lenguaje usado para consultar y modificar bases de datos relacionales.", "search": "SQL SELECT INSERT UPDATE DELETE JOIN ejemplos"}, {"category": "Bases de datos y datos", "term": "JOIN", "definition": "Operación que combina datos de varias tablas relacionadas.", "search": "SQL JOIN inner left right full ejemplos"}, {"category": "Bases de datos y datos", "term": "Índice", "definition": "Estructura que acelera búsquedas a cambio de costo extra en escritura y almacenamiento.", "search": "índices SQL PostgreSQL cuándo usarlos"}, {"category": "Bases de datos y datos", "term": "Transacción", "definition": "Conjunto de operaciones que se ejecutan como una unidad completa o no se aplican.", "search": "transacciones SQL ACID commit rollback"}, {"category": "Bases de datos y datos", "term": "ACID", "definition": "Propiedades que hacen confiables las transacciones: atomicidad, consistencia, aislamiento y durabilidad.", "search": "ACID bases de datos explicación ejemplos"}, {"category": "Bases de datos y datos", "term": "Migración", "definition": "Archivo o proceso para versionar cambios en la estructura de la base de datos.", "search": "migraciones base de datos Prisma Sequelize PostgreSQL"}, {"category": "Bases de datos y datos", "term": "Seed", "definition": "Datos iniciales o de prueba cargados en una base de datos.", "search": "database seed datos iniciales pruebas desarrollo"}, {"category": "Bases de datos y datos", "term": "Vista", "definition": "Consulta guardada que se puede tratar como una tabla virtual.", "search": "SQL views vistas bases de datos ejemplos"}, {"category": "Bases de datos y datos", "term": "Trigger", "definition": "Lógica que se ejecuta automáticamente ante eventos en una tabla.", "search": "triggers SQL PostgreSQL ejemplos"}, {"category": "Bases de datos y datos", "term": "NoSQL", "definition": "Familia de bases no relacionales orientadas a documentos, clave-valor, columnas o grafos.", "search": "NoSQL MongoDB Redis Cassandra diferencias"}, {"category": "Bases de datos y datos", "term": "Consistencia eventual", "definition": "Modelo donde los datos pueden tardar un poco en sincronizarse entre réplicas.", "search": "consistencia eventual sistemas distribuidos bases de datos"}, {"category": "Bases de datos y datos", "term": "Data model", "definition": "Diseño de cómo se estructuran, relacionan y validan los datos de una aplicación.", "search": "data model modelo de datos software ejemplos"}, {"category": "Arquitectura de software", "term": "Arquitectura de software", "definition": "Estructura de alto nivel de un sistema: componentes, relaciones, decisiones y restricciones.", "search": "arquitectura de software componentes decisiones ejemplos"}, {"category": "Arquitectura de software", "term": "MVC", "definition": "Patrón que separa modelo, vista y controlador.", "search": "MVC modelo vista controlador explicación ejemplos"}, {"category": "Arquitectura de software", "term": "Arquitectura por capas", "definition": "Organización del sistema en capas como presentación, negocio y datos.", "search": "arquitectura por capas backend frontend ejemplos"}, {"category": "Arquitectura de software", "term": "Clean Architecture", "definition": "Arquitectura que protege reglas de negocio separándolas de frameworks y detalles externos.", "search": "Clean Architecture casos de uso entidades adaptadores ejemplos"}, {"category": "Arquitectura de software", "term": "Arquitectura hexagonal", "definition": "Estilo que conecta el dominio con el exterior mediante puertos y adaptadores.", "search": "arquitectura hexagonal puertos adaptadores TypeScript ejemplos"}, {"category": "Arquitectura de software", "term": "Monolito", "definition": "Aplicación desplegada como una sola unidad.", "search": "monolito arquitectura ventajas desventajas"}, {"category": "Arquitectura de software", "term": "Monolito modular", "definition": "Monolito organizado en módulos internos claros y con bajo acoplamiento.", "search": "monolito modular arquitectura software ejemplos"}, {"category": "Arquitectura de software", "term": "Microservicios", "definition": "Arquitectura compuesta por servicios pequeños desplegables de forma independiente.", "search": "microservicios ventajas riesgos comunicación datos"}, {"category": "Arquitectura de software", "term": "API Gateway", "definition": "Punto de entrada que enruta peticiones hacia servicios internos.", "search": "API Gateway microservicios seguridad rutas"}, {"category": "Arquitectura de software", "term": "Event-driven", "definition": "Arquitectura donde componentes reaccionan a eventos publicados por otros componentes.", "search": "event driven architecture eventos colas ejemplos"}, {"category": "Arquitectura de software", "term": "Cola de mensajes", "definition": "Sistema que almacena mensajes para procesarlos de forma asíncrona.", "search": "message queue RabbitMQ Kafka SQS ejemplos"}, {"category": "Arquitectura de software", "term": "CQRS", "definition": "Patrón que separa operaciones de lectura y escritura.", "search": "CQRS command query responsibility segregation ejemplos"}, {"category": "Arquitectura de software", "term": "Event sourcing", "definition": "Patrón donde el estado se reconstruye desde una secuencia de eventos.", "search": "event sourcing explicación ejemplos"}, {"category": "Arquitectura de software", "term": "C4 Model", "definition": "Modelo para documentar arquitectura en niveles: contexto, contenedores, componentes y código.", "search": "C4 model diagramas arquitectura software"}, {"category": "Arquitectura de software", "term": "ADR", "definition": "Documento breve que registra una decisión arquitectónica importante y su justificación.", "search": "ADR architectural decision record ejemplos"}, {"category": "Arquitectura de software", "term": "Escalabilidad", "definition": "Capacidad de un sistema para manejar más usuarios, datos o carga.", "search": "escalabilidad horizontal vertical software ejemplos"}, {"category": "Arquitectura de software", "term": "Disponibilidad", "definition": "Capacidad de un sistema para estar operativo cuando se necesita.", "search": "disponibilidad alta disponibilidad software"}, {"category": "Arquitectura de software", "term": "Resiliencia", "definition": "Capacidad de recuperarse o seguir funcionando ante fallos.", "search": "resiliencia software tolerancia a fallos patrones"}, {"category": "Testing, calidad y mantenimiento", "term": "Prueba unitaria", "definition": "Prueba pequeña que valida una función o unidad aislada de código.", "search": "pruebas unitarias Jest Vitest ejemplos"}, {"category": "Testing, calidad y mantenimiento", "term": "Prueba de integración", "definition": "Prueba que valida que varias partes del sistema trabajen correctamente juntas.", "search": "pruebas de integración backend frontend ejemplos"}, {"category": "Testing, calidad y mantenimiento", "term": "Prueba E2E", "definition": "Prueba que simula un flujo completo de usuario de inicio a fin.", "search": "pruebas E2E Playwright Cypress ejemplos"}, {"category": "Testing, calidad y mantenimiento", "term": "Mock", "definition": "Objeto o función falsa usada para simular dependencias en pruebas.", "search": "mocks testing JavaScript Jest ejemplos"}, {"category": "Testing, calidad y mantenimiento", "term": "Stub", "definition": "Implementación simple que devuelve respuestas controladas durante pruebas.", "search": "stub testing diferencia mock fake"}, {"category": "Testing, calidad y mantenimiento", "term": "Fixture", "definition": "Datos preparados para ejecutar pruebas de forma repetible.", "search": "fixtures testing datos de prueba ejemplos"}, {"category": "Testing, calidad y mantenimiento", "term": "Cobertura", "definition": "Porcentaje de código ejecutado por las pruebas.", "search": "coverage cobertura pruebas unitarias significado"}, {"category": "Testing, calidad y mantenimiento", "term": "TDD", "definition": "Desarrollo guiado por pruebas: primero prueba, luego código y después refactor.", "search": "TDD test driven development ciclo red green refactor"}, {"category": "Testing, calidad y mantenimiento", "term": "Regression bug", "definition": "Error que reaparece después de haber funcionado antes.", "search": "regression bug pruebas regresión software"}, {"category": "Testing, calidad y mantenimiento", "term": "Smoke test", "definition": "Prueba rápida para comprobar que lo principal de una app funciona.", "search": "smoke testing software ejemplos"}, {"category": "Testing, calidad y mantenimiento", "term": "Code review", "definition": "Revisión de código por otra persona o por checklist antes de integrar cambios.", "search": "code review checklist buenas prácticas"}, {"category": "Testing, calidad y mantenimiento", "term": "CI", "definition": "Integración continua: ejecutar validaciones automáticas cuando se sube código.", "search": "CI continuous integration GitHub Actions pruebas"}, {"category": "Testing, calidad y mantenimiento", "term": "CD", "definition": "Entrega o despliegue continuo para publicar cambios de forma automatizada y segura.", "search": "CD continuous delivery deployment explicación"}, {"category": "Testing, calidad y mantenimiento", "term": "Observabilidad", "definition": "Capacidad de entender el estado interno del sistema mediante logs, métricas y trazas.", "search": "observabilidad logs métricas traces software"}, {"category": "Testing, calidad y mantenimiento", "term": "Log", "definition": "Registro de eventos relevantes para depurar, auditar o monitorear.", "search": "logging buenas prácticas niveles error info debug"}, {"category": "Testing, calidad y mantenimiento", "term": "Métrica", "definition": "Dato numérico que permite medir comportamiento o salud del sistema.", "search": "métricas software latencia errores throughput"}, {"category": "Testing, calidad y mantenimiento", "term": "SLA", "definition": "Acuerdo de nivel de servicio comprometido con usuarios o clientes.", "search": "SLA SLO SLI diferencias software servicios"}, {"category": "Testing, calidad y mantenimiento", "term": "SLO", "definition": "Objetivo interno medible de nivel de servicio.", "search": "SLO service level objective ejemplos"}, {"category": "Testing, calidad y mantenimiento", "term": "SLI", "definition": "Indicador que mide el nivel de servicio real, como latencia o disponibilidad.", "search": "SLI service level indicator ejemplos"}, {"category": "DevOps, infraestructura y nube", "term": "Terminal", "definition": "Interfaz para ejecutar comandos y controlar herramientas del sistema.", "search": "terminal línea de comandos comandos básicos desarrollo"}, {"category": "DevOps, infraestructura y nube", "term": "Shell", "definition": "Programa que interpreta comandos, como Bash, PowerShell o Zsh.", "search": "shell Bash PowerShell diferencias comandos"}, {"category": "DevOps, infraestructura y nube", "term": "Linux", "definition": "Sistema operativo muy usado en servidores y entornos de desarrollo.", "search": "Linux fundamentos para desarrolladores comandos"}, {"category": "DevOps, infraestructura y nube", "term": "Proceso", "definition": "Programa en ejecución administrado por el sistema operativo.", "search": "procesos sistema operativo memoria CPU"}, {"category": "DevOps, infraestructura y nube", "term": "Thread", "definition": "Unidad de ejecución dentro de un proceso.", "search": "threads hilos concurrencia sistema operativo"}, {"category": "DevOps, infraestructura y nube", "term": "Concurrencia", "definition": "Capacidad de manejar varias tareas progresando en el mismo periodo.", "search": "concurrencia paralelismo diferencias programación"}, {"category": "DevOps, infraestructura y nube", "term": "Docker", "definition": "Herramienta para empaquetar aplicaciones y dependencias en contenedores.", "search": "Docker contenedores imágenes Dockerfile docker compose"}, {"category": "DevOps, infraestructura y nube", "term": "Contenedor", "definition": "Entorno aislado que ejecuta una aplicación con sus dependencias.", "search": "contenedores Docker explicación ejemplos"}, {"category": "DevOps, infraestructura y nube", "term": "Imagen Docker", "definition": "Plantilla inmutable desde la cual se crean contenedores.", "search": "imagen Docker Dockerfile capas explicación"}, {"category": "DevOps, infraestructura y nube", "term": "Docker Compose", "definition": "Herramienta para definir y ejecutar varios contenedores juntos.", "search": "docker compose frontend backend base de datos ejemplo"}, {"category": "DevOps, infraestructura y nube", "term": "Variable de entorno", "definition": "Configuración externa que cambia según ambiente sin modificar código.", "search": "variables de entorno .env seguridad configuración"}, {"category": "DevOps, infraestructura y nube", "term": "Ambiente", "definition": "Contexto donde corre la app: desarrollo, pruebas, staging o producción.", "search": "ambientes desarrollo staging producción software"}, {"category": "DevOps, infraestructura y nube", "term": "Staging", "definition": "Ambiente parecido a producción usado para probar antes de publicar.", "search": "staging environment despliegue buenas prácticas"}, {"category": "DevOps, infraestructura y nube", "term": "Deploy", "definition": "Proceso de publicar una aplicación para que otros puedan usarla.", "search": "deploy despliegue web frontend backend pasos"}, {"category": "DevOps, infraestructura y nube", "term": "Rollback", "definition": "Volver a una versión anterior cuando un despliegue falla.", "search": "rollback deployment estrategias software"}, {"category": "DevOps, infraestructura y nube", "term": "Blue-green deployment", "definition": "Estrategia con dos ambientes para cambiar tráfico con menor riesgo.", "search": "blue green deployment explicación ejemplos"}, {"category": "DevOps, infraestructura y nube", "term": "CI/CD pipeline", "definition": "Flujo automatizado de pruebas, build y despliegue.", "search": "CI CD pipeline GitHub Actions Node React"}, {"category": "DevOps, infraestructura y nube", "term": "Build", "definition": "Proceso de preparar código para ejecución o producción.", "search": "build frontend backend bundling compilación"}, {"category": "DevOps, infraestructura y nube", "term": "Bundle", "definition": "Archivo o conjunto de archivos generados para entregar una app frontend.", "search": "bundle frontend Vite Webpack explicación"}, {"category": "DevOps, infraestructura y nube", "term": "Infraestructura como código", "definition": "Definir infraestructura mediante archivos versionables.", "search": "infraestructura como código Terraform conceptos"}, {"category": "Seguridad de software", "term": "OWASP Top 10", "definition": "Lista de riesgos comunes y críticos en aplicaciones web.", "search": "OWASP Top 10 explicación ejemplos aplicaciones web"}, {"category": "Seguridad de software", "term": "XSS", "definition": "Ataque donde se inyecta JavaScript malicioso en una página.", "search": "XSS cross site scripting prevención ejemplos"}, {"category": "Seguridad de software", "term": "CSRF", "definition": "Ataque que aprovecha una sesión activa para ejecutar acciones no deseadas.", "search": "CSRF prevención SameSite token ejemplos"}, {"category": "Seguridad de software", "term": "SQL Injection", "definition": "Ataque que inserta SQL malicioso en consultas vulnerables.", "search": "SQL injection prevención consultas parametrizadas ejemplos"}, {"category": "Seguridad de software", "term": "Hashing", "definition": "Transformación irreversible usada para guardar contraseñas de forma segura.", "search": "hashing contraseñas bcrypt salt seguridad"}, {"category": "Seguridad de software", "term": "Salt", "definition": "Valor aleatorio agregado a una contraseña antes de hashearla.", "search": "salt password hashing bcrypt seguridad"}, {"category": "Seguridad de software", "term": "Cifrado", "definition": "Proceso de convertir información en algo ilegible sin una clave.", "search": "cifrado encryption simétrico asimétrico explicación"}, {"category": "Seguridad de software", "term": "TLS", "definition": "Protocolo que protege la comunicación en HTTPS.", "search": "TLS HTTPS certificados seguridad web"}, {"category": "Seguridad de software", "term": "CORS", "definition": "Política del navegador que controla qué orígenes pueden llamar una API.", "search": "CORS backend frontend explicación errores"}, {"category": "Seguridad de software", "term": "RBAC", "definition": "Control de acceso basado en roles.", "search": "RBAC roles permisos autorización backend"}, {"category": "Seguridad de software", "term": "Principio de menor privilegio", "definition": "Dar a usuarios y servicios solo los permisos necesarios.", "search": "principio de menor privilegio seguridad software"}, {"category": "Seguridad de software", "term": "Secreto", "definition": "Dato sensible como API keys, tokens o contraseñas que no debe subirse a Git.", "search": "secretos API keys tokens variables entorno seguridad"}, {"category": "Seguridad de software", "term": "Sanitización", "definition": "Limpieza de datos para reducir riesgos antes de mostrarlos o procesarlos.", "search": "sanitización inputs XSS seguridad web"}, {"category": "Seguridad de software", "term": "Validación server-side", "definition": "Validar datos en el servidor aunque el frontend ya los valide.", "search": "validación servidor seguridad backend inputs"}, {"category": "Seguridad de software", "term": "Auditoría", "definition": "Revisión técnica para encontrar riesgos, errores o incumplimientos.", "search": "auditoría seguridad software checklist"}, {"category": "Datos, IA y producto", "term": "Dataset", "definition": "Conjunto de datos organizado para análisis, pruebas o modelos.", "search": "dataset datos análisis machine learning ejemplos"}, {"category": "Datos, IA y producto", "term": "ETL", "definition": "Proceso de extraer, transformar y cargar datos.", "search": "ETL extract transform load datos ejemplos"}, {"category": "Datos, IA y producto", "term": "Data cleaning", "definition": "Limpieza de datos para corregir faltantes, duplicados o errores.", "search": "limpieza de datos pandas ejemplos"}, {"category": "Datos, IA y producto", "term": "Feature", "definition": "Variable o característica usada por un modelo o sistema de recomendación.", "search": "feature machine learning variables ejemplos"}, {"category": "Datos, IA y producto", "term": "Modelo ML", "definition": "Algoritmo entrenado con datos para hacer predicciones o clasificaciones.", "search": "modelo machine learning entrenamiento evaluación"}, {"category": "Datos, IA y producto", "term": "Entrenamiento", "definition": "Proceso donde un modelo aprende patrones a partir de datos.", "search": "entrenamiento machine learning train test split"}, {"category": "Datos, IA y producto", "term": "Inferencia", "definition": "Uso de un modelo ya entrenado para generar una predicción.", "search": "inferencia machine learning predicción modelos"}, {"category": "Datos, IA y producto", "term": "Overfitting", "definition": "Cuando un modelo aprende demasiado los datos de entrenamiento y falla con datos nuevos.", "search": "overfitting machine learning explicación prevención"}, {"category": "Datos, IA y producto", "term": "Métrica de modelo", "definition": "Medida para evaluar un modelo, como accuracy, precision, recall o RMSE.", "search": "métricas machine learning accuracy precision recall RMSE"}, {"category": "Datos, IA y producto", "term": "Embedding", "definition": "Representación numérica de texto, imágenes u objetos para comparar similitud.", "search": "embeddings explicación búsqueda semántica recomendadores"}, {"category": "Datos, IA y producto", "term": "Recomendador", "definition": "Sistema que sugiere elementos según preferencias, similitud o comportamiento.", "search": "sistemas recomendación contenido colaborativo embeddings"}, {"category": "Datos, IA y producto", "term": "Prompt engineering", "definition": "Diseño de instrucciones claras para obtener mejores respuestas de modelos de IA.", "search": "prompt engineering buenas prácticas ejemplos"}, {"category": "Datos, IA y producto", "term": "Privacidad de datos", "definition": "Protección del uso, almacenamiento y exposición de información personal.", "search": "privacidad de datos software buenas prácticas"}, {"category": "Datos, IA y producto", "term": "MVP", "definition": "Producto mínimo viable para validar una idea con lo esencial.", "search": "MVP producto mínimo viable software ejemplos"}, {"category": "Datos, IA y producto", "term": "Roadmap", "definition": "Plan de evolución de producto con funcionalidades y prioridades.", "search": "roadmap producto software planificación"}, {"category": "Datos, IA y producto", "term": "KPI", "definition": "Indicador clave para medir avance o éxito de un producto o proceso.", "search": "KPI producto software métricas ejemplos"}, {"category": "Trabajo profesional y proceso", "term": "Requisito funcional", "definition": "Lo que el sistema debe hacer.", "search": "requisitos funcionales ejemplos software"}, {"category": "Trabajo profesional y proceso", "term": "Requisito no funcional", "definition": "Condición de calidad como seguridad, rendimiento, disponibilidad o usabilidad.", "search": "requisitos no funcionales ejemplos software"}, {"category": "Trabajo profesional y proceso", "term": "Historia de usuario", "definition": "Descripción corta de una necesidad desde la perspectiva del usuario.", "search": "historias de usuario formato como quiero para criterios aceptación"}, {"category": "Trabajo profesional y proceso", "term": "Criterio de aceptación", "definition": "Condición verificable para saber si una historia está terminada.", "search": "criterios de aceptación ejemplos Given When Then"}, {"category": "Trabajo profesional y proceso", "term": "Backlog", "definition": "Lista priorizada de trabajo pendiente del producto.", "search": "backlog producto sprint historias priorización"}, {"category": "Trabajo profesional y proceso", "term": "Sprint", "definition": "Periodo corto de trabajo en Scrum para entregar incrementos.", "search": "sprint Scrum planificación review retrospectiva"}, {"category": "Trabajo profesional y proceso", "term": "Kanban", "definition": "Método visual para gestionar flujo de trabajo y limitar trabajo en curso.", "search": "Kanban WIP tablero flujo software"}, {"category": "Trabajo profesional y proceso", "term": "Pull request", "definition": "Solicitud para revisar e integrar cambios de código a una rama principal.", "search": "pull request code review GitHub buenas prácticas"}, {"category": "Trabajo profesional y proceso", "term": "Branch", "definition": "Rama de Git usada para trabajar cambios sin afectar la principal.", "search": "branch Git feature branch merge rebase"}, {"category": "Trabajo profesional y proceso", "term": "Merge", "definition": "Integrar cambios de una rama en otra.", "search": "merge Git conflictos explicación"}, {"category": "Trabajo profesional y proceso", "term": "Rebase", "definition": "Reaplicar commits sobre otra base para limpiar historial.", "search": "git rebase vs merge explicación"}, {"category": "Trabajo profesional y proceso", "term": "Commit", "definition": "Registro de cambios en Git con mensaje descriptivo.", "search": "commits Git mensajes convencionales buenas prácticas"}, {"category": "Trabajo profesional y proceso", "term": "Issue", "definition": "Elemento de seguimiento para bugs, tareas o mejoras.", "search": "issues GitHub gestión tareas bugs features"}, {"category": "Trabajo profesional y proceso", "term": "Release", "definition": "Versión publicada del software con cambios definidos.", "search": "release versionado changelog software"}, {"category": "Trabajo profesional y proceso", "term": "SemVer", "definition": "Sistema de versionado MAJOR.MINOR.PATCH.", "search": "semantic versioning SemVer explicación ejemplos"}, {"category": "Trabajo profesional y proceso", "term": "Changelog", "definition": "Registro de cambios entre versiones.", "search": "changelog buenas prácticas Keep a Changelog"}, {"category": "Trabajo profesional y proceso", "term": "Onboarding", "definition": "Proceso para que una persona entienda un proyecto y pueda contribuir.", "search": "onboarding desarrolladores documentación proyecto"}, {"category": "Trabajo profesional y proceso", "term": "Pair programming", "definition": "Dos personas programando juntas para mejorar calidad y aprendizaje.", "search": "pair programming roles driver navigator beneficios"}];
+    let activeGlossaryCategory = 'Todos';
+
+    const classContainer = document.getElementById('classContainer');
+    const moduleButtons = document.getElementById('moduleButtons');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    const progressCount = document.getElementById('progressCount');
+    const resetBtn = document.getElementById('resetBtn');
+    const glossaryContainer = document.getElementById('glossaryContainer');
+    const glossaryCategoryButtons = document.getElementById('glossaryCategoryButtons');
+    const glossarySearch = document.getElementById('glossarySearch');
+    const glossaryCount = document.getElementById('glossaryCount');
+
+
+
+    function glossaryPrompt(term) {
+      return `Actúa como profesor senior de Ingeniería de Software. Explícame el término "${term.term}" dentro de la categoría "${term.category}". Incluye: definición sencilla, ejemplo real, analogía, cuándo se usa, errores comunes, relación con otros términos y 5 preguntas para evaluar si entendí.`;
     }
-    function update(){
-      const done = checks.filter(ch => ch.checked).length;
-      const total = checks.length;
-      const pct = total ? Math.round(done * 100 / total) : 0;
-      bar.style.width = pct + '%';
-      text.textContent = pct + '%';
-      count.textContent = done + ' de ' + total + ' actividades';
-    }
-    checks.forEach(ch => {
-      ch.addEventListener('change', () => {
-        localStorage.setItem('softwarePlan_' + ch.dataset.key, ch.checked ? '1' : '0');
-        update();
-      });
-    });
-    reset.addEventListener('click', () => {
-      if(confirm('¿Seguro que quieres reiniciar tu avance?')){
-        checks.forEach(ch => {
-          ch.checked = false;
-          localStorage.removeItem('softwarePlan_' + ch.dataset.key);
+
+    function renderGlossaryCategories() {
+      const categories = ['Todos', ...Array.from(new Set(glossaryTerms.map(t => t.category)))];
+      glossaryCategoryButtons.innerHTML = categories.map(cat => `
+        <button class="glossary-tab ${cat === activeGlossaryCategory ? 'active' : ''}" type="button" data-category="${cat}">${cat}</button>
+      `).join('');
+
+      glossaryCategoryButtons.querySelectorAll('.glossary-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeGlossaryCategory = btn.dataset.category;
+          renderGlossaryCategories();
+          renderGlossary();
         });
-        update();
+      });
+    }
+
+    function normalizeText(value) {
+      return String(value).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function renderGlossary() {
+      const query = normalizeText(glossarySearch.value || '');
+      const filtered = glossaryTerms.filter(term => {
+        const matchCategory = activeGlossaryCategory === 'Todos' || term.category === activeGlossaryCategory;
+        const haystack = normalizeText(`${term.term} ${term.definition} ${term.search} ${term.category}`);
+        return matchCategory && haystack.includes(query);
+      });
+
+      glossaryCount.textContent = `${filtered.length} de ${glossaryTerms.length} términos`;
+
+      if(!filtered.length) {
+        glossaryContainer.innerHTML = '<div class="empty-glossary">No encontré términos con ese filtro. Prueba con API, datos, seguridad, React, SQL o arquitectura.</div>';
+        return;
+      }
+
+      glossaryContainer.innerHTML = filtered.map(term => {
+        const prompt = glossaryPrompt(term).replace(/"/g, '&quot;');
+        return `
+          <article class="term-card">
+            <span class="term-category">${term.category}</span>
+            <h4>${term.term}</h4>
+            <p>${term.definition}</p>
+            <div class="term-search">Buscar en ChatGPT: ${term.search}</div>
+            <div class="cta-row" style="margin-top:8px">
+              <button class="btn copyTermBtn" type="button" data-prompt="${prompt}">Copiar prompt</button>
+              <span class="copy-ok">Copiado</span>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      document.querySelectorAll('.copyTermBtn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(btn.dataset.prompt);
+            const ok = btn.parentElement.querySelector('.copy-ok');
+            if(ok) {
+              ok.style.display = 'inline';
+              setTimeout(() => ok.style.display = 'none', 1300);
+            }
+          } catch (e) {
+            alert('No se pudo copiar automáticamente. Copia manualmente el texto de búsqueda del término.');
+          }
+        });
+      });
+    }
+
+    function lessonKey(n) {
+      return 'rutaSoftwareClase_' + n;
+    }
+
+    function getDone(n) {
+      return localStorage.getItem(lessonKey(n)) === '1';
+    }
+
+    function setDone(n, value) {
+      localStorage.setItem(lessonKey(n), value ? '1' : '0');
+    }
+
+    function promptForLesson(lesson) {
+      return `Actúa como profesor universitario y mentor senior de Ingeniería de Software. Enséñame ${lesson.concept} desde cero, sin saturarme. Incluye definición sencilla, ejemplo en JavaScript/TypeScript, errores comunes, 5 ejercicios progresivos, un mini reto real y preguntas para evaluar si entendí.`;
+    }
+
+    function renderModules() {
+      classContainer.innerHTML = '';
+
+      modules.forEach((moduleName, index) => {
+        const moduleLessons = lessons.filter(l => l.module === moduleName);
+        const doneCount = moduleLessons.filter(l => getDone(l.n)).length;
+        const totalCount = moduleLessons.length;
+        const details = document.createElement('details');
+        details.className = 'module';
+        details.id = 'modulo-' + (index + 1);
+        details.open = index === 0 || doneCount < totalCount;
+
+        details.innerHTML = `
+          <summary>
+            <span class="module-title">
+              <span>${moduleName}</span>
+              <span class="pill blue">Clases ${moduleLessons[0].n}–${moduleLessons[moduleLessons.length - 1].n}</span>
+            </span>
+            <span class="small">${doneCount}/${totalCount} completadas</span>
+          </summary>
+          <div class="module-body">
+            <div class="classes">
+              ${moduleLessons.map(lesson => renderLesson(lesson)).join('')}
+            </div>
+          </div>
+        `;
+        classContainer.appendChild(details);
+      });
+
+      attachEvents();
+      updateProgress();
+    }
+
+    function renderLesson(lesson) {
+      const checked = getDone(lesson.n) ? 'checked' : '';
+      const doneClass = getDone(lesson.n) ? 'done' : '';
+      const prompt = promptForLesson(lesson).replace(/"/g, '&quot;');
+      return `
+        <article class="lesson ${doneClass}" data-lesson="${lesson.n}">
+          <div class="lesson-top">
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <div class="lesson-num">${String(lesson.n).padStart(2,'0')}</div>
+              <div>
+                <h4>${lesson.title}</h4>
+                <div class="lesson-meta">
+                  <span class="pill">Mes ${lesson.month}</span>
+                  <span class="pill blue">Semana ${lesson.week}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p><strong>Objetivo:</strong> ${lesson.goal}</p>
+          <p><strong>Práctica:</strong> ${lesson.practice}</p>
+          <p><strong>Entregable:</strong> ${lesson.output}</p>
+          <p><strong>Buscar en ChatGPT:</strong></p>
+          <div class="concept">${lesson.concept}</div>
+          <div class="cta-row" style="margin-top:12px">
+            <button class="btn copyBtn" type="button" data-prompt="${prompt}">Copiar prompt</button>
+            <span class="copy-ok">Copiado</span>
+          </div>
+          <label class="check">
+            <input type="checkbox" class="lessonCheck" data-n="${lesson.n}" ${checked}>
+            Marcar clase como completada
+          </label>
+        </article>
+      `;
+    }
+
+    function attachEvents() {
+      document.querySelectorAll('.lessonCheck').forEach(ch => {
+        ch.addEventListener('change', () => {
+          const n = Number(ch.dataset.n);
+          setDone(n, ch.checked);
+          const card = document.querySelector(`.lesson[data-lesson="${n}"]`);
+          if(card) card.classList.toggle('done', ch.checked);
+          updateProgress();
+          updateModuleSummariesOnly();
+        });
+      });
+
+      document.querySelectorAll('.copyBtn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const text = btn.dataset.prompt;
+          try {
+            await navigator.clipboard.writeText(text);
+            const ok = btn.parentElement.querySelector('.copy-ok');
+            if(ok) {
+              ok.style.display = 'inline';
+              setTimeout(() => ok.style.display = 'none', 1300);
+            }
+          } catch (e) {
+            alert('No se pudo copiar automáticamente. Copia manualmente el concepto de la clase.');
+          }
+        });
+      });
+    }
+
+    function updateProgress() {
+      const done = lessons.filter(l => getDone(l.n)).length;
+      const total = lessons.length;
+      const pct = Math.round(done * 100 / total);
+      progressBar.style.width = pct + '%';
+      progressText.textContent = pct + '%';
+      progressCount.textContent = `${done} de ${total} clases`;
+    }
+
+    function updateModuleSummariesOnly() {
+      modules.forEach((moduleName, index) => {
+        const moduleLessons = lessons.filter(l => l.module === moduleName);
+        const doneCount = moduleLessons.filter(l => getDone(l.n)).length;
+        const summarySmall = document.querySelector(`#modulo-${index + 1} summary .small`);
+        if(summarySmall) summarySmall.textContent = `${doneCount}/${moduleLessons.length} completadas`;
+      });
+    }
+
+    function renderModuleButtons() {
+      moduleButtons.innerHTML = modules.map((m, i) => `
+        <button class="module-btn" type="button" data-target="modulo-${i+1}">
+          ${String(i+1).padStart(2,'0')} · ${m.replace(/^Módulo \d+ · /,'')}
+        </button>
+      `).join('');
+
+      moduleButtons.querySelectorAll('.module-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = document.getElementById(btn.dataset.target);
+          if(target) {
+            target.open = true;
+            target.scrollIntoView({behavior:'smooth', block:'start'});
+          }
+          moduleButtons.querySelectorAll('.module-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    }
+
+    resetBtn.addEventListener('click', () => {
+      if(confirm('¿Seguro que quieres reiniciar el avance de las 48 clases?')) {
+        lessons.forEach(l => localStorage.removeItem(lessonKey(l.n)));
+        renderModules();
       }
     });
-    load();
+
+    glossarySearch.addEventListener('input', renderGlossary);
+    renderGlossaryCategories();
+    renderGlossary();
+
+    renderModuleButtons();
+    renderModules();
   </script>
 </body>
 </html>
