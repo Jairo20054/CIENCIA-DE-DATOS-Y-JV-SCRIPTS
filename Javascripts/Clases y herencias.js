@@ -1,4 +1,4 @@
-*//
+//
 class comida {
     constructor(tipo, cantidad, precio, localizaciòn) {
         this.tipo = tipo;
@@ -16,7 +16,7 @@ let orden = new comida("almuerzo", 2, 15000, "Puerto tejadad")
 
 console.log(orden.inicial())
 
-*//
+//
 
 class cena extends comida {
     constructor(tipo, cantidad, precio, localizaciòn, postre) {
