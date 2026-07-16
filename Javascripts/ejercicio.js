@@ -30,7 +30,7 @@ console.log(sumatoria(45,50));
 // 5. Crea una función que reciba un número y determine si es par o impar.
 
 const par_o_impar = (Numero) => {
-    if (numero % 0) {
+    if (numero % 2 === 0) {
         return "el numero es par"
     } else {"el numero es impar"}
 }
