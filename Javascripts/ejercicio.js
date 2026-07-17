@@ -39,8 +39,21 @@ console.log(par_o_impar(23));
 // 6. Crea una función que reciba una edad y determine si la persona
 // es mayor o menor de edad.
 
+const calculadora_edad = (edad) => {
+    return edad => 18  ? "es mayor de edad" : "es menor de edad";
+} 
+console.log(edad(18)); 
+
 // 7. Crea una función que reciba el precio de un producto y calcule
 // el valor correspondiente al IVA del 19 %.
+
+const callculador_iva = (precio_prenda) => {
+    return precio_prenda * 0.19;
+}
+console.log(callculador_iva(200000));
+
+
+
 
 // 8. Crea una función que reciba un nombre y retorne un saludo personalizado.
 
