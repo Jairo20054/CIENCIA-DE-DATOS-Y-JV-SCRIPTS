@@ -39,10 +39,11 @@ class Personal {
     }
     presentarse() {
         console.log(`Hola, muy buenos dias mi nombre es ${this.nombre} y tengo ${this.edad} años y actualmente vivo en ${this.ciudad}`)
-    }
-    
+    } 
 }
+const Personal = new Personal("Jairo Viafara", 25, "Cali")
 
+Personal.presentarse()
 
 // ------------------------------------------------------
 // EJERCICIO 2: CLASE PRODUCTO
