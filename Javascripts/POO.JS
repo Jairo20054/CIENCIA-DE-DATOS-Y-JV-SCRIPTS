@@ -73,6 +73,33 @@ Personal.presentarse()
 // Ejemplo:
 // return this.precio * this.cantidad;
 
+// SOLUCIÓN
+//EJERCICIO 6
+//Crea una clase llamada Producto.
+
+class producto {
+    constructor(nombre, precio , cantidad) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+    mostrarproducto(){
+        console.log(`El producto es${this.nombre} y contiene ${this.cantidad}`)
+    }
+
+    calcularproducto() {
+        return this.precio * this.cantidad; 
+    }
+}
+
+const caracteristicasproductos = new producto("exito", 1100000000, 100)
+
+caracteristicasproductos.mostrarproducto()
+
+
+const total = caracteristicasproductos.calcularprecio()
+
+console.log(`el precio total es${total}`)
 
 
 
@@ -101,7 +128,26 @@ Personal.presentarse()
 
 // Ejecuta verificarPlantilla() para cada equipo.
 
+// SOLUCIÓN
 
+//Crea una clase llamada Estudiante.
+
+class estudiante {
+    constructor(nota1, nota2, nota3) {
+        this.nota1;
+        this.nota2;
+        this.nota3;
+    }
+    calularPromedio() {
+        const promedio = this.nota + this.nota2+ this.nota3;
+        if(promedio >= 3) {console.log("el estudiante aprueba")} else{console.log("El estudiante reprobo")}
+    }
+
+}
+
+const Mipromedio = new estudiante(2.5, 3.6, 5.0)
+
+Mipromedio.calularPromedio()
 
 
 
@@ -774,48 +820,4 @@ const miequipote = new equipo ("barcelona", "ciudad barcelona", 26)
 
 miequipote.verificacion()
 
-//EJERCICIO 6
-//Crea una clase llamada Producto.
 
-class producto {
-    constructor(nombre, precio , cantidad) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.cantidad = cantidad;
-    }
-    mostrarproducto(){
-        console.log(`El producto es${this.nombre} y contiene ${this.cantidad}`)
-    }
-
-    calcularproducto() {
-        return this.precio * this.cantidad; 
-    }
-}
-
-const caracteristicasproductos = new producto("exito", 1100000000, 100)
-
-caracteristicasproductos.mostrarproducto()
-
-
-const total = caracteristicasproductos.calcularprecio()
-
-console.log(`el precio total es${total}`)
-
-//Crea una clase llamada Estudiante.
-
-class estudiante {
-    constructor(nota1, nota2, nota3) {
-        this.nota1;
-        this.nota2;
-        this.nota3;
-    }
-    calularPromedio() {
-        const promedio = this.nota + this.nota2+ this.nota3;
-        if(promedio >= 3) {console.log("el estudiante aprueba")} else{console.log("El estudiante reprobo")}
-    }
-
-}
-
-const Mipromedio = new estudiante(2.5, 3.6, 5.0)
-
-Mipromedio.calularPromedio()
