@@ -70,6 +70,28 @@ Personal.presentarse()
 
 // Recuerda utilizar this para acceder a las propiedades.
 
+
+// solución 
+
+class Productoss {
+    constructor(nombre, precio, cantidad) {
+        this.nombre= nombre;
+        this.precio= precio;
+        this.cantidad = cantidad;
+    }
+    mostrarProducto(){
+        console.log(`el productoes ${this.nombre}`)
+    }
+    CalculaTotal() {
+        return this.cantidad * this.precio;
+    }
+}
+
+const PrecioFinal = new Productoss("Jabon", 10000, 20)
+
+PrecioFinal.mostrarproducto()
+console.log(PrecioFinal.CalculaTotal())
+
 // Ejemplo:
 // return this.precio * this.cantidad;
 
@@ -185,7 +207,14 @@ Mipromedio.calularPromedio()
 // cuenta.retirar(100000);
 // cuenta.consultarSaldo();
 
+// SOLUCIÓN
 
+//pseudocodigo
+// Creare la clase Cuenta Bancaria, luego se creara el constructor el cual tendra los argumentos
+// Titular y saldo
+// Luego se crearan 3 metodos 1-depositar, el cual tendra las siguientes condiciones If el this.saldo =< a 0
+// 2- Retiros negativos, if this.saldo menor que saldo o 0 entonces saldra un console.log("su saldo es negativo")
+// 3- Valores superiores al saldo, if el argumento this.saldo es mayor a this.saldo console.log()
 
 
 
