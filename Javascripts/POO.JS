@@ -214,8 +214,29 @@ Mipromedio.calularPromedio()
 // Titular y saldo
 // Luego se crearan 3 metodos 1-depositar, el cual tendra las siguientes condiciones If el this.saldo =< a 0
 // 2- Retiros negativos, if this.saldo menor que saldo o 0 entonces saldra un console.log("su saldo es negativo")
-// 3- Valores superiores al saldo, if el argumento this.saldo es mayor a this.saldo console.log()
+// 3- Valores superiores al saldo, if el argumento this.saldo es mayor a this.saldo console.log("el saldo a retirar es superior al disponible")
 
+class CuentaBancaria {
+    constructor(titular, saldo) {
+        this.titular = titular;
+        this.saldo= saldo;
+    }
+    depositar(saldo) {
+        if (this.saldo <= 0) {
+            console.log("No se puede retirar depósitos menores o iguales a cero.")
+}
+    Retirar(saldo) {
+        if (this.saldo < 0) {
+            console.log("No se puede retirar un saldo negativo")
+    } else { if (this.salso > this.saldo) {
+        console.log("El saldo a retrirar es superior al disponible")
+    }
+
+}
+const cuenta = new CuentaBancaria("Jairo Andres Viafara", 1000000)
+
+cuenta.depositar(300000)
+cuenta.Retirar(400000)
 
 
 // ------------------------------------------------------
@@ -245,7 +266,47 @@ Mipromedio.calularPromedio()
 // "Se vendieron 3 unidades de Mouse."
 // "Stock disponible: 7"
 
+R//
+class Articulo {
+    constructor (nombre, precio, stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+    vender(cantidad) {
+        if (cantidad <= 0) {
+            console.log("no se pueden verder unidades menor o igual a cero")
+            return
+        } 
+        
+        if (cantidad > this.stock ) {
+            console.log("no hay suficiente stock") 
+            return
+        
+            this.stock -= cantidad;
 
+        } console.log(`se vendieron un total de ${cantidad}`)
+    } 
+
+    rebastecer(cantidad) {
+        this.stock += cantidad;
+        return
+        console.log(`se agrego la siguiente ${cantidad} y el stock es ${this.stock}`)
+    }
+
+    MostrarStock(){
+        console.log(`El Stock total es igual ${this.stock}`);
+    }
+
+}
+
+const MostrarArticulo = new Articulo ("Cepillo", 200000,5);
+
+MostrarArticulo.vender(cantidad)
+MostrarArticulo.MostrarStock()
+
+MostrarArticulo.rebastecer(4)
+MostrarArticulo.MostrarStock()
 
 
 
