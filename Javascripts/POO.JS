@@ -225,7 +225,7 @@ class CuentaBancaria {
         if (this.saldo <= 0) {
             console.log("No se puede retirar depósitos menores o iguales a cero.")
 }
-    Retirar(saldo) {
+    Retirar(saldo) 
         if (this.saldo < 0) {
             console.log("No se puede retirar un saldo negativo")
     } else { if (this.salso > this.saldo) {
