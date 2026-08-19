@@ -346,7 +346,21 @@ MostrarArticulo.MostrarStock()
 // console.log(estudiante.calcularPromedio());
 // console.log(estudiante.determinarEstado());
 
+//R
 
+class estudiante {
+    constructor(nombre, calificaciones) {
+        this.nombre = nombre;
+        this.calificaciones = calificaciones;
+    }
+    agregarCalificaciones(Nota){
+        if (Nota <= 5){console.log("su nota es valida")
+
+        } else if(Nota === "" || isNaN) {console.log("la nota no es valida")}
+    }
+
+    calcularPromedio()
+}
 
 
 
