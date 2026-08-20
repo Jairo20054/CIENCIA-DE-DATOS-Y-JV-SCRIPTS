@@ -360,13 +360,17 @@ class estudiantess {
     }
 
     calcularPromedio() {
-        const promedio = Nota2 + Nota2 / 2
+        const promedio = Calificación1 + Calificación2 / 2
         console.log(`el promedio es: ${promedio}`)
 
     if (promedio > 3) {
         console.log("estudiante aprueba")
     } else {console.log("estudiante reprueba")}
     } 
+
+    DeterminarEstado(){
+        
+    }
 }
 
 
