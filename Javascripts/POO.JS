@@ -369,9 +369,12 @@ class estudiantess {
     } 
 
     DeterminarEstado(){
-        
+
     }
 }
+const VerificaciónCalificación = new estudiantess ("Jairo_viafara")
+
+VerificaciónCalificación.DeterminarEstado()
 
 
 
