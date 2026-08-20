@@ -348,7 +348,7 @@ MostrarArticulo.MostrarStock()
 
 //R
 
-class estudiante {
+class estudiantess {
     constructor(nombre, calificaciones) {
         this.nombre = nombre;
         this.calificaciones = calificaciones;
@@ -359,7 +359,14 @@ class estudiante {
         } else if(Nota === "" || isNaN) {console.log("la nota no es valida")}
     }
 
-    calcularPromedio()
+    calcularPromedio() {
+        const promedio = Nota2 + Nota2 / 2
+        console.log(`el promedio es: ${promedio}`)
+
+    if (promedio > 3) {
+        console.log("estudiante aprueba")
+    } else {console.log("estudiante reprueba")}
+    } 
 }
 
 
