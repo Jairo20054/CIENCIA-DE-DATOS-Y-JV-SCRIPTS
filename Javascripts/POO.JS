@@ -351,33 +351,50 @@ MostrarArticulo.MostrarStock()
 class estudiantess {
     constructor(nombre, calificaciones) {
         this.nombre = nombre;
-        this.calificaciones = calificaciones;
+        this.calificaciones = [];
+      }
+      AgregarCalificaciones(Nota){
+        if(isNaN(Nota)|| Nota < 0 || Nota < 3){
+            console.log("La nota no es validad")
+            return
+      }
+         this.calificaciones.push(Nota)
+        console.log(`la calificación es ${Nota}`)
+            
+      }
+
+      CalcularPromedio(){
+        if(this.calificaciones.length=== 0) {
+            return 0
+        }
+        let suma = 0
+
+        for( let Nota of this.calificaciones){
+            suma+= Nota;
+        }
+        const promedio = suma / this.calificaciones.length
+        return promedio
+      }
+      DeterminarPromedio(){
+        const Promedio = this.CalcularPromedio()
+
+        if (Promedio < 3)
+            {
+                Console.log("Estado Reprobado")
+            }else {"Estado aprobado"}
+      } 
+      
     }
-    agregarCalificaciones(Nota){
-        if (Nota <= 5){console.log("su nota es valida")
+const Estudiantess = new estudiantess("Jairo Andres Viafara")
 
-        } else if(Nota === "" || isNaN) {console.log("la nota no es valida")}
-    }
+Estudiantess.AgregarCalificaciones(4.5)
+Estudiantess.AgregarCalificaciones(4.8)
+Estudiantess.AgregarCalificaciones(3.7)
 
-    calcularPromedio() {
-        const promedio = Calificación1 + Calificación2 / 2
-        console.log(`el promedio es: ${promedio}`)
+Console.log(Estudiantess.CalcularPromedio())
+Console.log(Estudiantess.DeterminarPromedio())
 
-    if (promedio > 3) {
-        console.log("estudiante aprueba")
-    } else {console.log("estudiante reprueba")}
-    } 
-
-    DeterminarEstado(){
-
-    }
-}
-const VerificaciónCalificación = new estudiantess ("Jairo_viafara")
-
-VerificaciónCalificación.DeterminarEstado()
-
-
-
+  
 // ======================================================
 // NIVEL 3: ENCAPSULAMIENTO
 // ======================================================
