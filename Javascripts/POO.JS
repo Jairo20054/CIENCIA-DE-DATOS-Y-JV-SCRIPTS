@@ -429,9 +429,11 @@ Console.log(Estudiantess.DeterminarPromedio())
 //
 // porque #saldo es una propiedad privada.
 
+// RESPUESTA
 
-
-
+class Billetera {
+    constructor ()
+}
 
 // ------------------------------------------------------
 // EJERCICIO 8: USUARIO Y CONTRASEÑA PRIVADA
