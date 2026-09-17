@@ -438,7 +438,9 @@ constructor (propietario, saldo) {
     this.#saldo = saldo
 }
 Recargar(cantidad) {
-    
+    if (cantidad <= 0) {
+        console.log("la cantidad es negativa")
+    }else {}
 }
 }
 // ------------------------------------------------------
