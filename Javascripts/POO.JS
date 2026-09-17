@@ -432,9 +432,15 @@ Console.log(Estudiantess.DeterminarPromedio())
 // RESPUESTA
 
 class Billetera {
-    constructor ()
+    #saldo
+constructor (propietario, saldo) {
+    this.propietario = propietario,
+    this.#saldo = saldo
 }
-
+Recargar(cantidad) {
+    
+}
+}
 // ------------------------------------------------------
 // EJERCICIO 8: USUARIO Y CONTRASEÑA PRIVADA
 // ------------------------------------------------------
