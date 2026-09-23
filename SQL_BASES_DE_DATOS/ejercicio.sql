@@ -2,13 +2,14 @@
 
 ## Nivel básico — Tabla `productos`
 
-1. Crear una base de datos llamada `tienda_practica`.
+1. Crear una base de datos llamada `tienda_practica`. = FINALIZADO
+2. Seleccionar la base de datos `tienda_practica`. = FINALIZADO
 2. Seleccionar la base de datos `tienda_practica`.
 3. Crear una tabla llamada `productos` con los campos: id, nombre, categoría, precio, stock y fecha de creación.
-4. Insertar al menos 5 productos diferentes.
-5. Mostrar todos los productos.
-6. Mostrar únicamente el nombre y el precio de los productos.
-7. Mostrar los productos cuyo precio sea mayor a $200.000.
+4. Insertar al menos 5 productos diferentes. = FINALIZADO
+5. Mostrar todos los productos. = FINALIZADO
+6. Mostrar únicamente el nombre y el precio de los productos. = FINALIZADO
+7. Mostrar los productos cuyo precio sea mayor a $200.000 = FINALIZADO
 8. Mostrar únicamente los productos de la categoría `Tecnologia`.
 9. Ordenar todos los productos desde el más caro hasta el más barato.
 10. Mostrar los 3 productos más caros.
