@@ -10,21 +10,21 @@
 5. Mostrar todos los productos. = FINALIZADO
 6. Mostrar únicamente el nombre y el precio de los productos. = FINALIZADO
 7. Mostrar los productos cuyo precio sea mayor a $200.000 = FINALIZADO
-8. Mostrar únicamente los productos de la categoría `Tecnologia`.
-9. Ordenar todos los productos desde el más caro hasta el más barato.
-10. Mostrar los 3 productos más caros.
-11. Mostrar los productos cuyo stock sea mayor a 10 unidades.
-12. Mostrar los productos cuyo precio esté entre $100.000 y $700.000.
-13. Mostrar los productos creados después del 2 de septiembre de 2026.
-14. Cambiar el stock del producto con id 1 a 30 unidades.
-15. Aumentar en 5 unidades el stock de un producto.
-16. Cambiar el precio de un producto.
-17. Eliminar el producto con id 5.
-18. Contar cuántos productos existen.
-19. Encontrar el producto más caro.
-20. Encontrar el producto más barato.
-21. Calcular el precio promedio de los productos.
-22. Calcular la suma total del stock disponible.
+8. Mostrar únicamente los productos de la categoría `Tecnologia`. = FINALIZADO
+9. Ordenar todos los productos desde el más caro hasta el más barato. = FINALIZADO
+10. Mostrar los 3 productos más caros.= Finalizado
+11. Mostrar los productos cuyo stock sea mayor a 10 unidades. = FINALIZADO
+12. Mostrar los productos cuyo precio esté entre $100.000 y $700.000. = FINALIZADO
+13. Mostrar los productos creados después del 2 de septiembre de 2026. = FINALIZADO
+14. Cambiar el stock del producto con id 1 a 30 unidades. = FINALIZADO
+15. Aumentar en 5 unidades el stock de un producto. = FINALIZADO
+16. Cambiar el precio de un producto. = FINALIZADO
+17. Eliminar el producto con id 5. = FINALIZADO
+18. Contar cuántos productos existen. = FINALIZADO
+19. Encontrar el producto más caro. = FINALIZADO
+20. Encontrar el producto más barato. = FINALIZADO
+21. Calcular el precio promedio de los productos. = FINALIZADO
+22. Calcular la suma total del stock disponible. = FINALIZADO
 
 ---
 
