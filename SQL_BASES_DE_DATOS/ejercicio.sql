@@ -30,8 +30,8 @@
 
 # Nivel intermedio — Tablas `clientes` y `ventas`
 
-23. Crear una tabla llamada `clientes` con los campos: id, nombre, ciudad y correo.
-24. Crear una tabla llamada `ventas` con los campos: id, cliente_id, fecha y total.
+23. Crear una tabla llamada `clientes` con los campos: id, nombre, ciudad y correo. = FINALIZADO
+24. Crear una tabla llamada `ventas` con los campos: id, cliente_id, fecha y total. = FINALIZADO
 25. Crear una relación entre `ventas` y `clientes` utilizando una llave foránea.
 26. Insertar al menos 5 clientes.
 27. Insertar al menos 10 ventas asociadas a diferentes clientes.
