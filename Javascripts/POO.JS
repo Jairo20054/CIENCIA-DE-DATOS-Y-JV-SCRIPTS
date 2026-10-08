@@ -440,8 +440,20 @@ constructor (propietario, saldo) {
 Recargar(cantidad) {
     if (cantidad <= 0) {
         console.log("la cantidad es negativa")
-    }else {}
+    }else {
+        "puedes realizar la recarga"
+    }
+
+    cantidad += saldo;
 }
+
+pagos(cantidad){
+    if(cantidad > saldo) ||  {
+        "saldo incorrecto"
+    }
+
+}
+
 }
 // ------------------------------------------------------
 // EJERCICIO 8: USUARIO Y CONTRASEÑA PRIVADA
