@@ -1,0 +1,22 @@
+Una institución permite prestar un portátil si el estudiante está activo, no tiene préstamos vencidos y existen equipos disponibles.
+Debes describir el sistema, identificar entrada–proceso–salida y diseñar el algoritmo en pseudocódigo.
+
+Solución:
+Entradas; nombre del estudiante, identificación
+INICIO
+
+    LEER estado_estudiante
+    LEER prestamos_vencidos
+    LEER equipos_disponibles
+
+    SI _______________________ ENTONCES
+
+        _______________________
+
+    SINO
+
+        _______________________
+
+    FIN SI
+
+FIN

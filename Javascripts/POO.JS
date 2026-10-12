@@ -448,7 +448,7 @@ Recargar(cantidad) {
 }
 
 pagos(cantidad){
-    if(cantidad > saldo) ||  {
+    if(cantidad > saldo) or (saldo < 0)  {
         "saldo incorrecto"
     }
 
