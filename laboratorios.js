@@ -28,14 +28,34 @@ FIN
 
 //-----------------------------------------------------------------------------------------------------------------
 
-//Laboratorio 2 — Cálculo de parqueadero
-
 //Diseña los campos de un registro de vehículos y un programa Python que calcule una tarifa de $3.000 COP por cada hora o fracción. El tiempo se recibe en minutos enteros positivos.
 
-//Pseudocodig
+//INICIO
 
-//se realizara la implementación de un programa que validara la estadida de un vehiculo en un parqueadero, se le cobrara un valor por hora
+   // DEFINIR CAMPOS DEL REGISTRO = cedula , nombres_completos, Placa_vehiculo
 
-// ENTRADAS: Nombre dueño del vehiculo, CC, Placa del equipo, hora de llegada, valor por hora.
-// PROCESO: Numero de cedula = input(int("ingrese un numero de cedula"))  - nombre del propietarios = input("Ingrese nombre del propietario") - hora_llegada = input(INT("ingrese hora llegada"))
-//Se crea una función tarifia()
+  //  DEFINIR TARIFA_CONSTANTE = 3000
+
+   // LEER DATOS DEL VEHÍCULO = cedula = input("ingrese la cedula"), nombres_Completos = input("ingrese Nombre completos"), 
+
+  //  LEER MINUTOS_ESTADIA
+
+  //  SI [condición de validación] ENTONCES
+
+  //  [Determinar horas completas]
+
+  //   [Verificar si sobran minutos]
+
+        [Calcular las horas que se cobrarán]
+
+        [Calcular valor total]
+
+        MOSTRAR [resultados]
+
+    SINO
+
+        MOSTRAR [mensaje de error]
+
+    FIN SI
+
+FIN
