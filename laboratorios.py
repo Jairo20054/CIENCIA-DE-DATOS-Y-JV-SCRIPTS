@@ -1,7 +1,7 @@
 #Una institución permite prestar un portátil si el estudiante está activo, no tiene préstamos vencidos y existen equipos disponibles.
 #Debes describir el sistema, identificar entrada–proceso–salida y diseñar el algoritmo en pseudocódigo.#
 
-Solución:
+#Solución:
 #sistema de inventario institución fidelina echeverry, el objetivo es poner controlar el prestamo de equipo a los estudiante.
 
 #Entradas; nombre del estudiante, identificación, estado( activo/inactivo )#
@@ -24,7 +24,7 @@ Solución:
 
   #  si akguna condición fakka, se niega ek prestamo.
 
-FIN
+#FIN
 
 #-----------------------------------------------------------------------------------------------------------------
 
@@ -50,9 +50,15 @@ FIN
 
     #    MOSTRAR [no puedes sair, no has realizado el pago]
 
- #   FIN SI = usuario no ha pagado 
+#   FIN SI = usuario no ha pagado 
 
 #  FIN
+
+#SOLUCIONES 
+
+CEDULA = input(int("Ingrese numero de cedula")),
+
+Nombre_Completo = input("ingrese Nombre Completo")
 
 
 
