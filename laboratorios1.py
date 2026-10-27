@@ -97,3 +97,55 @@ else:
 
     except ValueError:
         print("Error: debe ingresar los minutos como un número entero.")
+
+
+## - # EJERCICIO: CONTROL DE INVENTARIO
+
+# Una tienda comienza con 10 unidades de un producto.
+
+# Recibe una lista de cantidades solicitadas por clientes.
+
+# El programa debe revisar cada solicitud utilizando un ciclo.
+
+# Si la cantidad es mayor que 0 y hay inventario suficiente,
+# se aprueba y se descuentan las unidades solicitadas.
+
+# Si la cantidad es mayor que 0, pero no hay inventario
+# suficiente, se rechaza sin modificar el inventario.
+
+# Si la cantidad es 0 o negativa, se considera inválida.
+
+# Debes utilizar funciones para realizar las validaciones.
+
+# Al finalizar, mostrar:
+# - Cantidad de solicitudes aprobadas.
+# - Cantidad de solicitudes rechazadas.
+# - Cantidad de solicitudes inválidas.
+# - Inventario restante.
+
+
+# CASOS DE PRUEBA
+
+# Caso 1: [4, 3]
+# Esperado: 2 aprobadas, saldo 3.
+
+# Caso 2: [10, 1]
+# Esperado: 1 aprobada, 1 rechazada, saldo 0.
+
+# Caso 3: [0, -2, 2]
+# Esperado: 2 inválidas, 1 aprobada, saldo 8.
+
+
+# ACTIVIDAD:
+# 1. Realiza el pseudocódigo.
+# 2. Desarrolla el programa en Python.
+# 3. Ejecuta los tres casos de prueba.
+
+## Inventario
+
+#entradas
+#cantidad_unidades = 10 , 
+# Lista_cantidades = Input("ingrese las cantidades")
+# while cantidad_unidades < 0 Print("ingrese un numero mayor")
+        #else(if Lista_cantidades < 0 or "") print("ingrese un valor correcto")
+# if (Lista_cantidades >= 0) print("") 
