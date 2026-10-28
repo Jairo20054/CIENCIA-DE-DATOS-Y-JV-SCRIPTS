@@ -1,7 +1,7 @@
 #Una institución permite prestar un portátil si el estudiante está activo, no tiene préstamos vencidos y existen equipos disponibles.
 #Debes describir el sistema, identificar entrada–proceso–salida y diseñar el algoritmo en pseudocódigo.#
 
-Solución:
+#Solución:
 #sistema de inventario institución fidelina echeverry, el objetivo es poner controlar el prestamo de equipo a los estudiante.
 
 #Entradas; nombre del estudiante, identificación, estado( activo/inactivo )#
@@ -141,11 +141,34 @@ else:
 # 2. Desarrolla el programa en Python.
 # 3. Ejecuta los tres casos de prueba.
 
-## Inventario
+## Solución Inventario
 
 #entradas
 #cantidad_unidades = 10 , 
-# Lista_cantidades = Input("ingrese las cantidades")
-# while cantidad_unidades < 0 Print("ingrese un numero mayor")
-        #else(if Lista_cantidades < 0 or "") print("ingrese un valor correcto")
-# if (Lista_cantidades >= 0) print("") 
+# Lista_cantidades = int(input("ingresa los numeros"))
+# 
+
+# def función(cantidades_unidades, Lista_cantidades):
+   #while cantidad_unidades < 0 return "ingrese un numero mayor"
+        #else if Lista_cantidades < 0 or "" 
+        # return "ingrese un valor correcto"
+        #    if Lista_cantidades >= 0 and cantidad_unidades > 0  
+        # return "aprobado" + cantidad_unidades-= 1
+        # if Lista_cantidades > 0 and cantidad_unidades < 0
+        #  return "suficiente"
+        # 1f Lista_cantidades == 0 or < 0 
+        # return "operación invalida" 
+
+#print(Lista_cantidades(8))
+
+# Solución
+
+cantidad = 10
+Lista_cantidades = int(input("ingrese la lista de cantidades"))
+
+def comprobación(cantidad, Lita_cantidades):
+    while Lista_cantidades < 0:
+        return "ingrese un numero mayor"
+    if Lista_cantidades > 0 and cantidad > 0:
+        return "aprobado" + Lista_cantidades -= 1
+    if 
