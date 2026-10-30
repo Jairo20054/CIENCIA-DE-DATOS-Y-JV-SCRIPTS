@@ -163,12 +163,27 @@ else:
 
 # Solución
 
-cantidad = 10
+cantidad = []
 Lista_cantidades = int(input("ingrese la lista de cantidades"))
+for i in range(Lista_cantidades):
+numero = int(input("ingrese # cantidad"))
+cantidad.append(numero)
 
-def comprobación(cantidad, Lita_cantidades):
-    while Lista_cantidades < 0:
-        return "ingrese un numero mayor"
+def comprobación(cantidad, Lista_cantidades):
+    if Lista_cantidades < 0 :
+            return "operación invalida"
+    
+    if Lista_cantidades > cantidad:
+        return f"credito rechazado"
+
     if Lista_cantidades > 0 and cantidad > 0:
-        return "aprobado" + Lista_cantidades -= 1
-    if 
+
+        Lista_cantidades -= cantidad
+
+        return f"aprobado cantidad restante: {Lista_cantidades}"
+
+    if Lista_cantidades > 0 and cantidad <= 0 : 
+        return f"credito rechazado"
+    
+
+print(comprobación(8,7))
