@@ -103,24 +103,24 @@ else:
 
 # Una tienda comienza con 10 unidades de un producto.
 
-# Recibe una lista de cantidades solicitadas por clientes.
+# Recibe una lista de Inventarioes solicitadas por clientes.
 
 # El programa debe revisar cada solicitud utilizando un ciclo.
 
-# Si la cantidad es mayor que 0 y hay inventario suficiente,
+# Si la Inventario es mayor que 0 y hay inventario suficiente,
 # se aprueba y se descuentan las unidades solicitadas.
 
-# Si la cantidad es mayor que 0, pero no hay inventario
+# Si la Inventario es mayor que 0, pero no hay inventario
 # suficiente, se rechaza sin modificar el inventario.
 
-# Si la cantidad es 0 o negativa, se considera inválida.
+# Si la Inventario es 0 o negativa, se considera inválida.
 
 # Debes utilizar funciones para realizar las validaciones.
 
 # Al finalizar, mostrar:
-# - Cantidad de solicitudes aprobadas.
-# - Cantidad de solicitudes rechazadas.
-# - Cantidad de solicitudes inválidas.
+# - Inventario de solicitudes aprobadas.
+# - Inventario de solicitudes rechazadas.
+# - Inventario de solicitudes inválidas.
 # - Inventario restante.
 
 
@@ -144,47 +144,64 @@ else:
 ## Solución Inventario
 
 #entradas
-#cantidad_unidades = 10 , 
-# Lista_cantidades = int(input("ingresa los numeros"))
+#Inventario_unidades = 10 , 
+# Lista_Inventarioes = int(input("ingresa los numeros"))
 # 
 
-# def función(cantidades_unidades, Lista_cantidades):
-   #while cantidad_unidades < 0 return "ingrese un numero mayor"
-        #else if Lista_cantidades < 0 or "" 
+# def función(Inventarioes_unidades, Lista_Inventarioes):
+   #while Inventario_unidades < 0 return "ingrese un numero mayor"
+        #else if Lista_Inventarioes < 0 or "" 
         # return "ingrese un valor correcto"
-        #    if Lista_cantidades >= 0 and cantidad_unidades > 0  
-        # return "aprobado" + cantidad_unidades-= 1
-        # if Lista_cantidades > 0 and cantidad_unidades < 0
+        #    if Lista_Inventarioes >= 0 and Inventario_unidades > 0  
+        # return "aprobado" + Inventario_unidades-= 1
+        # if Lista_Inventarioes > 0 and Inventario_unidades < 0
         #  return "suficiente"
-        # 1f Lista_cantidades == 0 or < 0 
+        # 1f Lista_Inventarioes == 0 or < 0 
         # return "operación invalida" 
 
-#print(Lista_cantidades(8))
+#print(Lista_Inventarioes(8))
 
 # Solución
 
-cantidad = []
-Lista_cantidades = int(input("ingrese la lista de cantidades"))
-for i in range(Lista_cantidades):
-numero = int(input("ingrese # cantidad"))
-cantidad.append(numero)
+Inventario = []
+
+Lista_Inventarioes = int(input("ingrese la lista de Inventarioes"))
+
+for i in range(Lista_Inventarioes):
+    numero = int(input("ingrese # Inventario"))
+    Inventario.append(numero)
+
 #debajo de cada contidiconal va el contador cuentas las invalidadas, aprobadas etc..
-def comprobación(cantidad, Lista_cantidades):
-    if Lista_cantidades < 0 :
-            return "operación invalida"
+def comprobación(Solicitud, Inventario) :
+      
+    if Solicitud <= 0 :
+            return f"invalida"
     
     
-    if Lista_cantidades > cantidad:
-        return f"credito rechazado"
+    if Solicitud > Inventario:
+        return f"rechazado"
 
-    if Lista_cantidades > 0 and cantidad > 0:
+    if Solicitud > 0 and Solicitud <= Inventario:
+        return f"aprobado"
 
-        Lista_cantidades -= cantidad
+        Inventario -= Solicitud
 
-        return f"aprobado cantidad restante: {Lista_cantidades}"
+#Contadores
 
-    if Lista_cantidades > 0 and cantidad <= 0 : 
-        return f"credito rechazado"
-    
+invalida = 0
+rechazado = 0
+aprobado = 0
 
-print(comprobación(8,7))
+for solicitud in Inventario:
+    resultado = comprobación(solicitud, Inventario)
+
+    if resultado == "invalida":
+        invalida += 1
+
+    elif resultado == "rechazado":
+        rechazado +=1
+    else:
+        aprobado +=1
+print(f"solicitudes invalidas: {invalida}")
+print(f"Solicitudes rechazadas: {rechazado}")
+print(f"Solicitudes aprobadas: {aprobado}")
