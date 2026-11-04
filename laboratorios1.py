@@ -168,10 +168,11 @@ Lista_cantidades = int(input("ingrese la lista de cantidades"))
 for i in range(Lista_cantidades):
 numero = int(input("ingrese # cantidad"))
 cantidad.append(numero)
-
+#debajo de cada contidiconal va el contador cuentas las invalidadas, aprobadas etc..
 def comprobación(cantidad, Lista_cantidades):
     if Lista_cantidades < 0 :
             return "operación invalida"
+    
     
     if Lista_cantidades > cantidad:
         return f"credito rechazado"
