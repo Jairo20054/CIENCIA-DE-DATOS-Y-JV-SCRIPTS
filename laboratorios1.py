@@ -202,6 +202,65 @@ for solicitud in Inventario:
         rechazado +=1
     else:
         aprobado +=1
+
 print(f"solicitudes invalidas: {invalida}")
 print(f"Solicitudes rechazadas: {rechazado}")
 print(f"Solicitudes aprobadas: {aprobado}")
+
+
+# EJERCICIO: CONTROL DE PARQUEADERO
+
+# Un parqueadero tiene 15 cupos disponibles.
+# Recibe una lista de solicitudes de ingreso de vehículos.
+
+# REGLAS:
+# 1. Si la solicitud > 0 y hay cupos, se aprueba
+#    y se descuentan los cupos utilizados.
+# 2. Si no hay suficientes cupos, se rechaza.
+# 3. Si la solicitud <= 0, es inválida.
+
+# UTILIZAR:
+# - Funciones (def y return).
+# - Condicionales (if, elif, else).
+# - Ciclo for.
+# - Listas y append().
+# - Contadores con += 1.
+
+# MOSTRAR:
+# - Solicitudes aprobadas.
+# - Solicitudes rechazadas.
+# - Solicitudes inválidas.
+# - Total de vehículos ingresados.
+# - Cupos restantes.
+
+# CASOS DE PRUEBA:
+
+# Caso 1: [5, 4, 3]
+# Esperado: 3 aprobadas, 3 cupos restantes.
+
+# Caso 2: [10, 7, 2]
+# Esperado: 2 aprobadas, 1 rechazada, 3 cupos restantes.
+
+# Caso 3: [0, -3, 8, 9, 2]
+# Esperado: 2 aprobadas, 1 rechazada,
+#           2 inválidas, 5 cupos restantes.
+
+# ACTIVIDAD:
+# 1. Escribir el pseudocódigo.
+# 2. Desarrollar el programa en Python.
+# 3. Ejecutar los tres casos.
+
+#PSEUDOCODIGO
+# Defini variable Cupos_Disponibles = 15
+# Definir lista de solicitudes como es una lista debe de ser un diccionario Lista_Disponible = []
+
+# Condicionales
+# if Lista_Solicitud > Cupos-Disponibles 
+# Cupos_Disponibles -= Lista_Solicitud
+# retornar return f"cupo aprobado", Cupos_Disponibles
+
+# if Cupos_Disponibles <= 0: 
+#retornar return f"Operación rechazada"
+
+#if Lista_Solicitud <= 0
+# retornar return es inválida
