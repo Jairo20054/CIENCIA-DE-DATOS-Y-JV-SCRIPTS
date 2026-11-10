@@ -1,4 +1,4 @@
-#Una institución permite prestar un portátil si el estudiante está activo, no tiene préstamos vencidos y existen equipos disponibles.
+#Una institución permite prestar un portátil si el estudiante está activo, no tiene préstamos vencidos y existen equipos Solicitud.
 #Debes describir el sistema, identificar entrada–proceso–salida y diseñar el algoritmo en pseudocódigo.#
 
 #Solución:
@@ -10,9 +10,9 @@
 
    # LEER estado_estudiante
    # LEER prestamos_vencidos
-    #LEER equipos_disponibles
+    #LEER equipos_Solicitud
 
-    #SI EK estudiante esta activo Y (AND) NO TIENE prestamos vencidos Y (AND) HAY EQUIPOS disponibles  ENTONCES
+    #SI EK estudiante esta activo Y (AND) NO TIENE prestamos vencidos Y (AND) HAY EQUIPOS Solicitud  ENTONCES
 
       #  reakizar prestamo
 
@@ -210,7 +210,7 @@ print(f"Solicitudes aprobadas: {aprobado}")
 
 # EJERCICIO: CONTROL DE PARQUEADERO
 
-# Un parqueadero tiene 15 cupos disponibles.
+# Un parqueadero tiene 15 cupos Solicitud.
 # Recibe una lista de solicitudes de ingreso de vehículos.
 
 # REGLAS:
@@ -251,16 +251,25 @@ print(f"Solicitudes aprobadas: {aprobado}")
 # 3. Ejecutar los tres casos.
 
 #PSEUDOCODIGO
-# Defini variable Cupos_Disponibles = 15
-# Definir lista de solicitudes como es una lista debe de ser un diccionario Lista_Disponible = []
+# Definir variable Cupos_Solicitud = []
+# Definir lista de solicitudes como es una lista debe de ser un diccionario Lista_Solicitud= int(input("ingrese la lista de solicitudes"))
+
+# def función(solicitud, Cupos_Solicitud):
+# cliclo for solicitud in Lista_Diponible:
+#agregar variable numero = int(input(Ingrese # de solicitud))
+# lista_Solicitud.append(numero)
 
 # Condicionales
-# if Lista_Solicitud > Cupos-Disponibles 
-# Cupos_Disponibles -= Lista_Solicitud
-# retornar return f"cupo aprobado", Cupos_Disponibles
 
-# if Cupos_Disponibles <= 0: 
-#retornar return f"Operación rechazada"
+# if Lista_Solicitud > Cupos-Solicitud 
+# Cupos_Solicitud -= Lista_Solicitud
+# retornar return f"cupo aprobado", Cupos_Solicitud
+#Aprobada += 1
+
+# if Cupos_Solicitud <= 0: 
+#retornar return f"Operación rechazada", Cupos_Solicitud
+#rechazada += 1
 
 #if Lista_Solicitud <= 0
-# retornar return es inválida
+# retornar return f"es inválida"
+#invalida +=1
